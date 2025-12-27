@@ -1,0 +1,124 @@
+# Doxyfile 1.15.0
+
+# This file describes the settings to be used by the documentation system
+# Doxygen (www.doxygen.org) for a project.
+#
+# All text after a double hash (##) is considered a comment and is placed in
+# front of the TAG it is preceding.
+#
+# All text after a single hash (#) is considered a comment and will be ignored.
+# The format is:
+# TAG = value [value, ...]
+# For lists, items can also be appended using:
+# TAG += value [value, ...]
+# Values that contain spaces should be placed between quotes (\" \").
+#
+# Note:
+#
+# Use Doxygen to compare the used configuration file with the template
+# configuration file:
+# doxygen -x [configFile]
+# Use Doxygen to compare the used configuration file with the template
+# configuration file without replacing the environment variables or CMake type
+# replacement variables:
+# doxygen -x_noenv [configFile]
+
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+
+# This tag specifies the encoding used for all characters in the configuration
+# file that follow. The default is UTF-8 which is also the encoding used for all
+# text before the first occurrence of this tag. Doxygen uses libiconv (or the
+# iconv built into libc) for the transcoding. See
+# https://www.gnu.org/software/libiconv/ for the list of possible encodings.
+# The default value is: UTF-8.
+
+DOXYFILE_ENCODING      = UTF-8
+
+#-------------------------------------------------
+# Project
+#-------------------------------------------------
+PROJECT_NAME           = "EARS-PIO-WSS3-LVGL-001"
+PROJECT_BRIEF          = "Embedded Firmware Documentation"
+OUTPUT_DIRECTORY       = docs/doxygen
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+PROJECT_NUMBER         = 1.0.0
+PROJECT_LOGO           =
+PROJECT_ICON           =
+
+#-------------------------------------------------
+# Input
+#-------------------------------------------------
+INPUT                  = \
+                         src \
+                         include \
+                         lib
+
+FILE_PATTERNS          = *.c \
+                         *.cpp \
+                         *.h \
+                         *.hpp
+
+RECURSIVE              = YES
+
+#-------------------------------------------------
+# Exclusions (IMPORTANT)
+#-------------------------------------------------
+EXCLUDE                = \
+                         .pio \
+                         .vscode \
+                         test
+
+EXCLUDE_PATTERNS       = */.pio/* \
+                         */examples/* \
+                         */test/*
+
+#-------------------------------------------------
+# Extraction
+#-------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+#-------------------------------------------------
+# Language & parsing
+#-------------------------------------------------
+OPTIMIZE_OUTPUT_FOR_C  = YES
+OPTIMIZE_OUTPUT_JAVA   = NO
+
+# PlatformIO / embedded friendliness
+ENABLE_PREPROCESSING  = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+
+PREDEFINED             = \
+                         ARDUINO \
+                         ESP32 \
+                         PLATFORMIO=1
+
+#-------------------------------------------------
+# Warnings (tell it like it is)
+#-------------------------------------------------
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+#-------------------------------------------------
+# Source browsing (very useful)
+#-------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+#-------------------------------------------------
+# Graphs (disable if slow)
+#-------------------------------------------------
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+DOT_IMAGE_FORMAT       = svg
