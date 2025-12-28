@@ -1,3 +1,4 @@
+#pragma once
 #ifndef NVSEEPROM_H
 #define NVSEEPROM_H
 

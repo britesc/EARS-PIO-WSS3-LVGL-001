@@ -1,9 +1,56 @@
+/**
+ * @file main.cpp
+ *
+ * @mainpage EARS Project
+ *
+ * @section description Description
+ * EARS - Equipment and Ammunition Reporting  System.
+ *
+ * @section libraries Libraries
+ * - GFX Library for Arduino (https://github.com/moononournation/Arduino_GFX)
+ *   - Graphics Gateway.
+ * - Widgets Library for Arduino (https://github.com/lvgl/lvgl)
+ *   - Widgets
+ *
+ * @section tools Tools
+ * - VSCode 1.81.1.
+ * - PlatformIO IDE 3.6.3.
+ * - EEZ Studio 0.23.2.
+ *
+ * @section notes Notes
+ * - Comments are Doxygen compatible.
+ *
+ * @section todo TODO
+ * - Don't use Doxygen style formatting inside the body of a function.
+ *
+ * @section author Author
+ * - Created by JTB on 20251220.
+ * - Modified by by JTB on 20251228.
+ *
+ * Copyright (c) 2025 JTB.  All rights reserved.
+ */
+
+ /******************************************************************************
+  * App Version Information
+  *****************************************************************************/
+ #define APP_VERSION_MAJOR "0"
+ #define APP_VERSION_MINOR "0"
+ #define APP_VERSION_PATCH "302"
+ #define APP_VERSION_BUILD "(Dev)"
+ #define APP_VERSION       APP_VERSION_MAJOR + "." + APP_VERSION_MINOR + "." + APP_VERSION_PATCH + " " + APP_VERSION_BUILD 
+
+ 
 #include <Arduino.h>
 #include <lvgl.h>
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
 #include "RGB565_COLORS.h"
 #include "NVSEeprom.h"
+// #include <nvs.h>
+// #include <nvs_flash.h>
+
+// NVS EEPROM object
+NVSEeprom nvs;
 
 // Display settings
 static const uint32_t screenWidth = TFT_WIDTH;
@@ -46,9 +93,12 @@ void setup() {
     
     Serial.println("Display initialized");
 
-    // Initialize LVGL
+    /* Initialise LVGL */
     lv_init();
-    
+  
+    /*Set a tick source so that LVGL will know how much time elapsed. */
+    lv_tick_set_cb(millis_cb);
+     
     // Create LVGL display
     disp = lv_display_create(screenWidth, screenHeight);
     lv_display_set_flush_cb(disp, my_disp_flush);
@@ -69,13 +119,37 @@ void setup() {
 
     Serial.println("Test screen created");
 
+    // Initialize NVS partition - ADD THIS
+    esp_err_t err = nvs_flash_init();
+    if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        nvs_flash_erase();
+        err = nvs_flash_init();
+    }
+    Serial.println("NVS initialized");
+
     // NVS Test Step 1
     nvs.putHash("test", "abc123");
     String retrieved = nvs.getHash("test");
     Serial.println(retrieved);    
 }
 
+/**
+ * @brief Core0 loop function
+ * 
+ */
+
 void loop() {
     lv_timer_handler();
     delay(5);
 }
+
+/**
+ * @brief Callback function to provide millis() to LVGL
+ * 
+ * @return uint32_t 
+ */
+
+uint32_t millis_cb(void) {
+    return millis();
+}
+  
