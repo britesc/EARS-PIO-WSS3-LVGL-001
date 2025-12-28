@@ -3,6 +3,7 @@
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
 #include "RGB565_COLORS.h"
+#include "NVSEeprom.h"
 
 // Display settings
 static const uint32_t screenWidth = TFT_WIDTH;
@@ -67,6 +68,11 @@ void setup() {
     lv_obj_center(label);
 
     Serial.println("Test screen created");
+
+    // NVS Test Step 1
+    nvs.putHash("test", "abc123");
+    String retrieved = nvs.getHash("test");
+    Serial.println(retrieved);    
 }
 
 void loop() {
