@@ -102,7 +102,17 @@ NVSEeprom nvs;
 }
 
 /**
- * @brief Primary setup function
+ * @brief Callback function to provide millis() to LVGL
+ * @description
+ * LVGL requires a millisecond tick source to manage its timing.
+ * @return uint32_t 
+ */
+uint32_t millis_cb(void) {
+    return millis();
+}
+
+/**
+ * @brief Primary setup functions for Core0
  * @description
  * Initializes Serial, Display, LVGL, and NVS.
  * @return void
@@ -166,6 +176,7 @@ void setup() {
  * @brief Core0 loop function
  * @desription
  * Handles LVGL timer tasks.
+ * @return void
  */
 void loop() {
     lv_timer_handler();
@@ -173,12 +184,30 @@ void loop() {
 }
 
 /**
- * @brief Callback function to provide millis() to LVGL
+ * @brief Primary setup functions for Core1
  * @description
- * LVGL requires a millisecond tick source to manage its timing.
- * @return uint32_t 
+ * Manages functions such as NVSEeprom.
+ * @return void
+
  */
-uint32_t millis_cb(void) {
-    return millis();
+void setup1() {
 }
+
+/**
+ * @brief Core1 loop function
+ * @desription
+ * Handles Functional tasks, such as the Eeprom.
+ * @return void
+ */
+void loop1() {
+}
+
+
+/******************************************************************************
+ * End of File
+ *****************************************************************************/
+
+
+
+
   
