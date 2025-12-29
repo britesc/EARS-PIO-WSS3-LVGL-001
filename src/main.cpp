@@ -33,42 +33,66 @@
  /******************************************************************************
   * App Version Information
   *****************************************************************************/
- #define APP_VERSION_MAJOR "0"
+ #define APP_VERSION_MAJOR "4"
  #define APP_VERSION_MINOR "0"
- #define APP_VERSION_PATCH "302"
+ #define APP_VERSION_PATCH "1"
  #define APP_VERSION_BUILD "(Dev)"
  #define APP_VERSION       APP_VERSION_MAJOR + "." + APP_VERSION_MINOR + "." + APP_VERSION_PATCH + " " + APP_VERSION_BUILD 
 
- 
+ /******************************************************************************
+  * Includes Information
+  *****************************************************************************/
 #include <Arduino.h>
 #include <lvgl.h>
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
 #include "RGB565_COLORS.h"
 #include "NVSEeprom.h"
-// #include <nvs.h>
-// #include <nvs_flash.h>
 
-// NVS EEPROM object
-NVSEeprom nvs;
+/******************************************************************************
+ * Start of Object Declarations 
+ *****************************************************************************/
 
-// Display settings
+/******************************************************************************
+ * Display settings
+ *****************************************************************************/
 static const uint32_t screenWidth = TFT_WIDTH;
 static const uint32_t screenHeight = TFT_HEIGHT;
 
-// LVGL draw buffers
+/******************************************************************************
+ * LVGL draw buffers
+ *****************************************************************************/
 static lv_color_t buf1[screenWidth * 40];
 static lv_color_t buf2[screenWidth * 40];
 
-// Arduino GFX display object
+/******************************************************************************
+ * Arduino GFX display object
+ *****************************************************************************/
 Arduino_DataBus *bus = new Arduino_ESP32SPI(LCD_DC, LCD_CS, SPI_SCLK, SPI_MOSI, SPI_MISO);
 Arduino_GFX *gfx = new Arduino_ILI9488_18bit(bus, LCD_RST, 0 /* rotation */, false /* IPS */);
 
-// LVGL display object
+/******************************************************************************
+ * LVGL display object
+ *****************************************************************************/
 lv_display_t *disp;
 
-// LVGL display flush callback
-void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map) {
+/******************************************************************************
+ * NVS EEPROM object
+ *****************************************************************************/
+NVSEeprom nvs;
+
+/******************************************************************************
+ * End of Object Declarations 
+ *****************************************************************************/
+
+/**
+ * @brief LVGL display flush callback
+ * 
+ * @param display 
+ * @param area 
+ * @param px_map 
+ */
+ void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map) {
     uint32_t w = lv_area_get_width(area);
     uint32_t h = lv_area_get_height(area);
 
@@ -77,6 +101,12 @@ void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map
     lv_display_flush_ready(display);
 }
 
+/**
+ * @brief Primary setup function
+ * @description
+ * Initializes Serial, Display, LVGL, and NVS.
+ * @return void
+ */
 void setup() {
     Serial.begin(115200);
     delay(1000);
@@ -120,12 +150,11 @@ void setup() {
     Serial.println("Test screen created");
 
     // Initialize NVS partition - ADD THIS
-    esp_err_t err = nvs_flash_init();
-    if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        nvs_flash_erase();
-        err = nvs_flash_init();
-    }
-    Serial.println("NVS initialized");
+    if (nvs.begin()) {
+        Serial.println("NVS initialized");
+    } else {
+        Serial.println("Failed to initialize NVS");
+    }    
 
     // NVS Test Step 1
     nvs.putHash("test", "abc123");
@@ -135,9 +164,9 @@ void setup() {
 
 /**
  * @brief Core0 loop function
- * 
+ * @desription
+ * Handles LVGL timer tasks.
  */
-
 void loop() {
     lv_timer_handler();
     delay(5);
@@ -145,10 +174,10 @@ void loop() {
 
 /**
  * @brief Callback function to provide millis() to LVGL
- * 
+ * @description
+ * LVGL requires a millisecond tick source to manage its timing.
  * @return uint32_t 
  */
-
 uint32_t millis_cb(void) {
     return millis();
 }
