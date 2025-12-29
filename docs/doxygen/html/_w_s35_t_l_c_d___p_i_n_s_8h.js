@@ -1,6 +1,6 @@
 var _w_s35_t_l_c_d___p_i_n_s_8h =
 [
-    [ "__WS35TLCD_PINS_H__", "_w_s35_t_l_c_d___p_i_n_s_8h.html#a77352441f5a04682e703f7c59dd82472", null ],
+    [ "__WS35TLCD_PINS_H_", "_w_s35_t_l_c_d___p_i_n_s_8h.html#a4d995e0a2fae76489e1a37588c204126", null ],
     [ "GFX_BL", "_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b", null ],
     [ "LCD_CS", "_w_s35_t_l_c_d___p_i_n_s_8h.html#a71d24cab0e16b054de228f29139f1b79", null ],
     [ "LCD_DC", "_w_s35_t_l_c_d___p_i_n_s_8h.html#a1dc6c4886242abf4447d0da651125d5d", null ],

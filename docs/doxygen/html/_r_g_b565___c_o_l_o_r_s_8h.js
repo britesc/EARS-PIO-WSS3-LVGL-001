@@ -1,6 +1,6 @@
 var _r_g_b565___c_o_l_o_r_s_8h =
 [
-    [ "__RGB565_COLORS_H__", "_r_g_b565___c_o_l_o_r_s_8h.html#a1ff65d3d2b18ce7a13ea2c09ef87d232", null ],
+    [ "__RGB_COLOURS_H_", "_r_g_b565___c_o_l_o_r_s_8h.html#af31742d8be925c535e7905fd5c3e0a55", null ],
     [ "RGB565_BLACK", "_r_g_b565___c_o_l_o_r_s_8h.html#a27c54489ae47cd64dee9c6a08269c2c2", null ],
     [ "RGB565_BLUE", "_r_g_b565___c_o_l_o_r_s_8h.html#af60f83daa7686ad05c8cd56bff2c3a35", null ],
     [ "RGB565_BROWN", "_r_g_b565___c_o_l_o_r_s_8h.html#aaded12441a1fd6443a58bf0d5ac87a0d", null ],

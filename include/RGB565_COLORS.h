@@ -1,6 +1,16 @@
+/**
+ * @file RGB565_COLORS.h
+ * @author Julian (51fiftyone51fiftyone@gmail.com)
+ * @brief Define the Colours for RGB565 format
+ * @version 0.1
+ * @date 20251229
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
 #pragma once
-#ifndef __RGB565_COLORS_H__
-#define __RGB565_COLORS_H__
+#ifndef __RGB_COLOURS_H_
+#define __RGB_COLOURS_H_
 
 #include <stdint.h>
 
@@ -35,4 +45,4 @@
 #define RGB888_TO_RGB565(r, g, b) \
     ((((r) & 0xF8) << 8) | (((g) & 0xFC) << 3) | (((b) & 0xF8) >> 3))
 
-#endif // __RGB565_COLORS_H__
+#endif // __RGB_COLOURS_H_

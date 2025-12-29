@@ -33,11 +33,12 @@
  /******************************************************************************
   * App Version Information
   *****************************************************************************/
- #define APP_VERSION_MAJOR "4"
- #define APP_VERSION_MINOR "0"
- #define APP_VERSION_PATCH "1"
- #define APP_VERSION_BUILD "(Dev)"
- #define APP_VERSION       APP_VERSION_MAJOR + "." + APP_VERSION_MINOR + "." + APP_VERSION_PATCH + " " + APP_VERSION_BUILD 
+ #include "ears_version.h"
+ /******************************************************************************
+  * Serisl Debug Settings
+  *****************************************************************************/
+ #define DEBUG 1    // SET TO 0 TO REMOVE TRACES
+ #include "D_Serial_Debug.h"  
 
  /******************************************************************************
   * Includes Information
@@ -112,16 +113,36 @@ uint32_t millis_cb(void) {
 }
 
 /**
+ * @brief Initialize Serial for Debugging.
+ * @description
+ * Sets up Serial communication at the defined baud rate and includes a delay to ensure readiness.
+ */
+void init_serial() {
+    #if DEBUG
+      D_SerialBegin(D_SERIAL_BAUD_RATE);
+      int x = 0;
+      while (x < D_SERIAL_DELAY) {
+        x++;
+        if (D_SerialAvailable()) {
+          x = D_SERIAL_DELAY + 1;
+        }
+      }
+    #endif  
+}
+    
+/**
  * @brief Primary setup functions for Core0
  * @description
  * Initializes Serial, Display, LVGL, and NVS.
  * @return void
  */
 void setup() {
-    Serial.begin(115200);
-    delay(1000);
+    init_serial();
+    D_SerialFlush();
+    // Serial.begin(115200);
+    // delay(1000);
     
-    Serial.println("LVGL Trial Starting...");
+    D_SerialPrintln("LVGL Trial Starting...");
 
     // Initialize backlight
     pinMode(GFX_BL, OUTPUT);
@@ -131,7 +152,7 @@ void setup() {
     gfx->begin();
     gfx->fillScreen(RGB565_BLACK);
     
-    Serial.println("Display initialized");
+    D_SerialPrintln("Display initialized");
 
     /* Initialise LVGL */
     lv_init();
@@ -144,7 +165,7 @@ void setup() {
     lv_display_set_flush_cb(disp, my_disp_flush);
     lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
 
-    Serial.println("LVGL initialized");
+    D_SerialPrintln("LVGL initialized");
 
     // Create a simple test screen
     lv_obj_t *scr = lv_screen_active();
@@ -157,19 +178,20 @@ void setup() {
     lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
     lv_obj_center(label);
 
-    Serial.println("Test screen created");
+    D_SerialPrintln("Test screen created");
 
     // Initialize NVS partition - ADD THIS
     if (nvs.begin()) {
-        Serial.println("NVS initialized");
+        D_SerialPrintln("NVS initialized");
     } else {
-        Serial.println("Failed to initialize NVS");
+        D_SerialPrintln("Failed to initialize NVS");
     }    
-
+    #if DEBUG
     // NVS Test Step 1
     nvs.putHash("test", "abc123");
     String retrieved = nvs.getHash("test");
-    Serial.println(retrieved);    
+    D_SerialPrintln(retrieved);
+    #endif        
 }
 
 /**

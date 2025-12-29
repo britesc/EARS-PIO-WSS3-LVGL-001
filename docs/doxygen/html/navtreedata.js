@@ -25,6 +25,17 @@
 var NAVTREE =
 [
   [ "EARS-PIO-WSS3-LVGL-001", "index.html", [
+    [ "EARS Project", "index.html", "index" ],
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Structure Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
@@ -39,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_r_g_b565___c_o_l_o_r_s_8h.html"
+"_n_v_s_eeprom_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
