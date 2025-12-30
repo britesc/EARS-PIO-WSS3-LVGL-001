@@ -37,10 +37,15 @@ public:
     // Hash functions - Step 1
     String getHash(const char* key, const String& defaultValue = "");
     bool putHash(const char* key, const String& value);
-    
+
+    // Hash generation and comparison - Step 2
+    String makeHash(const String& data);
+    bool compareHash(const String& data, const String& storedHash);
+
 private:
     // NVS Namespace
     static const char* NAMESPACE;
+    uint32_t calculateCRC32(const uint8_t* data, size_t length);    
 };
 
 #endif // __NVSEEPROM_H_

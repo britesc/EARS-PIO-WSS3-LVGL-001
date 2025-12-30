@@ -79,3 +79,55 @@ bool NVSEeprom::putHash(const char* key, const String& value) {
     return (result > 0);
 }
 
+/**
+ * @brief Calculate CRC32 checksum.
+ * 
+ * @param data 
+ * @param length 
+ * @return uint32_t 
+ */
+uint32_t NVSEeprom::calculateCRC32(const uint8_t* data, size_t length) {
+    uint32_t crc = 0xFFFFFFFF;
+    
+    for (size_t i = 0; i < length; i++) {
+        crc ^= data[i];
+        for (uint8_t j = 0; j < 8; j++) {
+            crc = (crc >> 1) ^ (0xEDB88320 & -(crc & 1));
+        }
+    }
+    
+    return ~crc;
+}
+
+/**
+ * @brief Generate CRC32 hash from data.
+ * 
+ * @param data 
+ * @return String 
+ */
+String NVSEeprom::makeHash(const String& data) {
+    uint32_t crc = calculateCRC32((const uint8_t*)data.c_str(), data.length());
+    
+    // Convert to 8-character hex string
+    char hashStr[9];
+    sprintf(hashStr, "%08X", crc);
+    
+    return String(hashStr);
+}
+
+/**
+ * @brief Compare data against stored hash.
+ * 
+ * @param data 
+ * @param storedHash 
+ * @return true 
+ * @return false 
+ */
+bool NVSEeprom::compareHash(const String& data, const String& storedHash) {
+    String computedHash = makeHash(data);
+    return (computedHash.equals(storedHash));
+}
+
+/******************************************************************************
+ * End of File
+ *****************************************************************************/

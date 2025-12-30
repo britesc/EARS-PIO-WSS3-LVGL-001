@@ -37,7 +37,7 @@
 #define TOUCH_RST  -1
 
 // Display Specifications
-#define TFT_WIDTH  320
-#define TFT_HEIGHT 480
+#define TFT_WIDTH  480
+#define TFT_HEIGHT 320
 
 #endif // __WS35TLCD_PINS_H_

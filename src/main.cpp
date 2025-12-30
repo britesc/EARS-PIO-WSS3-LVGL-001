@@ -34,7 +34,7 @@
   * App Version Information
   *****************************************************************************/
  #include "ears_version.h"
- 
+
  /******************************************************************************
   * Serisl Debug Settings
   *****************************************************************************/
@@ -49,6 +49,7 @@
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
 #include "RGB565_COLORS.h"
+#include "RGB888_COLORS.h"
 #include "NVSEeprom.h"
 
 /******************************************************************************
@@ -71,7 +72,7 @@ static lv_color_t buf2[screenWidth * 40];
  * Arduino GFX display object
  *****************************************************************************/
 Arduino_DataBus *bus = new Arduino_ESP32SPI(LCD_DC, LCD_CS, SPI_SCLK, SPI_MOSI, SPI_MISO);
-Arduino_GFX *gfx = new Arduino_ILI9488_18bit(bus, LCD_RST, 0 /* rotation */, false /* IPS */);
+Arduino_GFX *gfx = new Arduino_ILI9488_18bit(bus, LCD_RST, 1 /* rotation */, true /* IPS */);
 
 /******************************************************************************
  * LVGL display object
@@ -151,7 +152,7 @@ void setup() {
 
     // Initialize display
     gfx->begin();
-    gfx->fillScreen(RGB565_BLACK);
+    gfx->fillScreen(EARS_RGB565_BLACK);
     
     D_SerialPrintln("Display initialized");
 
@@ -170,12 +171,12 @@ void setup() {
 
     // Create a simple test screen
     lv_obj_t *scr = lv_screen_active();
-    lv_obj_set_style_bg_color(scr, lv_color_hex(RGB565_NAVY), 0);
+    lv_obj_set_style_bg_color(scr, lv_color_hex(EARS_RGB888_BLACK), 0);
 
     // Create a label
     lv_obj_t *label = lv_label_create(scr);
     lv_label_set_text(label, "LVGL Trial\nWorking!");
-    lv_obj_set_style_text_color(label, lv_color_hex(RGB565_WHITE), 0);
+    lv_obj_set_style_text_color(label, lv_color_hex(EARS_RGB888_WHITE), 0);
     lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
     lv_obj_center(label);
 
@@ -192,7 +193,27 @@ void setup() {
     nvs.putHash("test", "abc123");
     String retrieved = nvs.getHash("test");
     D_SerialPrintln(retrieved);
-    #endif        
+    #endif
+    
+    #if DEBUG
+    // Step 2 Test: Hash generation and comparison
+    String testData = "Hello EARS!";
+    String hash = nvs.makeHash(testData);
+    D_SerialPrint("Generated hash: ");
+    D_SerialPrintln(hash);
+    
+    // Store the hash
+    nvs.putHash("test_hash", hash);
+    
+    // Retrieve and compare
+    String retrievedHash = nvs.getHash("test_hash");
+    if (nvs.compareHash(testData, retrievedHash)) {
+      D_SerialPrintln("Hash verification SUCCESS!");
+    } else {
+      D_SerialPrintln("Hash verification FAILED!");
+    }
+
+    #endif
 }
 
 /**
