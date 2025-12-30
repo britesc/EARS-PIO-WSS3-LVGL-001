@@ -50,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_n_v_s_eeprom_8cpp.html"
+"_d___serial___debug_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

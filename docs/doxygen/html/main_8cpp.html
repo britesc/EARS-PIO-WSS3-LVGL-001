@@ -92,11 +92,14 @@ $(function(){initNavTree('main_8cpp.html','',''); });
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ears__version_8h_source.html">ears_version.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_d___serial___debug_8h_source.html">D_Serial_Debug.h</a>&quot;</code><br />
+<code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;lvgl.h&gt;</code><br />
 <code>#include &lt;Arduino_GFX_Library.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_w_s35_t_l_c_d___p_i_n_s_8h_source.html">WS35TLCD_PINS.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r_g_b565___c_o_l_o_r_s_8h_source.html">RGB565_COLORS.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r_g_b888___c_o_l_o_r_s_8h_source.html">RGB888_COLORS.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
@@ -108,11 +111,7 @@ Include dependency graph for main.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aef3457fba0ffa145e841c80f85adda1c" id="r_aef3457fba0ffa145e841c80f85adda1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef3457fba0ffa145e841c80f85adda1c">APP_VERSION_MAJOR</a>&#160;&#160;&#160;&quot;4&quot;</td></tr>
-<tr class="memitem:a7732f188a6cca879e493081406cbb293" id="r_a7732f188a6cca879e493081406cbb293"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7732f188a6cca879e493081406cbb293">APP_VERSION_MINOR</a>&#160;&#160;&#160;&quot;0&quot;</td></tr>
-<tr class="memitem:a3524583a75de0db510345b6f0eb189f7" id="r_a3524583a75de0db510345b6f0eb189f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3524583a75de0db510345b6f0eb189f7">APP_VERSION_PATCH</a>&#160;&#160;&#160;&quot;1&quot;</td></tr>
-<tr class="memitem:a3dbd0be03bfdb28562e7cfae80fff3fd" id="r_a3dbd0be03bfdb28562e7cfae80fff3fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dbd0be03bfdb28562e7cfae80fff3fd">APP_VERSION_BUILD</a>&#160;&#160;&#160;&quot;(Dev)&quot;</td></tr>
-<tr class="memitem:a92673e33f27532767749b79edb8ef806" id="r_a92673e33f27532767749b79edb8ef806"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92673e33f27532767749b79edb8ef806">APP_VERSION</a>&#160;&#160;&#160;<a class="el" href="#aef3457fba0ffa145e841c80f85adda1c">APP_VERSION_MAJOR</a> + &quot;.&quot; + <a class="el" href="#a7732f188a6cca879e493081406cbb293">APP_VERSION_MINOR</a> + &quot;.&quot; + <a class="el" href="#a3524583a75de0db510345b6f0eb189f7">APP_VERSION_PATCH</a> + &quot; &quot; + <a class="el" href="#a3dbd0be03bfdb28562e7cfae80fff3fd">APP_VERSION_BUILD</a></td></tr>
+<tr class="memitem:ad72dbcf6d0153db1b8d8a58001feed83" id="r_ad72dbcf6d0153db1b8d8a58001feed83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>&#160;&#160;&#160;1</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -120,6 +119,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:aeb891cadacdbb7142c387b4232fc412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">LVGL display flush callback.  <br /></td></tr>
 <tr class="memitem:aedc59dea91554dea6db97f21f51fd69b" id="r_aedc59dea91554dea6db97f21f51fd69b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a> (void)</td></tr>
 <tr class="memdesc:aedc59dea91554dea6db97f21f51fd69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to manage its timing.  <br /></td></tr>
+<tr class="memitem:acfb6f6d615183fc2f71e79dfbadfe27d" id="r_acfb6f6d615183fc2f71e79dfbadfe27d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfb6f6d615183fc2f71e79dfbadfe27d">init_serial</a> ()</td></tr>
+<tr class="memdesc:acfb6f6d615183fc2f71e79dfbadfe27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Serial for Debugging. @description Sets up Serial communication at the defined baud rate and includes a delay to ensure readiness.  <br /></td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary setup functions for Core0 @description Initializes Serial, Display, LVGL, and NVS.  <br /></td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
@@ -131,97 +132,79 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa6bb2d0970b95ea952c1eb3086a906ab" id="r_aa6bb2d0970b95ea952c1eb3086a906ab"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a> = 320</td></tr>
-<tr class="memitem:aa8b5dfbac926d5ef47bfc41e8757918f" id="r_aa8b5dfbac926d5ef47bfc41e8757918f"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a> = 480</td></tr>
+<tr class="memitem:aa6bb2d0970b95ea952c1eb3086a906ab" id="r_aa6bb2d0970b95ea952c1eb3086a906ab"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a> = 480</td></tr>
+<tr class="memitem:aa8b5dfbac926d5ef47bfc41e8757918f" id="r_aa8b5dfbac926d5ef47bfc41e8757918f"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a> = 320</td></tr>
 <tr class="memitem:a2098bffdebce63de6366ca2e0d1c2638" id="r_a2098bffdebce63de6366ca2e0d1c2638"><td class="memItemLeft" align="right" valign="top">static lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a> [<a class="el" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a> *40]</td></tr>
 <tr class="memitem:aaec57dd9b314789e8929c99a7b991331" id="r_aaec57dd9b314789e8929c99a7b991331"><td class="memItemLeft" align="right" valign="top">static lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaec57dd9b314789e8929c99a7b991331">buf2</a> [<a class="el" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a> *40]</td></tr>
 <tr class="memitem:a310f7e1a6cac48dc89c6cfcc3f6ef48f" id="r_a310f7e1a6cac48dc89c6cfcc3f6ef48f"><td class="memItemLeft" align="right" valign="top">Arduino_DataBus *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310f7e1a6cac48dc89c6cfcc3f6ef48f">bus</a> = new Arduino_ESP32SPI( 3 , -1 , 5 , 1 , 2 )</td></tr>
-<tr class="memitem:aa35e9135b0a3620ecb9b867344834657" id="r_aa35e9135b0a3620ecb9b867344834657"><td class="memItemLeft" align="right" valign="top">Arduino_GFX *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a> = new Arduino_ILI9488_18bit(<a class="el" href="#a310f7e1a6cac48dc89c6cfcc3f6ef48f">bus</a>, -1 , 0 , false )</td></tr>
+<tr class="memitem:aa35e9135b0a3620ecb9b867344834657" id="r_aa35e9135b0a3620ecb9b867344834657"><td class="memItemLeft" align="right" valign="top">Arduino_GFX *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a> = new Arduino_ILI9488_18bit(<a class="el" href="#a310f7e1a6cac48dc89c6cfcc3f6ef48f">bus</a>, -1 , 1 , true )</td></tr>
 <tr class="memitem:a647e5f267167a38dcd0e6fe55dfcfc61" id="r_a647e5f267167a38dcd0e6fe55dfcfc61"><td class="memItemLeft" align="right" valign="top">lv_display_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a></td></tr>
 <tr class="memitem:a27a476ad412f1de3b2626865c6b4114d" id="r_a27a476ad412f1de3b2626865c6b4114d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_v_s_eeprom.html">NVSEeprom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a92673e33f27532767749b79edb8ef806" name="a92673e33f27532767749b79edb8ef806"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92673e33f27532767749b79edb8ef806">&#9670;&#160;</a></span>APP_VERSION</h2>
+<a id="ad72dbcf6d0153db1b8d8a58001feed83" name="ad72dbcf6d0153db1b8d8a58001feed83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72dbcf6d0153db1b8d8a58001feed83">&#9670;&#160;</a></span>DEBUG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define APP_VERSION&#160;&#160;&#160;<a class="el" href="#aef3457fba0ffa145e841c80f85adda1c">APP_VERSION_MAJOR</a> + &quot;.&quot; + <a class="el" href="#a7732f188a6cca879e493081406cbb293">APP_VERSION_MINOR</a> + &quot;.&quot; + <a class="el" href="#a3524583a75de0db510345b6f0eb189f7">APP_VERSION_PATCH</a> + &quot; &quot; + <a class="el" href="#a3dbd0be03bfdb28562e7cfae80fff3fd">APP_VERSION_BUILD</a></td>
+          <td class="memname">#define DEBUG&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00040">40</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3dbd0be03bfdb28562e7cfae80fff3fd" name="a3dbd0be03bfdb28562e7cfae80fff3fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dbd0be03bfdb28562e7cfae80fff3fd">&#9670;&#160;</a></span>APP_VERSION_BUILD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define APP_VERSION_BUILD&#160;&#160;&#160;&quot;(Dev)&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00039">39</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aef3457fba0ffa145e841c80f85adda1c" name="aef3457fba0ffa145e841c80f85adda1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef3457fba0ffa145e841c80f85adda1c">&#9670;&#160;</a></span>APP_VERSION_MAJOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define APP_VERSION_MAJOR&#160;&#160;&#160;&quot;4&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00036">36</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a7732f188a6cca879e493081406cbb293" name="a7732f188a6cca879e493081406cbb293"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7732f188a6cca879e493081406cbb293">&#9670;&#160;</a></span>APP_VERSION_MINOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define APP_VERSION_MINOR&#160;&#160;&#160;&quot;0&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3524583a75de0db510345b6f0eb189f7" name="a3524583a75de0db510345b6f0eb189f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3524583a75de0db510345b6f0eb189f7">&#9670;&#160;</a></span>APP_VERSION_PATCH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define APP_VERSION_PATCH&#160;&#160;&#160;&quot;1&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00041">41</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="acfb6f6d615183fc2f71e79dfbadfe27d" name="acfb6f6d615183fc2f71e79dfbadfe27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb6f6d615183fc2f71e79dfbadfe27d">&#9670;&#160;</a></span>init_serial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_serial </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize Serial for Debugging. @description Sets up Serial communication at the defined baud rate and includes a delay to ensure readiness. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00122">122</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>                   {</div>
+<div class="line"><span class="lineno">  123</span><span class="preprocessor">    #if DEBUG</span></div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_define" href="_d___serial___debug_8h.html#a6a64616437d90e112e9dc720e8a84331">D_SerialBegin</a>(<a class="code hl_define" href="_d___serial___debug_8h.html#aa8d505e6f116a3202cec4288b0772514">D_SERIAL_BAUD_RATE</a>);</div>
+<div class="line"><span class="lineno">  125</span>      <span class="keywordtype">int</span> x = 0;</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">while</span> (x &lt; <a class="code hl_define" href="_d___serial___debug_8h.html#a5d37ea438ae79bf05379b8298261accf">D_SERIAL_DELAY</a>) {</div>
+<div class="line"><span class="lineno">  127</span>        x++;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (<a class="code hl_define" href="_d___serial___debug_8h.html#abbc46cc5a098f5bf3d4daaeb1c0024d8">D_SerialAvailable</a>()) {</div>
+<div class="line"><span class="lineno">  129</span>          x = <a class="code hl_define" href="_d___serial___debug_8h.html#a5d37ea438ae79bf05379b8298261accf">D_SERIAL_DELAY</a> + 1;</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>      }</div>
+<div class="line"><span class="lineno">  132</span><span class="preprocessor">    #endif  </span></div>
+<div class="line"><span class="lineno">  133</span>}</div>
+<div class="ttc" id="a_d___serial___debug_8h_html_a5d37ea438ae79bf05379b8298261accf"><div class="ttname"><a href="_d___serial___debug_8h.html#a5d37ea438ae79bf05379b8298261accf">D_SERIAL_DELAY</a></div><div class="ttdeci">#define D_SERIAL_DELAY</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00031">D_Serial_Debug.h:31</a></div></div>
+<div class="ttc" id="a_d___serial___debug_8h_html_a6a64616437d90e112e9dc720e8a84331"><div class="ttname"><a href="_d___serial___debug_8h.html#a6a64616437d90e112e9dc720e8a84331">D_SerialBegin</a></div><div class="ttdeci">#define D_SerialBegin(bauds)</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00025">D_Serial_Debug.h:25</a></div></div>
+<div class="ttc" id="a_d___serial___debug_8h_html_aa8d505e6f116a3202cec4288b0772514"><div class="ttname"><a href="_d___serial___debug_8h.html#aa8d505e6f116a3202cec4288b0772514">D_SERIAL_BAUD_RATE</a></div><div class="ttdeci">#define D_SERIAL_BAUD_RATE</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00032">D_Serial_Debug.h:32</a></div></div>
+<div class="ttc" id="a_d___serial___debug_8h_html_abbc46cc5a098f5bf3d4daaeb1c0024d8"><div class="ttname"><a href="_d___serial___debug_8h.html#abbc46cc5a098f5bf3d4daaeb1c0024d8">D_SerialAvailable</a></div><div class="ttdeci">#define D_SerialAvailable()</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00029">D_Serial_Debug.h:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_d___serial___debug_8h_source.html#l00032">D_SERIAL_BAUD_RATE</a>, <a class="el" href="_d___serial___debug_8h_source.html#l00031">D_SERIAL_DELAY</a>, <a class="el" href="_d___serial___debug_8h_source.html#l00029">D_SerialAvailable</a>, and <a class="el" href="_d___serial___debug_8h_source.html#l00025">D_SerialBegin</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
+
+</div>
+</div>
 <a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
 
@@ -240,11 +223,11 @@ Variables</h2></td></tr>
 <p>Core0 loop function @desription Handles LVGL timer tasks. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00181">181</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>            {</div>
-<div class="line"><span class="lineno">  182</span>    lv_timer_handler();</div>
-<div class="line"><span class="lineno">  183</span>    delay(5);</div>
-<div class="line"><span class="lineno">  184</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00225">225</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>            {</div>
+<div class="line"><span class="lineno">  226</span>    lv_timer_handler();</div>
+<div class="line"><span class="lineno">  227</span>    delay(5);</div>
+<div class="line"><span class="lineno">  228</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -266,9 +249,9 @@ Variables</h2></td></tr>
 <p>Core1 loop function @desription Handles Functional tasks, such as the Eeprom. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00202">202</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>             {</div>
-<div class="line"><span class="lineno">  203</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00246">246</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>             {</div>
+<div class="line"><span class="lineno">  247</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,16 +273,16 @@ Variables</h2></td></tr>
 <p>Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to manage its timing. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00110">110</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>                         {</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> millis();</div>
-<div class="line"><span class="lineno">  112</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00113">113</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>                         {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> millis();</div>
+<div class="line"><span class="lineno">  115</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
+<div class="center"><!-- SVG 2 --></div>
 </div>
 
 </div>
@@ -338,24 +321,24 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>                                                                                   {</div>
-<div class="line"><span class="lineno">   96</span>    uint32_t w = lv_area_get_width(area);</div>
-<div class="line"><span class="lineno">   97</span>    uint32_t h = lv_area_get_height(area);</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;draw16bitRGBBitmap(area-&gt;x1, area-&gt;y1, (uint16_t *)px_map, w, h);</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    lv_display_flush_ready(display);</div>
-<div class="line"><span class="lineno">  102</span>}</div>
-<div class="ttc" id="amain_8cpp_html_aa35e9135b0a3620ecb9b867344834657"><div class="ttname"><a href="#aa35e9135b0a3620ecb9b867344834657">gfx</a></div><div class="ttdeci">Arduino_GFX * gfx</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00072">main.cpp:72</a></div></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>                                                                                   {</div>
+<div class="line"><span class="lineno">   99</span>    uint32_t w = lv_area_get_width(area);</div>
+<div class="line"><span class="lineno">  100</span>    uint32_t h = lv_area_get_height(area);</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;draw16bitRGBBitmap(area-&gt;x1, area-&gt;y1, (uint16_t *)px_map, w, h);</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    lv_display_flush_ready(display);</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="amain_8cpp_html_aa35e9135b0a3620ecb9b867344834657"><div class="ttname"><a href="#aa35e9135b0a3620ecb9b867344834657">gfx</a></div><div class="ttdeci">Arduino_GFX * gfx</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00075">main.cpp:75</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00072">gfx</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00075">gfx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
+<div class="center"><!-- SVG 3 --></div>
 </div>
 
 </div>
@@ -378,79 +361,106 @@ Here is the caller graph for this function:</div>
 <p>Primary setup functions for Core0 @description Initializes Serial, Display, LVGL, and NVS. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00120">120</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>             {</div>
-<div class="line"><span class="lineno">  121</span>    Serial.begin(115200);</div>
-<div class="line"><span class="lineno">  122</span>    delay(1000);</div>
-<div class="line"><span class="lineno">  123</span>    </div>
-<div class="line"><span class="lineno">  124</span>    Serial.println(<span class="stringliteral">&quot;LVGL Trial Starting...&quot;</span>);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    <span class="comment">// Initialize backlight</span></div>
-<div class="line"><span class="lineno">  127</span>    pinMode(<a class="code hl_define" href="_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, OUTPUT);</div>
-<div class="line"><span class="lineno">  128</span>    digitalWrite(<a class="code hl_define" href="_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, HIGH);</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>    <span class="comment">// Initialize display</span></div>
-<div class="line"><span class="lineno">  131</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;begin();</div>
-<div class="line"><span class="lineno">  132</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;fillScreen(<a class="code hl_define" href="_r_g_b565___c_o_l_o_r_s_8h.html#a27c54489ae47cd64dee9c6a08269c2c2">RGB565_BLACK</a>);</div>
-<div class="line"><span class="lineno">  133</span>    </div>
-<div class="line"><span class="lineno">  134</span>    Serial.println(<span class="stringliteral">&quot;Display initialized&quot;</span>);</div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>    <span class="comment">/* Initialise LVGL */</span></div>
-<div class="line"><span class="lineno">  137</span>    lv_init();</div>
-<div class="line"><span class="lineno">  138</span>  </div>
-<div class="line"><span class="lineno">  139</span>    <span class="comment">/*Set a tick source so that LVGL will know how much time elapsed. */</span></div>
-<div class="line"><span class="lineno">  140</span>    lv_tick_set_cb(<a class="code hl_function" href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a>);</div>
-<div class="line"><span class="lineno">  141</span>     </div>
-<div class="line"><span class="lineno">  142</span>    <span class="comment">// Create LVGL display</span></div>
-<div class="line"><span class="lineno">  143</span>    <a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = lv_display_create(<a class="code hl_variable" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a>, <a class="code hl_variable" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a>);</div>
-<div class="line"><span class="lineno">  144</span>    lv_display_set_flush_cb(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_function" href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a>);</div>
-<div class="line"><span class="lineno">  145</span>    lv_display_set_buffers(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>, <a class="code hl_variable" href="#aaec57dd9b314789e8929c99a7b991331">buf2</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>), LV_DISPLAY_RENDER_MODE_PARTIAL);</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>    Serial.println(<span class="stringliteral">&quot;LVGL initialized&quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00141">141</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>             {</div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_function" href="#acfb6f6d615183fc2f71e79dfbadfe27d">init_serial</a>();</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#ab55b26c2e08acf8062ca773adabcf762">D_SerialFlush</a>();</div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">// Serial.begin(115200);</span></div>
+<div class="line"><span class="lineno">  145</span>    <span class="comment">// delay(1000);</span></div>
+<div class="line"><span class="lineno">  146</span>    </div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;LVGL Trial Starting...&quot;</span>);</div>
 <div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>    <span class="comment">// Create a simple test screen</span></div>
-<div class="line"><span class="lineno">  150</span>    lv_obj_t *scr = lv_screen_active();</div>
-<div class="line"><span class="lineno">  151</span>    lv_obj_set_style_bg_color(scr, lv_color_hex(<a class="code hl_define" href="_r_g_b565___c_o_l_o_r_s_8h.html#a6707c8d1099256efabb5f0819a675e24">RGB565_NAVY</a>), 0);</div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">// Initialize backlight</span></div>
+<div class="line"><span class="lineno">  150</span>    pinMode(<a class="code hl_define" href="_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, OUTPUT);</div>
+<div class="line"><span class="lineno">  151</span>    digitalWrite(<a class="code hl_define" href="_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, HIGH);</div>
 <div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    <span class="comment">// Create a label</span></div>
-<div class="line"><span class="lineno">  154</span>    lv_obj_t *label = lv_label_create(scr);</div>
-<div class="line"><span class="lineno">  155</span>    lv_label_set_text(label, <span class="stringliteral">&quot;LVGL Trial\nWorking!&quot;</span>);</div>
-<div class="line"><span class="lineno">  156</span>    lv_obj_set_style_text_color(label, lv_color_hex(<a class="code hl_define" href="_r_g_b565___c_o_l_o_r_s_8h.html#ad628e4aa6eaba960866a7a0a7157c114">RGB565_WHITE</a>), 0);</div>
-<div class="line"><span class="lineno">  157</span>    lv_obj_set_style_text_font(label, &amp;lv_font_montserrat_20, 0);</div>
-<div class="line"><span class="lineno">  158</span>    lv_obj_center(label);</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    Serial.println(<span class="stringliteral">&quot;Test screen created&quot;</span>);</div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>    <span class="comment">// Initialize NVS partition - ADD THIS</span></div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.begin()) {</div>
-<div class="line"><span class="lineno">  164</span>        Serial.println(<span class="stringliteral">&quot;NVS initialized&quot;</span>);</div>
-<div class="line"><span class="lineno">  165</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  166</span>        Serial.println(<span class="stringliteral">&quot;Failed to initialize NVS&quot;</span>);</div>
-<div class="line"><span class="lineno">  167</span>    }    </div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>    <span class="comment">// NVS Test Step 1</span></div>
-<div class="line"><span class="lineno">  170</span>    <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.putHash(<span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;abc123&quot;</span>);</div>
-<div class="line"><span class="lineno">  171</span>    String retrieved = <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.getHash(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><span class="lineno">  172</span>    Serial.println(retrieved);    </div>
-<div class="line"><span class="lineno">  173</span>}</div>
-<div class="ttc" id="a_r_g_b565___c_o_l_o_r_s_8h_html_a27c54489ae47cd64dee9c6a08269c2c2"><div class="ttname"><a href="_r_g_b565___c_o_l_o_r_s_8h.html#a27c54489ae47cd64dee9c6a08269c2c2">RGB565_BLACK</a></div><div class="ttdeci">#define RGB565_BLACK</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00021">RGB565_COLORS.h:21</a></div></div>
-<div class="ttc" id="a_r_g_b565___c_o_l_o_r_s_8h_html_a6707c8d1099256efabb5f0819a675e24"><div class="ttname"><a href="_r_g_b565___c_o_l_o_r_s_8h.html#a6707c8d1099256efabb5f0819a675e24">RGB565_NAVY</a></div><div class="ttdeci">#define RGB565_NAVY</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00040">RGB565_COLORS.h:40</a></div></div>
-<div class="ttc" id="a_r_g_b565___c_o_l_o_r_s_8h_html_ad628e4aa6eaba960866a7a0a7157c114"><div class="ttname"><a href="_r_g_b565___c_o_l_o_r_s_8h.html#ad628e4aa6eaba960866a7a0a7157c114">RGB565_WHITE</a></div><div class="ttdeci">#define RGB565_WHITE</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00022">RGB565_COLORS.h:22</a></div></div>
+<div class="line"><span class="lineno">  153</span>    <span class="comment">// Initialize display</span></div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;begin();</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;fillScreen(<a class="code hl_define" href="_r_g_b565___c_o_l_o_r_s_8h.html#a8a5f6e444ed0aeaa29b15d6c37f7dfbc">EARS_RGB565_BLACK</a>);</div>
+<div class="line"><span class="lineno">  156</span>    </div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;Display initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">/* Initialise LVGL */</span></div>
+<div class="line"><span class="lineno">  160</span>    lv_init();</div>
+<div class="line"><span class="lineno">  161</span>  </div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">/*Set a tick source so that LVGL will know how much time elapsed. */</span></div>
+<div class="line"><span class="lineno">  163</span>    lv_tick_set_cb(<a class="code hl_function" href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a>);</div>
+<div class="line"><span class="lineno">  164</span>     </div>
+<div class="line"><span class="lineno">  165</span>    <span class="comment">// Create LVGL display</span></div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = lv_display_create(<a class="code hl_variable" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a>, <a class="code hl_variable" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a>);</div>
+<div class="line"><span class="lineno">  167</span>    lv_display_set_flush_cb(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_function" href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a>);</div>
+<div class="line"><span class="lineno">  168</span>    lv_display_set_buffers(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>, <a class="code hl_variable" href="#aaec57dd9b314789e8929c99a7b991331">buf2</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>), LV_DISPLAY_RENDER_MODE_PARTIAL);</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;LVGL initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="comment">// Create a simple test screen</span></div>
+<div class="line"><span class="lineno">  173</span>    lv_obj_t *scr = lv_screen_active();</div>
+<div class="line"><span class="lineno">  174</span>    lv_obj_set_style_bg_color(scr, lv_color_hex(<a class="code hl_define" href="_r_g_b888___c_o_l_o_r_s_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">EARS_RGB888_BLACK</a>), 0);</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">// Create a label</span></div>
+<div class="line"><span class="lineno">  177</span>    lv_obj_t *label = lv_label_create(scr);</div>
+<div class="line"><span class="lineno">  178</span>    lv_label_set_text(label, <span class="stringliteral">&quot;LVGL Trial\nWorking!&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>    lv_obj_set_style_text_color(label, lv_color_hex(<a class="code hl_define" href="_r_g_b888___c_o_l_o_r_s_8h.html#abe361f4f87642c20f1e3cfa195c01cf0">EARS_RGB888_WHITE</a>), 0);</div>
+<div class="line"><span class="lineno">  180</span>    lv_obj_set_style_text_font(label, &amp;lv_font_montserrat_20, 0);</div>
+<div class="line"><span class="lineno">  181</span>    lv_obj_center(label);</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;Test screen created&quot;</span>);</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>    <span class="comment">// Initialize NVS partition - ADD THIS</span></div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.begin()) {</div>
+<div class="line"><span class="lineno">  187</span>        <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;NVS initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  189</span>        <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;Failed to initialize NVS&quot;</span>);</div>
+<div class="line"><span class="lineno">  190</span>    }    </div>
+<div class="line"><span class="lineno">  191</span><span class="preprocessor">    #if DEBUG</span></div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">// NVS Test Step 1</span></div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.putHash(<span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;abc123&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>    String retrieved = <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.getHash(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(retrieved);</div>
+<div class="line"><span class="lineno">  196</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">  197</span>    </div>
+<div class="line"><span class="lineno">  198</span><span class="preprocessor">    #if DEBUG</span></div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">// Step 2 Test: Hash generation and comparison</span></div>
+<div class="line"><span class="lineno">  200</span>    String testData = <span class="stringliteral">&quot;Hello EARS!&quot;</span>;</div>
+<div class="line"><span class="lineno">  201</span>    String hash = <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.makeHash(testData);</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#aa4b58fb800df959cd77633733a31caad">D_SerialPrint</a>(<span class="stringliteral">&quot;Generated hash: &quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(hash);</div>
+<div class="line"><span class="lineno">  204</span>    </div>
+<div class="line"><span class="lineno">  205</span>    <span class="comment">// Store the hash</span></div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.putHash(<span class="stringliteral">&quot;test_hash&quot;</span>, hash);</div>
+<div class="line"><span class="lineno">  207</span>    </div>
+<div class="line"><span class="lineno">  208</span>    <span class="comment">// Retrieve and compare</span></div>
+<div class="line"><span class="lineno">  209</span>    String retrievedHash = <a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.getHash(<span class="stringliteral">&quot;test_hash&quot;</span>);</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a>.compareHash(testData, retrievedHash)) {</div>
+<div class="line"><span class="lineno">  211</span>      <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;Hash verification SUCCESS!&quot;</span>);</div>
+<div class="line"><span class="lineno">  212</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  213</span>      <a class="code hl_define" href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a>(<span class="stringliteral">&quot;Hash verification FAILED!&quot;</span>);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="ttc" id="a_d___serial___debug_8h_html_a9fd6d83e886cebc0efbbe86972fbaf5d"><div class="ttname"><a href="_d___serial___debug_8h.html#a9fd6d83e886cebc0efbbe86972fbaf5d">D_SerialPrintln</a></div><div class="ttdeci">#define D_SerialPrintln(...)</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00028">D_Serial_Debug.h:28</a></div></div>
+<div class="ttc" id="a_d___serial___debug_8h_html_aa4b58fb800df959cd77633733a31caad"><div class="ttname"><a href="_d___serial___debug_8h.html#aa4b58fb800df959cd77633733a31caad">D_SerialPrint</a></div><div class="ttdeci">#define D_SerialPrint(...)</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00026">D_Serial_Debug.h:26</a></div></div>
+<div class="ttc" id="a_d___serial___debug_8h_html_ab55b26c2e08acf8062ca773adabcf762"><div class="ttname"><a href="_d___serial___debug_8h.html#ab55b26c2e08acf8062ca773adabcf762">D_SerialFlush</a></div><div class="ttdeci">#define D_SerialFlush()</div><div class="ttdef"><b>Definition</b> <a href="_d___serial___debug_8h_source.html#l00030">D_Serial_Debug.h:30</a></div></div>
+<div class="ttc" id="a_r_g_b565___c_o_l_o_r_s_8h_html_a8a5f6e444ed0aeaa29b15d6c37f7dfbc"><div class="ttname"><a href="_r_g_b565___c_o_l_o_r_s_8h.html#a8a5f6e444ed0aeaa29b15d6c37f7dfbc">EARS_RGB565_BLACK</a></div><div class="ttdeci">#define EARS_RGB565_BLACK</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00021">RGB565_COLORS.h:21</a></div></div>
+<div class="ttc" id="a_r_g_b888___c_o_l_o_r_s_8h_html_a3aa37eda5aaf70ff5beebebeb6bf5900"><div class="ttname"><a href="_r_g_b888___c_o_l_o_r_s_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">EARS_RGB888_BLACK</a></div><div class="ttdeci">#define EARS_RGB888_BLACK</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b888___c_o_l_o_r_s_8h_source.html#l00021">RGB888_COLORS.h:21</a></div></div>
+<div class="ttc" id="a_r_g_b888___c_o_l_o_r_s_8h_html_abe361f4f87642c20f1e3cfa195c01cf0"><div class="ttname"><a href="_r_g_b888___c_o_l_o_r_s_8h.html#abe361f4f87642c20f1e3cfa195c01cf0">EARS_RGB888_WHITE</a></div><div class="ttdeci">#define EARS_RGB888_WHITE</div><div class="ttdef"><b>Definition</b> <a href="_r_g_b888___c_o_l_o_r_s_8h_source.html#l00022">RGB888_COLORS.h:22</a></div></div>
 <div class="ttc" id="a_w_s35_t_l_c_d___p_i_n_s_8h_html_af1d9e076f5a205e1516b1f3251eab30b"><div class="ttname"><a href="_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a></div><div class="ttdeci">#define GFX_BL</div><div class="ttdef"><b>Definition</b> <a href="_w_s35_t_l_c_d___p_i_n_s_8h_source.html#l00019">WS35TLCD_PINS.h:19</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a2098bffdebce63de6366ca2e0d1c2638"><div class="ttname"><a href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a></div><div class="ttdeci">static lv_color_t buf1[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00065">main.cpp:65</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a27a476ad412f1de3b2626865c6b4114d"><div class="ttname"><a href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a></div><div class="ttdeci">NVSEeprom nvs</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00082">main.cpp:82</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00077">main.cpp:77</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aa6bb2d0970b95ea952c1eb3086a906ab"><div class="ttname"><a href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a></div><div class="ttdeci">static const uint32_t screenWidth</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00059">main.cpp:59</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aa8b5dfbac926d5ef47bfc41e8757918f"><div class="ttname"><a href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a></div><div class="ttdeci">static const uint32_t screenHeight</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00060">main.cpp:60</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aaec57dd9b314789e8929c99a7b991331"><div class="ttname"><a href="#aaec57dd9b314789e8929c99a7b991331">buf2</a></div><div class="ttdeci">static lv_color_t buf2[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00066">main.cpp:66</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aeb891cadacdbb7142c387b4232fc412d"><div class="ttname"><a href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a></div><div class="ttdeci">void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map)</div><div class="ttdoc">LVGL display flush callback.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aedc59dea91554dea6db97f21f51fd69b"><div class="ttname"><a href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a></div><div class="ttdeci">uint32_t millis_cb(void)</div><div class="ttdoc">Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00110">main.cpp:110</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a2098bffdebce63de6366ca2e0d1c2638"><div class="ttname"><a href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a></div><div class="ttdeci">static lv_color_t buf1[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00068">main.cpp:68</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a27a476ad412f1de3b2626865c6b4114d"><div class="ttname"><a href="#a27a476ad412f1de3b2626865c6b4114d">nvs</a></div><div class="ttdeci">NVSEeprom nvs</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00085">main.cpp:85</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00080">main.cpp:80</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aa6bb2d0970b95ea952c1eb3086a906ab"><div class="ttname"><a href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a></div><div class="ttdeci">static const uint32_t screenWidth</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00062">main.cpp:62</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aa8b5dfbac926d5ef47bfc41e8757918f"><div class="ttname"><a href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a></div><div class="ttdeci">static const uint32_t screenHeight</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00063">main.cpp:63</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aaec57dd9b314789e8929c99a7b991331"><div class="ttname"><a href="#aaec57dd9b314789e8929c99a7b991331">buf2</a></div><div class="ttdeci">static lv_color_t buf2[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00069">main.cpp:69</a></div></div>
+<div class="ttc" id="amain_8cpp_html_acfb6f6d615183fc2f71e79dfbadfe27d"><div class="ttname"><a href="#acfb6f6d615183fc2f71e79dfbadfe27d">init_serial</a></div><div class="ttdeci">void init_serial()</div><div class="ttdoc">Initialize Serial for Debugging. @description Sets up Serial communication at the defined baud rate a...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00122">main.cpp:122</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aeb891cadacdbb7142c387b4232fc412d"><div class="ttname"><a href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a></div><div class="ttdeci">void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map)</div><div class="ttdoc">LVGL display flush callback.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00098">main.cpp:98</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aedc59dea91554dea6db97f21f51fd69b"><div class="ttname"><a href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a></div><div class="ttdeci">uint32_t millis_cb(void)</div><div class="ttdoc">Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00113">main.cpp:113</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00065">buf1</a>, <a class="el" href="main_8cpp_source.html#l00066">buf2</a>, <a class="el" href="main_8cpp_source.html#l00077">disp</a>, <a class="el" href="main_8cpp_source.html#l00072">gfx</a>, <a class="el" href="_w_s35_t_l_c_d___p_i_n_s_8h_source.html#l00019">GFX_BL</a>, <a class="el" href="main_8cpp_source.html#l00110">millis_cb()</a>, <a class="el" href="main_8cpp_source.html#l00095">my_disp_flush()</a>, <a class="el" href="main_8cpp_source.html#l00082">nvs</a>, <a class="el" href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00021">RGB565_BLACK</a>, <a class="el" href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00040">RGB565_NAVY</a>, <a class="el" href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00022">RGB565_WHITE</a>, <a class="el" href="main_8cpp_source.html#l00060">screenHeight</a>, and <a class="el" href="main_8cpp_source.html#l00059">screenWidth</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00068">buf1</a>, <a class="el" href="main_8cpp_source.html#l00069">buf2</a>, <a class="el" href="_d___serial___debug_8h_source.html#l00030">D_SerialFlush</a>, <a class="el" href="_d___serial___debug_8h_source.html#l00026">D_SerialPrint</a>, <a class="el" href="_d___serial___debug_8h_source.html#l00028">D_SerialPrintln</a>, <a class="el" href="main_8cpp_source.html#l00080">disp</a>, <a class="el" href="_r_g_b565___c_o_l_o_r_s_8h_source.html#l00021">EARS_RGB565_BLACK</a>, <a class="el" href="_r_g_b888___c_o_l_o_r_s_8h_source.html#l00021">EARS_RGB888_BLACK</a>, <a class="el" href="_r_g_b888___c_o_l_o_r_s_8h_source.html#l00022">EARS_RGB888_WHITE</a>, <a class="el" href="main_8cpp_source.html#l00075">gfx</a>, <a class="el" href="_w_s35_t_l_c_d___p_i_n_s_8h_source.html#l00019">GFX_BL</a>, <a class="el" href="main_8cpp_source.html#l00122">init_serial()</a>, <a class="el" href="main_8cpp_source.html#l00113">millis_cb()</a>, <a class="el" href="main_8cpp_source.html#l00098">my_disp_flush()</a>, <a class="el" href="main_8cpp_source.html#l00085">nvs</a>, <a class="el" href="main_8cpp_source.html#l00063">screenHeight</a>, and <a class="el" href="main_8cpp_source.html#l00062">screenWidth</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
+<div class="center"><!-- SVG 4 --></div>
 </div>
 
 </div>
@@ -473,9 +483,9 @@ Here is the call graph for this function:</div>
 <p>Primary setup functions for Core1 @description Manages functions such as <a class="el" href="class_n_v_s_eeprom.html" title="NVS EEPROM wrapper class @description This class provides a simple interface for storing and retrievi...">NVSEeprom</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00193">193</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  193</span>              {</div>
-<div class="line"><span class="lineno">  194</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00237">237</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  237</span>              {</div>
+<div class="line"><span class="lineno">  238</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -500,9 +510,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00065">65</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00068">68</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -526,9 +536,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00069">69</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -544,7 +554,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -560,9 +570,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00077">77</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -573,14 +583,14 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Arduino_GFX* gfx = new Arduino_ILI9488_18bit(<a class="el" href="#a310f7e1a6cac48dc89c6cfcc3f6ef48f">bus</a>, -1 , 0 , false )</td>
+          <td class="memname">Arduino_GFX* gfx = new Arduino_ILI9488_18bit(<a class="el" href="#a310f7e1a6cac48dc89c6cfcc3f6ef48f">bus</a>, -1 , 1 , true )</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00072">72</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00075">75</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00095">my_disp_flush()</a>, and <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00098">my_disp_flush()</a>, and <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -596,9 +606,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00082">82</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00085">85</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -612,7 +622,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t screenHeight = 480</td>
+          <td class="memname">const uint32_t screenHeight = 320</td>
         </tr>
       </table>
   </td>
@@ -622,9 +632,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00060">60</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>
@@ -638,7 +648,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t screenWidth = 320</td>
+          <td class="memname">const uint32_t screenWidth = 480</td>
         </tr>
       </table>
   </td>
@@ -648,9 +658,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00120">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00141">setup()</a>.</p>
 
 </div>
 </div>

@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['rgb565_5fblack_0',['RGB565_BLACK',['../_r_g_b565___c_o_l_o_r_s_8h.html#a27c54489ae47cd64dee9c6a08269c2c2',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fblue_1',['RGB565_BLUE',['../_r_g_b565___c_o_l_o_r_s_8h.html#af60f83daa7686ad05c8cd56bff2c3a35',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fbrown_2',['RGB565_BROWN',['../_r_g_b565___c_o_l_o_r_s_8h.html#aaded12441a1fd6443a58bf0d5ac87a0d',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fcyan_3',['RGB565_CYAN',['../_r_g_b565___c_o_l_o_r_s_8h.html#ad98fdd1b1c78c90aef5f4faaa3722ba0',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fdarkgray_4',['RGB565_DARKGRAY',['../_r_g_b565___c_o_l_o_r_s_8h.html#ace20bdbd9ac46521bd8096461c8b1b20',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fgray_5',['RGB565_GRAY',['../_r_g_b565___c_o_l_o_r_s_8h.html#a12f72e33d2cfd6829bfdfc823c4e24eb',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fgreen_6',['RGB565_GREEN',['../_r_g_b565___c_o_l_o_r_s_8h.html#a44ef0b58b20bd336f7bed9733e6dbb2f',1,'RGB565_COLORS.h']]],
-  ['rgb565_5flightgray_7',['RGB565_LIGHTGRAY',['../_r_g_b565___c_o_l_o_r_s_8h.html#af9ae69f03401c6b0838c20b71a9a8334',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fmagenta_8',['RGB565_MAGENTA',['../_r_g_b565___c_o_l_o_r_s_8h.html#ae062c1c38e015b3409e252e0de406295',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fmaroon_9',['RGB565_MAROON',['../_r_g_b565___c_o_l_o_r_s_8h.html#afc36a4af8987c3368dbb2edd35e81874',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fnavy_10',['RGB565_NAVY',['../_r_g_b565___c_o_l_o_r_s_8h.html#a6707c8d1099256efabb5f0819a675e24',1,'RGB565_COLORS.h']]],
-  ['rgb565_5folive_11',['RGB565_OLIVE',['../_r_g_b565___c_o_l_o_r_s_8h.html#a2fb681d76e054fa4420b7e8a243575cf',1,'RGB565_COLORS.h']]],
-  ['rgb565_5forange_12',['RGB565_ORANGE',['../_r_g_b565___c_o_l_o_r_s_8h.html#a26d2237ace5b250d3228e59d67ee2b78',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fpink_13',['RGB565_PINK',['../_r_g_b565___c_o_l_o_r_s_8h.html#ac955a9086b7954e2514c4d3055a0a637',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fpurple_14',['RGB565_PURPLE',['../_r_g_b565___c_o_l_o_r_s_8h.html#a242c08d8e36d9ece50964d186bbb6bfd',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fred_15',['RGB565_RED',['../_r_g_b565___c_o_l_o_r_s_8h.html#ad28c98f6eb85d1020852da4d17de9f80',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fwhite_16',['RGB565_WHITE',['../_r_g_b565___c_o_l_o_r_s_8h.html#ad628e4aa6eaba960866a7a0a7157c114',1,'RGB565_COLORS.h']]],
-  ['rgb565_5fyellow_17',['RGB565_YELLOW',['../_r_g_b565___c_o_l_o_r_s_8h.html#a8ab0142cc60a5e6d112717340f84b046',1,'RGB565_COLORS.h']]],
-  ['rgb888_5fto_5frgb565_18',['RGB888_TO_RGB565',['../_r_g_b565___c_o_l_o_r_s_8h.html#a9e88e0b9d73e4c8c8fcf7dfbe9b06204',1,'RGB565_COLORS.h']]]
+  ['gfx_5fbl_0',['GFX_BL',['../_w_s35_t_l_c_d___p_i_n_s_8h.html#af1d9e076f5a205e1516b1f3251eab30b',1,'WS35TLCD_PINS.h']]]
 ];

@@ -1,10 +1,7 @@
 var main_8cpp =
 [
-    [ "APP_VERSION", "main_8cpp.html#a92673e33f27532767749b79edb8ef806", null ],
-    [ "APP_VERSION_BUILD", "main_8cpp.html#a3dbd0be03bfdb28562e7cfae80fff3fd", null ],
-    [ "APP_VERSION_MAJOR", "main_8cpp.html#aef3457fba0ffa145e841c80f85adda1c", null ],
-    [ "APP_VERSION_MINOR", "main_8cpp.html#a7732f188a6cca879e493081406cbb293", null ],
-    [ "APP_VERSION_PATCH", "main_8cpp.html#a3524583a75de0db510345b6f0eb189f7", null ],
+    [ "DEBUG", "main_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83", null ],
+    [ "init_serial", "main_8cpp.html#acfb6f6d615183fc2f71e79dfbadfe27d", null ],
     [ "loop", "main_8cpp.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "loop1", "main_8cpp.html#a39ceba300a80e348e278539f57e0ca79", null ],
     [ "millis_cb", "main_8cpp.html#aedc59dea91554dea6db97f21f51fd69b", null ],

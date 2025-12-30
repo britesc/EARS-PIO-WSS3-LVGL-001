@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['description_0',['Description',['../index.html#description',1,'']]],
-  ['disp_1',['disp',['../main_8cpp.html#a647e5f267167a38dcd0e6fe55dfcfc61',1,'main.cpp']]]
+  ['calculatecrc32_0',['calculateCRC32',['../class_n_v_s_eeprom.html#aef6c9cfce5074548940b6362c07dd6d0',1,'NVSEeprom']]],
+  ['comparehash_1',['compareHash',['../class_n_v_s_eeprom.html#aa50b95369856aeff3ca4a219d2e02dd8',1,'NVSEeprom']]]
 ];

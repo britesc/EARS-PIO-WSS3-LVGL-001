@@ -118,6 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a92bd5a8180c817d6d5ba564095f35e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Hash from NVS.  <br /></td></tr>
 <tr class="memitem:ac97e7a38b631ab368a050115fe17f010" id="r_ac97e7a38b631ab368a050115fe17f010"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97e7a38b631ab368a050115fe17f010">putHash</a> (const char *key, const String &amp;value)</td></tr>
 <tr class="memdesc:ac97e7a38b631ab368a050115fe17f010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put Hash into NVS.  <br /></td></tr>
+<tr class="memitem:a285429d51617be34f87920bdd156a0ed" id="r_a285429d51617be34f87920bdd156a0ed"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285429d51617be34f87920bdd156a0ed">makeHash</a> (const String &amp;data)</td></tr>
+<tr class="memdesc:a285429d51617be34f87920bdd156a0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate CRC32 hash from data.  <br /></td></tr>
+<tr class="memitem:aa50b95369856aeff3ca4a219d2e02dd8" id="r_aa50b95369856aeff3ca4a219d2e02dd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa50b95369856aeff3ca4a219d2e02dd8">compareHash</a> (const String &amp;data, const String &amp;storedHash)</td></tr>
+<tr class="memdesc:aa50b95369856aeff3ca4a219d2e02dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare data against stored hash.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aef6c9cfce5074548940b6362c07dd6d0" id="r_aef6c9cfce5074548940b6362c07dd6d0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6c9cfce5074548940b6362c07dd6d0">calculateCRC32</a> (const uint8_t *data, size_t length)</td></tr>
+<tr class="memdesc:aef6c9cfce5074548940b6362c07dd6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate CRC32 checksum.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -203,6 +212,113 @@ false </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aef6c9cfce5074548940b6362c07dd6d0" name="aef6c9cfce5074548940b6362c07dd6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6c9cfce5074548940b6362c07dd6d0">&#9670;&#160;</a></span>calculateCRC32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NVSEeprom::calculateCRC32 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate CRC32 checksum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00089">89</a> of file <a class="el" href="_n_v_s_eeprom_8cpp_source.html">NVSEeprom.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                                                                     {</div>
+<div class="line"><span class="lineno">   90</span>    uint32_t crc = 0xFFFFFFFF;</div>
+<div class="line"><span class="lineno">   91</span>    </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; length; i++) {</div>
+<div class="line"><span class="lineno">   93</span>        crc ^= data[i];</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">for</span> (uint8_t j = 0; j &lt; 8; j++) {</div>
+<div class="line"><span class="lineno">   95</span>            crc = (crc &gt;&gt; 1) ^ (0xEDB88320 &amp; -(crc &amp; 1));</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>    </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> ~crc;</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00108">makeHash()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
+
+</div>
+</div>
+<a id="aa50b95369856aeff3ca4a219d2e02dd8" name="aa50b95369856aeff3ca4a219d2e02dd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50b95369856aeff3ca4a219d2e02dd8">&#9670;&#160;</a></span>compareHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NVSEeprom::compareHash </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>storedHash</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare data against stored hash. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">storedHash</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00126">126</a> of file <a class="el" href="_n_v_s_eeprom_8cpp_source.html">NVSEeprom.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                                        {</div>
+<div class="line"><span class="lineno">  127</span>    String computedHash = <a class="code hl_function" href="#a285429d51617be34f87920bdd156a0ed">makeHash</a>(data);</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> (computedHash.equals(storedHash));</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+<div class="ttc" id="aclass_n_v_s_eeprom_html_a285429d51617be34f87920bdd156a0ed"><div class="ttname"><a href="#a285429d51617be34f87920bdd156a0ed">NVSEeprom::makeHash</a></div><div class="ttdeci">String makeHash(const String &amp;data)</div><div class="ttdoc">Generate CRC32 hash from data.</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8cpp_source.html#l00108">NVSEeprom.cpp:108</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00108">makeHash()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 --></div>
+</div>
+
+</div>
+</div>
 <a id="a92bd5a8180c817d6d5ba564095f35e3c" name="a92bd5a8180c817d6d5ba564095f35e3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92bd5a8180c817d6d5ba564095f35e3c">&#9670;&#160;</a></span>getHash()</h2>
 
@@ -244,9 +360,61 @@ false </dd></dl>
 <div class="line"><span class="lineno">   58</span>    </div>
 <div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> hash;</div>
 <div class="line"><span class="lineno">   60</span>}</div>
-<div class="ttc" id="aclass_n_v_s_eeprom_html_a554e378a0a7b0db565388829f1a80baf"><div class="ttname"><a href="#a554e378a0a7b0db565388829f1a80baf">NVSEeprom::NAMESPACE</a></div><div class="ttdeci">static const char * NAMESPACE</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00043">NVSEeprom.h:43</a></div></div>
+<div class="ttc" id="aclass_n_v_s_eeprom_html_a554e378a0a7b0db565388829f1a80baf"><div class="ttname"><a href="#a554e378a0a7b0db565388829f1a80baf">NVSEeprom::NAMESPACE</a></div><div class="ttdeci">static const char * NAMESPACE</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00047">NVSEeprom.h:47</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00043">NAMESPACE</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00047">NAMESPACE</a>.</p>
+
+</div>
+</div>
+<a id="a285429d51617be34f87920bdd156a0ed" name="a285429d51617be34f87920bdd156a0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285429d51617be34f87920bdd156a0ed">&#9670;&#160;</a></span>makeHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String NVSEeprom::makeHash </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate CRC32 hash from data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00108">108</a> of file <a class="el" href="_n_v_s_eeprom_8cpp_source.html">NVSEeprom.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                             {</div>
+<div class="line"><span class="lineno">  109</span>    uint32_t crc = <a class="code hl_function" href="#aef6c9cfce5074548940b6362c07dd6d0">calculateCRC32</a>((<span class="keyword">const</span> uint8_t*)data.c_str(), data.length());</div>
+<div class="line"><span class="lineno">  110</span>    </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">// Convert to 8-character hex string</span></div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">char</span> hashStr[9];</div>
+<div class="line"><span class="lineno">  113</span>    sprintf(hashStr, <span class="stringliteral">&quot;%08X&quot;</span>, crc);</div>
+<div class="line"><span class="lineno">  114</span>    </div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> String(hashStr);</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="aclass_n_v_s_eeprom_html_aef6c9cfce5074548940b6362c07dd6d0"><div class="ttname"><a href="#aef6c9cfce5074548940b6362c07dd6d0">NVSEeprom::calculateCRC32</a></div><div class="ttdeci">uint32_t calculateCRC32(const uint8_t *data, size_t length)</div><div class="ttdoc">Calculate CRC32 checksum.</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8cpp_source.html#l00089">NVSEeprom.cpp:89</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00089">calculateCRC32()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00126">compareHash()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 5 --></div>
+</div>
 
 </div>
 </div>
@@ -294,7 +462,7 @@ false </dd></dl>
 <div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> (result &gt; 0);</div>
 <div class="line"><span class="lineno">   80</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00043">NAMESPACE</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00047">NAMESPACE</a>.</p>
 
 </div>
 </div>
@@ -319,7 +487,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00043">43</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00047">47</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00050">getHash()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00070">putHash()</a>.</p>
 

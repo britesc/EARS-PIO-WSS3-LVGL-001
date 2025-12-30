@@ -36,12 +36,6 @@
  #include "ears_version.h"
 
  /******************************************************************************
-  * Serisl Debug Settings
-  *****************************************************************************/
- #define DEBUG 1    // SET TO 0 TO REMOVE TRACES
- #include "D_Serial_Debug.h"  
-
- /******************************************************************************
   * Includes Information
   *****************************************************************************/
 #include <Arduino.h>
@@ -120,16 +114,15 @@ uint32_t millis_cb(void) {
  * Sets up Serial communication at the defined baud rate and includes a delay to ensure readiness.
  */
 void init_serial() {
-    #if DEBUG
-      D_SerialBegin(D_SERIAL_BAUD_RATE);
+      Serial.flush();
+      Serial.begin(115200);
       int x = 0;
-      while (x < D_SERIAL_DELAY) {
+      while (x < 1500) {
         x++;
-        if (D_SerialAvailable()) {
-          x = D_SERIAL_DELAY + 1;
+        if (Serial.Available()) {
+          x = 1500 + 1;
         }
       }
-    #endif  
 }
     
 /**
@@ -140,11 +133,8 @@ void init_serial() {
  */
 void setup() {
     init_serial();
-    D_SerialFlush();
-    // Serial.begin(115200);
-    // delay(1000);
     
-    D_SerialPrintln("LVGL Trial Starting...");
+    Serial.println("LVGL Trial Starting...");
 
     // Initialize backlight
     pinMode(GFX_BL, OUTPUT);
@@ -154,7 +144,7 @@ void setup() {
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
     
-    D_SerialPrintln("Display initialized");
+    Serial.println("Display initialized");
 
     /* Initialise LVGL */
     lv_init();
@@ -167,7 +157,7 @@ void setup() {
     lv_display_set_flush_cb(disp, my_disp_flush);
     lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
 
-    D_SerialPrintln("LVGL initialized");
+    Serial.println("LVGL initialized");
 
     // Create a simple test screen
     lv_obj_t *scr = lv_screen_active();
@@ -180,27 +170,25 @@ void setup() {
     lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
     lv_obj_center(label);
 
-    D_SerialPrintln("Test screen created");
+    Serial.println("Test screen created");
 
     // Initialize NVS partition - ADD THIS
     if (nvs.begin()) {
-        D_SerialPrintln("NVS initialized");
+        Serial.println("NVS initialized");
     } else {
-        D_SerialPrintln("Failed to initialize NVS");
+        Serial.println("Failed to initialize NVS");
     }    
-    #if DEBUG
+  
     // NVS Test Step 1
     nvs.putHash("test", "abc123");
     String retrieved = nvs.getHash("test");
-    D_SerialPrintln(retrieved);
-    #endif
-    
-    #if DEBUG
+    Serial.println(retrieved);
+  
     // Step 2 Test: Hash generation and comparison
     String testData = "Hello EARS!";
     String hash = nvs.makeHash(testData);
-    D_SerialPrint("Generated hash: ");
-    D_SerialPrintln(hash);
+    Serial.print("Generated hash: ");
+    Serial.println(hash);
     
     // Store the hash
     nvs.putHash("test_hash", hash);
@@ -208,9 +196,9 @@ void setup() {
     // Retrieve and compare
     String retrievedHash = nvs.getHash("test_hash");
     if (nvs.compareHash(testData, retrievedHash)) {
-      D_SerialPrintln("Hash verification SUCCESS!");
+      Serial.println("Hash verification SUCCESS!");
     } else {
-      D_SerialPrintln("Hash verification FAILED!");
+      Serial.println("Hash verification FAILED!");
     }
 
     #endif
