@@ -119,7 +119,7 @@ void init_serial() {
       int x = 0;
       while (x < 1500) {
         x++;
-        if (Serial.Available()) {
+        if (Serial.available()) {
           x = 1500 + 1;
         }
       }
@@ -201,7 +201,7 @@ void setup() {
       Serial.println("Hash verification FAILED!");
     }
 
-    #endif
+
 }
 
 /**
@@ -238,8 +238,3 @@ void loop1() {
 /******************************************************************************
  * End of File
  *****************************************************************************/
-
-
-
-
-  

@@ -128,6 +128,44 @@ bool NVSEeprom::compareHash(const String& data, const String& storedHash) {
     return (computedHash.equals(storedHash));
 }
 
+/**
+ * @brief Get version number from NVS.
+ * 
+ * @param key 
+ * @param defaultVersion 
+ * @return uint16_t Version number (0-65535)
+ */
+uint16_t NVSEeprom::getVersion(const char* key, uint16_t defaultVersion) {
+    // Open namespace in read-only mode
+    if (!Preferences::begin(NAMESPACE, true)) {
+        return defaultVersion;
+    }
+    
+    uint16_t version = getUShort(key, defaultVersion);
+    end();
+    
+    return version;
+}
+
+/**
+ * @brief Put version number into NVS.
+ * 
+ * @param key 
+ * @param version Version number (0-65535)
+ * @return true Success
+ * @return false Failed
+ */
+bool NVSEeprom::putVersion(const char* key, uint16_t version) {
+    // Open namespace in read-write mode
+    if (!Preferences::begin(NAMESPACE, false)) {
+        return false;
+    }
+    
+    size_t result = putUShort(key, version);
+    end();
+    
+    return (result > 0);
+}
 /******************************************************************************
  * End of File
  *****************************************************************************/

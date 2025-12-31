@@ -42,6 +42,10 @@ public:
     String makeHash(const String& data);
     bool compareHash(const String& data, const String& storedHash);
 
+    // Version management - Step 3
+    uint16_t getVersion(const char* key, uint16_t defaultVersion = 0);
+    bool putVersion(const char* key, uint16_t version);    
+
 private:
     // NVS Namespace
     static const char* NAMESPACE;
