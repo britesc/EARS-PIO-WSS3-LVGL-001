@@ -250,8 +250,9 @@ void core0_loaderLogic() {
  * @return void
  */
 void setup() {
-    init_logger();
-    LOG("LVGL Trial Starting...");
+    Serial.begin(115200);
+    delay(2000);  // Give it time
+    Serial.println("Starting...");
 
     // Initialize backlight
     pinMode(GFX_BL, OUTPUT);
@@ -260,6 +261,9 @@ void setup() {
     // Initialize display
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
+
+    init_logger();
+    LOG("LVGL Trial Starting...");
     
     LOG("Display initialized");
 
