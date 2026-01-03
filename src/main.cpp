@@ -76,6 +76,10 @@ lv_display_t *disp;
 /******************************************************************************
  * NVS EEPROM object
  *****************************************************************************/
+// Global validation result - shared between cores
+NVSValidationResult g_nvsResult;
+
+// Global NVS instance
 NVSEeprom nvs;
 
 /******************************************************************************
@@ -124,7 +128,129 @@ void init_serial() {
         }
       }
 }
+
+/**
+ * @brief Core1 NVS Validation Task
+ * 
+ * @param parameter 
+ */
+void core1_nvsValidationTask(void* parameter) {
+    // Step 1: Initialize NVS
+    if (!nvs.begin()) {
+        g_nvsResult.status = NVSStatus::INITIALIZATION_FAILED;
+        vTaskDelete(NULL);
+        return;
+    }
     
+    // Step 2: Validate entire NVS
+    g_nvsResult = nvs.validateNVS();
+    
+    // Step 3: Report results
+    Serial.println("=== Core1 NVS Validation Results ===");
+    Serial.print("Status: ");
+    switch (g_nvsResult.status) {
+        case NVSStatus::VALID:
+            Serial.println("VALID");
+            break;
+        case NVSStatus::UPGRADED:
+            Serial.println("UPGRADED");
+            break;
+        case NVSStatus::INVALID_VERSION:
+            Serial.println("INVALID_VERSION");
+            break;
+        case NVSStatus::MISSING_ZAPNUMBER:
+            Serial.println("MISSING_ZAPNUMBER");
+            break;
+        case NVSStatus::MISSING_PASSWORD:
+            Serial.println("MISSING_PASSWORD");
+            break;
+        case NVSStatus::CRC_FAILED:
+            Serial.println("CRC_FAILED - TAMPERING DETECTED!");
+            break;
+        case NVSStatus::INITIALIZATION_FAILED:
+            Serial.println("INITIALIZATION_FAILED");
+            break;
+        default:
+            Serial.println("NOT_CHECKED");
+    }
+    
+    Serial.printf("Version: Current=%d, Expected=%d\n", 
+                  g_nvsResult.currentVersion, 
+                  g_nvsResult.expectedVersion);
+    Serial.printf("ZapNumber: Valid=%d, Value=%s\n", 
+                  g_nvsResult.zapNumberValid, 
+                  g_nvsResult.zapNumber);
+    Serial.printf("Password: Valid=%d\n", g_nvsResult.passwordHashValid);
+    Serial.printf("CRC: Valid=%d, Value=0x%08X\n", 
+                  g_nvsResult.crcValid, 
+                  g_nvsResult.calculatedCRC);
+    Serial.printf("Upgraded: %d\n", g_nvsResult.wasUpgraded);
+    Serial.println("====================================");
+    
+    // Core1 task complete
+    vTaskDelete(NULL);
+}
+
+/**
+ * @brief Core0 Loader Logic Decision
+ * 
+ */
+void core0_loaderLogic() {
+  Serial.println("=== Core0 Loader Decision ===");
+  
+  // Wait for Core1 to finish validation (in real code, use proper synchronization)
+  while (g_nvsResult.status == NVSStatus::NOT_CHECKED) {
+      delay(10);
+  }
+  
+  // Make decisions based on validation results
+  switch (g_nvsResult.status) {
+      case NVSStatus::VALID:
+      case NVSStatus::UPGRADED:
+          Serial.println("Decision: Proceed to login screen");
+          Serial.printf("ZapNumber: %s\n", g_nvsResult.zapNumber);
+          // TODO: Show login screen, validate password
+          break;
+          
+      case NVSStatus::MISSING_ZAPNUMBER:
+          Serial.println("Decision: Show ZapNumber setup wizard");
+          // TODO: Launch setup wizard to collect ZapNumber
+          break;
+          
+      case NVSStatus::MISSING_PASSWORD:
+          Serial.println("Decision: Show password setup wizard");
+          Serial.printf("Using ZapNumber: %s\n", g_nvsResult.zapNumber);
+          // TODO: Launch password setup wizard
+          break;
+          
+      case NVSStatus::CRC_FAILED:
+          Serial.println("Decision: SECURITY ALERT - Data tampering detected!");
+          Serial.println("Action: Factory reset required");
+          // TODO: Show security warning, require factory reset
+          break;
+          
+      case NVSStatus::INVALID_VERSION:
+          Serial.println("Decision: Version mismatch");
+          Serial.printf("NVS version %d incompatible with code version %d\n",
+                       g_nvsResult.currentVersion,
+                       g_nvsResult.expectedVersion);
+          // TODO: Show error, offer factory reset
+          break;
+          
+      case NVSStatus::INITIALIZATION_FAILED:
+          Serial.println("Decision: Hardware error");
+          // TODO: Show hardware error message
+          break;
+          
+      default:
+          Serial.println("Decision: Unknown state");
+          break;
+  }
+  Serial.println("=============================");
+}
+
+
+
 /**
  * @brief Primary setup functions for Core0
  * @description
