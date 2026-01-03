@@ -45,6 +45,7 @@
 #include "RGB565_COLORS.h"
 #include "RGB888_COLORS.h"
 #include "NVSEeprom.h"
+#include "Logger.h"
 
 /******************************************************************************
  * Start of Object Declarations 
@@ -113,20 +114,13 @@ uint32_t millis_cb(void) {
 }
 
 /**
- * @brief Initialize Serial for Debugging.
- * @description
- * Sets up Serial communication at the defined baud rate and includes a delay to ensure readiness.
+ * @brief Initialize Logger
+ * 
  */
-void init_serial() {
-      Serial.flush();
-      Serial.begin(115200);
-      int x = 0;
-      while (x < 1500) {
-        x++;
-        if (Serial.available()) {
-          x = 1500 + 1;
-        }
-      }
+void init_logger() {
+    LOG_INIT("/logs/debug.log");  // or just "/debug.log" for root
+    LOG("Setup started.");
+    LOGF("Free memory: %d bytes", ESP.getFreeHeap());
 }
 
 /**
@@ -146,46 +140,46 @@ void core1_nvsValidationTask(void* parameter) {
     g_nvsResult = nvs.validateNVS();
     
     // Step 3: Report results
-    Serial.println("=== Core1 NVS Validation Results ===");
-    Serial.print("Status: ");
+    LOG("=== Core1 NVS Validation Results ===");
+    LOG("Status: ");
     switch (g_nvsResult.status) {
         case NVSStatus::VALID:
-            Serial.println("VALID");
+            LOG("VALID");
             break;
         case NVSStatus::UPGRADED:
-            Serial.println("UPGRADED");
+            LOG("UPGRADED");
             break;
         case NVSStatus::INVALID_VERSION:
-            Serial.println("INVALID_VERSION");
+            LOG("INVALID_VERSION");
             break;
         case NVSStatus::MISSING_ZAPNUMBER:
-            Serial.println("MISSING_ZAPNUMBER");
+            LOG("MISSING_ZAPNUMBER");
             break;
         case NVSStatus::MISSING_PASSWORD:
-            Serial.println("MISSING_PASSWORD");
+            LOG("MISSING_PASSWORD");
             break;
         case NVSStatus::CRC_FAILED:
-            Serial.println("CRC_FAILED - TAMPERING DETECTED!");
+            LOG("CRC_FAILED - TAMPERING DETECTED!");
             break;
         case NVSStatus::INITIALIZATION_FAILED:
-            Serial.println("INITIALIZATION_FAILED");
+            LOG("INITIALIZATION_FAILED");
             break;
         default:
-            Serial.println("NOT_CHECKED");
+            LOG("NOT_CHECKED");
     }
     
-    Serial.printf("Version: Current=%d, Expected=%d\n", 
-                  g_nvsResult.currentVersion, 
-                  g_nvsResult.expectedVersion);
-    Serial.printf("ZapNumber: Valid=%d, Value=%s\n", 
-                  g_nvsResult.zapNumberValid, 
-                  g_nvsResult.zapNumber);
-    Serial.printf("Password: Valid=%d\n", g_nvsResult.passwordHashValid);
-    Serial.printf("CRC: Valid=%d, Value=0x%08X\n", 
+    LOGF("Version: Current=%d, Expected=%d\n", 
+                g_nvsResult.currentVersion, 
+                g_nvsResult.expectedVersion);
+    LOGF("ZapNumber: Valid=%d, Value=%s\n", 
+                    g_nvsResult.zapNumberValid, 
+                    g_nvsResult.zapNumber);
+    LOGF("Password: Valid=%d\n", g_nvsResult.passwordHashValid);        
+    LOGF("CRC: Valid=%d, Value=0x%08X\n", 
                   g_nvsResult.crcValid, 
                   g_nvsResult.calculatedCRC);
-    Serial.printf("Upgraded: %d\n", g_nvsResult.wasUpgraded);
-    Serial.println("====================================");
+    LOGF("Upgraded: %d\n", g_nvsResult.wasUpgraded);
+    LOG("====================================");
     
     // Core1 task complete
     vTaskDelete(NULL);
@@ -196,7 +190,7 @@ void core1_nvsValidationTask(void* parameter) {
  * 
  */
 void core0_loaderLogic() {
-  Serial.println("=== Core0 Loader Decision ===");
+  LOG("=== Core0 Loader Decision ===");
   
   // Wait for Core1 to finish validation (in real code, use proper synchronization)
   while (g_nvsResult.status == NVSStatus::NOT_CHECKED) {
@@ -207,49 +201,47 @@ void core0_loaderLogic() {
   switch (g_nvsResult.status) {
       case NVSStatus::VALID:
       case NVSStatus::UPGRADED:
-          Serial.println("Decision: Proceed to login screen");
-          Serial.printf("ZapNumber: %s\n", g_nvsResult.zapNumber);
+          LOG("Decision: Proceed to login screen");
+          LOGF("ZapNumber: %s\n", g_nvsResult.zapNumber);
           // TODO: Show login screen, validate password
           break;
           
       case NVSStatus::MISSING_ZAPNUMBER:
-          Serial.println("Decision: Show ZapNumber setup wizard");
+          LOG("Decision: Show ZapNumber setup wizard");
           // TODO: Launch setup wizard to collect ZapNumber
           break;
           
       case NVSStatus::MISSING_PASSWORD:
-          Serial.println("Decision: Show password setup wizard");
-          Serial.printf("Using ZapNumber: %s\n", g_nvsResult.zapNumber);
+          LOG("Decision: Show password setup wizard");
+          LOGF("Using ZapNumber: %s\n", g_nvsResult.zapNumber);
           // TODO: Launch password setup wizard
           break;
           
       case NVSStatus::CRC_FAILED:
-          Serial.println("Decision: SECURITY ALERT - Data tampering detected!");
-          Serial.println("Action: Factory reset required");
+          LOG("Decision: SECURITY ALERT - Data tampering detected!");
+          LOG("Action: Factory reset required");
           // TODO: Show security warning, require factory reset
           break;
           
       case NVSStatus::INVALID_VERSION:
-          Serial.println("Decision: Version mismatch");
-          Serial.printf("NVS version %d incompatible with code version %d\n",
+          LOG("Decision: Version mismatch");
+          LOGF("NVS version %d incompatible with code version %d\n",
                        g_nvsResult.currentVersion,
                        g_nvsResult.expectedVersion);
           // TODO: Show error, offer factory reset
           break;
           
       case NVSStatus::INITIALIZATION_FAILED:
-          Serial.println("Decision: Hardware error");
+          LOG("Decision: Hardware error");
           // TODO: Show hardware error message
           break;
           
       default:
-          Serial.println("Decision: Unknown state");
+          LOG("Decision: Unknown state");
           break;
   }
-  Serial.println("=============================");
+  LOG("=============================");
 }
-
-
 
 /**
  * @brief Primary setup functions for Core0
@@ -258,9 +250,8 @@ void core0_loaderLogic() {
  * @return void
  */
 void setup() {
-    init_serial();
-    
-    Serial.println("LVGL Trial Starting...");
+    init_logger();
+    LOG("LVGL Trial Starting...");
 
     // Initialize backlight
     pinMode(GFX_BL, OUTPUT);
@@ -270,7 +261,7 @@ void setup() {
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
     
-    Serial.println("Display initialized");
+    LOG("Display initialized");
 
     /* Initialise LVGL */
     lv_init();
@@ -283,7 +274,7 @@ void setup() {
     lv_display_set_flush_cb(disp, my_disp_flush);
     lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
 
-    Serial.println("LVGL initialized");
+    LOG("LVGL initialized");
 
     // Create a simple test screen
     lv_obj_t *scr = lv_screen_active();
@@ -296,25 +287,26 @@ void setup() {
     lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
     lv_obj_center(label);
 
-    Serial.println("Test screen created");
+    LOG("Test screen created");
 
     // Initialize NVS partition - ADD THIS
     if (nvs.begin()) {
-        Serial.println("NVS initialized");
+        LOG("NVS initialized");
     } else {
-        Serial.println("Failed to initialize NVS");
+        LOG("Failed to initialize NVS");
     }    
   
     // NVS Test Step 1
     nvs.putHash("test", "abc123");
     String retrieved = nvs.getHash("test");
-    Serial.println(retrieved);
+    LOGF("Hash Test %s\n",
+        retrieved);
   
     // Step 2 Test: Hash generation and comparison
     String testData = "Hello EARS!";
     String hash = nvs.makeHash(testData);
-    Serial.print("Generated hash: ");
-    Serial.println(hash);
+    LOGF("Generated hash: %s\n",
+        hash.c_str());
     
     // Store the hash
     nvs.putHash("test_hash", hash);
@@ -322,9 +314,9 @@ void setup() {
     // Retrieve and compare
     String retrievedHash = nvs.getHash("test_hash");
     if (nvs.compareHash(testData, retrievedHash)) {
-      Serial.println("Hash verification SUCCESS!");
+      LOG("Hash verification SUCCESS!");
     } else {
-      Serial.println("Hash verification FAILED!");
+      LOG("Hash verification FAILED!");
     }
 
 

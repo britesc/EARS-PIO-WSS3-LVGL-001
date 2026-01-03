@@ -1,5 +1,6 @@
-#ifndef LOGGER_H
-#define LOGGER_H
+#pragma once
+#ifndef __LOGGER_H_
+#define __LOGGER_H_
 
 // Set to 1 for development, 0 for production
 #define EARS_DEBUG 1
@@ -43,4 +44,4 @@ class Logger {
 
 #endif // EARS_DEBUG
 
-#endif // LOGGER_H
+#endif // __LOGGER_H_
