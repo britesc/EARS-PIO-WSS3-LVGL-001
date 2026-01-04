@@ -442,12 +442,17 @@ void setup() {
 /**
  * @brief Main loop function
  * @description
- * Empty - all work is done by FreeRTOS tasks
+ * During development, this loop monitors system status.
  * @return void
  */
 void loop() {
-    // Empty - tasks handle everything
-    // This keeps running but does nothing
+    // Development monitoring
+    static uint32_t lastPrint = 0;
+    if (millis() - lastPrint > 5000) {
+        Serial.printf("[Monitor] Free heap: %d bytes\n", ESP.getFreeHeap());
+        Serial.printf("[Monitor] Running on Core: %d\n", xPortGetCoreID());
+        lastPrint = millis();
+    }
     delay(1000);
 }
 
