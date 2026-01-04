@@ -249,7 +249,6 @@ void core0_loaderLogic() {
  * Initializes Serial, Display, LVGL, and NVS.
  * @return void
  */
-void setup() {
     void setup() {
         // Just hardware - no logging yet
         pinMode(GFX_BL, OUTPUT);
@@ -277,7 +276,7 @@ void setup() {
         lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
         lv_obj_center(label);
     }
-}
+
 
 /**
  * @brief Core0 loop function
