@@ -1,3 +1,16 @@
+/**
+ * @file test_serial.cpp
+ * @author Julian (51fiftyone51fiftyone@gmail.com)
+ * @brief Test File to confirm Serial Working.
+ * @section tests Tests
+ * - Unit Tests for Functionality.
+ * @version 0.1
+ * @date 20260104
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 #include <Arduino.h>
 #include <unity.h>
 

@@ -4,7 +4,7 @@
  * @mainpage EARS Project
  *
  * @section description Description
- * EARS - Equipment and Ammunition Reporting  System.
+ * EARS - Equipment and Ammunition Reporting System.
  *
  * @section libraries Libraries
  * - GFX Library for Arduino (https://github.com/moononournation/Arduino_GFX)
@@ -250,9 +250,6 @@ void core0_loaderLogic() {
  * @return void
  */
 void setup() {
-    Serial.begin(115200);
-    delay(2000);  // Give it time
-    Serial.println("Starting...");
 
     // Initialize backlight
     pinMode(GFX_BL, OUTPUT);
@@ -262,17 +259,19 @@ void setup() {
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
 
-    init_logger();
+    // Step 3: Initialize logger AFTER hardware is ready
+    LOG_INIT("/logs/debug.log");
+    LOG("Setup started");
+    LOGF("Free memory: %d bytes", ESP.getFreeHeap());
     LOG("LVGL Trial Starting...");
-    
-    LOG("Display initialized");
+    LOG("Display initialized");    
 
     /* Initialise LVGL */
     lv_init();
   
     /*Set a tick source so that LVGL will know how much time elapsed. */
-    lv_tick_set_cb(millis_cb);
-     
+    lv_tick_set_cb(millis_cb);    
+
     // Create LVGL display
     disp = lv_display_create(screenWidth, screenHeight);
     lv_display_set_flush_cb(disp, my_disp_flush);
@@ -286,14 +285,14 @@ void setup() {
 
     // Create a label
     lv_obj_t *label = lv_label_create(scr);
-    lv_label_set_text(label, "LVGL Trial\nWorking!");
+    lv_label_set_text(label, "Hi, Julian\nThe LVGL Trial\nIs Working!");
     lv_obj_set_style_text_color(label, lv_color_hex(EARS_RGB888_WHITE), 0);
     lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
     lv_obj_center(label);
 
     LOG("Test screen created");
 
-    // Initialize NVS partition - ADD THIS
+    // Initialize NVS partition
     if (nvs.begin()) {
         LOG("NVS initialized");
     } else {
@@ -322,7 +321,6 @@ void setup() {
     } else {
       LOG("Hash verification FAILED!");
     }
-
 
 }
 
