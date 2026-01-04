@@ -3,7 +3,7 @@
 #define __LOGGER_H_
 
 // Set to 1 for development, 0 for production
-#define EARS_DEBUG 1
+#define EARS_DEBUG 0
 
 #if EARS_DEBUG
 

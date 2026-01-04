@@ -250,78 +250,33 @@ void core0_loaderLogic() {
  * @return void
  */
 void setup() {
-
-    // Initialize backlight
-    pinMode(GFX_BL, OUTPUT);
-    digitalWrite(GFX_BL, HIGH);
-
-    // Initialize display
-    gfx->begin();
-    gfx->fillScreen(EARS_RGB565_BLACK);
-
-    // Step 3: Initialize logger AFTER hardware is ready
-    LOG_INIT("/logs/debug.log");
-    LOG("Setup started");
-    LOGF("Free memory: %d bytes", ESP.getFreeHeap());
-    LOG("LVGL Trial Starting...");
-    LOG("Display initialized");    
-
-    /* Initialise LVGL */
-    lv_init();
-  
-    /*Set a tick source so that LVGL will know how much time elapsed. */
-    lv_tick_set_cb(millis_cb);    
-
-    // Create LVGL display
-    disp = lv_display_create(screenWidth, screenHeight);
-    lv_display_set_flush_cb(disp, my_disp_flush);
-    lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
-
-    LOG("LVGL initialized");
-
-    // Create a simple test screen
-    lv_obj_t *scr = lv_screen_active();
-    lv_obj_set_style_bg_color(scr, lv_color_hex(EARS_RGB888_BLACK), 0);
-
-    // Create a label
-    lv_obj_t *label = lv_label_create(scr);
-    lv_label_set_text(label, "Hi, Julian\nThe LVGL Trial\nIs Working!");
-    lv_obj_set_style_text_color(label, lv_color_hex(EARS_RGB888_WHITE), 0);
-    lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
-    lv_obj_center(label);
-
-    LOG("Test screen created");
-
-    // Initialize NVS partition
-    if (nvs.begin()) {
-        LOG("NVS initialized");
-    } else {
-        LOG("Failed to initialize NVS");
-    }    
-  
-    // NVS Test Step 1
-    nvs.putHash("test", "abc123");
-    String retrieved = nvs.getHash("test");
-    LOGF("Hash Test %s\n",
-        retrieved);
-  
-    // Step 2 Test: Hash generation and comparison
-    String testData = "Hello EARS!";
-    String hash = nvs.makeHash(testData);
-    LOGF("Generated hash: %s\n",
-        hash.c_str());
+    void setup() {
+        // Just hardware - no logging yet
+        pinMode(GFX_BL, OUTPUT);
+        digitalWrite(GFX_BL, HIGH);
     
-    // Store the hash
-    nvs.putHash("test_hash", hash);
+        // Display only
+        gfx->begin();
+        gfx->fillScreen(EARS_RGB565_BLACK);
     
-    // Retrieve and compare
-    String retrievedHash = nvs.getHash("test_hash");
-    if (nvs.compareHash(testData, retrievedHash)) {
-      LOG("Hash verification SUCCESS!");
-    } else {
-      LOG("Hash verification FAILED!");
+        // LVGL only
+        lv_init();
+        lv_tick_set_cb(millis_cb);
+         
+        disp = lv_display_create(screenWidth, screenHeight);
+        lv_display_set_flush_cb(disp, my_disp_flush);
+        lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
+    
+        // Simple test screen
+        lv_obj_t *scr = lv_screen_active();
+        lv_obj_set_style_bg_color(scr, lv_color_hex(EARS_RGB888_BLACK), 0);
+    
+        lv_obj_t *label = lv_label_create(scr);
+        lv_label_set_text(label, "LVGL Works!");
+        lv_obj_set_style_text_color(label, lv_color_hex(EARS_RGB888_WHITE), 0);
+        lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
+        lv_obj_center(label);
     }
-
 }
 
 /**

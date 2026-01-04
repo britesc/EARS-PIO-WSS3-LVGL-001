@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['namespace_0',['NAMESPACE',['../class_n_v_s_eeprom.html#a554e378a0a7b0db565388829f1a80baf',1,'NVSEeprom']]],
-  ['nvs_1',['nvs',['../main_8cpp.html#a27a476ad412f1de3b2626865c6b4114d',1,'main.cpp']]]
+  ['expectedversion_0',['expectedVersion',['../struct_n_v_s_validation_result.html#a9d715b64c60ebfdd596cb993376d5a70',1,'NVSValidationResult']]]
 ];

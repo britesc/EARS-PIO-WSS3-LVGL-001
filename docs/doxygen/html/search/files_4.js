@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nvseeprom_2ecpp_0',['NVSEeprom.cpp',['../_n_v_s_eeprom_8cpp.html',1,'']]],
-  ['nvseeprom_2eh_1',['NVSEeprom.h',['../_n_v_s_eeprom_8h.html',1,'']]]
+  ['rgb565_5fcolors_2eh_0',['RGB565_COLORS.h',['../_r_g_b565___c_o_l_o_r_s_8h.html',1,'']]],
+  ['rgb888_5fcolors_2eh_1',['RGB888_COLORS.h',['../_r_g_b888___c_o_l_o_r_s_8h.html',1,'']]]
 ];

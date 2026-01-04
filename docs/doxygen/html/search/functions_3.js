@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_5fserial_0',['init_serial',['../main_8cpp.html#acfb6f6d615183fc2f71e79dfbadfe27d',1,'main.cpp']]]
+  ['flush_0',['flush',['../class_logger.html#a5cc08473729523bb4bde48459f2ac468',1,'Logger']]]
 ];

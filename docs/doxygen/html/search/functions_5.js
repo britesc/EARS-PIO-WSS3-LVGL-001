@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['makehash_0',['makeHash',['../class_n_v_s_eeprom.html#a285429d51617be34f87920bdd156a0ed',1,'NVSEeprom']]],
-  ['millis_5fcb_1',['millis_cb',['../main_8cpp.html#aedc59dea91554dea6db97f21f51fd69b',1,'main.cpp']]],
-  ['my_5fdisp_5fflush_2',['my_disp_flush',['../main_8cpp.html#aeb891cadacdbb7142c387b4232fc412d',1,'main.cpp']]]
+  ['init_0',['init',['../class_logger.html#aaf66139697e95de78b455a276c08942a',1,'Logger']]],
+  ['init_5flogger_1',['init_logger',['../main_8cpp.html#ab3d0e9567cfad5d6f83abc585beb520d',1,'main.cpp']]],
+  ['isvalidzapnumber_2',['isValidZapNumber',['../class_n_v_s_eeprom.html#a91f87689d6047a917f5a2973b6889ed0',1,'NVSEeprom']]]
 ];

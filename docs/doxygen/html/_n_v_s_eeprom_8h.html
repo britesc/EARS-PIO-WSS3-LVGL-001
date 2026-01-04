@@ -114,17 +114,33 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:NVSValidationResult" id="r_NVSValidationResult"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_s_validation_result.html">NVSValidationResult</a></td></tr>
 <tr class="memitem:NVSEeprom" id="r_NVSEeprom"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_v_s_eeprom.html">NVSEeprom</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVS EEPROM wrapper class @description This class provides a simple interface for storing and retrieving data.  <a href="class_n_v_s_eeprom.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a7c4c9eaf59a39703af70805f21e28906" id="r_a7c4c9eaf59a39703af70805f21e28906"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c4c9eaf59a39703af70805f21e28906">__NVSEEPROM_H_</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a636ea3dd5ee036c2a70fe68ce10dcad9" id="r_a636ea3dd5ee036c2a70fe68ce10dcad9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NOT_CHECKED</a> = 0
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">VALID</a> = 1
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">INVALID_VERSION</a> = 2
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">MISSING_ZAPNUMBER</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">MISSING_PASSWORD</a> = 4
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">CRC_FAILED</a> = 5
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">UPGRADED</a> = 6
+, <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">INITIALIZATION_FAILED</a> = 7
+<br />
+ }</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>NVS EEPROM wrapper class header. </p>
 <dl class="section author"><dt>Author</dt><dd>Julian (<a href="#" onclick="location.href='mai'+'lto:'+'51f'+'if'+'tyo'+'ne'+'51f'+'if'+'tyo'+'ne'+'@gm'+'ai'+'l.c'+'om'; return false;">51fif<span class="obfuscator">.nosp@m.</span>tyon<span class="obfuscator">.nosp@m.</span>e51fi<span class="obfuscator">.nosp@m.</span>ftyo<span class="obfuscator">.nosp@m.</span>ne@gm<span class="obfuscator">.nosp@m.</span>ail.<span class="obfuscator">.nosp@m.</span>com</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>20251229</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 
@@ -144,6 +160,59 @@ Macros</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00013">13</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
 
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="a636ea3dd5ee036c2a70fe68ce10dcad9" name="a636ea3dd5ee036c2a70fe68ce10dcad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9">&#9670;&#160;</a></span>NVSStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588" name="a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588"></a>NOT_CHECKED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea" name="a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea"></a>VALID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f" name="a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f"></a>INVALID_VERSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529" name="a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529"></a>MISSING_ZAPNUMBER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8" name="a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8"></a>MISSING_PASSWORD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc" name="a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc"></a>CRC_FAILED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6" name="a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6"></a>UPGRADED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf" name="a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf"></a>INITIALIZATION_FAILED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00026">26</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                     : uint8_t {</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NOT_CHECKED</a> = 0,</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">VALID</a> = 1,</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">INVALID_VERSION</a> = 2,</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">MISSING_ZAPNUMBER</a> = 3,</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">MISSING_PASSWORD</a> = 4,</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">CRC_FAILED</a> = 5,</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">UPGRADED</a> = 6,</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">INITIALIZATION_FAILED</a> = 7</div>
+<div class="line"><span class="lineno">   35</span>};</div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a></div><div class="ttdeci">@ MISSING_ZAPNUMBER</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00030">NVSEeprom.h:30</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a></div><div class="ttdeci">@ CRC_FAILED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00032">NVSEeprom.h:32</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a></div><div class="ttdeci">@ INVALID_VERSION</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00029">NVSEeprom.h:29</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">NVSStatus::MISSING_PASSWORD</a></div><div class="ttdeci">@ MISSING_PASSWORD</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00031">NVSEeprom.h:31</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">NVSStatus::UPGRADED</a></div><div class="ttdeci">@ UPGRADED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00033">NVSEeprom.h:33</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a></div><div class="ttdeci">@ VALID</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00028">NVSEeprom.h:28</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a></div><div class="ttdeci">@ NOT_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00027">NVSEeprom.h:27</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf"><div class="ttname"><a href="#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a></div><div class="ttdeci">@ INITIALIZATION_FAILED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00034">NVSEeprom.h:34</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
