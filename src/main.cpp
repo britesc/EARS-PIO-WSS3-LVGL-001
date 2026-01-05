@@ -167,7 +167,7 @@ void updateStatus(const char* message) {
  * @param parameter Task parameters (unused)
  */
 void Core0_NVSValidation(void* parameter) {
-    Serial.println("[Core 0] NVS Validation Task Started");
+    LOG("[Core 0] NVS Validation Task Started");
     
     // Simulate some validation steps with status updates
     updateStatus("Checking NVS...");
@@ -182,7 +182,7 @@ void Core0_NVSValidation(void* parameter) {
         vTaskDelete(NULL);
         return;
     }
-    Serial.println("[Core 0] NVS Initialized");
+    LOG("[Core 0] NVS Initialized");
     delay(500);
     
     // Step 2: Validate entire NVS
@@ -191,62 +191,63 @@ void Core0_NVSValidation(void* parameter) {
     delay(500);
     
     // Step 3: Report results
-    Serial.println("=== Core 0 NVS Validation Results ===");
-    Serial.print("Status: ");
+    LOG("=== Core 0 NVS Validation Results ===");
+    LOG("Status: ");
     
     switch (g_nvsResult.status) {
         case NVSStatus::VALID:
-            Serial.println("VALID");
+            LOG("VALID");
             updateStatus("Validation: PASSED");
             break;
         case NVSStatus::UPGRADED:
-            Serial.println("UPGRADED");
+            LOG("UPGRADED");
             updateStatus("Validation: UPGRADED");
             break;
         case NVSStatus::INVALID_VERSION:
-            Serial.println("INVALID_VERSION");
+            LOG("INVALID_VERSION");
             updateStatus("Validation: BAD VERSION");
             break;
         case NVSStatus::MISSING_ZAPNUMBER:
-            Serial.println("MISSING_ZAPNUMBER");
+            LOG("MISSING_ZAPNUMBER");
             updateStatus("Setup Required");
             break;
         case NVSStatus::MISSING_PASSWORD:
-            Serial.println("MISSING_PASSWORD");
+            LOG("MISSING_PASSWORD");
             updateStatus("Password Required");
             break;
         case NVSStatus::CRC_FAILED:
-            Serial.println("CRC_FAILED - TAMPERING DETECTED!");
+            LOG("CRC_FAILED - TAMPERING DETECTED!");
             updateStatus("SECURITY ALERT!");
             break;
         case NVSStatus::INITIALIZATION_FAILED:
-            Serial.println("INITIALIZATION_FAILED");
+            LOG("INITIALIZATION_FAILED");
             updateStatus("Hardware Error");
             break;
         default:
-            Serial.println("NOT_CHECKED");
+            LOG("NOT_CHECKED");
             updateStatus("Unknown Status");
+            break;
     }
     
-    Serial.printf("Version: Current=%d, Expected=%d\n", 
+    LOGF("Version: Current=%d, Expected=%d", 
                 g_nvsResult.currentVersion, 
                 g_nvsResult.expectedVersion);
-    Serial.printf("ZapNumber: Valid=%d, Value=%s\n", 
+    LOGF("ZapNumber: Valid=%d, Value=%s", 
                     g_nvsResult.zapNumberValid, 
                     g_nvsResult.zapNumber);
-    Serial.printf("Password: Valid=%d\n", g_nvsResult.passwordHashValid);        
-    Serial.printf("CRC: Valid=%d, Value=0x%08X\n", 
+    LOGF("Password: Valid=%d", g_nvsResult.passwordHashValid);        
+    LOGF("CRC: Valid=%d, Value=0x%08X", 
                   g_nvsResult.crcValid, 
                   g_nvsResult.calculatedCRC);
-    Serial.printf("Upgraded: %d\n", g_nvsResult.wasUpgraded);
-    Serial.println("====================================");
+    LOGF("Upgraded: %d", g_nvsResult.wasUpgraded);
+    LOG("====================================");
     
     delay(1000); // Show final status for 1 second
     
     // Mark validation as complete
     validationComplete = true;
     
-    Serial.println("[Core 0] Validation Complete - Task Ending");
+    LOG("[Core 0] Validation Complete - Task Ending");
     
     // Task complete, delete itself
     vTaskDelete(NULL);
@@ -258,41 +259,41 @@ void Core0_NVSValidation(void* parameter) {
  * Called after validation completes to determine next action
  */
 void core0_loaderLogic() {
-    Serial.println("=== Loader Decision ===");
+    LOG("=== Loader Decision ===");
     
     // Make decisions based on validation results
     switch (g_nvsResult.status) {
         case NVSStatus::VALID:
         case NVSStatus::UPGRADED:
-            Serial.println("Decision: Proceed to login screen");
-            Serial.printf("ZapNumber: %s\n", g_nvsResult.zapNumber);
+            LOG("Decision: Proceed to login screen");
+            LOGF("ZapNumber: %s", g_nvsResult.zapNumber);
             updateStatus("Ready - Login");
             // TODO: Show login screen, validate password
             break;
             
         case NVSStatus::MISSING_ZAPNUMBER:
-            Serial.println("Decision: Show ZapNumber setup wizard");
+            LOG("Decision: Show ZapNumber setup wizard");
             updateStatus("Setup: ZapNumber");
             // TODO: Launch setup wizard to collect ZapNumber
             break;
             
         case NVSStatus::MISSING_PASSWORD:
-            Serial.println("Decision: Show password setup wizard");
-            Serial.printf("Using ZapNumber: %s\n", g_nvsResult.zapNumber);
+            LOG("Decision: Show password setup wizard");
+            LOGF("Using ZapNumber: %s", g_nvsResult.zapNumber);
             updateStatus("Setup: Password");
             // TODO: Launch password setup wizard
             break;
             
         case NVSStatus::CRC_FAILED:
-            Serial.println("Decision: SECURITY ALERT - Data tampering detected!");
-            Serial.println("Action: Factory reset required");
+            LOG("Decision: SECURITY ALERT - Data tampering detected!");
+            LOG("Action: Factory reset required");
             updateStatus("Factory Reset Needed");
             // TODO: Show security warning, require factory reset
             break;
             
         case NVSStatus::INVALID_VERSION:
-            Serial.println("Decision: Version mismatch");
-            Serial.printf("NVS version %d incompatible with code version %d\n",
+            LOG("Decision: Version mismatch");
+            LOGF("NVS version %d incompatible with code version %d",
                          g_nvsResult.currentVersion,
                          g_nvsResult.expectedVersion);
             updateStatus("Version Mismatch");
@@ -300,17 +301,17 @@ void core0_loaderLogic() {
             break;
             
         case NVSStatus::INITIALIZATION_FAILED:
-            Serial.println("Decision: Hardware error");
+            LOG("Decision: Hardware error");
             updateStatus("Hardware Error");
             // TODO: Show hardware error message
             break;
             
         default:
-            Serial.println("Decision: Unknown state");
+            LOG("Decision: Unknown state");
             updateStatus("Unknown State");
             break;
     }
-    Serial.println("========================");
+    LOG("========================");
 }
 
 /**
@@ -321,7 +322,7 @@ void core0_loaderLogic() {
  * @param parameter Task parameters (unused)
  */
 void Core1_DisplayHandler(void* parameter) {
-    Serial.println("[Core 1] Display Handler Task Started");
+    LOG("[Core 1] Display Handler Task Started");
     
     while (true) {
         // Handle LVGL timer
@@ -342,7 +343,7 @@ void Core1_DisplayHandler(void* parameter) {
             core0_loaderLogic();
             
             // End this task as validation phase is done
-            Serial.println("[Core 1] Display task ending - validation complete");
+            LOG("[Core 1] Display task ending - validation complete");
             vTaskDelete(NULL);
             return;
         }
@@ -360,11 +361,15 @@ void Core1_DisplayHandler(void* parameter) {
  * @return void
  */
 void setup() {
-    // Initialize Serial for debugging
+    // Initialize Serial for debugging (keep for emergency fallback)
     Serial.begin(115200);
     delay(1000);
-    Serial.println("\n\n=== EARS Dual-Core System Starting ===");
-    Serial.printf("Setup running on Core: %d\n", xPortGetCoreID());
+    
+    // Initialize Logger first
+    init_logger();
+    
+    LOG("\n\n=== EARS Dual-Core System Starting ===");
+    LOGF("Setup running on Core: %d", xPortGetCoreID());
     
     // Create mutex for display synchronization
     displayMutex = xSemaphoreCreateMutex();
@@ -372,26 +377,26 @@ void setup() {
     // Step 1: Initialize backlight
     pinMode(GFX_BL, OUTPUT);
     digitalWrite(GFX_BL, HIGH);
-    Serial.println("Backlight: ON");
+    LOG("Backlight: ON");
     
     // Step 2: Initialize display
-    Serial.println("Initializing display...");
+    LOG("Initializing display...");
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
-    Serial.println("Display: Initialized");
+    LOG("Display: Initialized");
     
     // Step 3: Initialize LVGL
-    Serial.println("Initializing LVGL...");
+    LOG("Initializing LVGL...");
     lv_init();
     lv_tick_set_cb(millis_cb);
      
     disp = lv_display_create(screenWidth, screenHeight);
     lv_display_set_flush_cb(disp, my_disp_flush);
     lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
-    Serial.println("LVGL: Initialized");
+    LOG("LVGL: Initialized");
     
     // Step 4: Create loading screen with spinner
-    Serial.println("Creating loading screen...");
+    LOG("Creating loading screen...");
     lv_obj_t *scr = lv_screen_active();
     lv_obj_set_style_bg_color(scr, lv_color_hex(EARS_RGB888_BLACK), 0);
     
@@ -408,10 +413,10 @@ void setup() {
     lv_obj_set_style_text_font(status_label, &lv_font_montserrat_16, 0);
     lv_obj_align(status_label, LV_ALIGN_CENTER, 0, 60);
     
-    Serial.println("Loading screen: Created");
+    LOG("Loading screen: Created");
     
     // Step 5: Create Core 0 task for NVS validation
-    Serial.println("Creating Core 0 validation task...");
+    LOG("Creating Core 0 validation task...");
     xTaskCreatePinnedToCore(
         Core0_NVSValidation,      // Task function
         "NVS_Validation",         // Name
@@ -423,7 +428,7 @@ void setup() {
     );
     
     // Step 6: Create Core 1 task for display handling
-    Serial.println("Creating Core 1 display task...");
+    LOG("Creating Core 1 display task...");
     xTaskCreatePinnedToCore(
         Core1_DisplayHandler,     // Task function
         "Display_Handler",        // Name
@@ -434,9 +439,9 @@ void setup() {
         1                         // Core 1
     );
     
-    Serial.println("=== Setup Complete ===");
-    Serial.println("Core 0: Running NVS validation");
-    Serial.println("Core 1: Running display animation\n");
+    LOG("=== Setup Complete ===");
+    LOG("Core 0: Running NVS validation");
+    LOG("Core 1: Running display animation\n");
 }
 
 /**
@@ -449,8 +454,8 @@ void loop() {
     // Development monitoring
     static uint32_t lastPrint = 0;
     if (millis() - lastPrint > 5000) {
-        Serial.printf("[Monitor] Free heap: %d bytes\n", ESP.getFreeHeap());
-        Serial.printf("[Monitor] Running on Core: %d\n", xPortGetCoreID());
+        LOGF("[Monitor] Free heap: %d bytes", ESP.getFreeHeap());
+        LOGF("[Monitor] Running on Core: %d", xPortGetCoreID());
         lastPrint = millis();
     }
     delay(1000);
