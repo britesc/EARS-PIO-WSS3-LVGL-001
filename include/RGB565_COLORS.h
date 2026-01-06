@@ -41,6 +41,14 @@
 #define EARS_RGB565_MAROON      0x7800  // 128,   0,   0
 #define EARS_RGB565_OLIVE       0x7BE0  // 128, 128,   0
 
+// Camouflage Swatch
+
+#define EARS_RGB565_AS_BROWN1	0x6227  //  96,  68,  57
+#define EARS_RGB565_AS_TAN		0x9CCE  // 158, 154, 117
+#define EARS_RGB565_AS_BLACK	0x1906  //  28,  34,  46
+#define EARS_RGB565_AS_GREEN	0x42A7  //  65,  83,  59
+#define EARS_RGB565_AS_BROWN2	0x5248  //  85,  72,  64
+
 // Utility macro to convert RGB888 to EARS_RGB565
 #define RGB888_TO_EARS_RGB565(r, g, b) \
     ((((r) & 0xF8) << 8) | (((g) & 0xFC) << 3) | (((b) & 0xF8) >> 3))
