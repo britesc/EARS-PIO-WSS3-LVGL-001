@@ -395,53 +395,6 @@ NVSValidationResult NVSEeprom::validateNVS() {
     return result;
 }
 
-/**
- * @brief Get ZapNumber from NVS
- * 
- * @return String The stored ZapNumber or empty string if not found
- */
-String NVSEeprom::getZapNumber() {
-    // Open namespace in read-only mode
-    if (!Preferences::begin(NAMESPACE, true)) {
-        return "";
-    }
-    
-    String zapNumber = getString(KEY_ZAPNUMBER, "");
-    end();
-    
-    return zapNumber;
-}
-
-/**
- * @brief Set ZapNumber in NVS
- * 
- * @param zapNumber The ZapNumber to store (format: AANNNN)
- * @return true if successful
- * @return false if invalid format or write failed
- */
-bool NVSEeprom::setZapNumber(const String& zapNumber) {
-    // Validate format first
-    if (!isValidZapNumber(zapNumber)) {
-        return false;
-    }
-    
-    // Open namespace in read-write mode
-    if (!Preferences::begin(NAMESPACE, false)) {
-        return false;
-    }
-    
-    // Store in NVS
-    size_t result = putString(KEY_ZAPNUMBER, zapNumber);
-    end();
-    
-    if (result == 0) {
-        return false;
-    }
-    
-    // Update CRC after successful write
-    return updateNVSCRC();
-}
-
 /******************************************************************************
  * End of File
- ******************************************************************************/
+ *****************************************************************************/

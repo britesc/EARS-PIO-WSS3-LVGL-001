@@ -104,10 +104,6 @@ public:
     
     // NEW: ZapNumber validation
     bool isValidZapNumber(const String& zapNumber);
-    
-    // ZapNumber management
-    String getZapNumber();
-    bool setZapNumber(const String& zapNumber);
 
 private:
     // NVS Namespace
