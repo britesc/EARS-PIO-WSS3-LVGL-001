@@ -8,8 +8,22 @@
 #define LV_COLOR_16_SWAP 0
 
 /* Memory settings */
-#define LV_MEM_CUSTOM 0
-#define LV_MEM_SIZE (128U * 1024U)
+//#define LV_MEM_CUSTOM 0
+#define LV_MEM_CUSTOM 1
+//#define LV_MEM_SIZE (128U * 1024U)
+#define LV_MEM_SIZE  (48 * 1024U)  // Can be smaller now since using PSRAM
+
+// Then add or modify this section:
+#if LV_MEM_CUSTOM == 1
+    #define LV_MEM_CUSTOM_INCLUDE <stdlib.h>
+    #define LV_MEM_CUSTOM_ALLOC   heap_caps_malloc
+    #define LV_MEM_CUSTOM_FREE    heap_caps_free
+    #define LV_MEM_CUSTOM_REALLOC heap_caps_realloc
+    
+    // Add this line:
+    #define LV_MEM_CUSTOM_ALLOC_PARAM   MALLOC_CAP_SPIRAM
+#endif
+
 
 /* Display settings */
 #define LV_DPI_DEF 130
