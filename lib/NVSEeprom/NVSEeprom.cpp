@@ -2,7 +2,7 @@
  * @file NVSEeprom.cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class implementation
- * @version 0.2
+ * @version 1.0.0
  * @date 20251229
  * 
  * @copyright Copyright (c) 2025

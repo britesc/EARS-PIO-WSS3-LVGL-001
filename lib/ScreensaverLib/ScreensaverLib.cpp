@@ -1,3 +1,14 @@
+/**
+ * @file ScreensaverLib.cpp
+ * @author Julian (51fiftyone51fiftyone@gmail.com)
+ * @brief 
+ * @version 1.0.0
+ * @date 20260107
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 #include "ScreensaverLib.h"
 
 // Constructor

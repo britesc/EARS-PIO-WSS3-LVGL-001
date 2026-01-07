@@ -262,7 +262,7 @@ private:
 #define LOG_ERRORF(fmt, ...) Logger::getInstance().errorf(fmt, __VA_ARGS__)
 
 // Legacy macros for backward compatibility (map to INFO level)
-#define LOG_INIT(path) Logger::getInstance().begin(path, "/config/ears.config", &sdCard)
+#define LOG_INIT(path, sd) Logger::getInstance().begin(path, "/config/ears.config", sd)
 #define LOG(msg) Logger::getInstance().info(msg)
 #define LOGF(fmt, ...) Logger::getInstance().infof(fmt, __VA_ARGS__)
 

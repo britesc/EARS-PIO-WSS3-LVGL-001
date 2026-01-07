@@ -50,6 +50,7 @@
 #include "RGB888_COLORS.h"
 #include "NVSEeprom.h"
 #include "Logger.h"
+#include "SDCard.h"
 
 /******************************************************************************
  * Start of Object Declarations 
@@ -92,6 +93,12 @@ NVSValidationResult g_nvsResult;
 
 // Global NVS instance
 NVSEeprom nvs;
+
+/******************************************************************************
+ * SD Card object
+ *****************************************************************************/
+// Global SD Card instance
+ SDCard sdCard;
 
 /******************************************************************************
  * Task Handles for Core Management
@@ -140,7 +147,7 @@ uint32_t millis_cb(void) {
  * 
  */
 void init_logger() {
-    LOG_INIT("/logs/debug.log");
+    LOG_INIT("/logs/debug.log", &sdCard);
     LOG("Setup started.");
     LOGF("Free memory: %d bytes", ESP.getFreeHeap());
 }
