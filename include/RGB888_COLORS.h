@@ -42,7 +42,6 @@
 #define EARS_RGB888_OLIVE       0x808000  // 128, 128,   0
 
 // Camouflage Swatch
-
 #define EARS_RGB888_AS_BROWN1	0x604439  //  96,  68,  57
 #define EARS_RGB888_AS_TAN		0x9E9A75  // 158, 154, 117
 #define EARS_RGB888_AS_BLACK	0x1C222E  //  28,  34,  46
