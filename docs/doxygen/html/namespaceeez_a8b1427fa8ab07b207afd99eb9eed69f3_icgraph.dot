@@ -1,0 +1,21 @@
+digraph "eez::getDerivedUnit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::getDerivedUnit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::findDerivedUnit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#ab25041acc742a9adc7d980df19c62e47",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::DOUBLE_value_to_text",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#af1bf2251b1b2faff3c006afe819bb231",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::FLOAT_value_to_text",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a0e6bd7033f7e35c2461d45cd2cf051e5",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="eez::getBiggestUnit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a16ff1db60561361297a2358ae3b792ab",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez::getSmallerUnit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a14c3eec9b5bbbe1099ce506006c65306",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="eez::getSmallestUnit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a83c9398f825fb0956e619844f48255c7",tooltip=" "];
+}

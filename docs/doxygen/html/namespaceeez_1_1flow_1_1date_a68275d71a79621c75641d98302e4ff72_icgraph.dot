@@ -1,0 +1,30 @@
+digraph "eez::flow::date::makeDate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::flow::date::makeDate",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::flow::do_OPERATION\l_TYPE_DATE_MAKE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#af66a67d8fb7c456828e052093ba0f726",tooltip=" "];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge3_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::flow::date::fromString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a454a27a8b0a8f21a80dbbbc847b17703",tooltip=" "];
+  Node3 -> Node4 [id="edge4_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::flow::do_OPERATION\l_TYPE_DATE_FROM_STRING",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#af3b71d4f3e536d332256ddddef2e2d4c",tooltip=" "];
+  Node4 -> Node4 [id="edge5_Node000004_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge6_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="eez::flow::date::timeChange\lRuleToLocal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a2548266d2fc53c0b1adf355a9131710e",tooltip=" "];
+  Node5 -> Node6 [id="edge7_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez::flow::date::isDst",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a86fed1dab8f2b97c56db528ac6555c68",tooltip=" "];
+  Node6 -> Node7 [id="edge8_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="eez::flow::date::localToUtc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#abf9534c05226dcbe2248157c01b48944",tooltip=" "];
+  Node6 -> Node8 [id="edge9_Node000006_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="eez::flow::date::utcToLocal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a9b21f8ab3955f387b8238af68794b4a7",tooltip=" "];
+  Node8 -> Node9 [id="edge10_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="eez::flow::date::now",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#ac52f0a580591913b2c3bc92a7a0428c3",tooltip=" "];
+  Node9 -> Node10 [id="edge11_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="eez::flow::do_OPERATION\l_TYPE_DATE_NOW",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a87933a46e7d2671b1e310199848946d9",tooltip=" "];
+  Node10 -> Node10 [id="edge12_Node000010_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

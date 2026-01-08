@@ -11,12 +11,14 @@ digraph "NVSEeprom::calculateCRC32"
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="NVSEeprom::updateNVSCRC",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a481712cc4e4593cb30ead4b3b02f6310",tooltip="Update the stored NVS CRC32 value."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="NVSEeprom::upgradeNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a392eba0f37f363c1cf04f354c0363969",tooltip="Upgrade NVS from one version to another."];
-  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="NVSEeprom::validateNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a9ef62caff8a30f2a17cd6df03775102c",tooltip="Validate entire NVS storage."];
-  Node2 -> Node5 [id="edge5_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node6 [id="edge6_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="NVSEeprom::makeHash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a285429d51617be34f87920bdd156a0ed",tooltip="Generate CRC32 hash from data."];
-  Node6 -> Node7 [id="edge7_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="NVSEeprom::compareHash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#aa50b95369856aeff3ca4a219d2e02dd8",tooltip="Compare data against stored hash."];
+  Node4 [id="Node000004",label="NVSEeprom::setZapNumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a3d935636c002ab4c658f32a7abc8ec4a",tooltip="Set ZapNumber in NVS."];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="NVSEeprom::upgradeNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a392eba0f37f363c1cf04f354c0363969",tooltip="Upgrade NVS from one version to another."];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="NVSEeprom::validateNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a9ef62caff8a30f2a17cd6df03775102c",tooltip="Validate entire NVS storage."];
+  Node2 -> Node6 [id="edge6_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge7_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="NVSEeprom::makeHash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a285429d51617be34f87920bdd156a0ed",tooltip="Generate CRC32 hash from data."];
+  Node7 -> Node8 [id="edge8_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="NVSEeprom::compareHash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#aa50b95369856aeff3ca4a219d2e02dd8",tooltip="Compare data against stored hash."];
 }

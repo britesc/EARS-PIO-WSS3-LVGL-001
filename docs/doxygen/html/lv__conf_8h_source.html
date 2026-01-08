@@ -102,59 +102,73 @@ $(function(){initNavTree('lv__conf_8h_source.html','',''); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a322a97e9b4376aa58b0158c50171b9f8">    8</a></span><span class="preprocessor">#define LV_COLOR_16_SWAP 0</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/* Memory settings */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a77bde977fddc70ca0fd99775170e2294">   11</a></span><span class="preprocessor">#define LV_MEM_CUSTOM 0</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aeff108006de09a570aac88c106497ed6">   12</a></span><span class="preprocessor">#define LV_MEM_SIZE (128U * 1024U)</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/* Display settings */</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">   15</a></span><span class="preprocessor">#define LV_DPI_DEF 130</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/* Feature usage */</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a83a5f331fbf9c993ee61f2e0e2fdcc59">   18</a></span><span class="preprocessor">#define LV_USE_PERF_MONITOR 1</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aed77b5db413b3852f5ad654f04f1250a">   19</a></span><span class="preprocessor">#define LV_USE_MEM_MONITOR 1</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/* CRITICAL: Disable ARM-specific optimizations for ESP32 */</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a77ca6011662d42cebadc41134efda87f">   22</a></span><span class="preprocessor">#define LV_USE_DRAW_SW_ASM LV_DRAW_SW_ASM_NONE</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/* Enable filesystem support for SD card images */</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ad229a30c5f679f8e608a491f098dec24">   25</a></span><span class="preprocessor">#define LV_USE_FS_STDIO 1</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a14b31a71950ef946e637577dc0ac2a9a">   26</a></span><span class="preprocessor">#define LV_FS_STDIO_LETTER &#39;S&#39;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ab9f9873c891004cc388fc11cc8f478da">   27</a></span><span class="preprocessor">#define LV_FS_STDIO_PATH &quot;/sd&quot;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a049bff778b46ae45641f4cca9e198e16">   28</a></span><span class="preprocessor">#define LV_FS_STDIO_CACHE_SIZE 0</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/* Image decoder - enable PNG and BMP */</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aa204c68978c64a659c43618f9113fef8">   31</a></span><span class="preprocessor">#define LV_USE_BMP 1</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aa5ab5053c7c516c234f3af8cec87efac">   32</a></span><span class="preprocessor">#define LV_USE_PNG 1</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a1a7272048f176c8b87966194933cc2bd">   33</a></span><span class="preprocessor">#define LV_USE_SJPG 1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//#define LV_MEM_CUSTOM 0</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a77bde977fddc70ca0fd99775170e2294">   12</a></span><span class="preprocessor">#define LV_MEM_CUSTOM 1</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//#define LV_MEM_SIZE (128U * 1024U)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aeff108006de09a570aac88c106497ed6">   14</a></span><span class="preprocessor">#define LV_MEM_SIZE  (48 * 1024U)  </span><span class="comment">// Can be smaller now since using PSRAM</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// Then add or modify this section:</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#if LV_MEM_CUSTOM == 1</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#abc960f7a5291b9edd92f83291193554d">   18</a></span><span class="preprocessor">    #define LV_MEM_CUSTOM_INCLUDE &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ae82379ffa09d30f6f9628a235ba39ff3">   19</a></span><span class="preprocessor">    #define LV_MEM_CUSTOM_ALLOC   heap_caps_malloc</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a5bf3721a2acd5718964c6055efe6dd73">   20</a></span><span class="preprocessor">    #define LV_MEM_CUSTOM_FREE    heap_caps_free</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aa4a5b99e362dafe1fb42c18111d915a8">   21</a></span><span class="preprocessor">    #define LV_MEM_CUSTOM_REALLOC heap_caps_realloc</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Add this line:</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac423953cfc70ee632703d374c80b9696">   24</a></span><span class="preprocessor">    #define LV_MEM_CUSTOM_ALLOC_PARAM   MALLOC_CAP_SPIRAM</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/* Display settings */</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">   29</a></span><span class="preprocessor">#define LV_DPI_DEF 130</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/* Feature usage */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a83a5f331fbf9c993ee61f2e0e2fdcc59">   32</a></span><span class="preprocessor">#define LV_USE_PERF_MONITOR 1</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aed77b5db413b3852f5ad654f04f1250a">   33</a></span><span class="preprocessor">#define LV_USE_MEM_MONITOR 1</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Font support - ENABLE MONTSERRAT FONTS */</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac97836d54b3ffcde135728ec6f8ad344">   36</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_8  0</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a7c7302f07131fdae323615a905345e25">   37</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_10 0</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a3bbe5045ec263fad01d7104de7fc77be">   38</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_12 0</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a79cdb1f92e25cf5e3f611ef4ce07e9c2">   39</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_14 1</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac8f7334df9da9e301fa91c64d62b5b8e">   40</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_16 1</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a8f2ef0967e43802ac36522885e1dd3f1">   41</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_18 0</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#af03109d8293eb9e7e99b3675821f8963">   42</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_20 1</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a590c2f28e800a40bca99dcca6959e852">   43</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_22 0</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a920553c1d0f77482f14f1ef331683bfe">   44</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_24 0</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a50d897f0ef6c94eecd4bafbf4e9f963b">   45</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_26 0</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#adb83bd553b8db5973d467ef827b39b8b">   46</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_28 0</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a8c8c22728c19a7a2a87ed0933e5c478d">   47</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_30 0</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a70fbf2c6aab7f00a1886dca923816277">   48</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_32 0</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a2b13fb8eabe8f3fe6e8a53fea19bfe65">   49</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_34 0</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a85335a289fcb352ae39e143ec16c5141">   50</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_36 0</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a5a776d733e6b4eb5803527620e9c7fbf">   51</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_38 0</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a06993754cf3f9f91c856ed23a49cfafd">   52</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_40 0</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ae6edcf67fb721fba90b6cb8676c45801">   53</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_42 0</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#afdd89cb1aa0f3bc5dce3c08945794373">   54</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_44 0</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac9995d7ccf72ee0ae188df9197629905">   55</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_46 0</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aedabba4da43252235fe602e42cd28832">   56</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_48 0</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/* Logging */</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ad17238861ec699b517a2fbe273d3013c">   59</a></span><span class="preprocessor">#define LV_USE_LOG 1</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a32a33e8b75266521138d09e5835fbe00">   60</a></span><span class="preprocessor">#define LV_LOG_LEVEL LV_LOG_LEVEL_INFO</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a6cd7f9570faa70ad0c5d6ac2f8ad3b1a">   61</a></span><span class="preprocessor">#define LV_LOG_PRINTF 1</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* CRITICAL: Disable ARM-specific optimizations for ESP32 */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a77ca6011662d42cebadc41134efda87f">   36</a></span><span class="preprocessor">#define LV_USE_DRAW_SW_ASM LV_DRAW_SW_ASM_NONE</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/* Enable filesystem support for SD card images */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ad229a30c5f679f8e608a491f098dec24">   39</a></span><span class="preprocessor">#define LV_USE_FS_STDIO 1</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a14b31a71950ef946e637577dc0ac2a9a">   40</a></span><span class="preprocessor">#define LV_FS_STDIO_LETTER &#39;S&#39;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ab9f9873c891004cc388fc11cc8f478da">   41</a></span><span class="preprocessor">#define LV_FS_STDIO_PATH &quot;/sd&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a049bff778b46ae45641f4cca9e198e16">   42</a></span><span class="preprocessor">#define LV_FS_STDIO_CACHE_SIZE 0</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/* Image decoder - enable PNG and BMP */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aa204c68978c64a659c43618f9113fef8">   45</a></span><span class="preprocessor">#define LV_USE_BMP 1</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aa5ab5053c7c516c234f3af8cec87efac">   46</a></span><span class="preprocessor">#define LV_USE_PNG 1</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a1a7272048f176c8b87966194933cc2bd">   47</a></span><span class="preprocessor">#define LV_USE_SJPG 1</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/* Font support - ENABLE MONTSERRAT FONTS */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac97836d54b3ffcde135728ec6f8ad344">   50</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_8  0</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a7c7302f07131fdae323615a905345e25">   51</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_10 0</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a3bbe5045ec263fad01d7104de7fc77be">   52</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_12 1</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a79cdb1f92e25cf5e3f611ef4ce07e9c2">   53</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_14 1</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac8f7334df9da9e301fa91c64d62b5b8e">   54</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_16 1</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a8f2ef0967e43802ac36522885e1dd3f1">   55</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_18 0</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#af03109d8293eb9e7e99b3675821f8963">   56</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_20 1</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a590c2f28e800a40bca99dcca6959e852">   57</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_22 0</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a920553c1d0f77482f14f1ef331683bfe">   58</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_24 1</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a50d897f0ef6c94eecd4bafbf4e9f963b">   59</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_26 0</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#adb83bd553b8db5973d467ef827b39b8b">   60</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_28 0</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a8c8c22728c19a7a2a87ed0933e5c478d">   61</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_30 0</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a70fbf2c6aab7f00a1886dca923816277">   62</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_32 0</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a2b13fb8eabe8f3fe6e8a53fea19bfe65">   63</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_34 0</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a85335a289fcb352ae39e143ec16c5141">   64</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_36 0</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a5a776d733e6b4eb5803527620e9c7fbf">   65</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_38 0</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a06993754cf3f9f91c856ed23a49cfafd">   66</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_40 0</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ae6edcf67fb721fba90b6cb8676c45801">   67</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_42 0</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#afdd89cb1aa0f3bc5dce3c08945794373">   68</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_44 0</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ac9995d7ccf72ee0ae188df9197629905">   69</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_46 0</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#aedabba4da43252235fe602e42cd28832">   70</a></span><span class="preprocessor">#define LV_FONT_MONTSERRAT_48 0</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/* Logging */</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#ad17238861ec699b517a2fbe273d3013c">   73</a></span><span class="preprocessor">#define LV_USE_LOG 1</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a32a33e8b75266521138d09e5835fbe00">   74</a></span><span class="preprocessor">#define LV_LOG_LEVEL LV_LOG_LEVEL_INFO</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="lv__conf_8h.html#a6cd7f9570faa70ad0c5d6ac2f8ad3b1a">   75</a></span><span class="preprocessor">#define LV_LOG_PRINTF 1</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

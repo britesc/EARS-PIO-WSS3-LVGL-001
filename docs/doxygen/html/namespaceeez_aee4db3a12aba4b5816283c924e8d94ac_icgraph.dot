@@ -1,0 +1,15 @@
+digraph "eez::getTheme"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::getTheme",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::getThemeColors",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a99b9983a8836be59e9f130055cbeba58",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::getThemeColorsCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a9c2c2b6032a851851524b790868aa41d",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::getThemeName",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#aa8c1b825aca4d49ef7b47fec7b3b3897",tooltip=" "];
+}

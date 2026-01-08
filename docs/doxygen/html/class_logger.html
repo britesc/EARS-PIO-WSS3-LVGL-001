@@ -93,33 +93,112 @@ $(function(){initNavTree('class_logger.html','',''); });
 </div><!--header-->
 <div class="contents">
 
+<p>Enhanced <a class="el" href="class_logger.html" title="Enhanced Logger class with hierarchical levels.">Logger</a> class with hierarchical levels.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_logger_8h_source.html">Logger.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Logger:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7046ed945557ca90bc7e4c8967856a9b" id="r_a7046ed945557ca90bc7e4c8967856a9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7046ed945557ca90bc7e4c8967856a9b">begin</a> (const char *logFilePath, const char *configFilePath, <a class="el" href="class_s_d_card.html">SDCard</a> *<a class="el" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>)</td></tr>
+<tr class="memdesc:a7046ed945557ca90bc7e4c8967856a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize logger.  <br /></td></tr>
+<tr class="memitem:a7c2769fb989bec4ea28ea1497a10a709" id="r_a7c2769fb989bec4ea28ea1497a10a709"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c2769fb989bec4ea28ea1497a10a709">isInitialized</a> () const</td></tr>
+<tr class="memdesc:a7c2769fb989bec4ea28ea1497a10a709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if logger is initialized.  <br /></td></tr>
+<tr class="memitem:abeffd58a6beace1b1c01a5324227fd83" id="r_abeffd58a6beace1b1c01a5324227fd83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeffd58a6beace1b1c01a5324227fd83">debug</a> (const char *message)</td></tr>
+<tr class="memdesc:abeffd58a6beace1b1c01a5324227fd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message at DEBUG level.  <br /></td></tr>
+<tr class="memitem:ab5bf33c14d38b92736209c86acc1d572" id="r_ab5bf33c14d38b92736209c86acc1d572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5bf33c14d38b92736209c86acc1d572">debugf</a> (const char *format,...)</td></tr>
+<tr class="memdesc:ab5bf33c14d38b92736209c86acc1d572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a formatted message at DEBUG level.  <br /></td></tr>
+<tr class="memitem:a0c5851d03ba2e560bfd57aeb713267b3" id="r_a0c5851d03ba2e560bfd57aeb713267b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a> (const char *message)</td></tr>
+<tr class="memdesc:a0c5851d03ba2e560bfd57aeb713267b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message at INFO level.  <br /></td></tr>
+<tr class="memitem:a5c58b592a174b46a17a4b34403ae3263" id="r_a5c58b592a174b46a17a4b34403ae3263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a5c58b592a174b46a17a4b34403ae3263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a formatted message at INFO level.  <br /></td></tr>
+<tr class="memitem:a7f4ad7463f49e38e80f29c9ee777ca12" id="r_a7f4ad7463f49e38e80f29c9ee777ca12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f4ad7463f49e38e80f29c9ee777ca12">warn</a> (const char *message)</td></tr>
+<tr class="memdesc:a7f4ad7463f49e38e80f29c9ee777ca12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message at WARN level.  <br /></td></tr>
+<tr class="memitem:ae31a2ccd35d9d5d7bfc6634d358366ec" id="r_ae31a2ccd35d9d5d7bfc6634d358366ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae31a2ccd35d9d5d7bfc6634d358366ec">warnf</a> (const char *format,...)</td></tr>
+<tr class="memdesc:ae31a2ccd35d9d5d7bfc6634d358366ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a formatted message at WARN level.  <br /></td></tr>
+<tr class="memitem:ac862952b8ffa9de295a496af0108785c" id="r_ac862952b8ffa9de295a496af0108785c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac862952b8ffa9de295a496af0108785c">error</a> (const char *message)</td></tr>
+<tr class="memdesc:ac862952b8ffa9de295a496af0108785c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message at ERROR level.  <br /></td></tr>
+<tr class="memitem:a7004288c4a79ffc421888877e87ba42d" id="r_a7004288c4a79ffc421888877e87ba42d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7004288c4a79ffc421888877e87ba42d">errorf</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a7004288c4a79ffc421888877e87ba42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a formatted message at ERROR level.  <br /></td></tr>
+<tr class="memitem:a00fdcdbeb39a2d5d4fb27cc36c35c101" id="r_a00fdcdbeb39a2d5d4fb27cc36c35c101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fdcdbeb39a2d5d4fb27cc36c35c101">setLogLevel</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level)</td></tr>
+<tr class="memdesc:a00fdcdbeb39a2d5d4fb27cc36c35c101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current log level.  <br /></td></tr>
+<tr class="memitem:aba945b0f037b7de27976d3a6e1a0fbbd" id="r_aba945b0f037b7de27976d3a6e1a0fbbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba945b0f037b7de27976d3a6e1a0fbbd">getLogLevel</a> () const</td></tr>
+<tr class="memdesc:aba945b0f037b7de27976d3a6e1a0fbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current log level.  <br /></td></tr>
+<tr class="memitem:a0b5a12fa4f24fe790b863ed92bfb798f" id="r_a0b5a12fa4f24fe790b863ed92bfb798f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b5a12fa4f24fe790b863ed92bfb798f">getLogLevelString</a> () const</td></tr>
+<tr class="memdesc:a0b5a12fa4f24fe790b863ed92bfb798f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get log level as string.  <br /></td></tr>
+<tr class="memitem:afcb3cb19bc1fa9d6333c42f2dde3eb5a" id="r_afcb3cb19bc1fa9d6333c42f2dde3eb5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcb3cb19bc1fa9d6333c42f2dde3eb5a">setLogLevelFromString</a> (const String &amp;levelStr)</td></tr>
+<tr class="memdesc:afcb3cb19bc1fa9d6333c42f2dde3eb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set log level from string.  <br /></td></tr>
+<tr class="memitem:a697a219af6f6ed0e0a0f1348fb6ebd57" id="r_a697a219af6f6ed0e0a0f1348fb6ebd57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a697a219af6f6ed0e0a0f1348fb6ebd57">saveConfig</a> ()</td></tr>
+<tr class="memdesc:a697a219af6f6ed0e0a0f1348fb6ebd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save logger config to unified ears.config.  <br /></td></tr>
+<tr class="memitem:a18f9f22a192082ce9b4ae8a1879e281b" id="r_a18f9f22a192082ce9b4ae8a1879e281b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18f9f22a192082ce9b4ae8a1879e281b">loadConfig</a> ()</td></tr>
+<tr class="memdesc:a18f9f22a192082ce9b4ae8a1879e281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load logger config from unified ears.config.  <br /></td></tr>
+<tr class="memitem:a307aaee848cebb0a743dc50dd85f5dac" id="r_a307aaee848cebb0a743dc50dd85f5dac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a307aaee848cebb0a743dc50dd85f5dac">clearLog</a> ()</td></tr>
+<tr class="memdesc:a307aaee848cebb0a743dc50dd85f5dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear/delete current log file.  <br /></td></tr>
+<tr class="memitem:a3c98a51a43b7fb016aa66f31ba41e5a8" id="r_a3c98a51a43b7fb016aa66f31ba41e5a8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c98a51a43b7fb016aa66f31ba41e5a8">getLogFileSize</a> ()</td></tr>
+<tr class="memdesc:a3c98a51a43b7fb016aa66f31ba41e5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current log file size in bytes.  <br /></td></tr>
+<tr class="memitem:a3876523d22b5001cb5931632a2d6e84a" id="r_a3876523d22b5001cb5931632a2d6e84a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3876523d22b5001cb5931632a2d6e84a">getLogFileSizeMB</a> ()</td></tr>
+<tr class="memdesc:a3876523d22b5001cb5931632a2d6e84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current log file size in MB.  <br /></td></tr>
+<tr class="memitem:a171e73d7b029aa9de590dcbcc821d474" id="r_a171e73d7b029aa9de590dcbcc821d474"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a171e73d7b029aa9de590dcbcc821d474">rotateLog</a> ()</td></tr>
+<tr class="memdesc:a171e73d7b029aa9de590dcbcc821d474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force log rotation (for testing).  <br /></td></tr>
+<tr class="memitem:a48c84ae44a686fa5d224b6de2a8a447a" id="r_a48c84ae44a686fa5d224b6de2a8a447a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c84ae44a686fa5d224b6de2a8a447a">wouldLog</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) const</td></tr>
+<tr class="memdesc:a48c84ae44a686fa5d224b6de2a8a447a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a message at given level would be logged.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aaf66139697e95de78b455a276c08942a" id="r_aaf66139697e95de78b455a276c08942a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf66139697e95de78b455a276c08942a">init</a> (const char *filename=&quot;/logs/debug.log&quot;)</td></tr>
-<tr class="memitem:ae75cff0048f0d04006a4db976d59d18e" id="r_ae75cff0048f0d04006a4db976d59d18e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae75cff0048f0d04006a4db976d59d18e">log</a> (const char *message)</td></tr>
-<tr class="memitem:a4febe8d6f767d020a73468485658b16c" id="r_a4febe8d6f767d020a73468485658b16c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4febe8d6f767d020a73468485658b16c">logf</a> (const char *format,...)</td></tr>
-<tr class="memitem:aad576ccc039c37631533f8b67640e085" id="r_aad576ccc039c37631533f8b67640e085"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad576ccc039c37631533f8b67640e085">logWithInfo</a> (const char *file, int line, const char *func, const char *message)</td></tr>
-<tr class="memitem:a382881f3d7f6f25d5762e3ade8c8cda7" id="r_a382881f3d7f6f25d5762e3ade8c8cda7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a382881f3d7f6f25d5762e3ade8c8cda7">logfWithInfo</a> (const char *file, int line, const char *func, const char *format,...)</td></tr>
-<tr class="memitem:a5cc08473729523bb4bde48459f2ac468" id="r_a5cc08473729523bb4bde48459f2ac468"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cc08473729523bb4bde48459f2ac468">flush</a> ()</td></tr>
-<tr class="memitem:ad63939a5c0535c5abb8e59024b0ca6d4" id="r_ad63939a5c0535c5abb8e59024b0ca6d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad63939a5c0535c5abb8e59024b0ca6d4">clear</a> ()</td></tr>
+<tr class="memitem:acebb37f5538780e6c14f13de6ec497bc" id="r_acebb37f5538780e6c14f13de6ec497bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acebb37f5538780e6c14f13de6ec497bc">getInstance</a> ()</td></tr>
+<tr class="memdesc:acebb37f5538780e6c14f13de6ec497bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get singleton instance.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a5705b131366f0cbe5623e3c10c11a48e" id="r_a5705b131366f0cbe5623e3c10c11a48e"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5705b131366f0cbe5623e3c10c11a48e">extractFilename</a> (const char *path)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abc41bfb031d896170c7675fa96a6b30c" id="r_abc41bfb031d896170c7675fa96a6b30c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc41bfb031d896170c7675fa96a6b30c">Logger</a> ()</td></tr>
+<tr class="memdesc:abc41bfb031d896170c7675fa96a6b30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private constructor.  <br /></td></tr>
+<tr class="memitem:acb668a9e186a25fbaad2e4af6d1ed00a" id="r_acb668a9e186a25fbaad2e4af6d1ed00a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb668a9e186a25fbaad2e4af6d1ed00a">~Logger</a> ()</td></tr>
+<tr class="memdesc:acb668a9e186a25fbaad2e4af6d1ed00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="memitem:add0f34d4c753c86af8074840a72366b3" id="r_add0f34d4c753c86af8074840a72366b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add0f34d4c753c86af8074840a72366b3">Logger</a> (const <a class="el" href="class_logger.html">Logger</a> &amp;)=delete</td></tr>
+<tr class="memitem:a8c0ca770cdc91ca9fc3015286568e1ea" id="r_a8c0ca770cdc91ca9fc3015286568e1ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c0ca770cdc91ca9fc3015286568e1ea">operator=</a> (const <a class="el" href="class_logger.html">Logger</a> &amp;)=delete</td></tr>
+<tr class="memitem:af0dc4ff68b6d37026b9f6c7a51da6aaa" id="r_af0dc4ff68b6d37026b9f6c7a51da6aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level, const char *message)</td></tr>
+<tr class="memdesc:af0dc4ff68b6d37026b9f6c7a51da6aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core logging function.  <br /></td></tr>
+<tr class="memitem:aa7719b0e569e559f4d396f8098d37b2c" id="r_aa7719b0e569e559f4d396f8098d37b2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7719b0e569e559f4d396f8098d37b2c">logf</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level, const char *format, va_list args)</td></tr>
+<tr class="memdesc:aa7719b0e569e559f4d396f8098d37b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core formatted logging function.  <br /></td></tr>
+<tr class="memitem:a9a3a153c15a479cc234849078ae2b9ef" id="r_a9a3a153c15a479cc234849078ae2b9ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a3a153c15a479cc234849078ae2b9ef">shouldLog</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) const</td></tr>
+<tr class="memdesc:a9a3a153c15a479cc234849078ae2b9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if level should be logged (hierarchical).  <br /></td></tr>
+<tr class="memitem:a2c93c29befa08263f1f7f301333aa34b" id="r_a2c93c29befa08263f1f7f301333aa34b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c93c29befa08263f1f7f301333aa34b">getLevelString</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) const</td></tr>
+<tr class="memdesc:a2c93c29befa08263f1f7f301333aa34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get level string for log entry.  <br /></td></tr>
+<tr class="memitem:a015fa726e1e272a8bf6a845d57eba5ae" id="r_a015fa726e1e272a8bf6a845d57eba5ae"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a015fa726e1e272a8bf6a845d57eba5ae">getTimestamp</a> () const</td></tr>
+<tr class="memdesc:a015fa726e1e272a8bf6a845d57eba5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current timestamp string.  <br /></td></tr>
+<tr class="memitem:a33eb30472648fdb372e500d6a8ed1538" id="r_a33eb30472648fdb372e500d6a8ed1538"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33eb30472648fdb372e500d6a8ed1538">needsRotation</a> ()</td></tr>
+<tr class="memdesc:a33eb30472648fdb372e500d6a8ed1538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if log needs rotation.  <br /></td></tr>
+<tr class="memitem:a10a251ee06a5a2d8ffd4d79a61db12d7" id="r_a10a251ee06a5a2d8ffd4d79a61db12d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10a251ee06a5a2d8ffd4d79a61db12d7">performRotation</a> ()</td></tr>
+<tr class="memdesc:a10a251ee06a5a2d8ffd4d79a61db12d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform log rotation.  <br /></td></tr>
+<tr class="memitem:aaede204cafa39c183e00294bde3c10e6" id="r_aaede204cafa39c183e00294bde3c10e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaede204cafa39c183e00294bde3c10e6">loadUnifiedConfig</a> (JsonDocument &amp;doc)</td></tr>
+<tr class="memdesc:aaede204cafa39c183e00294bde3c10e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load entire unified config file.  <br /></td></tr>
+<tr class="memitem:ae0545dbe544c061358ee3a5de1b0796e" id="r_ae0545dbe544c061358ee3a5de1b0796e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0545dbe544c061358ee3a5de1b0796e">saveUnifiedConfig</a> (const JsonDocument &amp;doc)</td></tr>
+<tr class="memdesc:ae0545dbe544c061358ee3a5de1b0796e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save entire unified config file.  <br /></td></tr>
+<tr class="memitem:ae115d52b90e74296e42584ef4febad15" id="r_ae115d52b90e74296e42584ef4febad15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae115d52b90e74296e42584ef4febad15">parseLevelString</a> (const String &amp;levelStr) const</td></tr>
+<tr class="memdesc:ae115d52b90e74296e42584ef4febad15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse log level from string.  <br /></td></tr>
+<tr class="memitem:ab349de9968de1b8c7c6324c4788ae678" id="r_ab349de9968de1b8c7c6324c4788ae678"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab349de9968de1b8c7c6324c4788ae678">levelToString</a> (<a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) const</td></tr>
+<tr class="memdesc:ab349de9968de1b8c7c6324c4788ae678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert log level to string.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a01618684d05a39696dc155566eba0a4e" id="r_a01618684d05a39696dc155566eba0a4e"><td class="memItemLeft" align="right" valign="top">static File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01618684d05a39696dc155566eba0a4e">logFile</a></td></tr>
-<tr class="memitem:a688588ed3654c73b2a113483abe409f6" id="r_a688588ed3654c73b2a113483abe409f6"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a688588ed3654c73b2a113483abe409f6">logPath</a> [64]</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a41823af90dad6590ee67dcffc6cf74b9" id="r_a41823af90dad6590ee67dcffc6cf74b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a></td></tr>
+<tr class="memitem:adca53612ce6325efadcd37e3a6edd78e" id="r_adca53612ce6325efadcd37e3a6edd78e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a></td></tr>
+<tr class="memitem:a7812bead7bd76f95298047167f4081fe" id="r_a7812bead7bd76f95298047167f4081fe"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a></td></tr>
+<tr class="memitem:a7b0fe611ab5d2b03b3b0c338dfc2fc95" id="r_a7b0fe611ab5d2b03b3b0c338dfc2fc95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_d_card.html">SDCard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a></td></tr>
+<tr class="memitem:a16e0e6c347bfb6e81765162c2f08706c" id="r_a16e0e6c347bfb6e81765162c2f08706c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_logger_config.html">LoggerConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00014">14</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ad63939a5c0535c5abb8e59024b0ca6d4" name="ad63939a5c0535c5abb8e59024b0ca6d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad63939a5c0535c5abb8e59024b0ca6d4">&#9670;&#160;</a></span>clear()</h2>
+<div class="textblock"><p>Enhanced <a class="el" href="class_logger.html" title="Enhanced Logger class with hierarchical levels.">Logger</a> class with hierarchical levels. </p>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00056">56</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abc41bfb031d896170c7675fa96a6b30c" name="abc41bfb031d896170c7675fa96a6b30c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc41bfb031d896170c7675fa96a6b30c">&#9670;&#160;</a></span>Logger() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +207,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Logger::clear </td>
+          <td class="memname">Logger::Logger </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -136,69 +215,38 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00091">91</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>                   {</div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.close();</div>
-<div class="line"><span class="lineno">   94</span>        LittleFS.remove(<a class="code hl_variable" href="#a688588ed3654c73b2a113483abe409f6">logPath</a>);</div>
-<div class="line"><span class="lineno">   95</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a> = LittleFS.open(<a class="code hl_variable" href="#a688588ed3654c73b2a113483abe409f6">logPath</a>, <span class="stringliteral">&quot;a&quot;</span>);</div>
-<div class="line"><span class="lineno">   96</span>    }</div>
-<div class="line"><span class="lineno">   97</span>}</div>
-<div class="ttc" id="aclass_logger_html_a01618684d05a39696dc155566eba0a4e"><div class="ttname"><a href="#a01618684d05a39696dc155566eba0a4e">Logger::logFile</a></div><div class="ttdeci">static File logFile</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00024">Logger.h:24</a></div></div>
-<div class="ttc" id="aclass_logger_html_a688588ed3654c73b2a113483abe409f6"><div class="ttname"><a href="#a688588ed3654c73b2a113483abe409f6">Logger::logPath</a></div><div class="ttdeci">static char logPath[64]</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00025">Logger.h:25</a></div></div>
+<p>Private constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00027">27</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>               : </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>(<span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="aclass_logger_html_a41823af90dad6590ee67dcffc6cf74b9"><div class="ttname"><a href="#a41823af90dad6590ee67dcffc6cf74b9">Logger::_initialized</a></div><div class="ttdeci">bool _initialized</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00226">Logger.h:226</a></div></div>
+<div class="ttc" id="aclass_logger_html_a7812bead7bd76f95298047167f4081fe"><div class="ttname"><a href="#a7812bead7bd76f95298047167f4081fe">Logger::_configFilePath</a></div><div class="ttdeci">String _configFilePath</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00228">Logger.h:228</a></div></div>
+<div class="ttc" id="aclass_logger_html_a7b0fe611ab5d2b03b3b0c338dfc2fc95"><div class="ttname"><a href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">Logger::_sdCard</a></div><div class="ttdeci">SDCard * _sdCard</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00229">Logger.h:229</a></div></div>
+<div class="ttc" id="aclass_logger_html_adca53612ce6325efadcd37e3a6edd78e"><div class="ttname"><a href="#adca53612ce6325efadcd37e3a6edd78e">Logger::_logFilePath</a></div><div class="ttdeci">String _logFilePath</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00227">Logger.h:227</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00024">logFile</a>, and <a class="el" href="_logger_8h_source.html#l00025">logPath</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, and <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>.</p>
 
-</div>
-</div>
-<a id="a5705b131366f0cbe5623e3c10c11a48e" name="a5705b131366f0cbe5623e3c10c11a48e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5705b131366f0cbe5623e3c10c11a48e">&#9670;&#160;</a></span>extractFilename()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * Logger::extractFilename </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00009">9</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>                                                    {</div>
-<div class="line"><span class="lineno">   10</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* filename = strrchr(path, <span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!filename) {</div>
-<div class="line"><span class="lineno">   12</span>        filename = strrchr(path, <span class="charliteral">&#39;\\&#39;</span>);</div>
-<div class="line"><span class="lineno">   13</span>    }</div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">return</span> filename ? filename + 1 : path;</div>
-<div class="line"><span class="lineno">   15</span>}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00069">logfWithInfo()</a>, and <a class="el" href="_logger_8cpp_source.html#l00059">logWithInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00019">getInstance()</a>, <a class="el" href="#add0f34d4c753c86af8074840a72366b3">Logger()</a>, and <a class="el" href="#a8c0ca770cdc91ca9fc3015286568e1ea">operator=()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
+<div class="center"><!-- SVG 1 --></div>
 </div>
 
 </div>
 </div>
-<a id="a5cc08473729523bb4bde48459f2ac468" name="a5cc08473729523bb4bde48459f2ac468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cc08473729523bb4bde48459f2ac468">&#9670;&#160;</a></span>flush()</h2>
+<a id="acb668a9e186a25fbaad2e4af6d1ed00a" name="acb668a9e186a25fbaad2e4af6d1ed00a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb668a9e186a25fbaad2e4af6d1ed00a">&#9670;&#160;</a></span>~Logger()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +255,424 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Logger::flush </td>
+          <td class="memname">Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00037">37</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                {</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="add0f34d4c753c86af8074840a72366b3" name="add0f34d4c753c86af8074840a72366b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add0f34d4c753c86af8074840a72366b3">&#9670;&#160;</a></span>Logger() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_logger.html">Logger</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a7046ed945557ca90bc7e4c8967856a9b" name="a7046ed945557ca90bc7e4c8967856a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7046ed945557ca90bc7e4c8967856a9b">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>logFilePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>configFilePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_d_card.html">SDCard</a> *</td>          <td class="paramname"><span class="paramname"><em>sdCard</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize logger. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logFilePath</td><td>Path to log file (e.g., "/logs/debug.log") </td></tr>
+    <tr><td class="paramname">configFilePath</td><td>Path to unified config file (e.g., "/config/ears.config") </td></tr>
+    <tr><td class="paramname">sdCard</td><td>Pointer to <a class="el" href="class_s_d_card.html" title="SD Card management class.">SDCard</a> instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if initialization successful </dd>
+<dd>
+false if initialization failed</dd>
+<dd>
+true if initialization successful. </dd>
+<dd>
+false if initialization failed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logFilePath</td><td>Path to log file (e.g., "/logs/debug.log") </td></tr>
+    <tr><td class="paramname">configFilePath</td><td>Path to unified config file (e.g., "/config/ears.config") </td></tr>
+    <tr><td class="paramname">sdCard</td><td>Pointer to <a class="el" href="class_s_d_card.html" title="SD Card management class.">SDCard</a> instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00049">49</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                                      {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>) {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>    </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a> || !<a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>-&gt;<a class="code hl_function" href="class_s_d_card.html#a00ddb96efcdff340d6e3c086257bc8fe">isAvailable</a>()) {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>    </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a> = <a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>;</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> = String(logFilePath);</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a> = String(configFilePath);</div>
+<div class="line"><span class="lineno">   61</span>    </div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">// Ensure log directory exists</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordtype">int</span> lastSlash = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.lastIndexOf(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (lastSlash &gt; 0) {</div>
+<div class="line"><span class="lineno">   65</span>        String logDir = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.substring(0, lastSlash);</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;directoryExists(logDir.c_str())) {</div>
+<div class="line"><span class="lineno">   67</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;createDirectory(logDir.c_str());</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span>    </div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">// Ensure config directory exists</span></div>
+<div class="line"><span class="lineno">   72</span>    lastSlash = <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.lastIndexOf(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (lastSlash &gt; 0) {</div>
+<div class="line"><span class="lineno">   74</span>        String configDir = <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.substring(0, lastSlash);</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;directoryExists(configDir.c_str())) {</div>
+<div class="line"><span class="lineno">   76</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;createDirectory(configDir.c_str());</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span>    </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">// Load configuration (creates default if not exists)</span></div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_function" href="#a18f9f22a192082ce9b4ae8a1879e281b">loadConfig</a>();</div>
+<div class="line"><span class="lineno">   82</span>    </div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   84</span>    </div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// Log initialization</span></div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;=== Logger v2.1 Initialized ===&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Log file: %s&quot;</span>, <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Config file: %s&quot;</span>, <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Log level: %s&quot;</span>, <a class="code hl_function" href="#a0b5a12fa4f24fe790b863ed92bfb798f">getLogLevelString</a>().c_str());</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Max file size: %d bytes (%.2f MB)&quot;</span>, <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxFileSizeBytes, <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxFileSizeBytes / 1048576.0);</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Max rotated files: %d&quot;</span>, <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles);</div>
+<div class="line"><span class="lineno">   92</span>    </div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclass_logger_html_a0b5a12fa4f24fe790b863ed92bfb798f"><div class="ttname"><a href="#a0b5a12fa4f24fe790b863ed92bfb798f">Logger::getLogLevelString</a></div><div class="ttdeci">String getLogLevelString() const</div><div class="ttdoc">Get log level as string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00310">Logger.cpp:310</a></div></div>
+<div class="ttc" id="aclass_logger_html_a0c5851d03ba2e560bfd57aeb713267b3"><div class="ttname"><a href="#a0c5851d03ba2e560bfd57aeb713267b3">Logger::info</a></div><div class="ttdeci">void info(const char *message)</div><div class="ttdoc">Log a message at INFO level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00122">Logger.cpp:122</a></div></div>
+<div class="ttc" id="aclass_logger_html_a16e0e6c347bfb6e81765162c2f08706c"><div class="ttname"><a href="#a16e0e6c347bfb6e81765162c2f08706c">Logger::_config</a></div><div class="ttdeci">LoggerConfig _config</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00230">Logger.h:230</a></div></div>
+<div class="ttc" id="aclass_logger_html_a18f9f22a192082ce9b4ae8a1879e281b"><div class="ttname"><a href="#a18f9f22a192082ce9b4ae8a1879e281b">Logger::loadConfig</a></div><div class="ttdeci">bool loadConfig()</div><div class="ttdoc">Load logger config from unified ears.config.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00406">Logger.cpp:406</a></div></div>
+<div class="ttc" id="aclass_logger_html_a5c58b592a174b46a17a4b34403ae3263"><div class="ttname"><a href="#a5c58b592a174b46a17a4b34403ae3263">Logger::infof</a></div><div class="ttdeci">void infof(const char *format,...)</div><div class="ttdoc">Log a formatted message at INFO level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00131">Logger.cpp:131</a></div></div>
+<div class="ttc" id="aclass_s_d_card_html_a00ddb96efcdff340d6e3c086257bc8fe"><div class="ttname"><a href="class_s_d_card.html#a00ddb96efcdff340d6e3c086257bc8fe">SDCard::isAvailable</a></div><div class="ttdeci">bool isAvailable()</div><div class="ttdoc">Check if SD card is available.</div><div class="ttdef"><b>Definition</b> <a href="_s_d_card_8cpp_source.html#l00093">SDCard.cpp:93</a></div></div>
+<div class="ttc" id="amain_8cpp_html_af032f207a6f37d78677d86150296f01a"><div class="ttname"><a href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a></div><div class="ttdeci">SDCard sdCard</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00101">main.cpp:101</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, <a class="el" href="_logger_8cpp_source.html#l00310">getLogLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>, <a class="el" href="_logger_8cpp_source.html#l00131">infof()</a>, <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, and <a class="el" href="main_8cpp_source.html#l00101">sdCard</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 --></div>
+</div>
+
+</div>
+</div>
+<a id="a307aaee848cebb0a743dc50dd85f5dac" name="a307aaee848cebb0a743dc50dd85f5dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307aaee848cebb0a743dc50dd85f5dac">&#9670;&#160;</a></span>clearLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::clearLog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear/delete current log file. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if log cleared successfully </dd>
+<dd>
+false if clearing log failed</dd>
+<dd>
+true if clear successful </dd>
+<dd>
+false if clear failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00464">464</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  464</span>                      {</div>
+<div class="line"><span class="lineno">  465</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>) {</div>
+<div class="line"><span class="lineno">  466</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  467</span>    }</div>
+<div class="line"><span class="lineno">  468</span>    </div>
+<div class="line"><span class="lineno">  469</span>    <span class="keywordtype">bool</span> result = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  470</span>    </div>
+<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">if</span> (result) {</div>
+<div class="line"><span class="lineno">  472</span>        <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;Log file cleared&quot;</span>);</div>
+<div class="line"><span class="lineno">  473</span>    }</div>
+<div class="line"><span class="lineno">  474</span>    </div>
+<div class="line"><span class="lineno">  475</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  476</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, and <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 --></div>
+</div>
+
+</div>
+</div>
+<a id="abeffd58a6beace1b1c01a5324227fd83" name="abeffd58a6beace1b1c01a5324227fd83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeffd58a6beace1b1c01a5324227fd83">&#9670;&#160;</a></span>debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::debug </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a message at DEBUG level. </p>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00101">101</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>                                      {</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_function" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a>, message);</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a></div><div class="ttdeci">@ DEBUG</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00035">Logger.h:35</a></div></div>
+<div class="ttc" id="aclass_logger_html_af0dc4ff68b6d37026b9f6c7a51da6aaa"><div class="ttname"><a href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">Logger::log</a></div><div class="ttdeci">void log(LogLevel level, const char *message)</div><div class="ttdoc">Core logging function.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00186">Logger.cpp:186</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00035">DEBUG</a>, and <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 5 --></div>
+</div>
+
+</div>
+</div>
+<a id="ab5bf33c14d38b92736209c86acc1d572" name="ab5bf33c14d38b92736209c86acc1d572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bf33c14d38b92736209c86acc1d572">&#9670;&#160;</a></span>debugf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::debugf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a formatted message at DEBUG level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>printf-style format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00110">110</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                           {</div>
+<div class="line"><span class="lineno">  111</span>    va_list args;</div>
+<div class="line"><span class="lineno">  112</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="#aa7719b0e569e559f4d396f8098d37b2c">logf</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a>, format, args);</div>
+<div class="line"><span class="lineno">  114</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  115</span>}</div>
+<div class="ttc" id="aclass_logger_html_aa7719b0e569e559f4d396f8098d37b2c"><div class="ttname"><a href="#aa7719b0e569e559f4d396f8098d37b2c">Logger::logf</a></div><div class="ttdeci">void logf(LogLevel level, const char *format, va_list args)</div><div class="ttdoc">Core formatted logging function.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00216">Logger.cpp:216</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00035">DEBUG</a>, and <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 6 --></div>
+</div>
+
+</div>
+</div>
+<a id="ac862952b8ffa9de295a496af0108785c" name="ac862952b8ffa9de295a496af0108785c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac862952b8ffa9de295a496af0108785c">&#9670;&#160;</a></span>error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::error </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a message at ERROR level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00164">164</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                                      {</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_function" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a>, message);</div>
+<div class="line"><span class="lineno">  166</span>}</div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00032">Logger.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00032">ERROR</a>, and <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00375">loadUnifiedConfig()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 7 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 8 --></div>
+</div>
+
+</div>
+</div>
+<a id="a7004288c4a79ffc421888877e87ba42d" name="a7004288c4a79ffc421888877e87ba42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7004288c4a79ffc421888877e87ba42d">&#9670;&#160;</a></span>errorf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::errorf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a formatted message at ERROR level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>printf-style format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00173">173</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>                                           {</div>
+<div class="line"><span class="lineno">  174</span>    va_list args;</div>
+<div class="line"><span class="lineno">  175</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="#aa7719b0e569e559f4d396f8098d37b2c">logf</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a>, format, args);</div>
+<div class="line"><span class="lineno">  177</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  178</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00032">ERROR</a>, and <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 9 --></div>
+</div>
+
+</div>
+</div>
+<a id="acebb37f5538780e6c14f13de6ec497bc" name="acebb37f5538780e6c14f13de6ec497bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acebb37f5538780e6c14f13de6ec497bc">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_logger.html">Logger</a> &amp; Logger::getInstance </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -220,19 +685,27 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00085">85</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>                   {</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   87</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<p>Get singleton instance. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_logger.html" title="Enhanced Logger class with hierarchical levels.">Logger</a>&amp; Reference to <a class="el" href="class_logger.html" title="Enhanced Logger class with hierarchical levels.">Logger</a> instance. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00019">19</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                            {</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keyword">static</span> <a class="code hl_function" href="#abc41bfb031d896170c7675fa96a6b30c">Logger</a> instance;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> instance;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+<div class="ttc" id="aclass_logger_html_abc41bfb031d896170c7675fa96a6b30c"><div class="ttname"><a href="#abc41bfb031d896170c7675fa96a6b30c">Logger::Logger</a></div><div class="ttdeci">Logger()</div><div class="ttdoc">Private constructor.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00027">Logger.cpp:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00024">logFile</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 10 --></div>
+</div>
 
 </div>
 </div>
-<a id="aaf66139697e95de78b455a276c08942a" name="aaf66139697e95de78b455a276c08942a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf66139697e95de78b455a276c08942a">&#9670;&#160;</a></span>init()</h2>
+<a id="a2c93c29befa08263f1f7f301333aa34b" name="a2c93c29befa08263f1f7f301333aa34b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c93c29befa08263f1f7f301333aa34b">&#9670;&#160;</a></span>getLevelString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,48 +714,634 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Logger::init </td>
+          <td class="memname">const char * Logger::getLevelString </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;/logs/debug.log&quot;</span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get level string for log entry. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* Level string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00252">252</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>                                                       {</div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">switch</span> (level) {</div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a>:</div>
+<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
+<div class="line"><span class="lineno">  256</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>:</div>
+<div class="line"><span class="lineno">  257</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;INFO&quot;</span>;</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a>:</div>
+<div class="line"><span class="lineno">  259</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;WARN&quot;</span>;</div>
+<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a>:</div>
+<div class="line"><span class="lineno">  261</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;ERROR&quot;</span>;</div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a>:</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;NONE&quot;</span>;</div>
+<div class="line"><span class="lineno">  265</span>    }</div>
+<div class="line"><span class="lineno">  266</span>}</div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a></div><div class="ttdeci">@ WARN</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00033">Logger.h:33</a></div></div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a></div><div class="ttdeci">@ INFO</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00034">Logger.h:34</a></div></div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00031">Logger.h:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00035">DEBUG</a>, <a class="el" href="_logger_8h_source.html#l00032">ERROR</a>, <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, <a class="el" href="_logger_8h_source.html#l00031">NONE</a>, and <a class="el" href="_logger_8h_source.html#l00033">WARN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 11 --></div>
+</div>
+
+</div>
+</div>
+<a id="a3c98a51a43b7fb016aa66f31ba41e5a8" name="a3c98a51a43b7fb016aa66f31ba41e5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c98a51a43b7fb016aa66f31ba41e5a8">&#9670;&#160;</a></span>getLogFileSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Logger::getLogFileSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current log file size in bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t log file size in bytes</dd>
+<dd>
+uint32_t Log file size in bytes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00482">482</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  482</span>                                {</div>
+<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> || !<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  485</span>    }</div>
+<div class="line"><span class="lineno">  486</span>    </div>
+<div class="line"><span class="lineno">  487</span>    File file = SD.open(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str(), FILE_READ);</div>
+<div class="line"><span class="lineno">  488</span>    <span class="keywordflow">if</span> (!file) {</div>
+<div class="line"><span class="lineno">  489</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  490</span>    }</div>
+<div class="line"><span class="lineno">  491</span>    </div>
+<div class="line"><span class="lineno">  492</span>    uint32_t size = file.size();</div>
+<div class="line"><span class="lineno">  493</span>    file.close();</div>
+<div class="line"><span class="lineno">  494</span>    </div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">return</span> size;</div>
+<div class="line"><span class="lineno">  496</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, and <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00502">getLogFileSizeMB()</a>, and <a class="el" href="_logger_8cpp_source.html#l00511">needsRotation()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 12 --></div>
+</div>
+
+</div>
+</div>
+<a id="a3876523d22b5001cb5931632a2d6e84a" name="a3876523d22b5001cb5931632a2d6e84a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3876523d22b5001cb5931632a2d6e84a">&#9670;&#160;</a></span>getLogFileSizeMB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Logger::getLogFileSizeMB </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current log file size in MB. </p>
+<dl class="section return"><dt>Returns</dt><dd>float log file size in megabytes</dd>
+<dd>
+float Log file size in MB </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00502">502</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  502</span>                               {</div>
+<div class="line"><span class="lineno">  503</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3c98a51a43b7fb016aa66f31ba41e5a8">getLogFileSize</a>() / 1048576.0;</div>
+<div class="line"><span class="lineno">  504</span>}</div>
+<div class="ttc" id="aclass_logger_html_a3c98a51a43b7fb016aa66f31ba41e5a8"><div class="ttname"><a href="#a3c98a51a43b7fb016aa66f31ba41e5a8">Logger::getLogFileSize</a></div><div class="ttdeci">uint32_t getLogFileSize()</div><div class="ttdoc">Get current log file size in bytes.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00482">Logger.cpp:482</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00482">getLogFileSize()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 13 --></div>
+</div>
+
+</div>
+</div>
+<a id="aba945b0f037b7de27976d3a6e1a0fbbd" name="aba945b0f037b7de27976d3a6e1a0fbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba945b0f037b7de27976d3a6e1a0fbbd">&#9670;&#160;</a></span>getLogLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> Logger::getLogLevel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get current log level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>New log level (NONE, ERROR, WARN, INFO, DEBUG) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> current log level </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00148">148</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>.</p>
+
+</div>
+</div>
+<a id="a0b5a12fa4f24fe790b863ed92bfb798f" name="a0b5a12fa4f24fe790b863ed92bfb798f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5a12fa4f24fe790b863ed92bfb798f">&#9670;&#160;</a></span>getLogLevelString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Logger::getLogLevelString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get log level as string. </p>
+<dl class="section return"><dt>Returns</dt><dd>String "NONE", "ERROR", "WARN", "INFO", or "DEBUG"</dd>
+<dd>
+String Log level string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00310">310</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>                                       {</div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#ab349de9968de1b8c7c6324c4788ae678">levelToString</a>(<a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel);</div>
+<div class="line"><span class="lineno">  312</span>}</div>
+<div class="ttc" id="aclass_logger_html_ab349de9968de1b8c7c6324c4788ae678"><div class="ttname"><a href="#ab349de9968de1b8c7c6324c4788ae678">Logger::levelToString</a></div><div class="ttdeci">String levelToString(LogLevel level) const</div><div class="ttdoc">Convert log level to string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00352">Logger.cpp:352</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, and <a class="el" href="_logger_8cpp_source.html#l00352">levelToString()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 14 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 15 --></div>
+</div>
+
+</div>
+</div>
+<a id="a015fa726e1e272a8bf6a845d57eba5ae" name="a015fa726e1e272a8bf6a845d57eba5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015fa726e1e272a8bf6a845d57eba5ae">&#9670;&#160;</a></span>getTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Logger::getTimestamp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get current timestamp string. </p>
+<dl class="section return"><dt>Returns</dt><dd>String timestamp in "YYYY-MM-DD HH:MM:SS" format</dd>
+<dd>
+String Timestamp in "YYYY-MM-DD HH:MM:SS" format </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00272">272</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>                                  {</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keyword">struct </span>timeval tv;</div>
+<div class="line"><span class="lineno">  274</span>    gettimeofday(&amp;tv, NULL);</div>
+<div class="line"><span class="lineno">  275</span>    </div>
+<div class="line"><span class="lineno">  276</span>    <span class="keyword">struct </span>tm timeinfo;</div>
+<div class="line"><span class="lineno">  277</span>    localtime_r(&amp;tv.tv_sec, &amp;timeinfo);</div>
+<div class="line"><span class="lineno">  278</span>    </div>
+<div class="line"><span class="lineno">  279</span>    <span class="keywordtype">char</span> buffer[32];</div>
+<div class="line"><span class="lineno">  280</span>    snprintf(buffer, <span class="keyword">sizeof</span>(buffer), <span class="stringliteral">&quot;%04d-%02d-%02d %02d:%02d:%02d&quot;</span>,</div>
+<div class="line"><span class="lineno">  281</span>             timeinfo.tm_year + 1900,</div>
+<div class="line"><span class="lineno">  282</span>             timeinfo.tm_mon + 1,</div>
+<div class="line"><span class="lineno">  283</span>             timeinfo.tm_mday,</div>
+<div class="line"><span class="lineno">  284</span>             timeinfo.tm_hour,</div>
+<div class="line"><span class="lineno">  285</span>             timeinfo.tm_min,</div>
+<div class="line"><span class="lineno">  286</span>             timeinfo.tm_sec);</div>
+<div class="line"><span class="lineno">  287</span>    </div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">return</span> String(buffer);</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 16 --></div>
+</div>
+
+</div>
+</div>
+<a id="a0c5851d03ba2e560bfd57aeb713267b3" name="a0c5851d03ba2e560bfd57aeb713267b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5851d03ba2e560bfd57aeb713267b3">&#9670;&#160;</a></span>info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::info </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a message at INFO level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00122">122</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>                                     {</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_function" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>, message);</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, and <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8cpp_source.html#l00464">clearLog()</a>, and <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 17 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 18 --></div>
+</div>
+
+</div>
+</div>
+<a id="a5c58b592a174b46a17a4b34403ae3263" name="a5c58b592a174b46a17a4b34403ae3263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c58b592a174b46a17a4b34403ae3263">&#9670;&#160;</a></span>infof()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::infof </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a formatted message at INFO level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>printf-style format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00131">131</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                          {</div>
+<div class="line"><span class="lineno">  132</span>    va_list args;</div>
+<div class="line"><span class="lineno">  133</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_function" href="#aa7719b0e569e559f4d396f8098d37b2c">logf</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>, format, args);</div>
+<div class="line"><span class="lineno">  135</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, and <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, and <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 19 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 20 --></div>
+</div>
+
+</div>
+</div>
+<a id="a7c2769fb989bec4ea28ea1497a10a709" name="a7c2769fb989bec4ea28ea1497a10a709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2769fb989bec4ea28ea1497a10a709">&#9670;&#160;</a></span>isInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::isInitialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if logger is initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if initialized </dd>
+<dd>
+false if not initialized </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00079">79</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>.</p>
+
+</div>
+</div>
+<a id="ab349de9968de1b8c7c6324c4788ae678" name="ab349de9968de1b8c7c6324c4788ae678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab349de9968de1b8c7c6324c4788ae678">&#9670;&#160;</a></span>levelToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Logger::levelToString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert log level to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String log level as string</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String Log level string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00352">352</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>                                                 {</div>
+<div class="line"><span class="lineno">  353</span>    <span class="keywordflow">switch</span> (level) {</div>
+<div class="line"><span class="lineno">  354</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a>:</div>
+<div class="line"><span class="lineno">  355</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;NONE&quot;</span>;</div>
+<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a>:</div>
+<div class="line"><span class="lineno">  357</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;ERROR&quot;</span>;</div>
+<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a>:</div>
+<div class="line"><span class="lineno">  359</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;WARN&quot;</span>;</div>
+<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>:</div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;INFO&quot;</span>;</div>
+<div class="line"><span class="lineno">  362</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a>:</div>
+<div class="line"><span class="lineno">  363</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
+<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  365</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><span class="lineno">  366</span>    }</div>
+<div class="line"><span class="lineno">  367</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00035">DEBUG</a>, <a class="el" href="_logger_8h_source.html#l00032">ERROR</a>, <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, <a class="el" href="_logger_8h_source.html#l00031">NONE</a>, and <a class="el" href="_logger_8h_source.html#l00033">WARN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00310">getLogLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 21 --></div>
+</div>
+
+</div>
+</div>
+<a id="a18f9f22a192082ce9b4ae8a1879e281b" name="a18f9f22a192082ce9b4ae8a1879e281b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f9f22a192082ce9b4ae8a1879e281b">&#9670;&#160;</a></span>loadConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::loadConfig </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load logger config from unified ears.config. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if load successful </dd>
+<dd>
+false if load failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00406">406</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  406</span>                        {</div>
+<div class="line"><span class="lineno">  407</span>    JsonDocument doc;</div>
+<div class="line"><span class="lineno">  408</span>    </div>
+<div class="line"><span class="lineno">  409</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#aaede204cafa39c183e00294bde3c10e6">loadUnifiedConfig</a>(doc)) {</div>
+<div class="line"><span class="lineno">  410</span>        <span class="comment">// Config doesn&#39;t exist, create default</span></div>
+<div class="line"><span class="lineno">  411</span>        doc[<span class="stringliteral">&quot;system&quot;</span>][<span class="stringliteral">&quot;version&quot;</span>] = <span class="stringliteral">&quot;1.0.0&quot;</span>;</div>
+<div class="line"><span class="lineno">  412</span>        doc[<span class="stringliteral">&quot;system&quot;</span>][<span class="stringliteral">&quot;zap_number&quot;</span>] = <span class="stringliteral">&quot;&quot;</span>;  <span class="comment">// Will be populated from NVS</span></div>
+<div class="line"><span class="lineno">  413</span>        doc[<span class="stringliteral">&quot;system&quot;</span>][<span class="stringliteral">&quot;device_name&quot;</span>] = <span class="stringliteral">&quot;EARS&quot;</span>;</div>
+<div class="line"><span class="lineno">  414</span>        </div>
+<div class="line"><span class="lineno">  415</span>        doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;log_level&quot;</span>] = <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
+<div class="line"><span class="lineno">  416</span>        doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;max_file_size_bytes&quot;</span>] = 1048576;</div>
+<div class="line"><span class="lineno">  417</span>        doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;max_rotated_files&quot;</span>] = 3;</div>
+<div class="line"><span class="lineno">  418</span>        </div>
+<div class="line"><span class="lineno">  419</span>        <a class="code hl_function" href="#ae0545dbe544c061358ee3a5de1b0796e">saveUnifiedConfig</a>(doc);</div>
+<div class="line"><span class="lineno">  420</span>    }</div>
+<div class="line"><span class="lineno">  421</span>    </div>
+<div class="line"><span class="lineno">  422</span>    <span class="comment">// Extract logger section</span></div>
+<div class="line"><span class="lineno">  423</span>    JsonObject loggerObj = doc[<span class="stringliteral">&quot;logger&quot;</span>];</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">if</span> (loggerObj.isNull()) {</div>
+<div class="line"><span class="lineno">  425</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  426</span>    }</div>
+<div class="line"><span class="lineno">  427</span>    </div>
+<div class="line"><span class="lineno">  428</span>    String levelStr = loggerObj[<span class="stringliteral">&quot;log_level&quot;</span>] | <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
+<div class="line"><span class="lineno">  429</span>    <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel = <a class="code hl_function" href="#ae115d52b90e74296e42584ef4febad15">parseLevelString</a>(levelStr);</div>
+<div class="line"><span class="lineno">  430</span>    <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxFileSizeBytes = loggerObj[<span class="stringliteral">&quot;max_file_size_bytes&quot;</span>] | 1048576;</div>
+<div class="line"><span class="lineno">  431</span>    <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles = loggerObj[<span class="stringliteral">&quot;max_rotated_files&quot;</span>] | 3;</div>
+<div class="line"><span class="lineno">  432</span>    </div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  434</span>}</div>
+<div class="ttc" id="aclass_logger_html_aaede204cafa39c183e00294bde3c10e6"><div class="ttname"><a href="#aaede204cafa39c183e00294bde3c10e6">Logger::loadUnifiedConfig</a></div><div class="ttdeci">bool loadUnifiedConfig(JsonDocument &amp;doc)</div><div class="ttdoc">Load entire unified config file.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00375">Logger.cpp:375</a></div></div>
+<div class="ttc" id="aclass_logger_html_ae0545dbe544c061358ee3a5de1b0796e"><div class="ttname"><a href="#ae0545dbe544c061358ee3a5de1b0796e">Logger::saveUnifiedConfig</a></div><div class="ttdeci">bool saveUnifiedConfig(const JsonDocument &amp;doc)</div><div class="ttdoc">Save entire unified config file.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00395">Logger.cpp:395</a></div></div>
+<div class="ttc" id="aclass_logger_html_ae115d52b90e74296e42584ef4febad15"><div class="ttname"><a href="#ae115d52b90e74296e42584ef4febad15">Logger::parseLevelString</a></div><div class="ttdeci">LogLevel parseLevelString(const String &amp;levelStr) const</div><div class="ttdoc">Parse log level from string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00334">Logger.cpp:334</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8cpp_source.html#l00375">loadUnifiedConfig()</a>, <a class="el" href="_logger_8cpp_source.html#l00334">parseLevelString()</a>, and <a class="el" href="_logger_8cpp_source.html#l00395">saveUnifiedConfig()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 22 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 23 --></div>
+</div>
+
+</div>
+</div>
+<a id="aaede204cafa39c183e00294bde3c10e6" name="aaede204cafa39c183e00294bde3c10e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaede204cafa39c183e00294bde3c10e6">&#9670;&#160;</a></span>loadUnifiedConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::loadUnifiedConfig </td>
+          <td>(</td>
+          <td class="paramtype">JsonDocument &amp;</td>          <td class="paramname"><span class="paramname"><em>doc</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00017">17</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                                      {</div>
-<div class="line"><span class="lineno">   18</span>    <span class="comment">// Initialize LittleFS</span></div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!LittleFS.begin()) {</div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="line"><span class="lineno">   22</span>    </div>
-<div class="line"><span class="lineno">   23</span>    strncpy(<a class="code hl_variable" href="#a688588ed3654c73b2a113483abe409f6">logPath</a>, filename, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="#a688588ed3654c73b2a113483abe409f6">logPath</a>) - 1);</div>
-<div class="line"><span class="lineno">   24</span>    </div>
-<div class="line"><span class="lineno">   25</span>    <span class="comment">// Create logs directory if it doesn&#39;t exist</span></div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (strncmp(filename, <span class="stringliteral">&quot;/logs/&quot;</span>, 6) == 0) {</div>
-<div class="line"><span class="lineno">   27</span>        LittleFS.mkdir(<span class="stringliteral">&quot;/logs&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="line"><span class="lineno">   29</span>    </div>
-<div class="line"><span class="lineno">   30</span>    <span class="comment">// Open file in append mode</span></div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a> = LittleFS.open(filename, <span class="stringliteral">&quot;a&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.println(<span class="stringliteral">&quot;\n=== New Session ===&quot;</span>);</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.printf(<span class="stringliteral">&quot;Compiled: %s %s\n&quot;</span>, __DATE__, __TIME__);</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   36</span>    }</div>
-<div class="line"><span class="lineno">   37</span>}</div>
+<p>Load entire unified config file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>JsonDocument to load config into </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if load successful </dd>
+<dd>
+false if load failed</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>JsonDocument to load into </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if load successful </dd>
+<dd>
+false if load failed* </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00375">375</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  375</span>                                                {</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a> || !<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  377</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  378</span>    }</div>
+<div class="line"><span class="lineno">  379</span>    </div>
+<div class="line"><span class="lineno">  380</span>    String jsonString = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  381</span>    <span class="keywordflow">if</span> (jsonString.length() == 0) {</div>
+<div class="line"><span class="lineno">  382</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  383</span>    }</div>
+<div class="line"><span class="lineno">  384</span>    </div>
+<div class="line"><span class="lineno">  385</span>    DeserializationError <a class="code hl_function" href="#ac862952b8ffa9de295a496af0108785c">error</a> = deserializeJson(doc, jsonString);</div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="#ac862952b8ffa9de295a496af0108785c">error</a>;</div>
+<div class="line"><span class="lineno">  387</span>}</div>
+<div class="ttc" id="aclass_logger_html_ac862952b8ffa9de295a496af0108785c"><div class="ttname"><a href="#ac862952b8ffa9de295a496af0108785c">Logger::error</a></div><div class="ttdeci">void error(const char *message)</div><div class="ttdoc">Log a message at ERROR level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00164">Logger.cpp:164</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00024">logFile</a>, and <a class="el" href="_logger_8h_source.html#l00025">logPath</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, and <a class="el" href="_logger_8cpp_source.html#l00164">error()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 24 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 25 --></div>
+</div>
 
 </div>
 </div>
-<a id="ae75cff0048f0d04006a4db976d59d18e" name="ae75cff0048f0d04006a4db976d59d18e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75cff0048f0d04006a4db976d59d18e">&#9670;&#160;</a></span>log()</h2>
+<a id="af0dc4ff68b6d37026b9f6c7a51da6aaa" name="af0dc4ff68b6d37026b9f6c7a51da6aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">&#9670;&#160;</a></span>log()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,31 +1352,86 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Logger::log </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00039">39</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                    {</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.println(message);</div>
-<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<p>Core logging function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> of the message </td></tr>
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level </td></tr>
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00186">186</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>                                                    {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> || !<a class="code hl_function" href="#a9a3a153c15a479cc234849078ae2b9ef">shouldLog</a>(level)) {</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
+<div class="line"><span class="lineno">  190</span>    </div>
+<div class="line"><span class="lineno">  191</span>    <span class="comment">// Check if rotation needed</span></div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a33eb30472648fdb372e500d6a8ed1538">needsRotation</a>()) {</div>
+<div class="line"><span class="lineno">  193</span>        <a class="code hl_function" href="#a10a251ee06a5a2d8ffd4d79a61db12d7">performRotation</a>();</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span>    </div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">// Format log entry</span></div>
+<div class="line"><span class="lineno">  197</span>    String logEntry = <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><span class="lineno">  198</span>    logEntry += <a class="code hl_function" href="#a015fa726e1e272a8bf6a845d57eba5ae">getTimestamp</a>();</div>
+<div class="line"><span class="lineno">  199</span>    logEntry += <span class="stringliteral">&quot;] [&quot;</span>;</div>
+<div class="line"><span class="lineno">  200</span>    logEntry += <a class="code hl_function" href="#a2c93c29befa08263f1f7f301333aa34b">getLevelString</a>(level);</div>
+<div class="line"><span class="lineno">  201</span>    logEntry += <span class="stringliteral">&quot;] &quot;</span>;</div>
+<div class="line"><span class="lineno">  202</span>    logEntry += message;</div>
+<div class="line"><span class="lineno">  203</span>    logEntry += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  204</span>    </div>
+<div class="line"><span class="lineno">  205</span>    <span class="comment">// Write to file</span></div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;appendFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str(), logEntry);</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+<div class="ttc" id="aclass_logger_html_a015fa726e1e272a8bf6a845d57eba5ae"><div class="ttname"><a href="#a015fa726e1e272a8bf6a845d57eba5ae">Logger::getTimestamp</a></div><div class="ttdeci">String getTimestamp() const</div><div class="ttdoc">Get current timestamp string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00272">Logger.cpp:272</a></div></div>
+<div class="ttc" id="aclass_logger_html_a10a251ee06a5a2d8ffd4d79a61db12d7"><div class="ttname"><a href="#a10a251ee06a5a2d8ffd4d79a61db12d7">Logger::performRotation</a></div><div class="ttdeci">bool performRotation()</div><div class="ttdoc">Perform log rotation.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00521">Logger.cpp:521</a></div></div>
+<div class="ttc" id="aclass_logger_html_a2c93c29befa08263f1f7f301333aa34b"><div class="ttname"><a href="#a2c93c29befa08263f1f7f301333aa34b">Logger::getLevelString</a></div><div class="ttdeci">const char * getLevelString(LogLevel level) const</div><div class="ttdoc">Get level string for log entry.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00252">Logger.cpp:252</a></div></div>
+<div class="ttc" id="aclass_logger_html_a33eb30472648fdb372e500d6a8ed1538"><div class="ttname"><a href="#a33eb30472648fdb372e500d6a8ed1538">Logger::needsRotation</a></div><div class="ttdeci">bool needsRotation()</div><div class="ttdoc">Check if log needs rotation.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00511">Logger.cpp:511</a></div></div>
+<div class="ttc" id="aclass_logger_html_a9a3a153c15a479cc234849078ae2b9ef"><div class="ttname"><a href="#a9a3a153c15a479cc234849078ae2b9ef">Logger::shouldLog</a></div><div class="ttdeci">bool shouldLog(LogLevel level) const</div><div class="ttdoc">Check if level should be logged (hierarchical).</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00232">Logger.cpp:232</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00024">logFile</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, <a class="el" href="_logger_8cpp_source.html#l00252">getLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00272">getTimestamp()</a>, <a class="el" href="_logger_8cpp_source.html#l00511">needsRotation()</a>, <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>, and <a class="el" href="_logger_8cpp_source.html#l00232">shouldLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00101">debug()</a>, <a class="el" href="_logger_8cpp_source.html#l00164">error()</a>, <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>, <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>, and <a class="el" href="_logger_8cpp_source.html#l00143">warn()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 26 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 27 --></div>
+</div>
 
 </div>
 </div>
-<a id="a4febe8d6f767d020a73468485658b16c" name="a4febe8d6f767d020a73468485658b16c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4febe8d6f767d020a73468485658b16c">&#9670;&#160;</a></span>logf()</h2>
+<a id="aa7719b0e569e559f4d396f8098d37b2c" name="aa7719b0e569e559f4d396f8098d37b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7719b0e569e559f4d396f8098d37b2c">&#9670;&#160;</a></span>logf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,62 +1442,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Logger::logf </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00046">46</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                         {</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   48</span>        <span class="keywordtype">char</span> buffer[256];</div>
-<div class="line"><span class="lineno">   49</span>        va_list args;</div>
-<div class="line"><span class="lineno">   50</span>        va_start(args, format);</div>
-<div class="line"><span class="lineno">   51</span>        vsnprintf(buffer, <span class="keyword">sizeof</span>(buffer), format, args);</div>
-<div class="line"><span class="lineno">   52</span>        va_end(args);</div>
-<div class="line"><span class="lineno">   53</span>        </div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.println(buffer);</div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span>}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00024">logFile</a>.</p>
-
-</div>
-</div>
-<a id="a382881f3d7f6f25d5762e3ade8c8cda7" name="a382881f3d7f6f25d5762e3ade8c8cda7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a382881f3d7f6f25d5762e3ade8c8cda7">&#9670;&#160;</a></span>logfWithInfo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Logger::logfWithInfo </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -393,45 +1452,65 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00069">69</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                                                               {</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordtype">char</span> buffer[256];</div>
-<div class="line"><span class="lineno">   72</span>        va_list args;</div>
-<div class="line"><span class="lineno">   73</span>        va_start(args, format);</div>
-<div class="line"><span class="lineno">   74</span>        vsnprintf(buffer, <span class="keyword">sizeof</span>(buffer), format, args);</div>
-<div class="line"><span class="lineno">   75</span>        va_end(args);</div>
-<div class="line"><span class="lineno">   76</span>        </div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ms = millis();</div>
-<div class="line"><span class="lineno">   78</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.printf(<span class="stringliteral">&quot;[%lu.%03lu] %s:%d (%s) - %s\n&quot;</span>, </div>
-<div class="line"><span class="lineno">   79</span>                      ms / 1000, ms % 1000,</div>
-<div class="line"><span class="lineno">   80</span>                      <a class="code hl_function" href="#a5705b131366f0cbe5623e3c10c11a48e">extractFilename</a>(file), line, func, buffer);</div>
-<div class="line"><span class="lineno">   81</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   82</span>    }</div>
-<div class="line"><span class="lineno">   83</span>}</div>
-<div class="ttc" id="aclass_logger_html_a5705b131366f0cbe5623e3c10c11a48e"><div class="ttname"><a href="#a5705b131366f0cbe5623e3c10c11a48e">Logger::extractFilename</a></div><div class="ttdeci">static const char * extractFilename(const char *path)</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00009">Logger.cpp:9</a></div></div>
+<p>Core formatted logging function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> of the message </td></tr>
+    <tr><td class="paramname">format</td><td>printf-style format string </td></tr>
+    <tr><td class="paramname">args</td><td>va_list of arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level </td></tr>
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+    <tr><td class="paramname">args</td><td>Variable argument list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00216">216</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>                                                                  {</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> || !<a class="code hl_function" href="#a9a3a153c15a479cc234849078ae2b9ef">shouldLog</a>(level)) {</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>    </div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordtype">char</span> buffer[512];</div>
+<div class="line"><span class="lineno">  222</span>    vsnprintf(buffer, <span class="keyword">sizeof</span>(buffer), format, args);</div>
+<div class="line"><span class="lineno">  223</span>    <a class="code hl_function" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a>(level, buffer);</div>
+<div class="line"><span class="lineno">  224</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00009">extractFilename()</a>, and <a class="el" href="_logger_8h_source.html#l00024">logFile</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, and <a class="el" href="_logger_8cpp_source.html#l00232">shouldLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00110">debugf()</a>, <a class="el" href="_logger_8cpp_source.html#l00173">errorf()</a>, <a class="el" href="_logger_8cpp_source.html#l00131">infof()</a>, and <a class="el" href="_logger_8cpp_source.html#l00152">warnf()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
+<div class="center"><!-- SVG 28 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 29 --></div>
 </div>
 
 </div>
 </div>
-<a id="aad576ccc039c37631533f8b67640e085" name="aad576ccc039c37631533f8b67640e085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad576ccc039c37631533f8b67640e085">&#9670;&#160;</a></span>logWithInfo()</h2>
+<a id="a33eb30472648fdb372e500d6a8ed1538" name="a33eb30472648fdb372e500d6a8ed1538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33eb30472648fdb372e500d6a8ed1538">&#9670;&#160;</a></span>needsRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -440,56 +1519,684 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Logger::logWithInfo </td>
+          <td class="memname">bool Logger::needsRotation </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00059">59</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                                                          {</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>) {</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ms = millis();</div>
-<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.printf(<span class="stringliteral">&quot;[%lu.%03lu] %s:%d (%s) - %s\n&quot;</span>, </div>
-<div class="line"><span class="lineno">   63</span>                      ms / 1000, ms % 1000,</div>
-<div class="line"><span class="lineno">   64</span>                      <a class="code hl_function" href="#a5705b131366f0cbe5623e3c10c11a48e">extractFilename</a>(file), line, func, message);</div>
-<div class="line"><span class="lineno">   65</span>        <a class="code hl_variable" href="#a01618684d05a39696dc155566eba0a4e">logFile</a>.flush();</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<p>Check if log needs rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if rotation needed </dd>
+<dd>
+false if rotation not needed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00511">511</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  511</span>                           {</div>
+<div class="line"><span class="lineno">  512</span>    uint32_t currentSize = <a class="code hl_function" href="#a3c98a51a43b7fb016aa66f31ba41e5a8">getLogFileSize</a>();</div>
+<div class="line"><span class="lineno">  513</span>    <span class="keywordflow">return</span> (currentSize &gt;= <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxFileSizeBytes);</div>
+<div class="line"><span class="lineno">  514</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00009">extractFilename()</a>, and <a class="el" href="_logger_8h_source.html#l00024">logFile</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, and <a class="el" href="_logger_8cpp_source.html#l00482">getLogFileSize()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
+<div class="center"><!-- SVG 30 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 31 --></div>
+</div>
+
+</div>
+</div>
+<a id="a8c0ca770cdc91ca9fc3015286568e1ea" name="a8c0ca770cdc91ca9fc3015286568e1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0ca770cdc91ca9fc3015286568e1ea">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_logger.html">Logger</a> &amp; Logger::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_logger.html">Logger</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 32 --></div>
+</div>
+
+</div>
+</div>
+<a id="ae115d52b90e74296e42584ef4febad15" name="ae115d52b90e74296e42584ef4febad15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae115d52b90e74296e42584ef4febad15">&#9670;&#160;</a></span>parseLevelString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> Logger::parseLevelString </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>levelStr</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse log level from string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">levelStr</td><td>"NONE", "ERROR", "WARN", "INFO", or "DEBUG" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> parsed log level</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">levelStr</td><td>Log level string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> Parsed log level </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00334">334</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  334</span>                                                              {</div>
+<div class="line"><span class="lineno">  335</span>    String upper = levelStr;</div>
+<div class="line"><span class="lineno">  336</span>    upper.toUpperCase();</div>
+<div class="line"><span class="lineno">  337</span>    </div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">if</span> (upper == <span class="stringliteral">&quot;NONE&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a>;</div>
+<div class="line"><span class="lineno">  339</span>    <span class="keywordflow">if</span> (upper == <span class="stringliteral">&quot;ERROR&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a>;</div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">if</span> (upper == <span class="stringliteral">&quot;WARN&quot;</span> || upper == <span class="stringliteral">&quot;WARNING&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a>;</div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">if</span> (upper == <span class="stringliteral">&quot;INFO&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>;</div>
+<div class="line"><span class="lineno">  342</span>    <span class="keywordflow">if</span> (upper == <span class="stringliteral">&quot;DEBUG&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">LogLevel::DEBUG</a>;</div>
+<div class="line"><span class="lineno">  343</span>    </div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a>;  <span class="comment">// Default to NONE if invalid</span></div>
+<div class="line"><span class="lineno">  345</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00035">DEBUG</a>, <a class="el" href="_logger_8h_source.html#l00032">ERROR</a>, <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, <a class="el" href="_logger_8h_source.html#l00031">NONE</a>, and <a class="el" href="_logger_8h_source.html#l00033">WARN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00320">setLogLevelFromString()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 33 --></div>
+</div>
+
+</div>
+</div>
+<a id="a10a251ee06a5a2d8ffd4d79a61db12d7" name="a10a251ee06a5a2d8ffd4d79a61db12d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a251ee06a5a2d8ffd4d79a61db12d7">&#9670;&#160;</a></span>performRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::performRotation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform log rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if rotation successful </dd>
+<dd>
+false if rotation failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00521">521</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  521</span>                             {</div>
+<div class="line"><span class="lineno">  522</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>) {</div>
+<div class="line"><span class="lineno">  523</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  524</span>    }</div>
+<div class="line"><span class="lineno">  525</span>    </div>
+<div class="line"><span class="lineno">  526</span>    <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;Starting log rotation...&quot;</span>);</div>
+<div class="line"><span class="lineno">  527</span>    </div>
+<div class="line"><span class="lineno">  528</span>    <span class="comment">// Delete oldest rotated file if it exists</span></div>
+<div class="line"><span class="lineno">  529</span>    String oldestFile = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(<a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles);</div>
+<div class="line"><span class="lineno">  530</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(oldestFile.c_str())) {</div>
+<div class="line"><span class="lineno">  531</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(oldestFile.c_str());</div>
+<div class="line"><span class="lineno">  532</span>    }</div>
+<div class="line"><span class="lineno">  533</span>    </div>
+<div class="line"><span class="lineno">  534</span>    <span class="comment">// Shift all rotated files up by one</span></div>
+<div class="line"><span class="lineno">  535</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles - 1; i &gt;= 1; i--) {</div>
+<div class="line"><span class="lineno">  536</span>        String oldName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(i);</div>
+<div class="line"><span class="lineno">  537</span>        String newName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(i + 1);</div>
+<div class="line"><span class="lineno">  538</span>        </div>
+<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(oldName.c_str())) {</div>
+<div class="line"><span class="lineno">  540</span>            <span class="comment">// Read old file</span></div>
+<div class="line"><span class="lineno">  541</span>            String content = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(oldName.c_str());</div>
+<div class="line"><span class="lineno">  542</span>            <span class="comment">// Write to new file</span></div>
+<div class="line"><span class="lineno">  543</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(newName.c_str(), content);</div>
+<div class="line"><span class="lineno">  544</span>            <span class="comment">// Delete old file</span></div>
+<div class="line"><span class="lineno">  545</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(oldName.c_str());</div>
+<div class="line"><span class="lineno">  546</span>        }</div>
+<div class="line"><span class="lineno">  547</span>    }</div>
+<div class="line"><span class="lineno">  548</span>    </div>
+<div class="line"><span class="lineno">  549</span>    <span class="comment">// Rename current log to .1</span></div>
+<div class="line"><span class="lineno">  550</span>    String rotatedName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.1&quot;</span>;</div>
+<div class="line"><span class="lineno">  551</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  552</span>        String content = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  553</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(rotatedName.c_str(), content);</div>
+<div class="line"><span class="lineno">  554</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  555</span>    }</div>
+<div class="line"><span class="lineno">  556</span>    </div>
+<div class="line"><span class="lineno">  557</span>    <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;Log rotation completed&quot;</span>);</div>
+<div class="line"><span class="lineno">  558</span>    </div>
+<div class="line"><span class="lineno">  559</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  560</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, and <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, and <a class="el" href="_logger_8cpp_source.html#l00567">rotateLog()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 34 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 35 --></div>
+</div>
+
+</div>
+</div>
+<a id="a171e73d7b029aa9de590dcbcc821d474" name="a171e73d7b029aa9de590dcbcc821d474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171e73d7b029aa9de590dcbcc821d474">&#9670;&#160;</a></span>rotateLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::rotateLog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Force log rotation (for testing). </p>
+<dl class="section return"><dt>Returns</dt><dd>true if rotation successful </dd>
+<dd>
+false if rotation failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00567">567</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  567</span>                       {</div>
+<div class="line"><span class="lineno">  568</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a10a251ee06a5a2d8ffd4d79a61db12d7">performRotation</a>();</div>
+<div class="line"><span class="lineno">  569</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 36 --></div>
+</div>
+
+</div>
+</div>
+<a id="a697a219af6f6ed0e0a0f1348fb6ebd57" name="a697a219af6f6ed0e0a0f1348fb6ebd57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697a219af6f6ed0e0a0f1348fb6ebd57">&#9670;&#160;</a></span>saveConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::saveConfig </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save logger config to unified ears.config. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if save successful </dd>
+<dd>
+false if save failed</dd></dl>
+<p>Only updates the logger section, preserves other sections</p>
+<dl class="section return"><dt>Returns</dt><dd>true if save successful </dd>
+<dd>
+false if save failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00441">441</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  441</span>                        {</div>
+<div class="line"><span class="lineno">  442</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>) {</div>
+<div class="line"><span class="lineno">  443</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  444</span>    }</div>
+<div class="line"><span class="lineno">  445</span>    </div>
+<div class="line"><span class="lineno">  446</span>    JsonDocument doc;</div>
+<div class="line"><span class="lineno">  447</span>    </div>
+<div class="line"><span class="lineno">  448</span>    <span class="comment">// Load existing config or create new</span></div>
+<div class="line"><span class="lineno">  449</span>    <a class="code hl_function" href="#aaede204cafa39c183e00294bde3c10e6">loadUnifiedConfig</a>(doc);</div>
+<div class="line"><span class="lineno">  450</span>    </div>
+<div class="line"><span class="lineno">  451</span>    <span class="comment">// Update logger section</span></div>
+<div class="line"><span class="lineno">  452</span>    doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;log_level&quot;</span>] = <a class="code hl_function" href="#ab349de9968de1b8c7c6324c4788ae678">levelToString</a>(<a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel);</div>
+<div class="line"><span class="lineno">  453</span>    doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;max_file_size_bytes&quot;</span>] = <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxFileSizeBytes;</div>
+<div class="line"><span class="lineno">  454</span>    doc[<span class="stringliteral">&quot;logger&quot;</span>][<span class="stringliteral">&quot;max_rotated_files&quot;</span>] = <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles;</div>
+<div class="line"><span class="lineno">  455</span>    </div>
+<div class="line"><span class="lineno">  456</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#ae0545dbe544c061358ee3a5de1b0796e">saveUnifiedConfig</a>(doc);</div>
+<div class="line"><span class="lineno">  457</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8cpp_source.html#l00352">levelToString()</a>, <a class="el" href="_logger_8cpp_source.html#l00375">loadUnifiedConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00395">saveUnifiedConfig()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 37 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 38 --></div>
+</div>
+
+</div>
+</div>
+<a id="ae0545dbe544c061358ee3a5de1b0796e" name="ae0545dbe544c061358ee3a5de1b0796e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0545dbe544c061358ee3a5de1b0796e">&#9670;&#160;</a></span>saveUnifiedConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::saveUnifiedConfig </td>
+          <td>(</td>
+          <td class="paramtype">const JsonDocument &amp;</td>          <td class="paramname"><span class="paramname"><em>doc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save entire unified config file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>JsonDocument containing config to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if save successful </dd>
+<dd>
+false if save failed</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>JsonDocument to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if save successful </dd>
+<dd>
+false if save failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00395">395</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>                                                      {</div>
+<div class="line"><span class="lineno">  396</span>    String jsonString;</div>
+<div class="line"><span class="lineno">  397</span>    serializeJsonPretty(doc, jsonString);</div>
+<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str(), jsonString);</div>
+<div class="line"><span class="lineno">  399</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, and <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 39 --></div>
+</div>
+
+</div>
+</div>
+<a id="a00fdcdbeb39a2d5d4fb27cc36c35c101" name="a00fdcdbeb39a2d5d4fb27cc36c35c101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00fdcdbeb39a2d5d4fb27cc36c35c101">&#9670;&#160;</a></span>setLogLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::setLogLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set current log level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>New log level (NONE, ERROR, WARN, INFO, DEBUG) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00296">296</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>                                       {</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel = level;</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_function" href="#a697a219af6f6ed0e0a0f1348fb6ebd57">saveConfig</a>();</div>
+<div class="line"><span class="lineno">  299</span>    </div>
+<div class="line"><span class="lineno">  300</span>    <span class="comment">// Log the change at INFO level (if it will be visible)</span></div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a9a3a153c15a479cc234849078ae2b9ef">shouldLog</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a>)) {</div>
+<div class="line"><span class="lineno">  302</span>        <a class="code hl_function" href="#a5c58b592a174b46a17a4b34403ae3263">infof</a>(<span class="stringliteral">&quot;Log level changed to: %s&quot;</span>, <a class="code hl_function" href="#ab349de9968de1b8c7c6324c4788ae678">levelToString</a>(level).c_str());</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span>}</div>
+<div class="ttc" id="aclass_logger_html_a697a219af6f6ed0e0a0f1348fb6ebd57"><div class="ttname"><a href="#a697a219af6f6ed0e0a0f1348fb6ebd57">Logger::saveConfig</a></div><div class="ttdeci">bool saveConfig()</div><div class="ttdoc">Save logger config to unified ears.config.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00441">Logger.cpp:441</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00034">INFO</a>, <a class="el" href="_logger_8cpp_source.html#l00131">infof()</a>, <a class="el" href="_logger_8cpp_source.html#l00352">levelToString()</a>, <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00232">shouldLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00320">setLogLevelFromString()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 40 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 41 --></div>
+</div>
+
+</div>
+</div>
+<a id="afcb3cb19bc1fa9d6333c42f2dde3eb5a" name="afcb3cb19bc1fa9d6333c42f2dde3eb5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb3cb19bc1fa9d6333c42f2dde3eb5a">&#9670;&#160;</a></span>setLogLevelFromString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::setLogLevelFromString </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>levelStr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set log level from string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">levelStr</td><td>"NONE", "ERROR", "WARN", "INFO", or "DEBUG" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if valid level string </dd>
+<dd>
+false if invalid level string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00320">320</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  320</span>                                                         {</div>
+<div class="line"><span class="lineno">  321</span>    <a class="code hl_enumeration" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level = <a class="code hl_function" href="#ae115d52b90e74296e42584ef4febad15">parseLevelString</a>(levelStr);</div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">if</span> (level == <a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693">LogLevel::NONE</a> &amp;&amp; levelStr != <span class="stringliteral">&quot;NONE&quot;</span>) {</div>
+<div class="line"><span class="lineno">  323</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;  <span class="comment">// Invalid string</span></div>
+<div class="line"><span class="lineno">  324</span>    }</div>
+<div class="line"><span class="lineno">  325</span>    <a class="code hl_function" href="#a00fdcdbeb39a2d5d4fb27cc36c35c101">setLogLevel</a>(level);</div>
+<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  327</span>}</div>
+<div class="ttc" id="a_logger_8h_html_aca1fd1d8935433e6ba2e3918214e07f9"><div class="ttname"><a href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdoc">Hierarchical log level enumeration.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00030">Logger.h:30</a></div></div>
+<div class="ttc" id="aclass_logger_html_a00fdcdbeb39a2d5d4fb27cc36c35c101"><div class="ttname"><a href="#a00fdcdbeb39a2d5d4fb27cc36c35c101">Logger::setLogLevel</a></div><div class="ttdeci">void setLogLevel(LogLevel level)</div><div class="ttdoc">Set current log level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00296">Logger.cpp:296</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00031">NONE</a>, <a class="el" href="_logger_8cpp_source.html#l00334">parseLevelString()</a>, and <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 42 --></div>
+</div>
+
+</div>
+</div>
+<a id="a9a3a153c15a479cc234849078ae2b9ef" name="a9a3a153c15a479cc234849078ae2b9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3a153c15a479cc234849078ae2b9ef">&#9670;&#160;</a></span>shouldLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::shouldLog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if level should be logged (hierarchical). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if level should be logged </dd>
+<dd>
+false if level should be ignored</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if should log </dd>
+<dd>
+false if should not log </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00232">232</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>                                           {</div>
+<div class="line"><span class="lineno">  233</span>    <span class="comment">// Hierarchical: current level must be &gt;= message level</span></div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.currentLevel) &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(level));</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>, <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>, and <a class="el" href="_logger_8cpp_source.html#l00243">wouldLog()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 43 --></div>
+</div>
+
+</div>
+</div>
+<a id="a7f4ad7463f49e38e80f29c9ee777ca12" name="a7f4ad7463f49e38e80f29c9ee777ca12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f4ad7463f49e38e80f29c9ee777ca12">&#9670;&#160;</a></span>warn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::warn </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a message at WARN level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00143">143</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>                                     {</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_function" href="#af0dc4ff68b6d37026b9f6c7a51da6aaa">log</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a>, message);</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, and <a class="el" href="_logger_8h_source.html#l00033">WARN</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 44 --></div>
+</div>
+
+</div>
+</div>
+<a id="ae31a2ccd35d9d5d7bfc6634d358366ec" name="ae31a2ccd35d9d5d7bfc6634d358366ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31a2ccd35d9d5d7bfc6634d358366ec">&#9670;&#160;</a></span>warnf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::warnf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log a formatted message at WARN level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>printf-style format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00152">152</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>                                          {</div>
+<div class="line"><span class="lineno">  153</span>    va_list args;</div>
+<div class="line"><span class="lineno">  154</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="#aa7719b0e569e559f4d396f8098d37b2c">logf</a>(<a class="code hl_enumvalue" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">LogLevel::WARN</a>, format, args);</div>
+<div class="line"><span class="lineno">  156</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  157</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>, and <a class="el" href="_logger_8h_source.html#l00033">WARN</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 45 --></div>
+</div>
+
+</div>
+</div>
+<a id="a48c84ae44a686fa5d224b6de2a8a447a" name="a48c84ae44a686fa5d224b6de2a8a447a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c84ae44a686fa5d224b6de2a8a447a">&#9670;&#160;</a></span>wouldLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::wouldLog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a message at given level would be logged. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td><a class="el" href="_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9" title="Hierarchical log level enumeration.">LogLevel</a> to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if message at this level would be logged </dd>
+<dd>
+false if message at this level would be ignored</dd></dl>
+<p>Useful for avoiding expensive string operations</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Log level to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if would log </dd>
+<dd>
+false if would not log </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00243">243</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  243</span>                                          {</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> &amp;&amp; <a class="code hl_function" href="#a9a3a153c15a479cc234849078ae2b9ef">shouldLog</a>(level);</div>
+<div class="line"><span class="lineno">  245</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, and <a class="el" href="_logger_8cpp_source.html#l00232">shouldLog()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 46 --></div>
 </div>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Field Documentation</h2>
-<a id="a01618684d05a39696dc155566eba0a4e" name="a01618684d05a39696dc155566eba0a4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01618684d05a39696dc155566eba0a4e">&#9670;&#160;</a></span>logFile</h2>
+<a id="a16e0e6c347bfb6e81765162c2f08706c" name="a16e0e6c347bfb6e81765162c2f08706c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e0e6c347bfb6e81765162c2f08706c">&#9670;&#160;</a></span>_config</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,24 +2205,24 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">File Logger::logFile</td>
+          <td class="memname"><a class="el" href="struct_logger_config.html">LoggerConfig</a> Logger::_config</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00024">24</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00230">230</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00091">clear()</a>, <a class="el" href="_logger_8cpp_source.html#l00085">flush()</a>, <a class="el" href="_logger_8cpp_source.html#l00017">init()</a>, <a class="el" href="_logger_8cpp_source.html#l00039">log()</a>, <a class="el" href="_logger_8cpp_source.html#l00046">logf()</a>, <a class="el" href="_logger_8cpp_source.html#l00069">logfWithInfo()</a>, and <a class="el" href="_logger_8cpp_source.html#l00059">logWithInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8h_source.html#l00148">getLogLevel()</a>, <a class="el" href="_logger_8cpp_source.html#l00310">getLogLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, <a class="el" href="_logger_8cpp_source.html#l00511">needsRotation()</a>, <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>, <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>, <a class="el" href="_logger_8cpp_source.html#l00296">setLogLevel()</a>, and <a class="el" href="_logger_8cpp_source.html#l00232">shouldLog()</a>.</p>
 
 </div>
 </div>
-<a id="a688588ed3654c73b2a113483abe409f6" name="a688588ed3654c73b2a113483abe409f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a688588ed3654c73b2a113483abe409f6">&#9670;&#160;</a></span>logPath</h2>
+<a id="a7812bead7bd76f95298047167f4081fe" name="a7812bead7bd76f95298047167f4081fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7812bead7bd76f95298047167f4081fe">&#9670;&#160;</a></span>_configFilePath</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,19 +2231,97 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char Logger::logPath</td>
+          <td class="memname">String Logger::_configFilePath</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00025">25</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00228">228</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00091">clear()</a>, and <a class="el" href="_logger_8cpp_source.html#l00017">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8cpp_source.html#l00375">loadUnifiedConfig()</a>, <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>, and <a class="el" href="_logger_8cpp_source.html#l00395">saveUnifiedConfig()</a>.</p>
+
+</div>
+</div>
+<a id="a41823af90dad6590ee67dcffc6cf74b9" name="a41823af90dad6590ee67dcffc6cf74b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41823af90dad6590ee67dcffc6cf74b9">&#9670;&#160;</a></span>_initialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::_initialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00226">226</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8cpp_source.html#l00464">clearLog()</a>, <a class="el" href="_logger_8cpp_source.html#l00482">getLogFileSize()</a>, <a class="el" href="_logger_8h_source.html#l00079">isInitialized()</a>, <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, <a class="el" href="_logger_8cpp_source.html#l00216">logf()</a>, <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>, <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>, <a class="el" href="_logger_8cpp_source.html#l00441">saveConfig()</a>, and <a class="el" href="_logger_8cpp_source.html#l00243">wouldLog()</a>.</p>
+
+</div>
+</div>
+<a id="adca53612ce6325efadcd37e3a6edd78e" name="adca53612ce6325efadcd37e3a6edd78e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca53612ce6325efadcd37e3a6edd78e">&#9670;&#160;</a></span>_logFilePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Logger::_logFilePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00227">227</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8cpp_source.html#l00464">clearLog()</a>, <a class="el" href="_logger_8cpp_source.html#l00482">getLogFileSize()</a>, <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>, and <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>.</p>
+
+</div>
+</div>
+<a id="a7b0fe611ab5d2b03b3b0c338dfc2fc95" name="a7b0fe611ab5d2b03b3b0c338dfc2fc95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">&#9670;&#160;</a></span>_sdCard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_d_card.html">SDCard</a>* Logger::_sdCard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00229">229</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_logger_8cpp_source.html#l00049">begin()</a>, <a class="el" href="_logger_8cpp_source.html#l00464">clearLog()</a>, <a class="el" href="_logger_8cpp_source.html#l00482">getLogFileSize()</a>, <a class="el" href="_logger_8cpp_source.html#l00375">loadUnifiedConfig()</a>, <a class="el" href="_logger_8cpp_source.html#l00186">log()</a>, <a class="el" href="_logger_8cpp_source.html#l00027">Logger()</a>, <a class="el" href="_logger_8cpp_source.html#l00521">performRotation()</a>, and <a class="el" href="_logger_8cpp_source.html#l00395">saveUnifiedConfig()</a>.</p>
 
 </div>
 </div>

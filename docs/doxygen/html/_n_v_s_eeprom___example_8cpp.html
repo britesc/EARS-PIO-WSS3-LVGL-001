@@ -205,9 +205,9 @@ Variables</h2></td></tr>
 <div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea"><div class="ttname"><a href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a></div><div class="ttdeci">@ VALID</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00028">NVSEeprom.h:28</a></div></div>
 <div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588"><div class="ttname"><a href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a></div><div class="ttdeci">@ NOT_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00027">NVSEeprom.h:27</a></div></div>
 <div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf"><div class="ttname"><a href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a></div><div class="ttdeci">@ INITIALIZATION_FAILED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00034">NVSEeprom.h:34</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ad72437f094071fef8fa57acf26a21b09"><div class="ttname"><a href="main_8cpp.html#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a></div><div class="ttdeci">NVSValidationResult g_nvsResult</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00081">main.cpp:81</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad72437f094071fef8fa57acf26a21b09"><div class="ttname"><a href="main_8cpp.html#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a></div><div class="ttdeci">NVSValidationResult g_nvsResult</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00092">main.cpp:92</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00032">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00081">g_nvsResult</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00034">INITIALIZATION_FAILED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00029">INVALID_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00031">MISSING_PASSWORD</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00030">MISSING_ZAPNUMBER</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00027">NOT_CHECKED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00033">UPGRADED</a>, and <a class="el" href="_n_v_s_eeprom_8h_source.html#l00028">VALID</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00032">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00092">g_nvsResult</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00034">INITIALIZATION_FAILED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00029">INVALID_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00031">MISSING_PASSWORD</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00030">MISSING_ZAPNUMBER</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00027">NOT_CHECKED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00033">UPGRADED</a>, and <a class="el" href="_n_v_s_eeprom_8h_source.html#l00028">VALID</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom___example_8cpp_source.html#l00216">loop()</a>.</p>
 <div class="dynheader">
@@ -291,9 +291,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   75</span>    <span class="comment">// Core1 task complete</span></div>
 <div class="line"><span class="lineno">   76</span>    vTaskDelete(NULL);</div>
 <div class="line"><span class="lineno">   77</span>}</div>
-<div class="ttc" id="amain_8cpp_html_a27a476ad412f1de3b2626865c6b4114d"><div class="ttname"><a href="main_8cpp.html#a27a476ad412f1de3b2626865c6b4114d">nvs</a></div><div class="ttdeci">NVSEeprom nvs</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00084">main.cpp:84</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a27a476ad412f1de3b2626865c6b4114d"><div class="ttname"><a href="main_8cpp.html#a27a476ad412f1de3b2626865c6b4114d">nvs</a></div><div class="ttdeci">NVSEeprom nvs</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00032">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00081">g_nvsResult</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00034">INITIALIZATION_FAILED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00029">INVALID_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00031">MISSING_PASSWORD</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00030">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00084">nvs</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00033">UPGRADED</a>, and <a class="el" href="_n_v_s_eeprom_8h_source.html#l00028">VALID</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00032">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00092">g_nvsResult</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00034">INITIALIZATION_FAILED</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00029">INVALID_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00031">MISSING_PASSWORD</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00030">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00095">nvs</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00033">UPGRADED</a>, and <a class="el" href="_n_v_s_eeprom_8h_source.html#l00028">VALID</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom___example_8cpp_source.html#l00191">setup()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
 
 </div>
 </div>
@@ -348,13 +355,13 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_n_v_s_eeprom_html_a6fe746f75cc8a5137cb5088ef64e1d63"><div class="ttname"><a href="class_n_v_s_eeprom.html#a6fe746f75cc8a5137cb5088ef64e1d63">NVSEeprom::KEY_VERSION</a></div><div class="ttdeci">static const char * KEY_VERSION</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00076">NVSEeprom.h:76</a></div></div>
 <div class="ttc" id="aclass_n_v_s_eeprom_html_aa15945f1be61047d0a8a16f11a120279"><div class="ttname"><a href="class_n_v_s_eeprom.html#aa15945f1be61047d0a8a16f11a120279">NVSEeprom::KEY_ZAPNUMBER</a></div><div class="ttdeci">static const char * KEY_ZAPNUMBER</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00077">NVSEeprom.h:77</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00073">NVSEeprom::CURRENT_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00078">NVSEeprom::KEY_PASSWORD_HASH</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00076">NVSEeprom::KEY_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00077">NVSEeprom::KEY_ZAPNUMBER</a>, and <a class="el" href="main_8cpp_source.html#l00084">nvs</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00073">NVSEeprom::CURRENT_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00078">NVSEeprom::KEY_PASSWORD_HASH</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00076">NVSEeprom::KEY_VERSION</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00077">NVSEeprom::KEY_ZAPNUMBER</a>, and <a class="el" href="main_8cpp_source.html#l00095">nvs</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom___example_8cpp_source.html#l00216">loop()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
+<div class="center"><!-- SVG 3 --></div>
 </div>
 
 </div>
@@ -391,13 +398,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  185</span>    Serial.println(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><span class="lineno">  186</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00078">NVSEeprom::KEY_PASSWORD_HASH</a>, and <a class="el" href="main_8cpp_source.html#l00084">nvs</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00078">NVSEeprom::KEY_PASSWORD_HASH</a>, and <a class="el" href="main_8cpp_source.html#l00095">nvs</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom___example_8cpp_source.html#l00216">loop()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
+<div class="center"><!-- SVG 4 --></div>
 </div>
 
 </div>
@@ -446,7 +453,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 --></div>
+<div class="center"><!-- SVG 5 --></div>
 </div>
 
 </div>
@@ -476,7 +483,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  196</span>    </div>
 <div class="line"><span class="lineno">  197</span>    <span class="comment">// OPTION A: Create Core1 task explicitly</span></div>
 <div class="line"><span class="lineno">  198</span>    xTaskCreatePinnedToCore(</div>
-<div class="line"><span class="lineno">  199</span>        <a class="code hl_function" href="main_8cpp.html#aad1913a26d7986b1a352abb982119ff6">core1_nvsValidationTask</a>,  <span class="comment">// Task function</span></div>
+<div class="line"><span class="lineno">  199</span>        <a class="code hl_function" href="#aad1913a26d7986b1a352abb982119ff6">core1_nvsValidationTask</a>,  <span class="comment">// Task function</span></div>
 <div class="line"><span class="lineno">  200</span>        <span class="stringliteral">&quot;NVS_Validation&quot;</span>,          <span class="comment">// Task name</span></div>
 <div class="line"><span class="lineno">  201</span>        4096,                      <span class="comment">// Stack size</span></div>
 <div class="line"><span class="lineno">  202</span>        NULL,                      <span class="comment">// Parameters</span></div>
@@ -488,13 +495,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  208</span>    <span class="comment">// OPTION B: Run validation directly (if not using tasks)</span></div>
 <div class="line"><span class="lineno">  209</span>    <span class="comment">// g_nvsResult = nvs.validateNVS();</span></div>
 <div class="line"><span class="lineno">  210</span>}</div>
-<div class="ttc" id="amain_8cpp_html_aad1913a26d7986b1a352abb982119ff6"><div class="ttname"><a href="main_8cpp.html#aad1913a26d7986b1a352abb982119ff6">core1_nvsValidationTask</a></div><div class="ttdeci">void core1_nvsValidationTask(void *parameter)</div><div class="ttdoc">Core1 NVS Validation Task.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00131">main.cpp:131</a></div></div>
+<div class="ttc" id="a_n_v_s_eeprom___example_8cpp_html_aad1913a26d7986b1a352abb982119ff6"><div class="ttname"><a href="#aad1913a26d7986b1a352abb982119ff6">core1_nvsValidationTask</a></div><div class="ttdeci">void core1_nvsValidationTask(void *parameter)</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom___example_8cpp_source.html#l00022">NVSEeprom_Example.cpp:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00131">core1_nvsValidationTask()</a>.</p>
+<p class="reference">References <a class="el" href="_n_v_s_eeprom___example_8cpp_source.html#l00022">core1_nvsValidationTask()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 5 --></div>
+<div class="center"><!-- SVG 6 --></div>
 </div>
 
 </div>

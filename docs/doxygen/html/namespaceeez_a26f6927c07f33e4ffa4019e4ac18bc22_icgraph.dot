@@ -1,0 +1,15 @@
+digraph "eez::allocMemoryForDecompressedAssets"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::allocMemoryForDecompressed\lAssets",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::loadMainAssets",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez.html#a42e3c22c8058759b732d5fd977b5ef02",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez_flow_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$eez-flow_8cpp.html#addc98d609a03495f1d58de1ed439b4d4",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ui_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ui_8c.html#aa6f50ea564e0ba7375ce590a5196f12f",tooltip=" "];
+}

@@ -1,0 +1,23 @@
+digraph "eez::flow::deleteConnection"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="eez::flow::deleteConnection",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::flow::deallocateComponent\lExecutionState",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a7614ba475728f736f7bebe2aefcb76a8",tooltip=" "];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge3_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::flow::decRefCounter\lForFlowState",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a0c08cb63b35bfc752debddb13a61c324",tooltip=" "];
+  Node3 -> Node3 [id="edge4_Node000003_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node4 [id="edge5_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::flow::onComponentExecution\lStateChanged",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a1bf84ef29bea76a47d32546d819066ae",tooltip=" "];
+  Node4 -> Node5 [id="edge6_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="eez::flow::isSubscribedTo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a14c5171b47166c69c49c091883d1334e",tooltip=" "];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez_mqtt_deinit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$eez-flow_8cpp.html#a51e44554c71be1592913eec665e611df",tooltip=" "];
+  Node1 -> Node7 [id="edge8_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="eez::flow::findConnection",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a3f110a79a44a70bf24cf7dbf5a681b33",tooltip=" "];
+}

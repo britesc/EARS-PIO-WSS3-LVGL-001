@@ -1,0 +1,20 @@
+digraph "eez::flow::date::timeChangeRuleToLocal"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::flow::date::timeChange\lRuleToLocal",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::flow::date::isDst",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a86fed1dab8f2b97c56db528ac6555c68",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::flow::date::localToUtc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#abf9534c05226dcbe2248157c01b48944",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::flow::date::utcToLocal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#a9b21f8ab3955f387b8238af68794b4a7",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="eez::flow::date::now",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow_1_1date.html#ac52f0a580591913b2c3bc92a7a0428c3",tooltip=" "];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez::flow::do_OPERATION\l_TYPE_DATE_NOW",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a87933a46e7d2671b1e310199848946d9",tooltip=" "];
+  Node6 -> Node6 [id="edge6_Node000006_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

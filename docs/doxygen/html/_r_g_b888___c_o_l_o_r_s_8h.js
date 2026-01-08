@@ -1,6 +1,11 @@
 var _r_g_b888___c_o_l_o_r_s_8h =
 [
     [ "__RGB888_COLOURS_H_", "_r_g_b888___c_o_l_o_r_s_8h.html#ac85879a98160d97bfecae606426d7a8d", null ],
+    [ "EARS_RGB888_AS_BLACK", "_r_g_b888___c_o_l_o_r_s_8h.html#aa916ef85462c920335a93d1a3313de67", null ],
+    [ "EARS_RGB888_AS_BROWN1", "_r_g_b888___c_o_l_o_r_s_8h.html#a0a1a9a35fb3450c2fd2de798b4d96e9c", null ],
+    [ "EARS_RGB888_AS_BROWN2", "_r_g_b888___c_o_l_o_r_s_8h.html#a9dfd97fa0fe2d066e2b68ebaac55609f", null ],
+    [ "EARS_RGB888_AS_GREEN", "_r_g_b888___c_o_l_o_r_s_8h.html#a7031f06ae3f826d59f2614ef785f840e", null ],
+    [ "EARS_RGB888_AS_TAN", "_r_g_b888___c_o_l_o_r_s_8h.html#a5d3df1caa0720b7c083edb28b431b0df", null ],
     [ "EARS_RGB888_BLACK", "_r_g_b888___c_o_l_o_r_s_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900", null ],
     [ "EARS_RGB888_BLUE", "_r_g_b888___c_o_l_o_r_s_8h.html#a69c3133671a728f06bd56ff4826f6845", null ],
     [ "EARS_RGB888_BROWN", "_r_g_b888___c_o_l_o_r_s_8h.html#a9938d8ec3abec4bb5c8a7d95bf96f1f3", null ],

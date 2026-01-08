@@ -32,10 +32,17 @@ digraph "src/main.cpp"
   Node10 -> Node13 [id="edge14_Node000010_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="nvs_flash.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node14 [id="edge15_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="Logger.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logger_8h.html",tooltip=" "];
+  Node14 [id="Node000014",label="Logger.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logger_8h.html",tooltip="Enhanced logging system with hierarchical levels and unified config."];
   Node14 -> Node3 [id="edge16_Node000014_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node15 [id="edge17_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="FS.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node15 [id="Node000015",label="SD.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node14 -> Node16 [id="edge18_Node000014_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="LittleFS.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node16 [id="Node000016",label="ArduinoJson.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node14 -> Node17 [id="edge19_Node000014_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="SDCard.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_s_d_card_8h.html",tooltip="SD Card wrapper library for ESP32-S3 with separate SPI bus."];
+  Node17 -> Node3 [id="edge20_Node000017_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node15 [id="edge21_Node000017_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node18 [id="edge22_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="SPI.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node17 [id="edge23_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
 }

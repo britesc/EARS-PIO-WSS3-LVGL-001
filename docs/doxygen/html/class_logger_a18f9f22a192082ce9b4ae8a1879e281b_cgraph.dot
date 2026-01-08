@@ -1,0 +1,34 @@
+digraph "Logger::loadConfig"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Logger::loadConfig",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Load logger config from unified ears.config."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Logger::loadUnifiedConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#aaede204cafa39c183e00294bde3c10e6",tooltip="Load entire unified config file."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Logger::error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#ac862952b8ffa9de295a496af0108785c",tooltip="Log a message at ERROR level."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Logger::log",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#af0dc4ff68b6d37026b9f6c7a51da6aaa",tooltip="Core logging function."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Logger::getLevelString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a2c93c29befa08263f1f7f301333aa34b",tooltip="Get level string for log entry."];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Logger::getTimestamp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a015fa726e1e272a8bf6a845d57eba5ae",tooltip="Get current timestamp string."];
+  Node4 -> Node7 [id="edge6_Node000004_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Logger::needsRotation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a33eb30472648fdb372e500d6a8ed1538",tooltip="Check if log needs rotation."];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Logger::getLogFileSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a3c98a51a43b7fb016aa66f31ba41e5a8",tooltip="Get current log file size in bytes."];
+  Node4 -> Node9 [id="edge8_Node000004_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Logger::performRotation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a10a251ee06a5a2d8ffd4d79a61db12d7",tooltip="Perform log rotation."];
+  Node9 -> Node10 [id="edge9_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Logger::info",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a0c5851d03ba2e560bfd57aeb713267b3",tooltip="Log a message at INFO level."];
+  Node10 -> Node4 [id="edge10_Node000010_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node11 [id="edge11_Node000004_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Logger::shouldLog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a9a3a153c15a479cc234849078ae2b9ef",tooltip="Check if level should be logged (hierarchical)."];
+  Node1 -> Node12 [id="edge12_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Logger::parseLevelString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#ae115d52b90e74296e42584ef4febad15",tooltip="Parse log level from string."];
+  Node1 -> Node13 [id="edge13_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Logger::saveUnifiedConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#ae0545dbe544c061358ee3a5de1b0796e",tooltip="Save entire unified config file."];
+}

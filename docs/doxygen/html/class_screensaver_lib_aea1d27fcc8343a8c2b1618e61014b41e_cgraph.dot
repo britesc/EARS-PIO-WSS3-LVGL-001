@@ -1,0 +1,13 @@
+digraph "ScreensaverLib::activate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="ScreensaverLib::activate",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Activate screensaver."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ScreensaverLib::createScreensaver\lScreen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_screensaver_lib.html#a998f9ac5c20472c4952fb583d7c1eed9",tooltip="Private: Create the screensaver screen."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ScreensaverLib::saveBacklight",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_screensaver_lib.html#a59d0a4c0af24aa3cbd0f47e61869315a",tooltip="Private: Save current backlight value."];
+}

@@ -1,0 +1,24 @@
+digraph "eez::flow::createUserWidgetFlowState"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::flow::createUserWidget\lFlowState",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::flow::executeLVGLUser\lWidgetComponent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#a1a5886b671a7c9840f39a8103f6d3074",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="getFlowState",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$eez-flow_8cpp.html#a5934a606cba6ddd465254dc5f264acee",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="create_screen_initial\l_screen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$screens_8c.html#a8b3c217f0a04aec0f7f47d3ffea52724",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="create_screens",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$screens_8c.html#a6073eeb5bfdddd93f2ac07e3cffb37ae",tooltip=" "];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez_flow_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$eez-flow_8cpp.html#addc98d609a03495f1d58de1ed439b4d4",tooltip=" "];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="ui_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ui_8c.html#aa6f50ea564e0ba7375ce590a5196f12f",tooltip=" "];
+  Node3 -> Node8 [id="edge7_Node000003_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="tick_screen_initial\l_screen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$screens_8c.html#a5e35f1f703c31f65277eff00bbba2ac4",tooltip=" "];
+  Node8 -> Node4 [id="edge8_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

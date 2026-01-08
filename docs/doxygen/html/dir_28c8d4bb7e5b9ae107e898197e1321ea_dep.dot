@@ -7,6 +7,8 @@ digraph "lib/Logger"
   compound=true
   subgraph clusterdir_97aefd0d527b934f1d99a682da8fe6a9 {
     graph [ bgcolor="#edf0f7", pencolor="grey25", label="lib", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_97aefd0d527b934f1d99a682da8fe6a9.html",tooltip=""]
+  dir_a051b05a9a2136477446c1c112d077cc [label="SDCard", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a051b05a9a2136477446c1c112d077cc.html",tooltip=""];
   dir_28c8d4bb7e5b9ae107e898197e1321ea [label="Logger", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_28c8d4bb7e5b9ae107e898197e1321ea.html",tooltip=""];
   }
+  dir_28c8d4bb7e5b9ae107e898197e1321ea->dir_a051b05a9a2136477446c1c112d077cc [headlabel="1", labeldistance=1.5 headhref="dir_000003_000006.html" href="dir_000003_000006.html" color="steelblue1" fontcolor="steelblue1"];
 }

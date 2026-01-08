@@ -1,0 +1,19 @@
+digraph "eez::flow::writeLogMessage"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="eez::flow::writeLogMessage",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="eez::flow::logInfo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#af48ca5a86992680055e60d6055f5b780",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="eez::flow::executeLogComponent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#ac6ccbab91b9068502aec488d8c1cd9a0",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="eez::flow::logScpiCommand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#aa9b396c26e36456f2403aab037295c67",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="eez::flow::logScpiQuery",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#ab4256727ca43ce512d41456aa5ec8c6b",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="eez::flow::logScpiQueryResult",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceeez_1_1flow.html#ab64617440e2727a4aeef9868cb975c50",tooltip=" "];
+}

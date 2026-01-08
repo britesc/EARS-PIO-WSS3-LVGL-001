@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upgraded_0',['UPGRADED',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6',1,'NVSEeprom.h']]]
+  ['error_0',['ERROR',['../_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5',1,'Logger.h']]]
 ];

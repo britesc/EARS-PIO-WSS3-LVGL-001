@@ -100,7 +100,7 @@ $(function(){initNavTree('_r_g_b888___c_o_l_o_r_s_8h_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// EARS_RGB888 Color Definitions</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Format: 5 bits Red, 6 bits Green, 5 bits Blue</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Format: 6 bits Red, 6 bits Green, 6 bits Blue</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// Basic Colors</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">   21</a></span><span class="preprocessor">#define EARS_RGB888_BLACK       0x000000  </span><span class="comment">//   0,   0,   0</span></div>
@@ -126,11 +126,14 @@ $(function(){initNavTree('_r_g_b888___c_o_l_o_r_s_8h_source.html','',''); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a43beb4daff7f43cef188b0ff6738afcf">   41</a></span><span class="preprocessor">#define EARS_RGB888_MAROON      0x800000  </span><span class="comment">// 128,   0,   0</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#ab64bca98620215fbc005b8cc320d7a8c">   42</a></span><span class="preprocessor">#define EARS_RGB888_OLIVE       0x808000  </span><span class="comment">// 128, 128,   0</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Utility macro to convert RGB888 to EARS_RGB555</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// #define RGB888_TO_EARS_RGB555(r, g, b) \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//     ((((r) &amp; 0xF8) &lt;&lt; 8) | (((g) &amp; 0xFC) &lt;&lt; 3) | (((b) &amp; 0xF8) &gt;&gt; 3))</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// __RGB888_COLOURS_H_</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Camouflage Swatch</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a0a1a9a35fb3450c2fd2de798b4d96e9c">   45</a></span><span class="preprocessor">#define EARS_RGB888_AS_BROWN1   0x604439  </span><span class="comment">//  96,  68,  57</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a5d3df1caa0720b7c083edb28b431b0df">   46</a></span><span class="preprocessor">#define EARS_RGB888_AS_TAN      0x9E9A75  </span><span class="comment">// 158, 154, 117</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#aa916ef85462c920335a93d1a3313de67">   47</a></span><span class="preprocessor">#define EARS_RGB888_AS_BLACK    0x1C222E  </span><span class="comment">//  28,  34,  46</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a7031f06ae3f826d59f2614ef785f840e">   48</a></span><span class="preprocessor">#define EARS_RGB888_AS_GREEN    0x41533B  </span><span class="comment">//  65,  83,  59</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_r_g_b888___c_o_l_o_r_s_8h.html#a9dfd97fa0fe2d066e2b68ebaac55609f">   49</a></span><span class="preprocessor">#define EARS_RGB888_AS_BROWN2   0x554840  </span><span class="comment">//  85,  72,  64</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// __RGB888_COLOURS_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

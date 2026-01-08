@@ -94,7 +94,10 @@ $(function(){initNavTree('index.html','',''); });
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="description"></a>
 Description</h1>
-<p>EARS - Equipment and Ammunition Reporting System.</p>
+<p>EARS - Equipment and Ammunition Reporting System. Dual-Core ESP32-S3 Implementation:</p><ul>
+<li>Core 0: NVS Validation and background tasks</li>
+<li>Core 1: LVGL display, animation, and UI</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="libraries"></a>
 Libraries</h1>
 <ul>
@@ -129,6 +132,7 @@ Author</h1>
 <ul>
 <li>Created by JTB on 20251220.</li>
 <li>Modified by by JTB on 20251228.</li>
+<li>Modified for proper dual-core operation on 20250104.</li>
 </ul>
 <p>Copyright (c) 2025 JTB. All rights reserved. </p>
 </div></div><!-- PageDoc -->

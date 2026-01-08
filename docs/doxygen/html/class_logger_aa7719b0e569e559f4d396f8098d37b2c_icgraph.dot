@@ -1,0 +1,23 @@
+digraph "Logger::logf"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Logger::logf",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Core formatted logging function."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Logger::debugf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#ab5bf33c14d38b92736209c86acc1d572",tooltip="Log a formatted message at DEBUG level."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Logger::errorf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7004288c4a79ffc421888877e87ba42d",tooltip="Log a formatted message at ERROR level."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Logger::infof",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a5c58b592a174b46a17a4b34403ae3263",tooltip="Log a formatted message at INFO level."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Logger::setLogLevel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a00fdcdbeb39a2d5d4fb27cc36c35c101",tooltip="Set current log level."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Logger::setLogLevelFromString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#afcb3cb19bc1fa9d6333c42f2dde3eb5a",tooltip="Set log level from string."];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Logger::warnf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#ae31a2ccd35d9d5d7bfc6634d358366ec",tooltip="Log a formatted message at WARN level."];
+}

@@ -1,0 +1,27 @@
+var class_screensaver_lib =
+[
+    [ "ScreensaverLib", "class_screensaver_lib.html#ae082d6cb084c3a0e5eea4bf519b03d85", null ],
+    [ "activate", "class_screensaver_lib.html#aea1d27fcc8343a8c2b1618e61014b41e", null ],
+    [ "begin", "class_screensaver_lib.html#a5a92d278eede6ab7d1c23816126a54c5", null ],
+    [ "createScreensaverScreen", "class_screensaver_lib.html#a998f9ac5c20472c4952fb583d7c1eed9", null ],
+    [ "deactivate", "class_screensaver_lib.html#a98457a44e5a300b33a29fd5511e2d9a2", null ],
+    [ "destroyScreensaverScreen", "class_screensaver_lib.html#ab8cd663da87a3afb97bd342e85b4dc05", null ],
+    [ "getSettings", "class_screensaver_lib.html#a2bf041c280f95a541a88dce547925cf8", null ],
+    [ "isActive", "class_screensaver_lib.html#a3768edc3f26b1a80287399210725f333", null ],
+    [ "reset", "class_screensaver_lib.html#a11de41570555d7c64168555a100ca537", null ],
+    [ "restoreBacklight", "class_screensaver_lib.html#aea1590112f0b1ee8441e013be90b014c", null ],
+    [ "saveBacklight", "class_screensaver_lib.html#a59d0a4c0af24aa3cbd0f47e61869315a", null ],
+    [ "setAnimationSpeed", "class_screensaver_lib.html#a3d6c766510500c2676ea689142da5da1", null ],
+    [ "setBounceMode", "class_screensaver_lib.html#aeef36f9a4a5d2277f5a34be3dc86dc87", null ],
+    [ "setEnabled", "class_screensaver_lib.html#adf40b5bd8e533adc01f88bf25c8b0b2c", null ],
+    [ "setMode", "class_screensaver_lib.html#a55b5d1659be92abca102cc5b535d6476", null ],
+    [ "setTimeout", "class_screensaver_lib.html#aecdb398aa00bdfaf2570b3fa51804119", null ],
+    [ "toggleEnabled", "class_screensaver_lib.html#ac7e4af59ebcfe48920008ce4d0281c7b", null ],
+    [ "update", "class_screensaver_lib.html#a86c473249e27554a8c31528531033a02", null ],
+    [ "updateAnimation", "class_screensaver_lib.html#aa85230bfc228b56dac337abb1e7275c2", null ],
+    [ "_display", "class_screensaver_lib.html#aebd3457dd95435dafb14c17965d40347", null ],
+    [ "_is_active", "class_screensaver_lib.html#a55afc84ab3e83e93b09c559d8233722d", null ],
+    [ "_last_activity_ms", "class_screensaver_lib.html#a4f8254601f950f03ee18c1f538aea5bf", null ],
+    [ "_screensaver_screen", "class_screensaver_lib.html#a4c018bf8f0d862a28486fc2eb33e2d68", null ],
+    [ "_settings", "class_screensaver_lib.html#a66ca8bb60bdda06e19c227e3f39609ee", null ]
+];

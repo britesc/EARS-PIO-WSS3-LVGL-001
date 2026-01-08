@@ -7,7 +7,9 @@ digraph "NVSEeprom::updateNVSCRC"
   rankdir="RL";
   Node1 [id="Node000001",label="NVSEeprom::updateNVSCRC",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Update the stored NVS CRC32 value."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="NVSEeprom::upgradeNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a392eba0f37f363c1cf04f354c0363969",tooltip="Upgrade NVS from one version to another."];
-  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="NVSEeprom::validateNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a9ef62caff8a30f2a17cd6df03775102c",tooltip="Validate entire NVS storage."];
+  Node2 [id="Node000002",label="NVSEeprom::setZapNumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a3d935636c002ab4c658f32a7abc8ec4a",tooltip="Set ZapNumber in NVS."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="NVSEeprom::upgradeNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a392eba0f37f363c1cf04f354c0363969",tooltip="Upgrade NVS from one version to another."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="NVSEeprom::validateNVS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_v_s_eeprom.html#a9ef62caff8a30f2a17cd6df03775102c",tooltip="Validate entire NVS storage."];
 }
