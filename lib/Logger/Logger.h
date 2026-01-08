@@ -3,9 +3,9 @@
  * @author JTB
  * @brief Enhanced logging system with hierarchical levels and unified config
  * @version 2.1
- * @date 20250105
+ * @date 20260105
  * 
- * @copyright Copyright (c) 2025 JTB. All rights reserved.
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 #pragma once
@@ -73,63 +73,83 @@ public:
     
     /**
      * @brief Check if logger is initialized
+     * @return true if initialized
+     * @return false if not initialized
      */
     bool isInitialized() const { return _initialized; }
     
     /**
      * @brief Log a message at DEBUG level
+     * @return void
      */
     void debug(const char* message);
     
     /**
      * @brief Log a formatted message at DEBUG level
+     * @param format printf-style format string
+     * @return void
      */
     void debugf(const char* format, ...);
     
     /**
      * @brief Log a message at INFO level
+     * @param message Message to log
+     * @return void
      */
     void info(const char* message);
     
     /**
      * @brief Log a formatted message at INFO level
+     * @param format printf-style format string
+     * @return void
      */
     void infof(const char* format, ...);
     
     /**
      * @brief Log a message at WARN level
+     * @param message Message to log
+     * @return void
      */
     void warn(const char* message);
     
     /**
      * @brief Log a formatted message at WARN level
+     * @param format printf-style format string
+     * @return void
      */
     void warnf(const char* format, ...);
     
     /**
      * @brief Log a message at ERROR level
+     * @param message Message to log
+     * @return void
      */
     void error(const char* message);
     
     /**
      * @brief Log a formatted message at ERROR level
+     * @param format printf-style format string
+     * @return void
      */
     void errorf(const char* format, ...);
     
     /**
-     * @brief Set current log level
-     * 
+     * @brief Set current log level 
      * @param level New log level (NONE, ERROR, WARN, INFO, DEBUG)
+     * @return void
      */
     void setLogLevel(LogLevel level);
     
     /**
      * @brief Get current log level
+     * @param level New log level (NONE, ERROR, WARN, INFO, DEBUG)
+     * @return LogLevel current log level
      */
     LogLevel getLogLevel() const { return _config.currentLevel; }
     
     /**
      * @brief Get log level as string
+     * @return String "NONE", "ERROR", "WARN", "INFO", or "DEBUG"
      */
     String getLogLevelString() const;
     
@@ -138,11 +158,14 @@ public:
      * 
      * @param levelStr "NONE", "ERROR", "WARN", "INFO", or "DEBUG"
      * @return true if valid level string
+     * @return false if invalid level string
      */
     bool setLogLevelFromString(const String& levelStr);
     
     /**
      * @brief Save logger config to unified ears.config
+     * @return true if save successful
+     * @return false if save failed
      * 
      * Only updates the logger section, preserves other sections
      */
@@ -150,31 +173,42 @@ public:
     
     /**
      * @brief Load logger config from unified ears.config
+     * @return true if load successful
+     * @return false if load failed
      */
     bool loadConfig();
     
     /**
      * @brief Clear/delete current log file
+     * @return true if log cleared successfully
+     * @return false if clearing log failed
      */
     bool clearLog();
     
     /**
      * @brief Get current log file size in bytes
+     * @return uint32_t log file size in bytes
      */
     uint32_t getLogFileSize();
     
     /**
      * @brief Get current log file size in MB
+     * @return float log file size in megabytes
      */
     float getLogFileSizeMB();
     
     /**
      * @brief Force log rotation (for testing)
+     * @return true if rotation successful
+     * @return false if rotation failed
      */
     bool rotateLog();
     
     /**
      * @brief Check if a message at given level would be logged
+     * @param level LogLevel to check
+     * @return true if message at this level would be logged
+     * @return false if message at this level would be ignored
      * 
      * Useful for avoiding expensive string operations
      */
@@ -197,16 +231,26 @@ private:
     
     /**
      * @brief Core logging function
+     * @param level LogLevel of the message
+     * @param message Message to log
+     * @return void
      */
     void log(LogLevel level, const char* message);
     
     /**
      * @brief Core formatted logging function
+     * @param level LogLevel of the message
+     * @param format printf-style format string
+     * @param args va_list of arguments
+     * @return void
      */
     void logf(LogLevel level, const char* format, va_list args);
     
     /**
      * @brief Check if level should be logged (hierarchical)
+     * @param level LogLevel to check
+     * @return true if level should be logged
+     * @return false if level should be ignored
      */
     bool shouldLog(LogLevel level) const;
     
@@ -217,36 +261,51 @@ private:
     
     /**
      * @brief Get current timestamp string
+     * @return String timestamp in "YYYY-MM-DD HH:MM:SS" format
      */
     String getTimestamp() const;
     
     /**
      * @brief Check if log needs rotation
+     * @return true if rotation needed
+     * @return false if rotation not needed
      */
     bool needsRotation();
     
     /**
      * @brief Perform log rotation
+     * @return true if rotation successful
+     * @return false if rotation failed
      */
     bool performRotation();
     
     /**
      * @brief Load entire unified config file
+     * @param doc JsonDocument to load config into
+     * @return true if load successful
+     * @return false if load failed
      */
     bool loadUnifiedConfig(JsonDocument& doc);
     
     /**
      * @brief Save entire unified config file
+     * @param doc JsonDocument containing config to save
+     * @return true if save successful
+     * @return false if save failed
      */
     bool saveUnifiedConfig(const JsonDocument& doc);
     
     /**
      * @brief Parse log level from string
+     * @param levelStr "NONE", "ERROR", "WARN", "INFO", or "DEBUG"
+     * @return LogLevel parsed log level
      */
     LogLevel parseLevelString(const String& levelStr) const;
     
     /**
      * @brief Convert log level to string
+     * @param level LogLevel to convert
+     * @return String log level as string
      */
     String levelToString(LogLevel level) const;
 };
@@ -267,3 +326,7 @@ private:
 #define LOGF(fmt, ...) Logger::getInstance().infof(fmt, __VA_ARGS__)
 
 #endif // __LOGGER_H__
+
+/****************************************************************************
+ * End of Logger.h
+ ***************************************************************************/

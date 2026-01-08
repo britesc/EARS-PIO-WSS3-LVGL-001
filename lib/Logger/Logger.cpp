@@ -13,7 +13,8 @@
 #include <sys/time.h>
 
 /**
- * @brief Get singleton instance
+ * @brief Get singleton instance.
+ * @return Logger& Reference to Logger instance.
  */
 Logger& Logger::getInstance() {
     static Logger instance;
@@ -21,7 +22,7 @@ Logger& Logger::getInstance() {
 }
 
 /**
- * @brief Private constructor
+ * @brief Private constructor.
  */
 Logger::Logger() : 
     _initialized(false),
@@ -31,13 +32,19 @@ Logger::Logger() :
 }
 
 /**
- * @brief Destructor
+ * @brief Destructor.
  */
 Logger::~Logger() {
 }
 
 /**
- * @brief Initialize logger
+ * @brief Initialize logger.
+ * @return true if initialization successful.
+ * @return false if initialization failed.
+ * @param logFilePath Path to log file (e.g., "/logs/debug.log")
+ * @param configFilePath Path to unified config file (e.g., "/config/ears.config")
+ * @param sdCard Pointer to SDCard instance 
+ * 
  */
 bool Logger::begin(const char* logFilePath, const char* configFilePath, SDCard* sdCard) {
     if (_initialized) {
@@ -88,6 +95,8 @@ bool Logger::begin(const char* logFilePath, const char* configFilePath, SDCard* 
 
 /**
  * @brief Log a message at DEBUG level
+ * @param message Message to log
+ * @return void
  */
 void Logger::debug(const char* message) {
     log(LogLevel::DEBUG, message);
@@ -95,6 +104,8 @@ void Logger::debug(const char* message) {
 
 /**
  * @brief Log a formatted message at DEBUG level
+ * @param format Format string
+ * @return void
  */
 void Logger::debugf(const char* format, ...) {
     va_list args;
@@ -105,6 +116,8 @@ void Logger::debugf(const char* format, ...) {
 
 /**
  * @brief Log a message at INFO level
+ * @param message Message to log
+ * @return void
  */
 void Logger::info(const char* message) {
     log(LogLevel::INFO, message);
@@ -112,6 +125,8 @@ void Logger::info(const char* message) {
 
 /**
  * @brief Log a formatted message at INFO level
+ * @param format Format string
+ * @return void
  */
 void Logger::infof(const char* format, ...) {
     va_list args;
@@ -122,6 +137,8 @@ void Logger::infof(const char* format, ...) {
 
 /**
  * @brief Log a message at WARN level
+ * @param message Message to log
+ * @return void
  */
 void Logger::warn(const char* message) {
     log(LogLevel::WARN, message);
@@ -129,6 +146,8 @@ void Logger::warn(const char* message) {
 
 /**
  * @brief Log a formatted message at WARN level
+ * @param format Format string
+ * @return void
  */
 void Logger::warnf(const char* format, ...) {
     va_list args;
@@ -139,6 +158,8 @@ void Logger::warnf(const char* format, ...) {
 
 /**
  * @brief Log a message at ERROR level
+ * @param message Message to log
+ * @return void
  */
 void Logger::error(const char* message) {
     log(LogLevel::ERROR, message);
@@ -146,6 +167,8 @@ void Logger::error(const char* message) {
 
 /**
  * @brief Log a formatted message at ERROR level
+ * @param format Format string
+ * @return void
  */
 void Logger::errorf(const char* format, ...) {
     va_list args;
@@ -156,6 +179,9 @@ void Logger::errorf(const char* format, ...) {
 
 /**
  * @brief Core logging function
+ * @param level Log level
+ * @param message Message to log
+ * @return void
  */
 void Logger::log(LogLevel level, const char* message) {
     if (!_initialized || !shouldLog(level)) {
@@ -182,6 +208,10 @@ void Logger::log(LogLevel level, const char* message) {
 
 /**
  * @brief Core formatted logging function
+ * @param level Log level
+ * @param format Format string
+ * @param args Variable argument list
+ * @return void
  */
 void Logger::logf(LogLevel level, const char* format, va_list args) {
     if (!_initialized || !shouldLog(level)) {
@@ -195,6 +225,9 @@ void Logger::logf(LogLevel level, const char* format, va_list args) {
 
 /**
  * @brief Check if level should be logged (hierarchical)
+ * @param level Log level to check
+ * @return true if should log
+ * @return false if should not log
  */
 bool Logger::shouldLog(LogLevel level) const {
     // Hierarchical: current level must be >= message level
@@ -203,6 +236,9 @@ bool Logger::shouldLog(LogLevel level) const {
 
 /**
  * @brief Check if a message at given level would be logged
+ * @param level Log level to check
+ * @return true if would log
+ * @return false if would not log
  */
 bool Logger::wouldLog(LogLevel level) const {
     return _initialized && shouldLog(level);
@@ -210,6 +246,8 @@ bool Logger::wouldLog(LogLevel level) const {
 
 /**
  * @brief Get level string for log entry
+ * @param level Log level
+ * @return const char* Level string
  */
 const char* Logger::getLevelString(LogLevel level) const {
     switch (level) {
@@ -229,6 +267,7 @@ const char* Logger::getLevelString(LogLevel level) const {
 
 /**
  * @brief Get current timestamp string
+ * @return String Timestamp in "YYYY-MM-DD HH:MM:SS" format 
  */
 String Logger::getTimestamp() const {
     struct timeval tv;
@@ -251,6 +290,8 @@ String Logger::getTimestamp() const {
 
 /**
  * @brief Set current log level
+ * @param level New log level (NONE, ERROR, WARN, INFO, DEBUG)
+ * @return void
  */
 void Logger::setLogLevel(LogLevel level) {
     _config.currentLevel = level;
@@ -264,6 +305,7 @@ void Logger::setLogLevel(LogLevel level) {
 
 /**
  * @brief Get log level as string
+ * @return String Log level string
  */
 String Logger::getLogLevelString() const {
     return levelToString(_config.currentLevel);
@@ -271,6 +313,9 @@ String Logger::getLogLevelString() const {
 
 /**
  * @brief Set log level from string
+ * @param levelStr "NONE", "ERROR", "WARN", "INFO", or "DEBUG"
+ * @return true if valid level string
+ * @return false if invalid level string
  */
 bool Logger::setLogLevelFromString(const String& levelStr) {
     LogLevel level = parseLevelString(levelStr);
@@ -283,6 +328,8 @@ bool Logger::setLogLevelFromString(const String& levelStr) {
 
 /**
  * @brief Parse log level from string
+ * @param levelStr Log level string
+ * @return LogLevel Parsed log level
  */
 LogLevel Logger::parseLevelString(const String& levelStr) const {
     String upper = levelStr;
@@ -299,6 +346,8 @@ LogLevel Logger::parseLevelString(const String& levelStr) const {
 
 /**
  * @brief Convert log level to string
+ * @param level Log level
+ * @return String Log level string
  */
 String Logger::levelToString(LogLevel level) const {
     switch (level) {
@@ -319,6 +368,9 @@ String Logger::levelToString(LogLevel level) const {
 
 /**
  * @brief Load entire unified config file
+ * @param doc JsonDocument to load into
+ * @return true if load successful
+ * @return false if load failed* 
  */
 bool Logger::loadUnifiedConfig(JsonDocument& doc) {
     if (!_sdCard || !_sdCard->fileExists(_configFilePath.c_str())) {
@@ -336,6 +388,9 @@ bool Logger::loadUnifiedConfig(JsonDocument& doc) {
 
 /**
  * @brief Save entire unified config file
+ * @param doc JsonDocument to save
+ * @return true if save successful
+ * @return false if save failed
  */
 bool Logger::saveUnifiedConfig(const JsonDocument& doc) {
     String jsonString;
@@ -345,6 +400,8 @@ bool Logger::saveUnifiedConfig(const JsonDocument& doc) {
 
 /**
  * @brief Load logger config from unified ears.config
+ * @return true if load successful
+ * @return false if load failed
  */
 bool Logger::loadConfig() {
     JsonDocument doc;
@@ -378,6 +435,8 @@ bool Logger::loadConfig() {
 
 /**
  * @brief Save logger config to unified ears.config
+ * @return true if save successful
+ * @return false if save failed
  */
 bool Logger::saveConfig() {
     if (!_initialized) {
@@ -399,6 +458,8 @@ bool Logger::saveConfig() {
 
 /**
  * @brief Clear/delete current log file
+ * @return true if clear successful
+ * @return false if clear failed
  */
 bool Logger::clearLog() {
     if (!_initialized) {
@@ -416,6 +477,7 @@ bool Logger::clearLog() {
 
 /**
  * @brief Get current log file size in bytes
+ * @return uint32_t Log file size in bytes
  */
 uint32_t Logger::getLogFileSize() {
     if (!_initialized || !_sdCard->fileExists(_logFilePath.c_str())) {
@@ -435,6 +497,7 @@ uint32_t Logger::getLogFileSize() {
 
 /**
  * @brief Get current log file size in MB
+ * @return float Log file size in MB
  */
 float Logger::getLogFileSizeMB() {
     return getLogFileSize() / 1048576.0;
@@ -442,6 +505,8 @@ float Logger::getLogFileSizeMB() {
 
 /**
  * @brief Check if log needs rotation
+ * @return true if rotation needed
+ * @return false if rotation not needed
  */
 bool Logger::needsRotation() {
     uint32_t currentSize = getLogFileSize();
@@ -450,6 +515,8 @@ bool Logger::needsRotation() {
 
 /**
  * @brief Perform log rotation
+ * @return true if rotation successful
+ * @return false if rotation failed
  */
 bool Logger::performRotation() {
     if (!_initialized) {
@@ -494,7 +561,13 @@ bool Logger::performRotation() {
 
 /**
  * @brief Force log rotation (for testing)
+ * @return true if rotation successful
+ * @return false if rotation failed
  */
 bool Logger::rotateLog() {
     return performRotation();
 }
+
+/*****************************************************************************
+ * End of Logger.cpp
+ ****************************************************************************/

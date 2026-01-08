@@ -1,3 +1,13 @@
+/**
+ * @file ScreensaverLib.h
+ * @author Julian (51fiftyone51fiftyone@gmail.com)
+ * @brief Screensaver library implementation header file
+ * @version 1.0.0
+ * @date 20260107
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #pragma once
 #ifndef SCREENSAVER_LIB_H
 #define SCREENSAVER_LIB_H
@@ -5,7 +15,11 @@
 #include <Arduino.h>
 #include <lvgl.h>
 
-// Screensaver modes
+/**
+ * @brief Screensaver modes
+ * @enum ScreensaverMode
+ * 
+ */
 enum ScreensaverMode {
     SS_MODE_BLACK = 0,
     SS_MODE_EARS_TEXT = 1,
@@ -13,7 +27,10 @@ enum ScreensaverMode {
     SS_MODE_USER_IMAGE = 3
 };
 
-// Screensaver settings structure
+/**
+ * @brief Screensaver settings structure
+ * @struct ScreensaverSettings
+ */
 struct ScreensaverSettings {
     bool enabled;
     uint8_t timeout_seconds;        // 0-120
@@ -23,16 +40,24 @@ struct ScreensaverSettings {
     uint8_t backlight_restore;      // Value to restore backlight to
 };
 
-// Screensaver manager class
+/**
+ * @brief Screensaver Library Class
+ * 
+ */
 class ScreensaverLib {
 public:
     ScreensaverLib();
     
-    // Initialization
+    /**
+     * @brief Initialization
+     * @param display
+     * @return void 
+     */
     void begin(lv_display_t* display);
     
     // Settings management
     void setEnabled(bool enabled);
+    void toggleEnabled();
     void setTimeout(uint8_t seconds);
     void setMode(ScreensaverMode mode);
     void setAnimationSpeed(uint8_t speed);
@@ -64,3 +89,7 @@ private:
 };
 
 #endif // SCREENSAVER_LIB_H
+
+/************************************************************************
+ * End of ScreensaverLib.h
+ ***********************************************************************/

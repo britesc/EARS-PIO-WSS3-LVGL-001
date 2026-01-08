@@ -1,7 +1,7 @@
 /**
  * @file ScreensaverLib.cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
- * @brief 
+ * @brief Screensaver library implementation
  * @version 1.0.0
  * @date 20260107
  * 
@@ -11,7 +11,10 @@
 
 #include "ScreensaverLib.h"
 
-// Constructor
+/**
+ * @brief Construct a new Screensaver Lib:: Screensaver Lib object
+ * @return ScreensaverLib&* 
+ */
 ScreensaverLib::ScreensaverLib() {
     _display = nullptr;
     _is_active = false;
@@ -27,55 +30,100 @@ ScreensaverLib::ScreensaverLib() {
     _settings.backlight_restore = 255;
 }
 
-// Initialize the screensaver
+/**
+ * @brief Initialize the screensaver
+ * @param display 
+ * @return void
+ */
 void ScreensaverLib::begin(lv_display_t* display) {
     _display = display;
     _last_activity_ms = millis();
 }
 
-// Reset inactivity timer
+/**
+ * @brief Reset inactivity timer
+ * @return void 
+ */
 void ScreensaverLib::reset() {
     _last_activity_ms = millis();
 }
 
-// Enable/disable screensaver
+/**
+ * @brief Set explicit state 
+ * @param enabled
+ * @return void
+ */
 void ScreensaverLib::setEnabled(bool enabled) {
     _settings.enabled = enabled;
 }
 
-// Set timeout in seconds
+/**
+ * @brief Toggle current state
+ * @return void
+ */
+void ScreensaverLib::toggleEnabled() {
+    _settings.enabled = !_settings.enabled;
+}
+
+/**
+ * @brief  Set timeout in seconds
+ * @param seconds 
+ * @return void
+ */
 void ScreensaverLib::setTimeout(uint8_t seconds) {
     _settings.timeout_seconds = seconds;
 }
 
-// Set screensaver mode
+/**
+ * @brief  Set screensaver mode
+ * @param mode 
+ * @return void
+ */
 void ScreensaverLib::setMode(ScreensaverMode mode) {
     _settings.mode = mode;
 }
 
-// Set animation speed (1-10)
+/**
+ * @brief  Set animation speed in seconds
+ * @param speed 
+ * @return void
+ */
 void ScreensaverLib::setAnimationSpeed(uint8_t speed) {
     if (speed >= 1 && speed <= 10) {
         _settings.animation_speed = speed;
     }
 }
 
-// Set bounce or wrap mode
+/**
+ * @brief  Set bounce mode
+ * @param bounce 
+ * @return void
+ */
 void ScreensaverLib::setBounceMode(bool bounce) {
     _settings.bounce_mode = bounce;
 }
 
-// Check if screensaver is active
+/**
+ * @brief Check if screensaver is active
+ * @return true 
+ * @return false 
+ */
 bool ScreensaverLib::isActive() {
     return _is_active;
 }
 
-// Get current settings
+/**
+ * @brief  Get current settings
+ * @return ScreensaverSettings 
+ */
 ScreensaverSettings ScreensaverLib::getSettings() {
     return _settings;
 }
 
-// Main update function - call in loop
+/**
+ * @brief Update screensaver state, call regularly in loop
+ * @return void
+ */
 void ScreensaverLib::update() {
     if (!_settings.enabled) return;
     if (_settings.timeout_seconds == 0) return;  // Disabled via timeout
@@ -92,7 +140,10 @@ void ScreensaverLib::update() {
     }
 }
 
-// Activate screensaver
+/**
+ * @brief Activate screensaver
+ * @return void
+ */
 void ScreensaverLib::activate() {
     if (_is_active) return;
     
@@ -101,7 +152,10 @@ void ScreensaverLib::activate() {
     _is_active = true;
 }
 
-// Deactivate screensaver
+/**
+ * @brief Deactivate screensaver
+ * @return void
+ */
 void ScreensaverLib::deactivate() {
     if (!_is_active) return;
     
@@ -111,27 +165,46 @@ void ScreensaverLib::deactivate() {
     reset();  // Reset timer
 }
 
-// Private: Save current backlight value
+/**
+ * @brief Private: Save current backlight value
+ * @return void
+ */
 void ScreensaverLib::saveBacklight() {
     // TODO: Implement backlight save
 }
 
-// Private: Restore backlight value
+/**
+ * @brief Private: Restore backlight to saved value
+ * @return void
+ */
 void ScreensaverLib::restoreBacklight() {
     // TODO: Implement backlight restore
 }
 
-// Private: Create the screensaver screen
+/**
+ * @brief Private: Create the screensaver screen
+ * @return void
+ */
 void ScreensaverLib::createScreensaverScreen() {
     // TODO: Implement screen creation
 }
 
-// Private: Destroy the screensaver screen
+/**
+ * @brief Private: Destroy the screensaver screen
+ * @return void
+ */
 void ScreensaverLib::destroyScreensaverScreen() {
     // TODO: Implement screen destruction
 }
 
-// Private: Update animation
+/**
+ * @brief Private: Update screensaver animation
+ * @return void
+ */
 void ScreensaverLib::updateAnimation() {
     // TODO: Implement animation
 }
+
+/************************************************************************
+ * End of ScreensaverLib.cpp
+ ***********************************************************************/

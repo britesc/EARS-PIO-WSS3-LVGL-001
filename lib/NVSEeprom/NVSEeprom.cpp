@@ -33,9 +33,8 @@ NVSEeprom::~NVSEeprom() {
 
 /**
  * @brief Begin NVS
- * 
- * @return true 
- * @return false 
+ * @return true
+ * @return false
  */
 bool NVSEeprom::begin() {
     esp_err_t err = nvs_flash_init();
@@ -443,5 +442,5 @@ bool NVSEeprom::setZapNumber(const String& zapNumber) {
 }
 
 /******************************************************************************
- * End of File
+ * End of NVSEeprom.cpp
  ******************************************************************************/

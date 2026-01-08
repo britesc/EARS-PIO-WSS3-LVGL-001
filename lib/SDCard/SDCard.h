@@ -3,9 +3,9 @@
  * @author JTB
  * @brief SD Card wrapper library for ESP32-S3 with separate SPI bus
  * @version 1.0
- * @date 20250105
+ * @date 20260105
  * 
- * @copyright Copyright (c) 2025 JTB. All rights reserved.
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 #pragma once
@@ -163,3 +163,7 @@ private:
 };
 
 #endif // __SDCARD_H__
+
+/****************************************************************************
+ * End of SDCard.h
+ ***************************************************************************/

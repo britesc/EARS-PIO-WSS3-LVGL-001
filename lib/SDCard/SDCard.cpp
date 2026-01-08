@@ -3,9 +3,9 @@
  * @author JTB
  * @brief SD Card wrapper library implementation
  * @version 1.0
- * @date 20250105
+ * @date 20260105
  * 
- * @copyright Copyright (c) 2025 JTB. All rights reserved.
+ * @copyright Copyright (c) 2026  JTB. All rights reserved.
  */
 
 #include "SDCard.h"
@@ -13,6 +13,9 @@
 
 /**
  * @brief Construct a new SDCard object
+ * @param spi SPI bus instance
+ * @param Initialised flag
+ * @return void
  */
 SDCard::SDCard() : _initialized(false), _spi(nullptr) {
 }
@@ -28,6 +31,7 @@ SDCard::~SDCard() {
 
 /**
  * @brief Initialize SPI bus for SD card
+ * @return void
  */
 void SDCard::initSPI() {
     // Create new SPI instance for SD card
@@ -39,7 +43,6 @@ void SDCard::initSPI() {
 
 /**
  * @brief Initialize the SD card
- * 
  * @return true if SD card initialized successfully
  * @return false if SD card initialization failed
  */
@@ -84,6 +87,8 @@ bool SDCard::begin() {
 
 /**
  * @brief Check if SD card is available
+ * @return true if SD card is available
+ * @return false if SD card is not available
  */
 bool SDCard::isAvailable() {
     return _initialized;
@@ -91,6 +96,7 @@ bool SDCard::isAvailable() {
 
 /**
  * @brief Get SD card type
+ * @return String describing card type (SD, SDHC, MMC, Unknown, NONE)
  */
 String SDCard::getCardType() {
     if (!_initialized) return "NONE";
@@ -111,6 +117,7 @@ String SDCard::getCardType() {
 
 /**
  * @brief Get SD card size in MB
+ * @return uint64_t card size in megabytes
  */
 uint64_t SDCard::getCardSizeMB() {
     if (!_initialized) return 0;
@@ -121,6 +128,7 @@ uint64_t SDCard::getCardSizeMB() {
 
 /**
  * @brief Get SD card free space in MB
+ * @return uint64_t free space in megabytes
  */
 uint64_t SDCard::getFreeSpaceMB() {
     if (!_initialized) return 0;
@@ -134,6 +142,9 @@ uint64_t SDCard::getFreeSpaceMB() {
 
 /**
  * @brief Create a directory on SD card
+ * @param path Directory path
+ * @return true if directory created or already exists
+ * @return false if creation failed
  */
 bool SDCard::createDirectory(const char* path) {
     if (!_initialized) return false;
@@ -155,6 +166,9 @@ bool SDCard::createDirectory(const char* path) {
 
 /**
  * @brief Check if file exists
+ * @param path File path
+ * @return true if file exists
+ * @return false if file does not exist
  */
 bool SDCard::fileExists(const char* path) {
     if (!_initialized) return false;
@@ -170,6 +184,9 @@ bool SDCard::fileExists(const char* path) {
 
 /**
  * @brief Check if directory exists
+ * @param path Directory path
+ * @return true if directory exists
+ * @return false if directory does not exist
  */
 bool SDCard::directoryExists(const char* path) {
     if (!_initialized) return false;
@@ -185,6 +202,9 @@ bool SDCard::directoryExists(const char* path) {
 
 /**
  * @brief Remove a file
+ * @param path File path
+ * @return true if file removed
+ * @return false if removal failed
  */
 bool SDCard::removeFile(const char* path) {
     if (!_initialized) return false;
@@ -201,6 +221,9 @@ bool SDCard::removeFile(const char* path) {
 
 /**
  * @brief Remove a directory
+ * @param path Directory path
+ * @return true if directory removed
+ * @return false if removal failed
  */
 bool SDCard::removeDirectory(const char* path) {
     if (!_initialized) return false;
@@ -217,6 +240,9 @@ bool SDCard::removeDirectory(const char* path) {
 
 /**
  * @brief List directory contents
+ * @param path Directory path
+ * @param indent Indentation level for display
+ * @return void
  */
 void SDCard::listDirectory(const char* path, uint8_t indent) {
     if (!_initialized) return;
@@ -262,6 +288,8 @@ void SDCard::listDirectory(const char* path, uint8_t indent) {
 
 /**
  * @brief Read entire file into String
+ * @param path File path
+ * @return String file contents (empty if failed)
  */
 String SDCard::readFile(const char* path) {
     if (!_initialized) return "";
@@ -284,6 +312,10 @@ String SDCard::readFile(const char* path) {
 
 /**
  * @brief Write String to file (overwrites existing)
+ * @param path File path
+ * @param content Content to write
+ * @return true if write successful
+ * @return false if write failed
  */
 bool SDCard::writeFile(const char* path, const String& content) {
     if (!_initialized) return false;
@@ -309,6 +341,10 @@ bool SDCard::writeFile(const char* path, const String& content) {
 
 /**
  * @brief Append String to file
+ * @param path File path
+ * @param content Content to append
+ * @return true if append successful
+ * @return false if append failed
  */
 bool SDCard::appendFile(const char* path, const String& content) {
     if (!_initialized) return false;
@@ -331,3 +367,7 @@ bool SDCard::appendFile(const char* path, const String& content) {
     Serial.println(path);
     return false;
 }
+
+/************************************************************************
+ * End of SDCard.cpp
+ ***********************************************************************/
