@@ -1,3 +1,11 @@
 Libraries:
 1.  CamelCase
 2.  SuffixLib
+3.  Invoke class "using_classname"
+
+Current Libraries to Refactor
+    Old Name            New Name
+1.  Logger              
+2.  NVSEeprom
+3.  ScreensaverLib
+4.  SDCard              sdCard
