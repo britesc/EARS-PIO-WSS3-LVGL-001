@@ -22,17 +22,17 @@
  * Handles SD card initialization and provides basic file operations
  * for the Waveshare ESP32-S3 3.5" LCD with dedicated SD card SPI bus
  */
-class SDCard {
+class EARS_sdCard {
 public:
     /**
-     * @brief Construct a new SDCard object
+     * @brief Construct a new EARS_sdCard object
      */
-    SDCard();
+    EARS_sdCard();
     
     /**
-     * @brief Destroy the SDCard object
+     * @brief Destroy the EARS_sdCard object
      */
-    ~SDCard();
+    ~EARS_sdCard();
     
     /**
      * @brief Initialize the SD card

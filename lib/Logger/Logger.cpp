@@ -46,7 +46,7 @@ Logger::~Logger() {
  * @param sdCard Pointer to SDCard instance 
  * 
  */
-bool Logger::begin(const char* logFilePath, const char* configFilePath, SDCard* sdCard) {
+bool Logger::begin(const char* logFilePath, const char* configFilePath, EARS_sdCard* sdCard) {
     if (_initialized) {
         return true;
     }

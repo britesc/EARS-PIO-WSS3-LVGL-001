@@ -69,7 +69,7 @@ public:
      * @return true if initialization successful
      * @return false if initialization failed
      */
-    bool begin(const char* logFilePath, const char* configFilePath, SDCard* sdCard);
+    bool begin(const char* logFilePath, const char* configFilePath, EARS_sdCard* sdCard);
     
     /**
      * @brief Check if logger is initialized
@@ -226,7 +226,7 @@ private:
     bool _initialized;
     String _logFilePath;
     String _configFilePath;
-    SDCard* _sdCard;
+    EARS_sdCard* _sdCard;
     LoggerConfig _config;
     
     /**

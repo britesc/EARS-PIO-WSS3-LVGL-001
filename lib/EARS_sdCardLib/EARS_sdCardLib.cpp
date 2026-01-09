@@ -12,18 +12,18 @@
 #include "WS35TLCD_PINS.h"
 
 /**
- * @brief Construct a new SDCard object
+ * @brief Construct a new EARS_sdCard object
  * @param spi SPI bus instance
  * @param Initialised flag
  * @return void
  */
-SDCard::SDCard() : _initialized(false), _spi(nullptr) {
+EARS_sdCard::EARS_sdCard() : _initialized(false), _spi(nullptr) {
 }
 
 /**
- * @brief Destroy the SDCard object
+ * @brief Destroy the EARS_sdCard object
  */
-SDCard::~SDCard() {
+EARS_sdCard::~EARS_sdCard() {
     if (_spi) {
         _spi->end();
     }
@@ -33,7 +33,7 @@ SDCard::~SDCard() {
  * @brief Initialize SPI bus for SD card
  * @return void
  */
-void SDCard::initSPI() {
+void EARS_sdCard::initSPI() {
     // Create new SPI instance for SD card
     _spi = new SPIClass(HSPI);
     
@@ -46,7 +46,7 @@ void SDCard::initSPI() {
  * @return true if SD card initialized successfully
  * @return false if SD card initialization failed
  */
-bool SDCard::begin() {
+bool EARS_sdCard::begin() {
     if (_initialized) {
         return true;
     }
@@ -90,7 +90,7 @@ bool SDCard::begin() {
  * @return true if SD card is available
  * @return false if SD card is not available
  */
-bool SDCard::isAvailable() {
+bool EARS_sdCard::isAvailable() {
     return _initialized;
 }
 
@@ -98,7 +98,7 @@ bool SDCard::isAvailable() {
  * @brief Get SD card type
  * @return String describing card type (SD, SDHC, MMC, Unknown, NONE)
  */
-String SDCard::getCardType() {
+String EARS_sdCard::getCardType() {
     if (!_initialized) return "NONE";
     
     uint8_t cardType = SD.cardType();
@@ -119,7 +119,7 @@ String SDCard::getCardType() {
  * @brief Get SD card size in MB
  * @return uint64_t card size in megabytes
  */
-uint64_t SDCard::getCardSizeMB() {
+uint64_t EARS_sdCard::getCardSizeMB() {
     if (!_initialized) return 0;
     
     uint64_t cardSize = SD.cardSize() / (1024 * 1024);
@@ -130,7 +130,7 @@ uint64_t SDCard::getCardSizeMB() {
  * @brief Get SD card free space in MB
  * @return uint64_t free space in megabytes
  */
-uint64_t SDCard::getFreeSpaceMB() {
+uint64_t EARS_sdCard::getFreeSpaceMB() {
     if (!_initialized) return 0;
     
     uint64_t totalBytes = SD.totalBytes();
@@ -146,7 +146,7 @@ uint64_t SDCard::getFreeSpaceMB() {
  * @return true if directory created or already exists
  * @return false if creation failed
  */
-bool SDCard::createDirectory(const char* path) {
+bool EARS_sdCard::createDirectory(const char* path) {
     if (!_initialized) return false;
     
     if (SD.mkdir(path)) {
@@ -170,7 +170,7 @@ bool SDCard::createDirectory(const char* path) {
  * @return true if file exists
  * @return false if file does not exist
  */
-bool SDCard::fileExists(const char* path) {
+bool EARS_sdCard::fileExists(const char* path) {
     if (!_initialized) return false;
     
     File file = SD.open(path);
@@ -188,7 +188,7 @@ bool SDCard::fileExists(const char* path) {
  * @return true if directory exists
  * @return false if directory does not exist
  */
-bool SDCard::directoryExists(const char* path) {
+bool EARS_sdCard::directoryExists(const char* path) {
     if (!_initialized) return false;
     
     File dir = SD.open(path);
@@ -206,7 +206,7 @@ bool SDCard::directoryExists(const char* path) {
  * @return true if file removed
  * @return false if removal failed
  */
-bool SDCard::removeFile(const char* path) {
+bool EARS_sdCard::removeFile(const char* path) {
     if (!_initialized) return false;
     
     if (SD.remove(path)) {
@@ -225,7 +225,7 @@ bool SDCard::removeFile(const char* path) {
  * @return true if directory removed
  * @return false if removal failed
  */
-bool SDCard::removeDirectory(const char* path) {
+bool EARS_sdCard::removeDirectory(const char* path) {
     if (!_initialized) return false;
     
     if (SD.rmdir(path)) {
@@ -244,7 +244,7 @@ bool SDCard::removeDirectory(const char* path) {
  * @param indent Indentation level for display
  * @return void
  */
-void SDCard::listDirectory(const char* path, uint8_t indent) {
+void EARS_sdCard::listDirectory(const char* path, uint8_t indent) {
     if (!_initialized) return;
     
     File dir = SD.open(path);
@@ -291,7 +291,7 @@ void SDCard::listDirectory(const char* path, uint8_t indent) {
  * @param path File path
  * @return String file contents (empty if failed)
  */
-String SDCard::readFile(const char* path) {
+String EARS_sdCard::readFile(const char* path) {
     if (!_initialized) return "";
     
     File file = SD.open(path, FILE_READ);
@@ -317,7 +317,7 @@ String SDCard::readFile(const char* path) {
  * @return true if write successful
  * @return false if write failed
  */
-bool SDCard::writeFile(const char* path, const String& content) {
+bool EARS_sdCard::writeFile(const char* path, const String& content) {
     if (!_initialized) return false;
     
     File file = SD.open(path, FILE_WRITE);
@@ -346,7 +346,7 @@ bool SDCard::writeFile(const char* path, const String& content) {
  * @return true if append successful
  * @return false if append failed
  */
-bool SDCard::appendFile(const char* path, const String& content) {
+bool EARS_sdCard::appendFile(const char* path, const String& content) {
     if (!_initialized) return false;
     
     File file = SD.open(path, FILE_APPEND);

@@ -98,7 +98,7 @@ NVSEeprom nvs;
  * SD Card object
  *****************************************************************************/
 // Global SD Card instance
- SDCard sdCard;
+ EARS_sdCard using_ears_sdcard;
 
 /******************************************************************************
  * Task Handles for Core Management
@@ -144,17 +144,15 @@ uint32_t millis_cb(void) {
 
 /**
  * @brief Initialize Logger
- * 
  */
 void init_logger() {
-    LOG_INIT("/logs/debug.log", &sdCard);
+    LOG_INIT("/logs/debug.log", &using_ears_sdcard);
     LOG("Setup started.");
     LOGF("Free memory: %d bytes", ESP.getFreeHeap());
 }
 
 /**
  * @brief Update status message on display
- * 
  * @param message Status message to display
  */
 void updateStatus(const char* message) {
@@ -170,7 +168,6 @@ void updateStatus(const char* message) {
  * @brief Core 0 Task: NVS Validation
  * @description
  * Runs on Core 0, performs NVS validation while Core 1 shows animation
- * 
  * @param parameter Task parameters (unused)
  */
 void Core0_NVSValidation(void* parameter) {
