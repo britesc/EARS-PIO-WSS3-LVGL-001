@@ -47,7 +47,7 @@
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
 #include "RGB565_COLORS.h"
-#include "RGB888_COLORS.h"
+#include "EARS_rgb888ColoursDef.h"
 #include "NVSEeprom.h"
 #include "Logger.h"
 #include "EARS_sdCardLib.h"
