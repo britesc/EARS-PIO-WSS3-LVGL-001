@@ -41,6 +41,9 @@
 #define EARS_RGB888_MAROON      0x800000  // 128,   0,   0
 #define EARS_RGB888_OLIVE       0x808000  // 128, 128,   0
 
+// Define True Black
+#define EARS_RGB888_TRUE_BLACK  0x0A0B0B  //  10,  11,  11
+
 // Camouflage Swatch
 #define EARS_RGB888_AS_BROWN1	0x604439  //  96,  68,  57
 #define EARS_RGB888_AS_TAN		0x9E9A75  // 158, 154, 117
