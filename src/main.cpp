@@ -50,7 +50,7 @@
 #include "RGB888_COLORS.h"
 #include "NVSEeprom.h"
 #include "Logger.h"
-#include "SDCard.h"
+#include "EARS_sdCardLib.h"
 
 /******************************************************************************
  * Start of Object Declarations 

@@ -1,14 +1,14 @@
 /**
- * @file SDCard.cpp
+ * @file EARS_sdCardLib.cpp
  * @author JTB
  * @brief SD Card wrapper library implementation
- * @version 1.0
+ * @version 1.1.0
  * @date 20260105
  * 
  * @copyright Copyright (c) 2026  JTB. All rights reserved.
  */
 
-#include "SDCard.h"
+#include "EARS_sdCardLib.h"
 #include "WS35TLCD_PINS.h"
 
 /**
@@ -369,5 +369,5 @@ bool SDCard::appendFile(const char* path, const String& content) {
 }
 
 /************************************************************************
- * End of SDCard.cpp
+ * End of EARS_sdCardLib.cpp
  ***********************************************************************/

@@ -1,16 +1,16 @@
 /**
- * @file SDCard.h
+ * @file EARS_sdCardLib.h
  * @author JTB
  * @brief SD Card wrapper library for ESP32-S3 with separate SPI bus
- * @version 1.0
+ * @version 1.1.0
  * @date 20260105
  * 
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 #pragma once
-#ifndef __SDCARD_H__
-#define __SDCARD_H__
+#ifndef __EARS_SDCARD_LIB_H__
+#define __EARS_SDCARD_LIB_H__
 
 #include <Arduino.h>
 #include <SD.h>
@@ -162,8 +162,8 @@ private:
     void initSPI();
 };
 
-#endif // __SDCARD_H__
+#endif // __EARS_SDCARD_LIB_H__
 
 /****************************************************************************
- * End of SDCard.h
+ * End of EARS_sdCardLib.h
  ***************************************************************************/

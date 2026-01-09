@@ -15,7 +15,7 @@
 #include <Arduino.h>
 #include <SD.h>
 #include <ArduinoJson.h>
-#include "SDCard.h"
+#include "EARS_sdCardLib.h"
 
 /**
  * @brief Hierarchical log level enumeration
