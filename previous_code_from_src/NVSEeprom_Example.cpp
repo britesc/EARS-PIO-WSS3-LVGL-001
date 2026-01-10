@@ -7,7 +7,7 @@
  * - Core0: Reads result struct and decides what to do
  */
 
-#include "NVSEeprom.h"
+ #include "EARS_nvsEepromLib.h"
 
 // Global validation result - shared between cores
 NVSValidationResult g_nvsResult;

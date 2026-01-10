@@ -8,5 +8,5 @@ Current Libraries to Refactor
     Old Name            New Name            Header Guard                Class Name  Invoke
 1.  Logger              
 2.  NVSEeprom           EARS_nvsEepromLib   __EARS_NVSEEPROM_LIB_H__    EARS_nvsEeprom using_ears_nvseeprom
-3.  ScreensaverLib
+3.  ScreensaverLib      EARS_screenSaverLib __EARS_SCREENSAVER_LIB_H__  EARS_screenSaver using_ears_screensaver
 4.  SDCard              EARS_sdCardLib      __EARS_SDCARD_LIB_H__      EARS_sdCard using_ears_sdcard

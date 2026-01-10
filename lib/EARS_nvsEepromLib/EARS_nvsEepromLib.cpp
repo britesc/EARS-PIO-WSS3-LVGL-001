@@ -2,7 +2,7 @@
  * @file EARS_nvsEepromLib .cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class implementation
- * @version 1.0.0
+ * @version 1.1.0
  * @date 20251229
  * @update 20260110
  * 
@@ -13,7 +13,7 @@
 /******************************************************************************
  * Includes Information
  *****************************************************************************/
-#include "EARS_nvsEepromLib .h"
+#include "EARS_nvsEepromLib.h"
 
 // NVS Namespace
 const char* EARS_nvsEepromLib ::NAMESPACE = "EARS";

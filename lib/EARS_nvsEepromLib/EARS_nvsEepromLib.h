@@ -2,7 +2,7 @@
  * @file EARS_nvsEepromLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class header
- * @version 0.2
+ * @version 1.1.0
  * @date 20251229
  * @update 20260110
  * @copyright Copyright (c) 2025
