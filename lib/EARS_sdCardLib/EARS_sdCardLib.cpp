@@ -9,7 +9,7 @@
  */
 
 #include "EARS_sdCardLib.h"
-#include "WS35TLCD_PINS.h"
+#include "EARS_ws35tlcdPins.h"
 
 /**
  * @brief Construct a new EARS_sdCard object

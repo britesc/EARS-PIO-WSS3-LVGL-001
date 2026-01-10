@@ -45,7 +45,7 @@
 #include <Arduino.h>
 #include <lvgl.h>
 #include <Arduino_GFX_Library.h>
-#include "WS35TLCD_PINS.h"
+#include "EARS_ws35tlcdPins.h"
 #include "EARS_rgb565ColoursDef.h"
 #include "EARS_rgb888ColoursDef.h"
 #include "NVSEeprom.h"
