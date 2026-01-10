@@ -37,7 +37,7 @@
  /******************************************************************************
   * App Version Information
   *****************************************************************************/
- #include "ears_version.h"
+ #include "EARS_versionDef.h"
 
  /******************************************************************************
   * Includes Information
@@ -46,7 +46,7 @@
 #include <lvgl.h>
 #include <Arduino_GFX_Library.h>
 #include "WS35TLCD_PINS.h"
-#include "RGB565_COLORS.h"
+#include "EARS_rgb565ColoursDef.h"
 #include "EARS_rgb888ColoursDef.h"
 #include "NVSEeprom.h"
 #include "Logger.h"
