@@ -48,7 +48,7 @@
 #include "EARS_ws35tlcdPins.h"
 #include "EARS_rgb565ColoursDef.h"
 #include "EARS_rgb888ColoursDef.h"
-#include "NVSEeprom.h"
+#include "EARS_nvsEepromLib.h"
 #include "Logger.h"
 #include "EARS_sdCardLib.h"
 
@@ -92,7 +92,7 @@ lv_obj_t *status_label = NULL;
 NVSValidationResult g_nvsResult;
 
 // Global NVS instance
-NVSEeprom nvs;
+EARS_nvsEepromLib using_nvs_eeprom;
 
 /******************************************************************************
  * SD Card object
@@ -179,7 +179,7 @@ void Core0_NVSValidation(void* parameter) {
     
     // Step 1: Initialize NVS
     updateStatus("Initializing NVS...");
-    if (!nvs.begin()) {
+    if (!using_nvs_eeprom.begin()) {
         g_nvsResult.status = NVSStatus::INITIALIZATION_FAILED;
         updateStatus("NVS Init Failed!");
         validationComplete = true;
@@ -191,7 +191,7 @@ void Core0_NVSValidation(void* parameter) {
     
     // Step 2: Validate entire NVS
     updateStatus("Validating data...");
-    g_nvsResult = nvs.validateNVS();
+    g_nvsResult = using_nvs_eeprom.validateNVS();
     delay(500);
     
     // Step 3: Report results

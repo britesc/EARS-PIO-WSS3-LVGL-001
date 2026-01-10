@@ -1,16 +1,16 @@
 /**
- * @file NVSEeprom.h
+ * @file EARS_nvsEepromLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class header
  * @version 0.2
  * @date 20251229
- * 
+ * @update 20260110
  * @copyright Copyright (c) 2025
  * 
  */
 #pragma once
-#ifndef __NVSEEPROM_H_
-#define __NVSEEPROM_H_
+#ifndef __EARS_NVSEEPROM_LIB_H__
+#define __EARS_NVSEEPROM_LIB_H__
 
 /******************************************************************************
  * Includes Information
@@ -23,7 +23,13 @@
 /******************************************************************************
  * Validation Status Enum
  *****************************************************************************/
-enum class NVSStatus : uint8_t {
+/**
+ * @enum NVSStatus
+ * @brief Enumeration for NVS validation status
+ * @description
+ * This enum defines various status codes for validating the Non-Volatile Storage (NVS). It includes states for not checked, valid, invalid version, missing zap number, missing password, CRC failure, upgraded, and initialization failure. It is used to indicate the result of NVS validation operations.
+ */
+ enum class NVSStatus : uint8_t {
     NOT_CHECKED = 0,
     VALID = 1,
     INVALID_VERSION = 2,
@@ -37,7 +43,13 @@ enum class NVSStatus : uint8_t {
 /******************************************************************************
  * Core0/Core1 Communication Struct
  *****************************************************************************/
-struct NVSValidationResult {
+/**
+ * @struct NVSValidationResult
+ * @brief Structure to hold NVS validation results
+ * @description
+ * This struct contains detailed information about the validation status of the NVS, including version info, zap number validity, password hash validity, CRC status, and whether an upgrade was performed. It also holds the calculated CRC32 value and the zap number string. It is used to provide comprehensive feedback after validating the NVS. It is used for communication between Core0 and Core1.
+ */
+ struct NVSValidationResult {
     NVSStatus status;           // Overall validation status
     uint16_t currentVersion;    // Version found in NVS
     uint16_t expectedVersion;   // Version expected by code
@@ -48,7 +60,10 @@ struct NVSValidationResult {
     uint32_t calculatedCRC;     // The calculated CRC32 value
     char zapNumber[7];          // The ZapNumber value (AANNNN format + null)
     
-    // Constructor to initialize values
+    /**
+     * @brief Construct a new NVSValidationResult object
+     * 
+     */
     NVSValidationResult() : 
         status(NVSStatus::NOT_CHECKED),
         currentVersion(0),
@@ -67,7 +82,7 @@ struct NVSValidationResult {
  * @description
  * This class provides a simple interface for storing and retrieving data
  */
-class NVSEeprom : public Preferences {
+class EARS_nvsEepromLib  : public Preferences {
 public:
     // NVS Version - increment when NVS structure changes
     static const uint16_t CURRENT_VERSION = 1;
@@ -79,8 +94,8 @@ public:
     static const char* KEY_NVS_CRC;
     
     // Constructor and Destructor
-    NVSEeprom();
-    ~NVSEeprom();
+    EARS_nvsEepromLib ();
+    ~EARS_nvsEepromLib ();
     
     // Initialize NVS - call this in setup()
     bool begin();
@@ -118,8 +133,8 @@ private:
     bool upgradeNVS(uint16_t fromVersion, uint16_t toVersion);
 };
 
-#endif // __NVSEEPROM_H_
+#endif // __EARS_NVSEEPROM_LIB_H__
 
 /******************************************************************************
- * End of NVSEeprom.h
- *****************************************************************************/
+ * End of EARS_nvsEepromLib.h
+ *****************************************************************************/ 

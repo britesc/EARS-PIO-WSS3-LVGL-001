@@ -1,9 +1,10 @@
 /**
- * @file NVSEeprom.cpp
+ * @file EARS_nvsEepromLib .cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class implementation
  * @version 1.0.0
  * @date 20251229
+ * @update 20260110
  * 
  * @copyright Copyright (c) 2025
  * 
@@ -12,23 +13,23 @@
 /******************************************************************************
  * Includes Information
  *****************************************************************************/
-#include "NVSEeprom.h"
+#include "EARS_nvsEepromLib .h"
 
 // NVS Namespace
-const char* NVSEeprom::NAMESPACE = "EARS";
+const char* EARS_nvsEepromLib ::NAMESPACE = "EARS";
 
 // Standard NVS Keys
-const char* NVSEeprom::KEY_VERSION = "nvsVersion";
-const char* NVSEeprom::KEY_ZAPNUMBER = "zapNumber";
-const char* NVSEeprom::KEY_PASSWORD_HASH = "pwdHash";
-const char* NVSEeprom::KEY_NVS_CRC = "nvsCRC";
+const char* EARS_nvsEepromLib ::KEY_VERSION = "nvsVersion";
+const char* EARS_nvsEepromLib ::KEY_ZAPNUMBER = "zapNumber";
+const char* EARS_nvsEepromLib ::KEY_PASSWORD_HASH = "pwdHash";
+const char* EARS_nvsEepromLib ::KEY_NVS_CRC = "nvsCRC";
 
 // NVS Constructor 
-NVSEeprom::NVSEeprom() {
+EARS_nvsEepromLib ::EARS_nvsEepromLib () {
 }
 
 // NVS Destructor
-NVSEeprom::~NVSEeprom() {
+EARS_nvsEepromLib ::~EARS_nvsEepromLib () {
 }
 
 /**
@@ -36,7 +37,7 @@ NVSEeprom::~NVSEeprom() {
  * @return true
  * @return false
  */
-bool NVSEeprom::begin() {
+bool EARS_nvsEepromLib ::begin() {
     esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         nvs_flash_erase();
@@ -52,7 +53,7 @@ bool NVSEeprom::begin() {
  * @param defaultValue 
  * @return Hash String 
  */
-String NVSEeprom::getHash(const char* key, const String& defaultValue) {
+String EARS_nvsEepromLib ::getHash(const char* key, const String& defaultValue) {
     // Open namespace in read-only mode
     if (!Preferences::begin(NAMESPACE, true)) {
         return defaultValue;
@@ -72,7 +73,7 @@ String NVSEeprom::getHash(const char* key, const String& defaultValue) {
  * @return true 
  * @return false 
  */
-bool NVSEeprom::putHash(const char* key, const String& value) {
+bool EARS_nvsEepromLib ::putHash(const char* key, const String& value) {
     // Open namespace in read-write mode
     if (!Preferences::begin(NAMESPACE, false)) {
         return false;
@@ -91,7 +92,7 @@ bool NVSEeprom::putHash(const char* key, const String& value) {
  * @param length 
  * @return uint32_t 
  */
-uint32_t NVSEeprom::calculateCRC32(const uint8_t* data, size_t length) {
+uint32_t EARS_nvsEepromLib ::calculateCRC32(const uint8_t* data, size_t length) {
     uint32_t crc = 0xFFFFFFFF;
     
     for (size_t i = 0; i < length; i++) {
@@ -110,7 +111,7 @@ uint32_t NVSEeprom::calculateCRC32(const uint8_t* data, size_t length) {
  * @param data 
  * @return String 
  */
-String NVSEeprom::makeHash(const String& data) {
+String EARS_nvsEepromLib ::makeHash(const String& data) {
     uint32_t crc = calculateCRC32((const uint8_t*)data.c_str(), data.length());
     
     // Convert to 8-character hex string
@@ -128,7 +129,7 @@ String NVSEeprom::makeHash(const String& data) {
  * @return true 
  * @return false 
  */
-bool NVSEeprom::compareHash(const String& data, const String& storedHash) {
+bool EARS_nvsEepromLib ::compareHash(const String& data, const String& storedHash) {
     String computedHash = makeHash(data);
     return (computedHash.equals(storedHash));
 }
@@ -140,7 +141,7 @@ bool NVSEeprom::compareHash(const String& data, const String& storedHash) {
  * @param defaultVersion 
  * @return uint16_t Version number (0-65535)
  */
-uint16_t NVSEeprom::getVersion(const char* key, uint16_t defaultVersion) {
+uint16_t EARS_nvsEepromLib ::getVersion(const char* key, uint16_t defaultVersion) {
     // Open namespace in read-only mode
     if (!Preferences::begin(NAMESPACE, true)) {
         return defaultVersion;
@@ -160,7 +161,7 @@ uint16_t NVSEeprom::getVersion(const char* key, uint16_t defaultVersion) {
  * @return true Success
  * @return false Failed
  */
-bool NVSEeprom::putVersion(const char* key, uint16_t version) {
+bool EARS_nvsEepromLib ::putVersion(const char* key, uint16_t version) {
     // Open namespace in read-write mode
     if (!Preferences::begin(NAMESPACE, false)) {
         return false;
@@ -179,7 +180,7 @@ bool NVSEeprom::putVersion(const char* key, uint16_t version) {
  * @return true Valid format
  * @return false Invalid format
  */
-bool NVSEeprom::isValidZapNumber(const String& zapNumber) {
+bool EARS_nvsEepromLib ::isValidZapNumber(const String& zapNumber) {
     // Must be exactly 6 characters
     if (zapNumber.length() != 6) {
         return false;
@@ -205,7 +206,7 @@ bool NVSEeprom::isValidZapNumber(const String& zapNumber) {
  * 
  * @return uint32_t CRC32 value
  */
-uint32_t NVSEeprom::calculateNVSCRC() {
+uint32_t EARS_nvsEepromLib ::calculateNVSCRC() {
     String dataToHash = "";
     
     // Open namespace in read-only mode
@@ -240,7 +241,7 @@ uint32_t NVSEeprom::calculateNVSCRC() {
  * @return true Success
  * @return false Failed
  */
-bool NVSEeprom::updateNVSCRC() {
+bool EARS_nvsEepromLib ::updateNVSCRC() {
     uint32_t crc = calculateNVSCRC();
     
     // Open namespace in read-write mode
@@ -262,7 +263,7 @@ bool NVSEeprom::updateNVSCRC() {
  * @return true Upgrade successful
  * @return false Upgrade failed
  */
-bool NVSEeprom::upgradeNVS(uint16_t fromVersion, uint16_t toVersion) {
+bool EARS_nvsEepromLib ::upgradeNVS(uint16_t fromVersion, uint16_t toVersion) {
     // Prevent downgrade
     if (toVersion <= fromVersion) {
         return false;
@@ -310,7 +311,7 @@ bool NVSEeprom::upgradeNVS(uint16_t fromVersion, uint16_t toVersion) {
  * 
  * @return NVSValidationResult Structure containing validation results
  */
-NVSValidationResult NVSEeprom::validateNVS() {
+NVSValidationResult EARS_nvsEepromLib ::validateNVS() {
     NVSValidationResult result;
     result.expectedVersion = CURRENT_VERSION;
     
@@ -399,7 +400,7 @@ NVSValidationResult NVSEeprom::validateNVS() {
  * 
  * @return String The stored ZapNumber or empty string if not found
  */
-String NVSEeprom::getZapNumber() {
+String EARS_nvsEepromLib ::getZapNumber() {
     // Open namespace in read-only mode
     if (!Preferences::begin(NAMESPACE, true)) {
         return "";
@@ -418,7 +419,7 @@ String NVSEeprom::getZapNumber() {
  * @return true if successful
  * @return false if invalid format or write failed
  */
-bool NVSEeprom::setZapNumber(const String& zapNumber) {
+bool EARS_nvsEepromLib ::setZapNumber(const String& zapNumber) {
     // Validate format first
     if (!isValidZapNumber(zapNumber)) {
         return false;
