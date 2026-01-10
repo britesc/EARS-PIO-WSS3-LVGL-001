@@ -1,21 +1,22 @@
 /**
- * @file ScreensaverLib.cpp
+ * @file EARS_screenSaverLib.cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief Screensaver library implementation
- * @version 1.0.0
+ * @version 1.1.0
  * @date 20260107
+ * @update  20260110
  * 
  * @copyright Copyright (c) 2026
  * 
  */
 
-#include "ScreensaverLib.h"
+#include "EARS_screenSaverLib.h"
 
 /**
  * @brief Construct a new Screensaver Lib:: Screensaver Lib object
- * @return ScreensaverLib&* 
+ * @return EARS_screenSaver&* 
  */
-ScreensaverLib::ScreensaverLib() {
+EARS_screenSaver::EARS_screenSaver() {
     _display = nullptr;
     _is_active = false;
     _last_activity_ms = 0;
@@ -35,7 +36,7 @@ ScreensaverLib::ScreensaverLib() {
  * @param display 
  * @return void
  */
-void ScreensaverLib::begin(lv_display_t* display) {
+void EARS_screenSaver::begin(lv_display_t* display) {
     _display = display;
     _last_activity_ms = millis();
 }
@@ -44,7 +45,7 @@ void ScreensaverLib::begin(lv_display_t* display) {
  * @brief Reset inactivity timer
  * @return void 
  */
-void ScreensaverLib::reset() {
+void EARS_screenSaver::reset() {
     _last_activity_ms = millis();
 }
 
@@ -53,7 +54,7 @@ void ScreensaverLib::reset() {
  * @param enabled
  * @return void
  */
-void ScreensaverLib::setEnabled(bool enabled) {
+void EARS_screenSaver::setEnabled(bool enabled) {
     _settings.enabled = enabled;
 }
 
@@ -61,7 +62,7 @@ void ScreensaverLib::setEnabled(bool enabled) {
  * @brief Toggle current state
  * @return void
  */
-void ScreensaverLib::toggleEnabled() {
+void EARS_screenSaver::toggleEnabled() {
     _settings.enabled = !_settings.enabled;
 }
 
@@ -70,7 +71,7 @@ void ScreensaverLib::toggleEnabled() {
  * @param seconds 
  * @return void
  */
-void ScreensaverLib::setTimeout(uint8_t seconds) {
+void EARS_screenSaver::setTimeout(uint8_t seconds) {
     _settings.timeout_seconds = seconds;
 }
 
@@ -79,7 +80,7 @@ void ScreensaverLib::setTimeout(uint8_t seconds) {
  * @param mode 
  * @return void
  */
-void ScreensaverLib::setMode(ScreensaverMode mode) {
+void EARS_screenSaver::setMode(ScreensaverMode mode) {
     _settings.mode = mode;
 }
 
@@ -88,7 +89,7 @@ void ScreensaverLib::setMode(ScreensaverMode mode) {
  * @param speed 
  * @return void
  */
-void ScreensaverLib::setAnimationSpeed(uint8_t speed) {
+void EARS_screenSaver::setAnimationSpeed(uint8_t speed) {
     if (speed >= 1 && speed <= 10) {
         _settings.animation_speed = speed;
     }
@@ -99,7 +100,7 @@ void ScreensaverLib::setAnimationSpeed(uint8_t speed) {
  * @param bounce 
  * @return void
  */
-void ScreensaverLib::setBounceMode(bool bounce) {
+void EARS_screenSaver::setBounceMode(bool bounce) {
     _settings.bounce_mode = bounce;
 }
 
@@ -108,7 +109,7 @@ void ScreensaverLib::setBounceMode(bool bounce) {
  * @return true 
  * @return false 
  */
-bool ScreensaverLib::isActive() {
+bool EARS_screenSaver::isActive() {
     return _is_active;
 }
 
@@ -116,7 +117,7 @@ bool ScreensaverLib::isActive() {
  * @brief  Get current settings
  * @return ScreensaverSettings 
  */
-ScreensaverSettings ScreensaverLib::getSettings() {
+ScreensaverSettings EARS_screenSaver::getSettings() {
     return _settings;
 }
 
@@ -124,7 +125,7 @@ ScreensaverSettings ScreensaverLib::getSettings() {
  * @brief Update screensaver state, call regularly in loop
  * @return void
  */
-void ScreensaverLib::update() {
+void EARS_screenSaver::update() {
     if (!_settings.enabled) return;
     if (_settings.timeout_seconds == 0) return;  // Disabled via timeout
     
@@ -144,7 +145,7 @@ void ScreensaverLib::update() {
  * @brief Activate screensaver
  * @return void
  */
-void ScreensaverLib::activate() {
+void EARS_screenSaver::activate() {
     if (_is_active) return;
     
     saveBacklight();
@@ -156,7 +157,7 @@ void ScreensaverLib::activate() {
  * @brief Deactivate screensaver
  * @return void
  */
-void ScreensaverLib::deactivate() {
+void EARS_screenSaver::deactivate() {
     if (!_is_active) return;
     
     destroyScreensaverScreen();
@@ -169,7 +170,7 @@ void ScreensaverLib::deactivate() {
  * @brief Private: Save current backlight value
  * @return void
  */
-void ScreensaverLib::saveBacklight() {
+void EARS_screenSaver::saveBacklight() {
     // TODO: Implement backlight save
 }
 
@@ -177,7 +178,7 @@ void ScreensaverLib::saveBacklight() {
  * @brief Private: Restore backlight to saved value
  * @return void
  */
-void ScreensaverLib::restoreBacklight() {
+void EARS_screenSaver::restoreBacklight() {
     // TODO: Implement backlight restore
 }
 
@@ -185,7 +186,7 @@ void ScreensaverLib::restoreBacklight() {
  * @brief Private: Create the screensaver screen
  * @return void
  */
-void ScreensaverLib::createScreensaverScreen() {
+void EARS_screenSaver::createScreensaverScreen() {
     // TODO: Implement screen creation
 }
 
@@ -193,7 +194,7 @@ void ScreensaverLib::createScreensaverScreen() {
  * @brief Private: Destroy the screensaver screen
  * @return void
  */
-void ScreensaverLib::destroyScreensaverScreen() {
+void EARS_screenSaver::destroyScreensaverScreen() {
     // TODO: Implement screen destruction
 }
 
@@ -201,10 +202,10 @@ void ScreensaverLib::destroyScreensaverScreen() {
  * @brief Private: Update screensaver animation
  * @return void
  */
-void ScreensaverLib::updateAnimation() {
+void EARS_screenSaver::updateAnimation() {
     // TODO: Implement animation
 }
 
 /************************************************************************
- * End of ScreensaverLib.cpp
+ * End of EARS_screenSaver.cpp
  ***********************************************************************/

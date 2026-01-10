@@ -9,7 +9,7 @@ digraph "Logger::parseLevelString"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="Logger::loadConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a18f9f22a192082ce9b4ae8a1879e281b",tooltip="Load logger config from unified ears.config."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node3 [id="Node000003",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e",tooltip="Initialize logger."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Logger::setLogLevelFromString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#afcb3cb19bc1fa9d6333c42f2dde3eb5a",tooltip="Set log level from string."];
 }

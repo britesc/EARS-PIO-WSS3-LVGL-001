@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['valid_0',['VALID',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea',1,'NVSEeprom.h']]],
-  ['validatenvs_1',['validateNVS',['../class_n_v_s_eeprom.html#a9ef62caff8a30f2a17cd6df03775102c',1,'NVSEeprom']]],
+  ['valid_0',['VALID',['../_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea',1,'EARS_nvsEepromLib.h']]],
+  ['validatenvs_1',['validateNVS',['../class_e_a_r_s__nvs_eeprom_lib.html#ad361d1c4f98f886f883f59a141b64b5b',1,'EARS_nvsEepromLib']]],
   ['validationcomplete_2',['validationComplete',['../main_8cpp.html#a7bbc1d5433c18bc75eacc1de1ef6aa67',1,'main.cpp']]],
   ['value_3',['value',['../structeez_1_1flow_1_1_m_q_t_t_event.html#a51bc742a8538c2973a87125c58284961',1,'eez::flow::MQTTEvent::value'],['../structeez_1_1flow_1_1_watch_variable_componenent_execution_state.html#a22e4ce20c5431532956516a379e05668',1,'eez::flow::WatchVariableComponenentExecutionState::value']]],
   ['value_5fptr_5fvalue_5fto_5ftext_4',['VALUE_PTR_value_to_text',['../namespaceeez.html#ab041e5264ce686795c55a58c4e336275',1,'eez']]],

@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="ScreensaverSettings",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_screensaver_settings.html",tooltip="Screensaver settings structure."];
+  Node0 [id="Node000000",label="ScreensaverLib",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_screensaver_lib.html",tooltip="Screensaver Library Class."];
 }

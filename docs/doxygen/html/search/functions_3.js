@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['calculatecrc32_0',['calculateCRC32',['../class_n_v_s_eeprom.html#aef6c9cfce5074548940b6362c07dd6d0',1,'NVSEeprom']]],
-  ['calculatenvscrc_1',['calculateNVSCRC',['../class_n_v_s_eeprom.html#a0e2a3285b590ab9691bbcdd1abab9d32',1,'NVSEeprom']]],
+  ['calculatecrc32_0',['calculateCRC32',['../class_e_a_r_s__nvs_eeprom_lib.html#abe787595bf26ebaf7f3b4d61b215e7dd',1,'EARS_nvsEepromLib']]],
+  ['calculatenvscrc_1',['calculateNVSCRC',['../class_e_a_r_s__nvs_eeprom_lib.html#a260394c804bd38c3731adc0246a8244f',1,'EARS_nvsEepromLib']]],
   ['calendargetpresseddate_2',['calendarGetPressedDate',['../namespaceeez_1_1flow.html#a1aeef861aa55349957f0dee1e3ac3a52',1,'eez::flow']]],
   ['calendarsethighlighteddate_3',['calendarSetHighlightedDate',['../namespaceeez_1_1flow.html#a4e425eb2c25e0365a5501747452203bd',1,'eez::flow']]],
   ['calendarsetshoweddate_4',['calendarSetShowedDate',['../namespaceeez_1_1flow.html#adab343ab1306fd49585a0c1e12172a36',1,'eez::flow']]],
@@ -53,18 +53,17 @@ var searchData=
   ['compare_5fversioned_5fstring_5fvalue_50',['compare_VERSIONED_STRING_value',['../namespaceeez.html#a727469102bb428c11a2710f2baa6fc8b',1,'eez']]],
   ['compare_5fwidget_5fvalue_51',['compare_WIDGET_value',['../namespaceeez.html#a0f99480a5b4a9d9982359d376f8dfe92',1,'eez']]],
   ['compare_5fyt_5fdata_5fget_5fvalue_5ffunction_5fpointer_5fvalue_52',['compare_YT_DATA_GET_VALUE_FUNCTION_POINTER_value',['../namespaceeez.html#ab8fbd7aa9f54436a3e628a0ec604c852',1,'eez']]],
-  ['comparehash_53',['compareHash',['../class_n_v_s_eeprom.html#aa50b95369856aeff3ca4a219d2e02dd8',1,'NVSEeprom']]],
+  ['comparehash_53',['compareHash',['../class_e_a_r_s__nvs_eeprom_lib.html#ae5f77e4345ec07e685c29f757d3b6012',1,'EARS_nvsEepromLib']]],
   ['comparerolleroptions_54',['compareRollerOptions',['../eez-flow_8cpp.html#a46e731e77b88cd8ae8a6f5a6e0c0dacb',1,'compareRollerOptions(lv_roller_t *roller, const char *new_val, const char *cur_val, lv_roller_mode_t mode):&#160;eez-flow.cpp'],['../eez-flow_8h.html#a46e731e77b88cd8ae8a6f5a6e0c0dacb',1,'compareRollerOptions(lv_roller_t *roller, const char *new_val, const char *cur_val, lv_roller_mode_t mode):&#160;eez-flow.cpp']]],
   ['converttime24to12_55',['convertTime24to12',['../namespaceeez_1_1flow_1_1date.html#a1bf95ebe23a7befe1bc9cd4501701181',1,'eez::flow::date']]],
-  ['core0_5floaderlogic_56',['core0_loaderLogic',['../main_8cpp.html#a9deaa646e3a2ff968bf99bb481fb9971',1,'core0_loaderLogic():&#160;main.cpp'],['../_n_v_s_eeprom___example_8cpp.html#a9deaa646e3a2ff968bf99bb481fb9971',1,'core0_loaderLogic():&#160;NVSEeprom_Example.cpp']]],
+  ['core0_5floaderlogic_56',['core0_loaderLogic',['../main_8cpp.html#a9deaa646e3a2ff968bf99bb481fb9971',1,'main.cpp']]],
   ['core0_5fnvsvalidation_57',['Core0_NVSValidation',['../main_8cpp.html#a1c076b10748fbca0df3dd401d6ecea8e',1,'main.cpp']]],
   ['core1_5fdisplayhandler_58',['Core1_DisplayHandler',['../main_8cpp.html#ab79f2231aa335d2d0f1c9f1b4c02ab01',1,'main.cpp']]],
-  ['core1_5fnvsvalidationtask_59',['core1_nvsValidationTask',['../_n_v_s_eeprom___example_8cpp.html#aad1913a26d7986b1a352abb982119ff6',1,'NVSEeprom_Example.cpp']]],
-  ['crc32_60',['crc32',['../namespaceeez.html#a28330e2adadc77d63a74c81f02ab2900',1,'eez']]],
-  ['create_5fscreen_5finitial_5fscreen_61',['create_screen_initial_screen',['../screens_8c.html#a8b3c217f0a04aec0f7f47d3ffea52724',1,'create_screen_initial_screen():&#160;screens.c'],['../screens_8h.html#a8b3c217f0a04aec0f7f47d3ffea52724',1,'create_screen_initial_screen():&#160;screens.c']]],
-  ['create_5fscreens_62',['create_screens',['../eez-flow_8cpp.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8c.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8h.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c']]],
-  ['createdirectory_63',['createDirectory',['../class_s_d_card.html#a6ae33ac716e2a88a4dc199fe6d0ab333',1,'SDCard']]],
-  ['createscreen_64',['createScreen',['../namespaceeez_1_1flow.html#a3d598de1f2aa00a9f515ba68ecd0bacd',1,'eez::flow::createScreen()'],['../eez-flow_8cpp.html#a323466cdbe7e39703f14602f465f132d',1,'createScreen():&#160;eez-flow.cpp']]],
-  ['createscreensaverscreen_65',['createScreensaverScreen',['../class_screensaver_lib.html#a998f9ac5c20472c4952fb583d7c1eed9',1,'ScreensaverLib']]],
-  ['createuserwidgetflowstate_66',['createUserWidgetFlowState',['../namespaceeez_1_1flow.html#aa233c049c02d6a121fe0845dfb7707ae',1,'eez::flow']]]
+  ['crc32_59',['crc32',['../namespaceeez.html#a28330e2adadc77d63a74c81f02ab2900',1,'eez']]],
+  ['create_5fscreen_5finitial_5fscreen_60',['create_screen_initial_screen',['../screens_8c.html#a8b3c217f0a04aec0f7f47d3ffea52724',1,'create_screen_initial_screen():&#160;screens.c'],['../screens_8h.html#a8b3c217f0a04aec0f7f47d3ffea52724',1,'create_screen_initial_screen():&#160;screens.c']]],
+  ['create_5fscreens_61',['create_screens',['../eez-flow_8cpp.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8c.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8h.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c']]],
+  ['createdirectory_62',['createDirectory',['../class_e_a_r_s__sd_card.html#a24f8524dbe0feba5bb07eb10b72a5be3',1,'EARS_sdCard']]],
+  ['createscreen_63',['createScreen',['../namespaceeez_1_1flow.html#a3d598de1f2aa00a9f515ba68ecd0bacd',1,'eez::flow::createScreen()'],['../eez-flow_8cpp.html#a323466cdbe7e39703f14602f465f132d',1,'createScreen():&#160;eez-flow.cpp']]],
+  ['createscreensaverscreen_64',['createScreensaverScreen',['../class_screensaver_lib.html#a998f9ac5c20472c4952fb583d7c1eed9',1,'ScreensaverLib']]],
+  ['createuserwidgetflowstate_65',['createUserWidgetFlowState',['../namespaceeez_1_1flow.html#aa233c049c02d6a121fe0845dfb7707ae',1,'eez::flow']]]
 ];

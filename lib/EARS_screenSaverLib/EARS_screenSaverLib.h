@@ -1,16 +1,16 @@
 /**
- * @file ScreensaverLib.h
+ * @file EARS_screenSaver.h.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief Screensaver library implementation header file
  * @version 1.0.0
- * @date 20260107
- * 
+ * @date 20260110
+ * @update 20260107
  * @copyright Copyright (c) 2026
  * 
  */
 #pragma once
-#ifndef SCREENSAVER_LIB_H
-#define SCREENSAVER_LIB_H
+#ifndef __EARS_SCREENSAVER_LIB_H__
+#define __EARS_SCREENSAVER_LIB_H__
 
 #include <Arduino.h>
 #include <lvgl.h>
@@ -18,7 +18,12 @@
 /**
  * @brief Screensaver modes
  * @enum ScreensaverMode
- * 
+ * @description Different modes for the screensaver
+ * Modes:
+ * - SS_MODE_BLACK: Blank screen
+ * - SS_MODE_EARS_TEXT: "EARS" text animation
+ * - SS_MODE_BUILTIN_IMAGE: Built-in image display
+ * - SS_MODE_USER_IMAGE: User-defined image display
  */
 enum ScreensaverMode {
     SS_MODE_BLACK = 0,
@@ -30,6 +35,14 @@ enum ScreensaverMode {
 /**
  * @brief Screensaver settings structure
  * @struct ScreensaverSettings
+ * @description Holds configuration for the screensaver
+ * Members:
+ * - enabled: Whether the screensaver is enabled
+ * - timeout_seconds: Inactivity timeout in seconds (0-120)
+ * - mode: Screensaver mode (ScreensaverMode)
+ * - animation_speed: Animation speed (1-10 scale)
+ * - bounce_mode: Bounce mode (true=bounce, false=wrap)
+ * - backlight_restore: Backlight level to restore to
  */
 struct ScreensaverSettings {
     bool enabled;
@@ -44,9 +57,9 @@ struct ScreensaverSettings {
  * @brief Screensaver Library Class
  * 
  */
-class ScreensaverLib {
+class EARS_screenSaver {
 public:
-    ScreensaverLib();
+    EARS_screenSaver();
     
     /**
      * @brief Initialization
@@ -88,8 +101,8 @@ private:
     void updateAnimation();
 };
 
-#endif // SCREENSAVER_LIB_H
+#endif // __EARS_SCREENSAVER_LIB_H__
 
 /************************************************************************
- * End of ScreensaverLib.h
+ * End of EARS_screenSaverLib
  ***********************************************************************/

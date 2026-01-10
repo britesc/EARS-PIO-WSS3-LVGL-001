@@ -6,7 +6,7 @@ digraph "src/main.cpp"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="src/main.cpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="ears_version.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ears__version_8h.html",tooltip="EARS Project Version Header File."];
+  Node2 [id="Node000002",label="EARS_versionDef.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__version_def_8h.html",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Arduino.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
@@ -14,16 +14,16 @@ digraph "src/main.cpp"
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="Arduino_GFX_Library.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="WS35TLCD_PINS.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_w_s35_t_l_c_d___p_i_n_s_8h.html",tooltip="Defines pin assignments for the Waveshare 3.5\" ESP32-S3 LCD display. @Description This file is for th..."];
+  Node6 [id="Node000006",label="EARS_ws35tlcdPins.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__ws35tlcd_pins_8h.html",tooltip="Defines pin assignments for the Waveshare 3.5\" ESP32-S3 LCD display. @Description This file is for th..."];
   Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="RGB565_COLORS.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_r_g_b565___c_o_l_o_r_s_8h.html",tooltip=" "];
+  Node7 [id="Node000007",label="EARS_rgb565ColoursDef.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__rgb565_colours_def_8h.html",tooltip="Define the Colours for EARS_RGB565 format."];
   Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="stdint.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node9 [id="edge8_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="RGB888_COLORS.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_r_g_b888___c_o_l_o_r_s_8h.html",tooltip=" "];
+  Node9 [id="Node000009",label="EARS_rgb888ColoursDef.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__rgb888_colours_def_8h.html",tooltip="Define the Colours for EARS_RGB888 format."];
   Node9 -> Node8 [id="edge9_Node000009_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node10 [id="edge10_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="NVSEeprom.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_n_v_s_eeprom_8h.html",tooltip="NVS EEPROM wrapper class header."];
+  Node10 [id="Node000010",label="EARS_nvsEepromLib.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__nvs_eeprom_lib_8h.html",tooltip="NVS EEPROM wrapper class header."];
   Node10 -> Node11 [id="edge11_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="Preferences.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node10 -> Node3 [id="edge12_Node000010_Node000003",color="steelblue1",style="solid",tooltip=" "];
@@ -39,7 +39,7 @@ digraph "src/main.cpp"
   Node14 -> Node16 [id="edge18_Node000014_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="ArduinoJson.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node14 -> Node17 [id="edge19_Node000014_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="SDCard.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_s_d_card_8h.html",tooltip="SD Card wrapper library for ESP32-S3 with separate SPI bus."];
+  Node17 [id="Node000017",label="EARS_sdCardLib.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__sd_card_lib_8h.html",tooltip="SD Card wrapper library for ESP32-S3 with separate SPI bus."];
   Node17 -> Node3 [id="edge20_Node000017_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node17 -> Node15 [id="edge21_Node000017_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node17 -> Node18 [id="edge22_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];

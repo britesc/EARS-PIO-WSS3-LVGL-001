@@ -18,11 +18,11 @@ var main_8cpp =
     [ "displayMutex", "main_8cpp.html#a8409b569450ed69169f6bd4725726527", null ],
     [ "g_nvsResult", "main_8cpp.html#ad72437f094071fef8fa57acf26a21b09", null ],
     [ "gfx", "main_8cpp.html#aa35e9135b0a3620ecb9b867344834657", null ],
-    [ "nvs", "main_8cpp.html#a27a476ad412f1de3b2626865c6b4114d", null ],
     [ "screenHeight", "main_8cpp.html#aa8b5dfbac926d5ef47bfc41e8757918f", null ],
     [ "screenWidth", "main_8cpp.html#aa6bb2d0970b95ea952c1eb3086a906ab", null ],
-    [ "sdCard", "main_8cpp.html#af032f207a6f37d78677d86150296f01a", null ],
     [ "spinner", "main_8cpp.html#aca59e0966d3d11a6276e37ea6393dd6b", null ],
     [ "status_label", "main_8cpp.html#ac4b382b229c227a83d418b45c2db03f0", null ],
+    [ "using_ears_sdcard", "main_8cpp.html#a76585e4d0d254d24ab0944560e8044e7", null ],
+    [ "using_nvs_eeprom", "main_8cpp.html#a9ac98c601b3861a2f3356843d8f5ed83", null ],
     [ "validationComplete", "main_8cpp.html#a7bbc1d5433c18bc75eacc1de1ef6aa67", null ]
 ];

@@ -17,7 +17,7 @@ digraph "Logger::performRotation"
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="Logger::loadConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a18f9f22a192082ce9b4ae8a1879e281b",tooltip="Load logger config from unified ears.config."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node7 [id="Node000007",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e",tooltip="Initialize logger."];
   Node5 -> Node8 [id="edge7_Node000005_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="Logger::saveConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a697a219af6f6ed0e0a0f1348fb6ebd57",tooltip="Save logger config to unified ears.config."];
   Node8 -> Node9 [id="edge8_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];

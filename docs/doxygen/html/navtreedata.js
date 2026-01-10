@@ -56,7 +56,7 @@ var NAVTREE =
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -65,13 +65,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_backlight_manager_8cpp.html",
-"class_screensaver_lib.html#aebd3457dd95435dafb14c17965d40347",
-"eez-flow_8h.html#a58129cd82e844ac5e981c016bf729305",
-"namespaceeez.html#a18ac692361b4c8b3a15ddfbd2de86c44",
-"namespaceeez_1_1flow.html#a0b01a75b429c3d871bc75174ca7d09c0",
-"namespaceeez_1_1flow.html#a81fe56887ba2a455b4a45f46769bc6ec",
-"namespaceeez_1_1flow_1_1date.html#a56c573dd5e4462912fa476510c1fdaaa",
-"structeez_1_1flow_1_1_m_q_t_t_event_action_componenent_execution_state.html#a2fbe169f86b9fe896e965e210d3cfc25"
+"class_logger.html#ae115d52b90e74296e42584ef4febad15",
+"eez-flow_8h.html#a3febee8a15bb46ffdf77ecff2a4ac9ad",
+"main_8cpp.html#ab79f2231aa335d2d0f1c9f1b4c02ab01",
+"namespaceeez.html#afdeea2c16101d2fd43dfd328beb91d35",
+"namespaceeez_1_1flow.html#a77699bf5ea5ce835f4ce99a993a81de1abf1f866bfe3a81d6f7b6be0fd5341885",
+"namespaceeez_1_1flow.html#af9219db292326a7e9d6746a0fecfd206",
+"structeez_1_1flow_1_1_m_q_t_t_connection_event_handler.html#a5e55d341db18660a99033b7886203990"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

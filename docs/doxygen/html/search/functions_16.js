@@ -11,7 +11,7 @@ var searchData=
   ['writearray_8',['writeArray',['../namespaceeez_1_1flow.html#aa6162a3dfa5bcf829fbf15196b2fe94c',1,'eez::flow']]],
   ['writearraytype_9',['writeArrayType',['../namespaceeez_1_1flow.html#a78d0791fdcc1789783e49e3795642d52',1,'eez::flow']]],
   ['writedebuggerbuffer_10',['writeDebuggerBuffer',['../namespaceeez_1_1flow.html#a0ee5f06b6250f0908e458e25e78a1071',1,'eez::flow']]],
-  ['writefile_11',['writeFile',['../class_s_d_card.html#a45429f02db0df31eb67d60d01404af49',1,'SDCard']]],
+  ['writefile_11',['writeFile',['../class_e_a_r_s__sd_card.html#abc292a49492d8f5034fb0100a384a41e',1,'EARS_sdCard']]],
   ['writehex_12',['writeHex',['../namespaceeez_1_1flow.html#a5f8f59061fea13af0c2984f54b2bd6bb',1,'eez::flow']]],
   ['writelogmessage_13',['writeLogMessage',['../namespaceeez_1_1flow.html#af348aa4caace47c9b1b53f79d99ae0dd',1,'eez::flow::writeLogMessage(const char *str)'],['../namespaceeez_1_1flow.html#a3894f8e16ab917d93a8736c87114dc45',1,'eez::flow::writeLogMessage(const char *str, size_t len)']]],
   ['writestring_14',['writeString',['../namespaceeez_1_1flow.html#aa2995efcdaff6dcd238682b586361aaa',1,'eez::flow']]],

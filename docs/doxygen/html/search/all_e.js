@@ -1,7 +1,7 @@
 var searchData=
 [
   ['name_0',['name',['../struct__ext__img__desc__t.html#a50318e8e1e8fcdb394d6346c41bb7465',1,'_ext_img_desc_t']]],
-  ['namespace_1',['NAMESPACE',['../class_n_v_s_eeprom.html#a554e378a0a7b0db565388829f1a80baf',1,'NVSEeprom']]],
+  ['namespace_1',['NAMESPACE',['../class_e_a_r_s__nvs_eeprom_lib.html#aefd2fcca2a78d4bba3a91fadf83adc7f',1,'EARS_nvsEepromLib']]],
   ['native_5fvar_5ft_2',['native_var_t',['../eez-flow_8h.html#a7b811e23fee27778cb6f134641e89e2c',1,'eez-flow.h']]],
   ['native_5fvar_5ftype_5fboolean_3',['NATIVE_VAR_TYPE_BOOLEAN',['../eez-flow_8h.html#a30ba898fa186f3dbc953a2118edf7e08a9974263797a4a39709f917fce31a8a1d',1,'eez-flow.h']]],
   ['native_5fvar_5ftype_5fdouble_4',['NATIVE_VAR_TYPE_DOUBLE',['../eez-flow_8h.html#a30ba898fa186f3dbc953a2118edf7e08abd6bf2649f5b40d74191a4dd3c5b0a4a',1,'eez-flow.h']]],
@@ -18,17 +18,12 @@ var searchData=
   ['no_5fcomponent_5findex_15',['NO_COMPONENT_INDEX',['../namespaceeez_1_1flow.html#a6412b704eef62a4a7a96fe1a1327d62c',1,'eez::flow']]],
   ['node_16',['node',['../structeez_1_1flow_1_1_watch_variable_componenent_execution_state.html#a289793df859696a96c334d9b6b5159f8',1,'eez::flow::WatchVariableComponenentExecutionState']]],
   ['none_17',['NONE',['../namespaceeez_1_1flow.html#a77699bf5ea5ce835f4ce99a993a81de1a5244a061fe6ab013edc8a02da22c27ba',1,'eez::flow::NONE'],['../_logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab50339a10e1de285ac99d4c3990b8693',1,'NONE:&#160;Logger.h']]],
-  ['not_5fchecked_18',['NOT_CHECKED',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588',1,'NVSEeprom.h']]],
+  ['not_5fchecked_18',['NOT_CHECKED',['../_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588',1,'EARS_nvsEepromLib.h']]],
   ['notes_19',['Notes',['../index.html#notes',1,'']]],
   ['nov_20',['Nov',['../namespaceeez_1_1flow_1_1date.html#a7cd07f6a27078aca4e7ecaa6f79173b8aa6fa8fca904d0f8d61d249e18792f596',1,'eez::flow::date']]],
   ['now_21',['now',['../namespaceeez_1_1flow_1_1date.html#ac52f0a580591913b2c3bc92a7a0428c3',1,'eez::flow::date']]],
   ['null_5fvalue_5fto_5ftext_22',['NULL_value_to_text',['../namespaceeez.html#ae3fab7a13e70ca0d3f160e3820d54f68',1,'eez']]],
   ['null_5fvalue_5ftype_5fname_23',['NULL_value_type_name',['../namespaceeez.html#a14cf7fe95b538ba6ef8e58eb3768a189',1,'eez']]],
-  ['nvs_24',['nvs',['../main_8cpp.html#a27a476ad412f1de3b2626865c6b4114d',1,'nvs:&#160;main.cpp'],['../_n_v_s_eeprom___example_8cpp.html#a27a476ad412f1de3b2626865c6b4114d',1,'nvs:&#160;NVSEeprom_Example.cpp']]],
-  ['nvseeprom_25',['NVSEeprom',['../class_n_v_s_eeprom.html',1,'NVSEeprom'],['../class_n_v_s_eeprom.html#a89e66fcc148bb0215f6c9206f7b4e478',1,'NVSEeprom::NVSEeprom()']]],
-  ['nvseeprom_2ecpp_26',['NVSEeprom.cpp',['../_n_v_s_eeprom_8cpp.html',1,'']]],
-  ['nvseeprom_2eh_27',['NVSEeprom.h',['../_n_v_s_eeprom_8h.html',1,'']]],
-  ['nvseeprom_5fexample_2ecpp_28',['NVSEeprom_Example.cpp',['../_n_v_s_eeprom___example_8cpp.html',1,'']]],
-  ['nvsstatus_29',['NVSStatus',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9',1,'NVSEeprom.h']]],
-  ['nvsvalidationresult_30',['NVSValidationResult',['../struct_n_v_s_validation_result.html',1,'NVSValidationResult'],['../struct_n_v_s_validation_result.html#a1027af7517915a90f5a43d72b0ae9706',1,'NVSValidationResult::NVSValidationResult()']]]
+  ['nvsstatus_24',['NVSStatus',['../_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9',1,'EARS_nvsEepromLib.h']]],
+  ['nvsvalidationresult_25',['NVSValidationResult',['../struct_n_v_s_validation_result.html',1,'NVSValidationResult'],['../struct_n_v_s_validation_result.html#a1027af7517915a90f5a43d72b0ae9706',1,'NVSValidationResult::NVSValidationResult()']]]
 ];

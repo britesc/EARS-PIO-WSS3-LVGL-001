@@ -13,7 +13,7 @@ var searchData=
   ['deletepageflowstate_10',['deletePageFlowState',['../namespaceeez_1_1flow.html#a7333382599eb72376ae6a38074bb43db',1,'eez::flow::deletePageFlowState()'],['../eez-flow_8cpp.html#af05d685eb8ef3a0631deeb70f7d55440',1,'deletePageFlowState(unsigned pageIndex):&#160;eez-flow.cpp'],['../eez-flow_8h.html#af05d685eb8ef3a0631deeb70f7d55440',1,'deletePageFlowState(unsigned pageIndex):&#160;eez-flow.cpp']]],
   ['deletescreen_11',['deleteScreen',['../namespaceeez_1_1flow.html#ad5a13d01d9ea020e74779aab2b028f44',1,'eez::flow::deleteScreen()'],['../eez-flow_8cpp.html#ac13fa1a19b6598ccda265610fe34046c',1,'deleteScreen():&#160;eez-flow.cpp']]],
   ['destroyscreensaverscreen_12',['destroyScreensaverScreen',['../class_screensaver_lib.html#ab8cd663da87a3afb97bd342e85b4dc05',1,'ScreensaverLib']]],
-  ['directoryexists_13',['directoryExists',['../class_s_d_card.html#a5db8db6a2d21fc012607d5b74c3900b0',1,'SDCard']]],
+  ['directoryexists_13',['directoryExists',['../class_e_a_r_s__sd_card.html#a60f8cc92a170c74ba8942115fd7f3fa9',1,'EARS_sdCard']]],
   ['do_5foperation_5ftype_5fadd_14',['do_OPERATION_TYPE_ADD',['../namespaceeez_1_1flow.html#a148535a4cc807ff6c7d14623354f6f14',1,'eez::flow']]],
   ['do_5foperation_5ftype_5farray_5fallocate_15',['do_OPERATION_TYPE_ARRAY_ALLOCATE',['../namespaceeez_1_1flow.html#a04bde19b45a423ba8cb5956a6b1a3791',1,'eez::flow']]],
   ['do_5foperation_5ftype_5farray_5fappend_16',['do_OPERATION_TYPE_ARRAY_APPEND',['../namespaceeez_1_1flow.html#aa4fd1a2dae6dbd44cb421e0166aede49',1,'eez::flow']]],

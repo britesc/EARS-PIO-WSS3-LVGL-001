@@ -16,6 +16,6 @@ var searchData=
   ['propagatevaluethroughseqout_13',['propagateValueThroughSeqout',['../namespaceeez_1_1flow.html#a8c79f141e2e978fb5f6950bc9211577e',1,'eez::flow']]],
   ['property_5fref_5fvalue_5fto_5ftext_14',['PROPERTY_REF_value_to_text',['../namespaceeez.html#afa23ef5504a5df2f8ea12f147dcdc7fd',1,'eez']]],
   ['property_5fref_5fvalue_5ftype_5fname_15',['PROPERTY_REF_value_type_name',['../namespaceeez.html#a1de1acb033f4ff582104d0fc79c639e9',1,'eez']]],
-  ['puthash_16',['putHash',['../class_n_v_s_eeprom.html#ac97e7a38b631ab368a050115fe17f010',1,'NVSEeprom']]],
-  ['putversion_17',['putVersion',['../class_n_v_s_eeprom.html#a6d4fe62a5ee8cfa2a80b46421d71b685',1,'NVSEeprom']]]
+  ['puthash_16',['putHash',['../class_e_a_r_s__nvs_eeprom_lib.html#ab0010e6fca29aff3dd30ea5944fe1017',1,'EARS_nvsEepromLib']]],
+  ['putversion_17',['putVersion',['../class_e_a_r_s__nvs_eeprom_lib.html#a54baf3e97ef531fb915de938615db994',1,'EARS_nvsEepromLib']]]
 ];

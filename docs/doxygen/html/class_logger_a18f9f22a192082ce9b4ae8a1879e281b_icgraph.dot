@@ -7,5 +7,5 @@ digraph "Logger::loadConfig"
   rankdir="RL";
   Node1 [id="Node000001",label="Logger::loadConfig",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Load logger config from unified ears.config."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node2 [id="Node000002",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e",tooltip="Initialize logger."];
 }

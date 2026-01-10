@@ -22,6 +22,6 @@ var searchData=
   ['property_5fref_5fvalue_5fto_5ftext_19',['PROPERTY_REF_value_to_text',['../namespaceeez.html#afa23ef5504a5df2f8ea12f147dcdc7fd',1,'eez']]],
   ['property_5fref_5fvalue_5ftype_5fname_20',['PROPERTY_REF_value_type_name',['../namespaceeez.html#a1de1acb033f4ff582104d0fc79c639e9',1,'eez']]],
   ['propertycode_21',['PropertyCode',['../namespaceeez_1_1flow.html#a77699bf5ea5ce835f4ce99a993a81de1',1,'eez::flow']]],
-  ['puthash_22',['putHash',['../class_n_v_s_eeprom.html#ac97e7a38b631ab368a050115fe17f010',1,'NVSEeprom']]],
-  ['putversion_23',['putVersion',['../class_n_v_s_eeprom.html#a6d4fe62a5ee8cfa2a80b46421d71b685',1,'NVSEeprom']]]
+  ['puthash_22',['putHash',['../class_e_a_r_s__nvs_eeprom_lib.html#ab0010e6fca29aff3dd30ea5944fe1017',1,'EARS_nvsEepromLib']]],
+  ['putversion_23',['putVersion',['../class_e_a_r_s__nvs_eeprom_lib.html#a54baf3e97ef531fb915de938615db994',1,'EARS_nvsEepromLib']]]
 ];

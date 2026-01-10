@@ -93,15 +93,19 @@ $(function(){initNavTree('struct_n_v_s_validation_result.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>&gt;</code></p>
+<p>Structure to hold NVS validation results @description This struct contains detailed information about the validation status of the NVS, including version info, zap number validity, password hash validity, CRC status, and whether an upgrade was performed. It also holds the calculated CRC32 value and the zap number string. It is used to provide comprehensive feedback after validating the NVS. It is used for communication between Core0 and Core1.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1027af7517915a90f5a43d72b0ae9706" id="r_a1027af7517915a90f5a43d72b0ae9706"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1027af7517915a90f5a43d72b0ae9706">NVSValidationResult</a> ()</td></tr>
+<tr class="memdesc:a1027af7517915a90f5a43d72b0ae9706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="struct_n_v_s_validation_result.html" title="Structure to hold NVS validation results @description This struct contains detailed information about...">NVSValidationResult</a> object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad6cd161afb8411ac60f1b952ac76bde4" id="r_ad6cd161afb8411ac60f1b952ac76bde4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6cd161afb8411ac60f1b952ac76bde4">status</a></td></tr>
+<tr class="memitem:ad6cd161afb8411ac60f1b952ac76bde4" id="r_ad6cd161afb8411ac60f1b952ac76bde4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6cd161afb8411ac60f1b952ac76bde4">status</a></td></tr>
 <tr class="memitem:a9448baf66beeb76a5bb957a8b7e75ca1" id="r_a9448baf66beeb76a5bb957a8b7e75ca1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9448baf66beeb76a5bb957a8b7e75ca1">currentVersion</a></td></tr>
 <tr class="memitem:a9d715b64c60ebfdd596cb993376d5a70" id="r_a9d715b64c60ebfdd596cb993376d5a70"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d715b64c60ebfdd596cb993376d5a70">expectedVersion</a></td></tr>
 <tr class="memitem:a2c99bf6a48c2b9a80a45ac1cd580e187" id="r_a2c99bf6a48c2b9a80a45ac1cd580e187"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c99bf6a48c2b9a80a45ac1cd580e187">zapNumberValid</a></td></tr>
@@ -112,8 +116,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ae2e5146c1bbce4a03a580f7204c96fd5" id="r_ae2e5146c1bbce4a03a580f7204c96fd5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e5146c1bbce4a03a580f7204c96fd5">zapNumber</a> [7]</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00040">40</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<div class="textblock"><p>Structure to hold NVS validation results @description This struct contains detailed information about the validation status of the NVS, including version info, zap number validity, password hash validity, CRC status, and whether an upgrade was performed. It also holds the calculated CRC32 value and the zap number string. It is used to provide comprehensive feedback after validating the NVS. It is used for communication between Core0 and Core1. </p>
+
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00052">52</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1027af7517915a90f5a43d72b0ae9706" name="a1027af7517915a90f5a43d72b0ae9706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1027af7517915a90f5a43d72b0ae9706">&#9670;&#160;</a></span>NVSValidationResult()</h2>
@@ -138,30 +143,32 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">52</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                          : </div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_variable" href="#ad6cd161afb8411ac60f1b952ac76bde4">status</a>(<a class="code hl_enumvalue" href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a>),</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="#a9448baf66beeb76a5bb957a8b7e75ca1">currentVersion</a>(0),</div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="#a9d715b64c60ebfdd596cb993376d5a70">expectedVersion</a>(0),</div>
-<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="#a2c99bf6a48c2b9a80a45ac1cd580e187">zapNumberValid</a>(<span class="keyword">false</span>),</div>
-<div class="line"><span class="lineno">   57</span>        <a class="code hl_variable" href="#a3c44378f77f474091a4fe07090b1acbb">passwordHashValid</a>(<span class="keyword">false</span>),</div>
-<div class="line"><span class="lineno">   58</span>        <a class="code hl_variable" href="#a9abaffbe66648a015cf260dccb14ddd4">crcValid</a>(<span class="keyword">false</span>),</div>
-<div class="line"><span class="lineno">   59</span>        <a class="code hl_variable" href="#afb6e631c20d8dc6972e3d7ae2e3d5230">wasUpgraded</a>(<span class="keyword">false</span>),</div>
-<div class="line"><span class="lineno">   60</span>        <a class="code hl_variable" href="#a0af31c8ed3072914482f9ea03a665ebf">calculatedCRC</a>(0) {</div>
-<div class="line"><span class="lineno">   61</span>        <a class="code hl_variable" href="#ae2e5146c1bbce4a03a580f7204c96fd5">zapNumber</a>[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="ttc" id="a_n_v_s_eeprom_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588"><div class="ttname"><a href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a></div><div class="ttdeci">@ NOT_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00027">NVSEeprom.h:27</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a0af31c8ed3072914482f9ea03a665ebf"><div class="ttname"><a href="#a0af31c8ed3072914482f9ea03a665ebf">NVSValidationResult::calculatedCRC</a></div><div class="ttdeci">uint32_t calculatedCRC</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00048">NVSEeprom.h:48</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a2c99bf6a48c2b9a80a45ac1cd580e187"><div class="ttname"><a href="#a2c99bf6a48c2b9a80a45ac1cd580e187">NVSValidationResult::zapNumberValid</a></div><div class="ttdeci">bool zapNumberValid</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00044">NVSEeprom.h:44</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a3c44378f77f474091a4fe07090b1acbb"><div class="ttname"><a href="#a3c44378f77f474091a4fe07090b1acbb">NVSValidationResult::passwordHashValid</a></div><div class="ttdeci">bool passwordHashValid</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00045">NVSEeprom.h:45</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a9448baf66beeb76a5bb957a8b7e75ca1"><div class="ttname"><a href="#a9448baf66beeb76a5bb957a8b7e75ca1">NVSValidationResult::currentVersion</a></div><div class="ttdeci">uint16_t currentVersion</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00042">NVSEeprom.h:42</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a9abaffbe66648a015cf260dccb14ddd4"><div class="ttname"><a href="#a9abaffbe66648a015cf260dccb14ddd4">NVSValidationResult::crcValid</a></div><div class="ttdeci">bool crcValid</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00046">NVSEeprom.h:46</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_a9d715b64c60ebfdd596cb993376d5a70"><div class="ttname"><a href="#a9d715b64c60ebfdd596cb993376d5a70">NVSValidationResult::expectedVersion</a></div><div class="ttdeci">uint16_t expectedVersion</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00043">NVSEeprom.h:43</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_ad6cd161afb8411ac60f1b952ac76bde4"><div class="ttname"><a href="#ad6cd161afb8411ac60f1b952ac76bde4">NVSValidationResult::status</a></div><div class="ttdeci">NVSStatus status</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00041">NVSEeprom.h:41</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_ae2e5146c1bbce4a03a580f7204c96fd5"><div class="ttname"><a href="#ae2e5146c1bbce4a03a580f7204c96fd5">NVSValidationResult::zapNumber</a></div><div class="ttdeci">char zapNumber[7]</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00049">NVSEeprom.h:49</a></div></div>
-<div class="ttc" id="astruct_n_v_s_validation_result_html_afb6e631c20d8dc6972e3d7ae2e3d5230"><div class="ttname"><a href="#afb6e631c20d8dc6972e3d7ae2e3d5230">NVSValidationResult::wasUpgraded</a></div><div class="ttdeci">bool wasUpgraded</div><div class="ttdef"><b>Definition</b> <a href="_n_v_s_eeprom_8h_source.html#l00047">NVSEeprom.h:47</a></div></div>
+<p>Construct a new <a class="el" href="struct_n_v_s_validation_result.html" title="Structure to hold NVS validation results @description This struct contains detailed information about...">NVSValidationResult</a> object. </p>
+
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">67</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                          : </div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="#ad6cd161afb8411ac60f1b952ac76bde4">status</a>(<a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a>),</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="#a9448baf66beeb76a5bb957a8b7e75ca1">currentVersion</a>(0),</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_variable" href="#a9d715b64c60ebfdd596cb993376d5a70">expectedVersion</a>(0),</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_variable" href="#a2c99bf6a48c2b9a80a45ac1cd580e187">zapNumberValid</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_variable" href="#a3c44378f77f474091a4fe07090b1acbb">passwordHashValid</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_variable" href="#a9abaffbe66648a015cf260dccb14ddd4">crcValid</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="#afb6e631c20d8dc6972e3d7ae2e3d5230">wasUpgraded</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_variable" href="#a0af31c8ed3072914482f9ea03a665ebf">calculatedCRC</a>(0) {</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_variable" href="#ae2e5146c1bbce4a03a580f7204c96fd5">zapNumber</a>[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="ttc" id="a_e_a_r_s__nvs_eeprom_lib_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588"><div class="ttname"><a href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9aef8fdced38856787318885d74120e588">NVSStatus::NOT_CHECKED</a></div><div class="ttdeci">@ NOT_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00033">EARS_nvsEepromLib.h:33</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a0af31c8ed3072914482f9ea03a665ebf"><div class="ttname"><a href="#a0af31c8ed3072914482f9ea03a665ebf">NVSValidationResult::calculatedCRC</a></div><div class="ttdeci">uint32_t calculatedCRC</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00060">EARS_nvsEepromLib.h:60</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a2c99bf6a48c2b9a80a45ac1cd580e187"><div class="ttname"><a href="#a2c99bf6a48c2b9a80a45ac1cd580e187">NVSValidationResult::zapNumberValid</a></div><div class="ttdeci">bool zapNumberValid</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00056">EARS_nvsEepromLib.h:56</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a3c44378f77f474091a4fe07090b1acbb"><div class="ttname"><a href="#a3c44378f77f474091a4fe07090b1acbb">NVSValidationResult::passwordHashValid</a></div><div class="ttdeci">bool passwordHashValid</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00057">EARS_nvsEepromLib.h:57</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a9448baf66beeb76a5bb957a8b7e75ca1"><div class="ttname"><a href="#a9448baf66beeb76a5bb957a8b7e75ca1">NVSValidationResult::currentVersion</a></div><div class="ttdeci">uint16_t currentVersion</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00054">EARS_nvsEepromLib.h:54</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a9abaffbe66648a015cf260dccb14ddd4"><div class="ttname"><a href="#a9abaffbe66648a015cf260dccb14ddd4">NVSValidationResult::crcValid</a></div><div class="ttdeci">bool crcValid</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00058">EARS_nvsEepromLib.h:58</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_a9d715b64c60ebfdd596cb993376d5a70"><div class="ttname"><a href="#a9d715b64c60ebfdd596cb993376d5a70">NVSValidationResult::expectedVersion</a></div><div class="ttdeci">uint16_t expectedVersion</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00055">EARS_nvsEepromLib.h:55</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_ad6cd161afb8411ac60f1b952ac76bde4"><div class="ttname"><a href="#ad6cd161afb8411ac60f1b952ac76bde4">NVSValidationResult::status</a></div><div class="ttdeci">NVSStatus status</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00053">EARS_nvsEepromLib.h:53</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_ae2e5146c1bbce4a03a580f7204c96fd5"><div class="ttname"><a href="#ae2e5146c1bbce4a03a580f7204c96fd5">NVSValidationResult::zapNumber</a></div><div class="ttdeci">char zapNumber[7]</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00061">EARS_nvsEepromLib.h:61</a></div></div>
+<div class="ttc" id="astruct_n_v_s_validation_result_html_afb6e631c20d8dc6972e3d7ae2e3d5230"><div class="ttname"><a href="#afb6e631c20d8dc6972e3d7ae2e3d5230">NVSValidationResult::wasUpgraded</a></div><div class="ttdeci">bool wasUpgraded</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00059">EARS_nvsEepromLib.h:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_n_v_s_eeprom_8h_source.html#l00048">calculatedCRC</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00046">crcValid</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00042">currentVersion</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00043">expectedVersion</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00045">passwordHashValid</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00041">status</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00047">wasUpgraded</a>, <a class="el" href="_n_v_s_eeprom_8h_source.html#l00049">zapNumber</a>, and <a class="el" href="_n_v_s_eeprom_8h_source.html#l00044">zapNumberValid</a>.</p>
+<p class="reference">References <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00060">calculatedCRC</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00058">crcValid</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00054">currentVersion</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00055">expectedVersion</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00057">passwordHashValid</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00053">status</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00059">wasUpgraded</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00061">zapNumber</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00056">zapNumberValid</a>.</p>
 
 </div>
 </div>
@@ -178,9 +185,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00048">48</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00060">60</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -196,9 +203,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00046">46</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00058">58</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -214,9 +221,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00042">42</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00054">54</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -232,9 +239,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00043">43</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00055">55</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -250,9 +257,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00045">45</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00057">57</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -263,14 +270,14 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a> NVSValidationResult::status</td>
+          <td class="memname"><a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9">NVSStatus</a> NVSValidationResult::status</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00041">41</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00053">53</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -286,9 +293,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00047">47</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00059">59</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -304,9 +311,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00049">49</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00061">61</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
@@ -322,14 +329,14 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_n_v_s_eeprom_8h_source.html#l00044">44</a> of file <a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00056">56</a> of file <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_n_v_s_eeprom_8h_source.html#l00052">NVSValidationResult()</a>, and <a class="el" href="_n_v_s_eeprom_8cpp_source.html#l00313">NVSEeprom::validateNVS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00067">NVSValidationResult()</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8cpp_source.html#l00314">EARS_nvsEepromLib::validateNVS()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>lib/NVSEeprom/<a class="el" href="_n_v_s_eeprom_8h_source.html">NVSEeprom.h</a></li>
+<li>lib/EARS_nvsEepromLib/<a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

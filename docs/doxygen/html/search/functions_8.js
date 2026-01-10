@@ -15,7 +15,7 @@ var searchData=
   ['initmemory_12',['initMemory',['../namespaceeez.html#a38658c95ec2810021c219a4ff7f3bd21',1,'eez']]],
   ['initothermemory_13',['initOtherMemory',['../namespaceeez.html#a300b65cd1ede977e07c5be37d7a6b38f',1,'eez']]],
   ['initpageflowstate_14',['initPageFlowState',['../namespaceeez_1_1flow.html#a5f915a92c5020d6b6b87640afe0f8b5f',1,'eez::flow']]],
-  ['initspi_15',['initSPI',['../class_s_d_card.html#abc64602bb040b36c742a1b43f4e9b21d',1,'SDCard']]],
+  ['initspi_15',['initSPI',['../class_e_a_r_s__sd_card.html#ab4877a915af7961ebdc675ec02666df5',1,'EARS_sdCard']]],
   ['int16_5fvalue_5fto_5ftext_16',['INT16_value_to_text',['../namespaceeez.html#a5c9bb40fbcf4625e44e28564369dae7e',1,'eez']]],
   ['int16_5fvalue_5ftype_5fname_17',['INT16_value_type_name',['../namespaceeez.html#adb1cafd835b1127d7be4851559ed37dc',1,'eez']]],
   ['int32_5fvalue_5fto_5ftext_18',['INT32_value_to_text',['../namespaceeez.html#a881beed2d0cc4caf9c06c6587e757a88',1,'eez']]],
@@ -32,7 +32,7 @@ var searchData=
   ['is_5fgreat_29',['is_great',['../namespaceeez_1_1flow.html#a0b829a1d7d8c39551d173b76d9819713',1,'eez::flow']]],
   ['is_5fless_30',['is_less',['../namespaceeez_1_1flow.html#ae4b75ddad72c095b5461b62238e3d13d',1,'eez::flow']]],
   ['isactive_31',['isActive',['../class_screensaver_lib.html#a3768edc3f26b1a80287399210725f333',1,'ScreensaverLib']]],
-  ['isavailable_32',['isAvailable',['../class_s_d_card.html#a00ddb96efcdff340d6e3c086257bc8fe',1,'SDCard']]],
+  ['isavailable_32',['isAvailable',['../class_e_a_r_s__sd_card.html#a49952d7de7f2b5abba59521166855d4c',1,'EARS_sdCard']]],
   ['iscomponentreadytorun_33',['isComponentReadyToRun',['../namespaceeez_1_1flow.html#a1c2f393b87cb046d520b53f48eafa157',1,'eez::flow']]],
   ['isdigit_34',['isDigit',['../namespaceeez.html#a3e0b4ab520ffb10c6daab3a066253ef4',1,'eez']]],
   ['isdst_35',['isDst',['../namespaceeez_1_1flow_1_1date.html#a86fed1dab8f2b97c56db528ac6555c68',1,'eez::flow::date']]],
@@ -46,5 +46,5 @@ var searchData=
   ['isstringempty_43',['isStringEmpty',['../namespaceeez.html#a7c5b0d15b9c047a8fdf9e3f5c29fee36',1,'eez']]],
   ['issubscribedto_44',['isSubscribedTo',['../namespaceeez_1_1flow.html#a14c5171b47166c69c49c091883d1334e',1,'eez::flow']]],
   ['isupercaseletter_45',['isUperCaseLetter',['../namespaceeez.html#aa29b52b1b9d9264d6ac59ce2077740ef',1,'eez']]],
-  ['isvalidzapnumber_46',['isValidZapNumber',['../class_n_v_s_eeprom.html#a91f87689d6047a917f5a2973b6889ed0',1,'NVSEeprom']]]
+  ['isvalidzapnumber_46',['isValidZapNumber',['../class_e_a_r_s__nvs_eeprom_lib.html#a3f3833929613cb0505b4338758dd12a5',1,'EARS_nvsEepromLib']]]
 ];

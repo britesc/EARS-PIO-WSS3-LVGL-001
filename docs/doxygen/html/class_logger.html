@@ -105,8 +105,8 @@ Collaboration diagram for Logger:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7046ed945557ca90bc7e4c8967856a9b" id="r_a7046ed945557ca90bc7e4c8967856a9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7046ed945557ca90bc7e4c8967856a9b">begin</a> (const char *logFilePath, const char *configFilePath, <a class="el" href="class_s_d_card.html">SDCard</a> *<a class="el" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>)</td></tr>
-<tr class="memdesc:a7046ed945557ca90bc7e4c8967856a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize logger.  <br /></td></tr>
+<tr class="memitem:a07ce98c263cbe8d4edcc3ef442695f5e" id="r_a07ce98c263cbe8d4edcc3ef442695f5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ce98c263cbe8d4edcc3ef442695f5e">begin</a> (const char *logFilePath, const char *configFilePath, <a class="el" href="class_e_a_r_s__sd_card.html">EARS_sdCard</a> *sdCard)</td></tr>
+<tr class="memdesc:a07ce98c263cbe8d4edcc3ef442695f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize logger.  <br /></td></tr>
 <tr class="memitem:a7c2769fb989bec4ea28ea1497a10a709" id="r_a7c2769fb989bec4ea28ea1497a10a709"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c2769fb989bec4ea28ea1497a10a709">isInitialized</a> () const</td></tr>
 <tr class="memdesc:a7c2769fb989bec4ea28ea1497a10a709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if logger is initialized.  <br /></td></tr>
 <tr class="memitem:abeffd58a6beace1b1c01a5324227fd83" id="r_abeffd58a6beace1b1c01a5324227fd83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeffd58a6beace1b1c01a5324227fd83">debug</a> (const char *message)</td></tr>
@@ -189,7 +189,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a41823af90dad6590ee67dcffc6cf74b9" id="r_a41823af90dad6590ee67dcffc6cf74b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a></td></tr>
 <tr class="memitem:adca53612ce6325efadcd37e3a6edd78e" id="r_adca53612ce6325efadcd37e3a6edd78e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a></td></tr>
 <tr class="memitem:a7812bead7bd76f95298047167f4081fe" id="r_a7812bead7bd76f95298047167f4081fe"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a></td></tr>
-<tr class="memitem:a7b0fe611ab5d2b03b3b0c338dfc2fc95" id="r_a7b0fe611ab5d2b03b3b0c338dfc2fc95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_d_card.html">SDCard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a></td></tr>
+<tr class="memitem:a34e0d45013d141f54b657d839c688ce5" id="r_a34e0d45013d141f54b657d839c688ce5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_a_r_s__sd_card.html">EARS_sdCard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a></td></tr>
 <tr class="memitem:a16e0e6c347bfb6e81765162c2f08706c" id="r_a16e0e6c347bfb6e81765162c2f08706c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_logger_config.html">LoggerConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -227,11 +227,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>(<span class="keyword">false</span>),</div>
 <div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
 <div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>(<span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>(<span class="keyword">nullptr</span>) {</div>
 <div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="aclass_logger_html_a34e0d45013d141f54b657d839c688ce5"><div class="ttname"><a href="#a34e0d45013d141f54b657d839c688ce5">Logger::_sdCard</a></div><div class="ttdeci">EARS_sdCard * _sdCard</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00229">Logger.h:229</a></div></div>
 <div class="ttc" id="aclass_logger_html_a41823af90dad6590ee67dcffc6cf74b9"><div class="ttname"><a href="#a41823af90dad6590ee67dcffc6cf74b9">Logger::_initialized</a></div><div class="ttdeci">bool _initialized</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00226">Logger.h:226</a></div></div>
 <div class="ttc" id="aclass_logger_html_a7812bead7bd76f95298047167f4081fe"><div class="ttname"><a href="#a7812bead7bd76f95298047167f4081fe">Logger::_configFilePath</a></div><div class="ttdeci">String _configFilePath</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00228">Logger.h:228</a></div></div>
-<div class="ttc" id="aclass_logger_html_a7b0fe611ab5d2b03b3b0c338dfc2fc95"><div class="ttname"><a href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">Logger::_sdCard</a></div><div class="ttdeci">SDCard * _sdCard</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00229">Logger.h:229</a></div></div>
 <div class="ttc" id="aclass_logger_html_adca53612ce6325efadcd37e3a6edd78e"><div class="ttname"><a href="#adca53612ce6325efadcd37e3a6edd78e">Logger::_logFilePath</a></div><div class="ttdeci">String _logFilePath</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00227">Logger.h:227</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, and <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>.</p>
@@ -309,8 +309,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a7046ed945557ca90bc7e4c8967856a9b" name="a7046ed945557ca90bc7e4c8967856a9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7046ed945557ca90bc7e4c8967856a9b">&#9670;&#160;</a></span>begin()</h2>
+<a id="a07ce98c263cbe8d4edcc3ef442695f5e" name="a07ce98c263cbe8d4edcc3ef442695f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ce98c263cbe8d4edcc3ef442695f5e">&#9670;&#160;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,7 +328,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_s_d_card.html">SDCard</a> *</td>          <td class="paramname"><span class="paramname"><em>sdCard</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_e_a_r_s__sd_card.html">EARS_sdCard</a> *</td>          <td class="paramname"><span class="paramname"><em>sdCard</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,7 +338,7 @@ Here is the call graph for this function:</div>
   <table class="params">
     <tr><td class="paramname">logFilePath</td><td>Path to log file (e.g., "/logs/debug.log") </td></tr>
     <tr><td class="paramname">configFilePath</td><td>Path to unified config file (e.g., "/config/ears.config") </td></tr>
-    <tr><td class="paramname">sdCard</td><td>Pointer to <a class="el" href="class_s_d_card.html" title="SD Card management class.">SDCard</a> instance </td></tr>
+    <tr><td class="paramname">sdCard</td><td>Pointer to SDCard instance </td></tr>
   </table>
   </dd>
 </dl>
@@ -353,22 +353,22 @@ false if initialization failed. </dd></dl>
   <table class="params">
     <tr><td class="paramname">logFilePath</td><td>Path to log file (e.g., "/logs/debug.log") </td></tr>
     <tr><td class="paramname">configFilePath</td><td>Path to unified config file (e.g., "/config/ears.config") </td></tr>
-    <tr><td class="paramname">sdCard</td><td>Pointer to <a class="el" href="class_s_d_card.html" title="SD Card management class.">SDCard</a> instance </td></tr>
+    <tr><td class="paramname">sdCard</td><td>Pointer to SDCard instance </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00049">49</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                                      {</div>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                                           {</div>
 <div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a>) {</div>
 <div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   52</span>    }</div>
 <div class="line"><span class="lineno">   53</span>    </div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a> || !<a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>-&gt;<a class="code hl_function" href="class_s_d_card.html#a00ddb96efcdff340d6e3c086257bc8fe">isAvailable</a>()) {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!sdCard || !sdCard-&gt;<a class="code hl_function" href="class_e_a_r_s__sd_card.html#a49952d7de7f2b5abba59521166855d4c">isAvailable</a>()) {</div>
 <div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   56</span>    }</div>
 <div class="line"><span class="lineno">   57</span>    </div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a> = <a class="code hl_variable" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a>;</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a> = sdCard;</div>
 <div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> = String(logFilePath);</div>
 <div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a> = String(configFilePath);</div>
 <div class="line"><span class="lineno">   61</span>    </div>
@@ -376,8 +376,8 @@ false if initialization failed. </dd></dl>
 <div class="line"><span class="lineno">   63</span>    <span class="keywordtype">int</span> lastSlash = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.lastIndexOf(<span class="charliteral">&#39;/&#39;</span>);</div>
 <div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (lastSlash &gt; 0) {</div>
 <div class="line"><span class="lineno">   65</span>        String logDir = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.substring(0, lastSlash);</div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;directoryExists(logDir.c_str())) {</div>
-<div class="line"><span class="lineno">   67</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;createDirectory(logDir.c_str());</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;directoryExists(logDir.c_str())) {</div>
+<div class="line"><span class="lineno">   67</span>            <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;createDirectory(logDir.c_str());</div>
 <div class="line"><span class="lineno">   68</span>        }</div>
 <div class="line"><span class="lineno">   69</span>    }</div>
 <div class="line"><span class="lineno">   70</span>    </div>
@@ -385,8 +385,8 @@ false if initialization failed. </dd></dl>
 <div class="line"><span class="lineno">   72</span>    lastSlash = <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.lastIndexOf(<span class="charliteral">&#39;/&#39;</span>);</div>
 <div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (lastSlash &gt; 0) {</div>
 <div class="line"><span class="lineno">   74</span>        String configDir = <a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.substring(0, lastSlash);</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;directoryExists(configDir.c_str())) {</div>
-<div class="line"><span class="lineno">   76</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;createDirectory(configDir.c_str());</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;directoryExists(configDir.c_str())) {</div>
+<div class="line"><span class="lineno">   76</span>            <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;createDirectory(configDir.c_str());</div>
 <div class="line"><span class="lineno">   77</span>        }</div>
 <div class="line"><span class="lineno">   78</span>    }</div>
 <div class="line"><span class="lineno">   79</span>    </div>
@@ -405,15 +405,14 @@ false if initialization failed. </dd></dl>
 <div class="line"><span class="lineno">   92</span>    </div>
 <div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclass_e_a_r_s__sd_card_html_a49952d7de7f2b5abba59521166855d4c"><div class="ttname"><a href="class_e_a_r_s__sd_card.html#a49952d7de7f2b5abba59521166855d4c">EARS_sdCard::isAvailable</a></div><div class="ttdeci">bool isAvailable()</div><div class="ttdoc">Check if SD card is available.</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__sd_card_lib_8cpp_source.html#l00093">EARS_sdCardLib.cpp:93</a></div></div>
 <div class="ttc" id="aclass_logger_html_a0b5a12fa4f24fe790b863ed92bfb798f"><div class="ttname"><a href="#a0b5a12fa4f24fe790b863ed92bfb798f">Logger::getLogLevelString</a></div><div class="ttdeci">String getLogLevelString() const</div><div class="ttdoc">Get log level as string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00310">Logger.cpp:310</a></div></div>
 <div class="ttc" id="aclass_logger_html_a0c5851d03ba2e560bfd57aeb713267b3"><div class="ttname"><a href="#a0c5851d03ba2e560bfd57aeb713267b3">Logger::info</a></div><div class="ttdeci">void info(const char *message)</div><div class="ttdoc">Log a message at INFO level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00122">Logger.cpp:122</a></div></div>
 <div class="ttc" id="aclass_logger_html_a16e0e6c347bfb6e81765162c2f08706c"><div class="ttname"><a href="#a16e0e6c347bfb6e81765162c2f08706c">Logger::_config</a></div><div class="ttdeci">LoggerConfig _config</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00230">Logger.h:230</a></div></div>
 <div class="ttc" id="aclass_logger_html_a18f9f22a192082ce9b4ae8a1879e281b"><div class="ttname"><a href="#a18f9f22a192082ce9b4ae8a1879e281b">Logger::loadConfig</a></div><div class="ttdeci">bool loadConfig()</div><div class="ttdoc">Load logger config from unified ears.config.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00406">Logger.cpp:406</a></div></div>
 <div class="ttc" id="aclass_logger_html_a5c58b592a174b46a17a4b34403ae3263"><div class="ttname"><a href="#a5c58b592a174b46a17a4b34403ae3263">Logger::infof</a></div><div class="ttdeci">void infof(const char *format,...)</div><div class="ttdoc">Log a formatted message at INFO level.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00131">Logger.cpp:131</a></div></div>
-<div class="ttc" id="aclass_s_d_card_html_a00ddb96efcdff340d6e3c086257bc8fe"><div class="ttname"><a href="class_s_d_card.html#a00ddb96efcdff340d6e3c086257bc8fe">SDCard::isAvailable</a></div><div class="ttdeci">bool isAvailable()</div><div class="ttdoc">Check if SD card is available.</div><div class="ttdef"><b>Definition</b> <a href="_s_d_card_8cpp_source.html#l00093">SDCard.cpp:93</a></div></div>
-<div class="ttc" id="amain_8cpp_html_af032f207a6f37d78677d86150296f01a"><div class="ttname"><a href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a></div><div class="ttdeci">SDCard sdCard</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00101">main.cpp:101</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, <a class="el" href="_logger_8cpp_source.html#l00310">getLogLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>, <a class="el" href="_logger_8cpp_source.html#l00131">infof()</a>, <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>, and <a class="el" href="main_8cpp_source.html#l00101">sdCard</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00230">_config</a>, <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, <a class="el" href="_logger_8h_source.html#l00226">_initialized</a>, <a class="el" href="_logger_8h_source.html#l00227">_logFilePath</a>, <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>, <a class="el" href="_logger_8cpp_source.html#l00310">getLogLevelString()</a>, <a class="el" href="_logger_8cpp_source.html#l00122">info()</a>, <a class="el" href="_logger_8cpp_source.html#l00131">infof()</a>, <a class="el" href="_e_a_r_s__sd_card_lib_8cpp_source.html#l00093">EARS_sdCard::isAvailable()</a>, and <a class="el" href="_logger_8cpp_source.html#l00406">loadConfig()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -452,7 +451,7 @@ false if clear failed </dd></dl>
 <div class="line"><span class="lineno">  466</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  467</span>    }</div>
 <div class="line"><span class="lineno">  468</span>    </div>
-<div class="line"><span class="lineno">  469</span>    <span class="keywordtype">bool</span> result = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  469</span>    <span class="keywordtype">bool</span> result = <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
 <div class="line"><span class="lineno">  470</span>    </div>
 <div class="line"><span class="lineno">  471</span>    <span class="keywordflow">if</span> (result) {</div>
 <div class="line"><span class="lineno">  472</span>        <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;Log file cleared&quot;</span>);</div>
@@ -789,7 +788,7 @@ uint32_t Log file size in bytes </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00482">482</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  482</span>                                {</div>
-<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> || !<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a41823af90dad6590ee67dcffc6cf74b9">_initialized</a> || !<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
 <div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">  485</span>    }</div>
 <div class="line"><span class="lineno">  486</span>    </div>
@@ -1310,11 +1309,11 @@ false if load failed* </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00375">375</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  375</span>                                                {</div>
-<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a> || !<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a> || !<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str())) {</div>
 <div class="line"><span class="lineno">  377</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  378</span>    }</div>
 <div class="line"><span class="lineno">  379</span>    </div>
-<div class="line"><span class="lineno">  380</span>    String jsonString = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  380</span>    String jsonString = <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str());</div>
 <div class="line"><span class="lineno">  381</span>    <span class="keywordflow">if</span> (jsonString.length() == 0) {</div>
 <div class="line"><span class="lineno">  382</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  383</span>    }</div>
@@ -1406,7 +1405,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  203</span>    logEntry += <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  204</span>    </div>
 <div class="line"><span class="lineno">  205</span>    <span class="comment">// Write to file</span></div>
-<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;appendFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str(), logEntry);</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;appendFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str(), logEntry);</div>
 <div class="line"><span class="lineno">  207</span>}</div>
 <div class="ttc" id="aclass_logger_html_a015fa726e1e272a8bf6a845d57eba5ae"><div class="ttname"><a href="#a015fa726e1e272a8bf6a845d57eba5ae">Logger::getTimestamp</a></div><div class="ttdeci">String getTimestamp() const</div><div class="ttdoc">Get current timestamp string.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00272">Logger.cpp:272</a></div></div>
 <div class="ttc" id="aclass_logger_html_a10a251ee06a5a2d8ffd4d79a61db12d7"><div class="ttname"><a href="#a10a251ee06a5a2d8ffd4d79a61db12d7">Logger::performRotation</a></div><div class="ttdeci">bool performRotation()</div><div class="ttdoc">Perform log rotation.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00521">Logger.cpp:521</a></div></div>
@@ -1693,8 +1692,8 @@ false if rotation failed </dd></dl>
 <div class="line"><span class="lineno">  527</span>    </div>
 <div class="line"><span class="lineno">  528</span>    <span class="comment">// Delete oldest rotated file if it exists</span></div>
 <div class="line"><span class="lineno">  529</span>    String oldestFile = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(<a class="code hl_variable" href="#a16e0e6c347bfb6e81765162c2f08706c">_config</a>.maxRotatedFiles);</div>
-<div class="line"><span class="lineno">  530</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(oldestFile.c_str())) {</div>
-<div class="line"><span class="lineno">  531</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(oldestFile.c_str());</div>
+<div class="line"><span class="lineno">  530</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;fileExists(oldestFile.c_str())) {</div>
+<div class="line"><span class="lineno">  531</span>        <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;removeFile(oldestFile.c_str());</div>
 <div class="line"><span class="lineno">  532</span>    }</div>
 <div class="line"><span class="lineno">  533</span>    </div>
 <div class="line"><span class="lineno">  534</span>    <span class="comment">// Shift all rotated files up by one</span></div>
@@ -1702,22 +1701,22 @@ false if rotation failed </dd></dl>
 <div class="line"><span class="lineno">  536</span>        String oldName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(i);</div>
 <div class="line"><span class="lineno">  537</span>        String newName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.&quot;</span> + String(i + 1);</div>
 <div class="line"><span class="lineno">  538</span>        </div>
-<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(oldName.c_str())) {</div>
+<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;fileExists(oldName.c_str())) {</div>
 <div class="line"><span class="lineno">  540</span>            <span class="comment">// Read old file</span></div>
-<div class="line"><span class="lineno">  541</span>            String content = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(oldName.c_str());</div>
+<div class="line"><span class="lineno">  541</span>            String content = <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;readFile(oldName.c_str());</div>
 <div class="line"><span class="lineno">  542</span>            <span class="comment">// Write to new file</span></div>
-<div class="line"><span class="lineno">  543</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(newName.c_str(), content);</div>
+<div class="line"><span class="lineno">  543</span>            <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;writeFile(newName.c_str(), content);</div>
 <div class="line"><span class="lineno">  544</span>            <span class="comment">// Delete old file</span></div>
-<div class="line"><span class="lineno">  545</span>            <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(oldName.c_str());</div>
+<div class="line"><span class="lineno">  545</span>            <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;removeFile(oldName.c_str());</div>
 <div class="line"><span class="lineno">  546</span>        }</div>
 <div class="line"><span class="lineno">  547</span>    }</div>
 <div class="line"><span class="lineno">  548</span>    </div>
 <div class="line"><span class="lineno">  549</span>    <span class="comment">// Rename current log to .1</span></div>
 <div class="line"><span class="lineno">  550</span>    String rotatedName = <a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a> + <span class="stringliteral">&quot;.1&quot;</span>;</div>
-<div class="line"><span class="lineno">  551</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
-<div class="line"><span class="lineno">  552</span>        String content = <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
-<div class="line"><span class="lineno">  553</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(rotatedName.c_str(), content);</div>
-<div class="line"><span class="lineno">  554</span>        <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  551</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;fileExists(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str())) {</div>
+<div class="line"><span class="lineno">  552</span>        String content = <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;readFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
+<div class="line"><span class="lineno">  553</span>        <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;writeFile(rotatedName.c_str(), content);</div>
+<div class="line"><span class="lineno">  554</span>        <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;removeFile(<a class="code hl_variable" href="#adca53612ce6325efadcd37e3a6edd78e">_logFilePath</a>.c_str());</div>
 <div class="line"><span class="lineno">  555</span>    }</div>
 <div class="line"><span class="lineno">  556</span>    </div>
 <div class="line"><span class="lineno">  557</span>    <a class="code hl_function" href="#a0c5851d03ba2e560bfd57aeb713267b3">info</a>(<span class="stringliteral">&quot;Log rotation completed&quot;</span>);</div>
@@ -1881,7 +1880,7 @@ false if save failed </dd></dl>
 <div class="fragment"><div class="line"><span class="lineno">  395</span>                                                      {</div>
 <div class="line"><span class="lineno">  396</span>    String jsonString;</div>
 <div class="line"><span class="lineno">  397</span>    serializeJsonPretty(doc, jsonString);</div>
-<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">_sdCard</a>-&gt;writeFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str(), jsonString);</div>
+<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a34e0d45013d141f54b657d839c688ce5">_sdCard</a>-&gt;writeFile(<a class="code hl_variable" href="#a7812bead7bd76f95298047167f4081fe">_configFilePath</a>.c_str(), jsonString);</div>
 <div class="line"><span class="lineno">  399</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_logger_8h_source.html#l00228">_configFilePath</a>, and <a class="el" href="_logger_8h_source.html#l00229">_sdCard</a>.</p>
@@ -2299,8 +2298,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7b0fe611ab5d2b03b3b0c338dfc2fc95" name="a7b0fe611ab5d2b03b3b0c338dfc2fc95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b0fe611ab5d2b03b3b0c338dfc2fc95">&#9670;&#160;</a></span>_sdCard</h2>
+<a id="a34e0d45013d141f54b657d839c688ce5" name="a34e0d45013d141f54b657d839c688ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e0d45013d141f54b657d839c688ce5">&#9670;&#160;</a></span>_sdCard</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2309,7 +2308,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_d_card.html">SDCard</a>* Logger::_sdCard</td>
+          <td class="memname"><a class="el" href="class_e_a_r_s__sd_card.html">EARS_sdCard</a>* Logger::_sdCard</td>
         </tr>
       </table>
   </td>

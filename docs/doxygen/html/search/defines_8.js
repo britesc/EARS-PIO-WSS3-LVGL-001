@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['lcd_5fcs_0',['LCD_CS',['../_w_s35_t_l_c_d___p_i_n_s_8h.html#a71d24cab0e16b054de228f29139f1b79',1,'WS35TLCD_PINS.h']]],
-  ['lcd_5fdc_1',['LCD_DC',['../_w_s35_t_l_c_d___p_i_n_s_8h.html#a1dc6c4886242abf4447d0da651125d5d',1,'WS35TLCD_PINS.h']]],
-  ['lcd_5frst_2',['LCD_RST',['../_w_s35_t_l_c_d___p_i_n_s_8h.html#aec0f0ab242f1b58b1d017bc9ab4b898b',1,'WS35TLCD_PINS.h']]],
+  ['lcd_5fcs_0',['LCD_CS',['../_e_a_r_s__ws35tlcd_pins_8h.html#a71d24cab0e16b054de228f29139f1b79',1,'EARS_ws35tlcdPins.h']]],
+  ['lcd_5fdc_1',['LCD_DC',['../_e_a_r_s__ws35tlcd_pins_8h.html#a1dc6c4886242abf4447d0da651125d5d',1,'EARS_ws35tlcdPins.h']]],
+  ['lcd_5frst_2',['LCD_RST',['../_e_a_r_s__ws35tlcd_pins_8h.html#aec0f0ab242f1b58b1d017bc9ab4b898b',1,'EARS_ws35tlcdPins.h']]],
   ['leap_5fyear_3',['LEAP_YEAR',['../eez-flow_8cpp.html#ac0623a9834738f5c6747faef9119c7b1',1,'eez-flow.cpp']]],
   ['log_4',['LOG',['../_logger_8h.html#a158a8c64f24645c7478298399825737f',1,'Logger.h']]],
   ['log_5fdebug_5',['LOG_DEBUG',['../_logger_8h.html#a2332264037abe02c8041a498b2fa1627',1,'Logger.h']]],

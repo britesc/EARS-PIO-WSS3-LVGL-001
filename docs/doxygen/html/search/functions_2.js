@@ -1,7 +1,7 @@
 var searchData=
 [
   ['barsetvalue_0',['barSetValue',['../namespaceeez_1_1flow.html#a6e7eb1dae98f6c601a7963cf7696d7c4',1,'eez::flow']]],
-  ['begin_1',['begin',['../class_logger.html#a7046ed945557ca90bc7e4c8967856a9b',1,'Logger::begin()'],['../class_n_v_s_eeprom.html#a85c2243f2dd10aebd5e3e876e50fa614',1,'NVSEeprom::begin()'],['../class_screensaver_lib.html#a5a92d278eede6ab7d1c23816126a54c5',1,'ScreensaverLib::begin()'],['../class_s_d_card.html#a4aeb2fc69d104ea06e0fcd4ea982347c',1,'SDCard::begin()']]],
+  ['begin_1',['begin',['../class_e_a_r_s__nvs_eeprom_lib.html#aa9a951fd9e7f056786bbbf040a9a0d6d',1,'EARS_nvsEepromLib::begin()'],['../class_e_a_r_s__sd_card.html#ae89a25a70b8b7a99d30ec7d08cd090e9',1,'EARS_sdCard::begin()'],['../class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e',1,'Logger::begin()'],['../class_screensaver_lib.html#a5a92d278eede6ab7d1c23816126a54c5',1,'ScreensaverLib::begin()']]],
   ['beginasyncexecution_2',['beginAsyncExecution',['../namespaceeez_1_1flow.html#a1a5ffad7e6109fe6854efdc9ed6d6b08',1,'eez::flow']]],
   ['blob_5fref_5fvalue_5fto_5ftext_3',['BLOB_REF_value_to_text',['../namespaceeez.html#a4023c2ec2026ec47cab839d76bf9b7df',1,'eez']]],
   ['blob_5fref_5fvalue_5ftype_5fname_4',['BLOB_REF_value_type_name',['../namespaceeez.html#afaa5baec3e8a6cbb3e4e8bd81dc647b6',1,'eez']]],

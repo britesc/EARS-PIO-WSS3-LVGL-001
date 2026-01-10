@@ -24,7 +24,7 @@ var searchData=
   ['deletescreen_21',['deleteScreen',['../namespaceeez_1_1flow.html#ad5a13d01d9ea020e74779aab2b028f44',1,'eez::flow::deleteScreen()'],['../eez-flow_8cpp.html#ac13fa1a19b6598ccda265610fe34046c',1,'deleteScreen():&#160;eez-flow.cpp']]],
   ['description_22',['Description',['../index.html#description',1,'']]],
   ['destroyscreensaverscreen_23',['destroyScreensaverScreen',['../class_screensaver_lib.html#ab8cd663da87a3afb97bd342e85b4dc05',1,'ScreensaverLib']]],
-  ['directoryexists_24',['directoryExists',['../class_s_d_card.html#a5db8db6a2d21fc012607d5b74c3900b0',1,'SDCard']]],
+  ['directoryexists_24',['directoryExists',['../class_e_a_r_s__sd_card.html#a60f8cc92a170c74ba8942115fd7f3fa9',1,'EARS_sdCard']]],
   ['disconnecteventoutputindex_25',['disconnectEventOutputIndex',['../structeez_1_1flow_1_1_m_q_t_t_event_action_componenent.html#a92cc9e74a0dae53c56c01c8f363c8982',1,'eez::flow::MQTTEventActionComponenent']]],
   ['disp_26',['disp',['../main_8cpp.html#a647e5f267167a38dcd0e6fe55dfcfc61',1,'main.cpp']]],
   ['displaymutex_27',['displayMutex',['../main_8cpp.html#a8409b569450ed69169f6bd4725726527',1,'main.cpp']]],

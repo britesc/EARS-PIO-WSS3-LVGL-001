@@ -12,7 +12,7 @@ digraph "lib/Logger/Logger.h"
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="ArduinoJson.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="SDCard.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_s_d_card_8h.html",tooltip="SD Card wrapper library for ESP32-S3 with separate SPI bus."];
+  Node5 [id="Node000005",label="EARS_sdCardLib.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__sd_card_lib_8h.html",tooltip="SD Card wrapper library for ESP32-S3 with separate SPI bus."];
   Node5 -> Node2 [id="edge5_Node000005_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node3 [id="edge6_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node6 [id="edge7_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];

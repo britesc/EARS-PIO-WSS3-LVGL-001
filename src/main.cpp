@@ -2,6 +2,8 @@
  * @file main.cpp
  *
  * @mainpage EARS Project
+ * 
+ * @version file EARS_versionDef.h
  *
  * @section description Description
  * EARS - Equipment and Ammunition Reporting System.
@@ -51,6 +53,7 @@
 #include "EARS_nvsEepromLib.h"
 #include "Logger.h"
 #include "EARS_sdCardLib.h"
+#include "EARS_screenSaverLib.h"
 
 /******************************************************************************
  * Start of Object Declarations 

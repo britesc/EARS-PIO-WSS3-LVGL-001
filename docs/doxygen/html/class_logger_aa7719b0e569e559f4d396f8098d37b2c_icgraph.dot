@@ -13,7 +13,7 @@ digraph "Logger::logf"
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Logger::infof",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a5c58b592a174b46a17a4b34403ae3263",tooltip="Log a formatted message at INFO level."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node5 [id="Node000005",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e",tooltip="Initialize logger."];
   Node4 -> Node6 [id="edge5_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="Logger::setLogLevel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a00fdcdbeb39a2d5d4fb27cc36c35c101",tooltip="Set current log level."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];

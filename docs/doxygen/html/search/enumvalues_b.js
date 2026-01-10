@@ -25,7 +25,7 @@ var searchData=
   ['message_5fto_5fdebugger_5fremove_5ffrom_5fqueue_22',['MESSAGE_TO_DEBUGGER_REMOVE_FROM_QUEUE',['../namespaceeez_1_1flow.html#a94dde8b313242e96c7d98245252622eeaa23a08ff8f71cf359f75bb637a6b9e8b',1,'eez::flow']]],
   ['message_5fto_5fdebugger_5fstate_5fchanged_23',['MESSAGE_TO_DEBUGGER_STATE_CHANGED',['../namespaceeez_1_1flow.html#a94dde8b313242e96c7d98245252622eeae531f97c1938336fbe1b56b170fcc313',1,'eez::flow']]],
   ['message_5fto_5fdebugger_5fvalue_5fchanged_24',['MESSAGE_TO_DEBUGGER_VALUE_CHANGED',['../namespaceeez_1_1flow.html#a94dde8b313242e96c7d98245252622eeaeaad35943be7258f1774d56a861675f4',1,'eez::flow']]],
-  ['missing_5fpassword_25',['MISSING_PASSWORD',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8',1,'NVSEeprom.h']]],
-  ['missing_5fzapnumber_26',['MISSING_ZAPNUMBER',['../_n_v_s_eeprom_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529',1,'NVSEeprom.h']]],
+  ['missing_5fpassword_25',['MISSING_PASSWORD',['../_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8',1,'EARS_nvsEepromLib.h']]],
+  ['missing_5fzapnumber_26',['MISSING_ZAPNUMBER',['../_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529',1,'EARS_nvsEepromLib.h']]],
   ['mon_27',['Mon',['../namespaceeez_1_1flow_1_1date.html#a4b3b72e84b16ab214b7a48d4b3fb4af4aff97b9a65c5bfd6fe94928a1b7804edb',1,'eez::flow::date']]]
 ];

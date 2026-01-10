@@ -3,7 +3,7 @@ var class_logger =
     [ "Logger", "class_logger.html#abc41bfb031d896170c7675fa96a6b30c", null ],
     [ "~Logger", "class_logger.html#acb668a9e186a25fbaad2e4af6d1ed00a", null ],
     [ "Logger", "class_logger.html#add0f34d4c753c86af8074840a72366b3", null ],
-    [ "begin", "class_logger.html#a7046ed945557ca90bc7e4c8967856a9b", null ],
+    [ "begin", "class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e", null ],
     [ "clearLog", "class_logger.html#a307aaee848cebb0a743dc50dd85f5dac", null ],
     [ "debug", "class_logger.html#abeffd58a6beace1b1c01a5324227fd83", null ],
     [ "debugf", "class_logger.html#ab5bf33c14d38b92736209c86acc1d572", null ],
@@ -41,5 +41,5 @@ var class_logger =
     [ "_configFilePath", "class_logger.html#a7812bead7bd76f95298047167f4081fe", null ],
     [ "_initialized", "class_logger.html#a41823af90dad6590ee67dcffc6cf74b9", null ],
     [ "_logFilePath", "class_logger.html#adca53612ce6325efadcd37e3a6edd78e", null ],
-    [ "_sdCard", "class_logger.html#a7b0fe611ab5d2b03b3b0c338dfc2fc95", null ]
+    [ "_sdCard", "class_logger.html#a34e0d45013d141f54b657d839c688ce5", null ]
 ];

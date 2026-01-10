@@ -7,7 +7,7 @@ digraph "Logger::info"
   rankdir="RL";
   Node1 [id="Node000001",label="Logger::info",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Log a message at INFO level."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a7046ed945557ca90bc7e4c8967856a9b",tooltip="Initialize logger."];
+  Node2 [id="Node000002",label="Logger::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a07ce98c263cbe8d4edcc3ef442695f5e",tooltip="Initialize logger."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Logger::clearLog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_logger.html#a307aaee848cebb0a743dc50dd85f5dac",tooltip="Clear/delete current log file."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

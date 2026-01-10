@@ -22,6 +22,7 @@ var hierarchy =
       [ "eez::flow::OutputActionComponent", "structeez_1_1flow_1_1_output_action_component.html", null ],
       [ "eez::flow::ShowPageActionComponent", "structeez_1_1flow_1_1_show_page_action_component.html", null ]
     ] ],
+    [ "EARS_sdCard", "class_e_a_r_s__sd_card.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "LoggerConfig", "struct_logger_config.html", null ],
     [ "eez::flow::MQTTConnection", "structeez_1_1flow_1_1_m_q_t_t_connection.html", null ],
@@ -29,11 +30,10 @@ var hierarchy =
     [ "eez::flow::MQTTEvent", "structeez_1_1flow_1_1_m_q_t_t_event.html", null ],
     [ "NVSValidationResult", "struct_n_v_s_validation_result.html", null ],
     [ "Preferences", null, [
-      [ "NVSEeprom", "class_n_v_s_eeprom.html", null ]
+      [ "EARS_nvsEepromLib", "class_e_a_r_s__nvs_eeprom_lib.html", null ]
     ] ],
     [ "ScreensaverLib", "class_screensaver_lib.html", null ],
     [ "ScreensaverSettings", "struct_screensaver_settings.html", null ],
-    [ "SDCard", "class_s_d_card.html", null ],
     [ "eez::flow::date::TimeChangeRule", "structeez_1_1flow_1_1date_1_1_time_change_rule.html", null ],
     [ "eez::flow::WatchList", "structeez_1_1flow_1_1_watch_list.html", null ],
     [ "eez::flow::WatchListNode", "structeez_1_1flow_1_1_watch_list_node.html", null ]

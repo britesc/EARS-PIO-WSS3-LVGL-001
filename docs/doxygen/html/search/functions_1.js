@@ -29,7 +29,7 @@ var searchData=
   ['animwidth_26',['animWidth',['../namespaceeez_1_1flow.html#a7e770485027da0a3e2cd58fd65a2e944',1,'eez::flow']]],
   ['animx_27',['animX',['../namespaceeez_1_1flow.html#a9720641fa1eb6e4dcf29d4474582ae3f',1,'eez::flow']]],
   ['animy_28',['animY',['../namespaceeez_1_1flow.html#a62e116aeda03867f269f0310073bee48',1,'eez::flow']]],
-  ['appendfile_29',['appendFile',['../class_s_d_card.html#a79868b8ae5e0e16d19a0b454abe9910d',1,'SDCard']]],
+  ['appendfile_29',['appendFile',['../class_e_a_r_s__sd_card.html#aa0d1d8be9ea328b5673793192094c60c',1,'EARS_sdCard']]],
   ['arcsetvalue_30',['arcSetValue',['../namespaceeez_1_1flow.html#afe2c73bb10329cd89b4ba69a006fbca5',1,'eez::flow']]],
   ['array_5fasset_5fvalue_5fto_5ftext_31',['ARRAY_ASSET_value_to_text',['../namespaceeez.html#ab22e5dcb3ef3f872aa1a6efffe382c05',1,'eez']]],
   ['array_5fasset_5fvalue_5ftype_5fname_32',['ARRAY_ASSET_value_type_name',['../namespaceeez.html#a97ff60b9dfc062d8173f36cc8488425a',1,'eez']]],
