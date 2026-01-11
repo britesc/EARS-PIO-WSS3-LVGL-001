@@ -1,5 +1,5 @@
 /**
- * @file ears_version.h
+ * @file EARS_versionDef.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief EARS Project Version Header File.
  * @version 0.2.0

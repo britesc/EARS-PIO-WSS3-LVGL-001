@@ -45,4 +45,8 @@ digraph "src/main.cpp"
   Node17 -> Node18 [id="edge22_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="SPI.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node17 [id="edge23_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node19 [id="edge24_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="EARS_screenSaverLib.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_e_a_r_s__screen_saver_lib_8h.html",tooltip=" "];
+  Node19 -> Node3 [id="edge25_Node000019_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node19 -> Node4 [id="edge26_Node000019_Node000004",color="steelblue1",style="solid",tooltip=" "];
 }

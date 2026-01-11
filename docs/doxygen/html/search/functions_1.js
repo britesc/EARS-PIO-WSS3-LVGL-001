@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['activate_0',['activate',['../class_screensaver_lib.html#aea1d27fcc8343a8c2b1618e61014b41e',1,'ScreensaverLib']]],
+  ['activate_0',['activate',['../class_e_a_r_s__screen_saver.html#abdcada2cc98cc86b53d2e3c95d825fbb',1,'EARS_screenSaver']]],
   ['addconnection_1',['addConnection',['../namespaceeez_1_1flow.html#ab1d742c4dfd54c97a37b623144577174',1,'eez::flow']]],
   ['addconnectioneventhandler_2',['addConnectionEventHandler',['../namespaceeez_1_1flow.html#add6d7550573ecd484b227a20ff440109',1,'eez::flow']]],
   ['addevent_3',['addEvent',['../structeez_1_1flow_1_1_m_q_t_t_event_action_componenent_execution_state.html#a6815d5eb85e9534dea82ddc037cfd1de',1,'eez::flow::MQTTEventActionComponenentExecutionState']]],

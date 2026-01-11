@@ -31,10 +31,10 @@ var annotated_dup =
     [ "_native_var_t", "struct__native__var__t.html", "struct__native__var__t" ],
     [ "_objects_t", "struct__objects__t.html", "struct__objects__t" ],
     [ "EARS_nvsEepromLib", "class_e_a_r_s__nvs_eeprom_lib.html", "class_e_a_r_s__nvs_eeprom_lib" ],
+    [ "EARS_screenSaver", "class_e_a_r_s__screen_saver.html", "class_e_a_r_s__screen_saver" ],
     [ "EARS_sdCard", "class_e_a_r_s__sd_card.html", "class_e_a_r_s__sd_card" ],
     [ "Logger", "class_logger.html", "class_logger" ],
     [ "LoggerConfig", "struct_logger_config.html", "struct_logger_config" ],
     [ "NVSValidationResult", "struct_n_v_s_validation_result.html", "struct_n_v_s_validation_result" ],
-    [ "ScreensaverLib", "class_screensaver_lib.html", "class_screensaver_lib" ],
     [ "ScreensaverSettings", "struct_screensaver_settings.html", "struct_screensaver_settings" ]
 ];

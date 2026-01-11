@@ -8,13 +8,13 @@ digraph "lib"
   subgraph clusterdir_97aefd0d527b934f1d99a682da8fe6a9 {
     graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_97aefd0d527b934f1d99a682da8fe6a9.html",tooltip=""]
     dir_97aefd0d527b934f1d99a682da8fe6a9 [shape=plaintext, label="lib"];
-  dir_316db9f2dbaca163ba806fccf175a6f3 [label="BacklightManager", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_316db9f2dbaca163ba806fccf175a6f3.html",tooltip=""];
+  dir_2904a31b2146163d31232fdae4213f9b [label="EARS_backLightManagerLib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2904a31b2146163d31232fdae4213f9b.html",tooltip=""];
   dir_629eb1bdca65509d517200a3e27008ee [label="EARS_nvsEepromLib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_629eb1bdca65509d517200a3e27008ee.html",tooltip=""];
+  dir_ff229f61c5d290fa758f7fe4d55f8d75 [label="EARS_screenSaverLib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_ff229f61c5d290fa758f7fe4d55f8d75.html",tooltip=""];
   dir_0f1ba4ec15db9d2299c4b831146ba0a5 [label="EARS_sdCardLib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_0f1ba4ec15db9d2299c4b831146ba0a5.html",tooltip=""];
   dir_28c8d4bb7e5b9ae107e898197e1321ea [label="Logger", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_28c8d4bb7e5b9ae107e898197e1321ea.html",tooltip=""];
-  dir_0d4b7d8b47388f0a69bac93fc32e26d3 [label="ScreensaverLib", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_0d4b7d8b47388f0a69bac93fc32e26d3.html",tooltip=""];
   }
   dir_d44c64559bbebec7f509842c48db8b23 [label="include", fillcolor="#edf0f7", color="grey25", style="filled", URL="dir_d44c64559bbebec7f509842c48db8b23.html",tooltip=""];
-  dir_0f1ba4ec15db9d2299c4b831146ba0a5->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000003.html" href="dir_000002_000003.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_28c8d4bb7e5b9ae107e898197e1321ea->dir_0f1ba4ec15db9d2299c4b831146ba0a5 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000002.html" href="dir_000005_000002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_0f1ba4ec15db9d2299c4b831146ba0a5->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000004.html" href="dir_000003_000004.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_28c8d4bb7e5b9ae107e898197e1321ea->dir_0f1ba4ec15db9d2299c4b831146ba0a5 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000003.html" href="dir_000006_000003.html" color="steelblue1" fontcolor="steelblue1"];
 }

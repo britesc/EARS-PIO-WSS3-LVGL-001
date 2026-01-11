@@ -1,0 +1,13 @@
+EARS Libraries and Defines,,,,,
+,,,,,
+Old Name,New Name,Header Guard,Class Name,Invocation,Status
+Logger,EARS_loggerLib,__EARS_LOGGER_LIB_H__,EARS_logger,using_ears_logger,Due
+NVSEeprom,EARS_nvsEepromLib,__EARS_NVSEEPROM_LIB_H__,EARS_nvsEeprom,using_ears_eeprom,Updated
+ScreenSaverLib,EARS_screenSaverLib,__EARS_SCREENSAVER_LIB_H__,EARS_screenSaver,using_ears_screensaver,Updated
+SDCard,EARS_sdCardLib,__EARS_SDCARD_LIB_H__,EARS_sdCard,using_ears_sdcard,Updated
+BackLightManager,EARS_backLightManagerLib,__EARS_BACKLIGHT_MANAGER_LIB_H__,EARS_backLightManager,using_ears_backlightmanager,Not Written
+ErrorLib,EARS_errorsLib,__EARS_ERRORS_LIB_H__,EARS_errors,using_ears_errors,Not Written
+ears_version,EARS_versionDef,__EARS_VERSION_DEF_H__,,,Updated
+RGB565_COLORS,EARS_rgb565ColoursDef,__EARS_RGB565_COLOURS_DEF_H__,,,Updated
+RGB888_COLORS,EARS_rgb888ColoursDef,__EARS_RGB888_COLOURS_DEF_H__,,,Updated
+WS35TLCD_PINS,EARS_ws35tlcdPins ,__EARS_WS35TLCD_PINS_H_ ,,,Updated

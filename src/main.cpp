@@ -30,7 +30,7 @@
  *
  * @section author Author
  * - Created by JTB on 20251220.
- * - Modified by by JTB on 20251228.
+ * - Modified by by JTB on 20260110.
  * - Modified for proper dual-core operation on 20250104.
  *
  * Copyright (c) 2025 JTB.  All rights reserved.
@@ -95,13 +95,19 @@ lv_obj_t *status_label = NULL;
 NVSValidationResult g_nvsResult;
 
 // Global NVS instance
-EARS_nvsEepromLib using_nvs_eeprom;
+EARS_nvsEeprom using_nvs_eeprom;
 
 /******************************************************************************
  * SD Card object
  *****************************************************************************/
 // Global SD Card instance
  EARS_sdCard using_ears_sdcard;
+
+/******************************************************************************
+ * Screen Saver object
+ *****************************************************************************/
+// Global Screen Saver instance 
+EARS_screenSaver using_screen_saver;
 
 /******************************************************************************
  * Task Handles for Core Management

@@ -2,7 +2,7 @@
  * @file EARS_nvsEepromLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief NVS EEPROM wrapper class header
- * @version 1.1.0
+ * @version 1.2.0
  * @date 20251229
  * @update 20260110
  * @copyright Copyright (c) 2025
@@ -25,11 +25,12 @@
  *****************************************************************************/
 /**
  * @enum NVSStatus
- * @brief Enumeration for NVS validation status
- * @description
+ * @brief Enumeration for NVS validation status.
+ *
+ * @details
  * This enum defines various status codes for validating the Non-Volatile Storage (NVS). It includes states for not checked, valid, invalid version, missing zap number, missing password, CRC failure, upgraded, and initialization failure. It is used to indicate the result of NVS validation operations.
  */
- enum class NVSStatus : uint8_t {
+enum class NVSStatus : uint8_t {
     NOT_CHECKED = 0,
     VALID = 1,
     INVALID_VERSION = 2,
@@ -45,11 +46,12 @@
  *****************************************************************************/
 /**
  * @struct NVSValidationResult
- * @brief Structure to hold NVS validation results
- * @description
+ * @brief Structure to hold NVS validation results.
+ * 
+ * @details
  * This struct contains detailed information about the validation status of the NVS, including version info, zap number validity, password hash validity, CRC status, and whether an upgrade was performed. It also holds the calculated CRC32 value and the zap number string. It is used to provide comprehensive feedback after validating the NVS. It is used for communication between Core0 and Core1.
  */
- struct NVSValidationResult {
+struct NVSValidationResult {
     NVSStatus status;           // Overall validation status
     uint16_t currentVersion;    // Version found in NVS
     uint16_t expectedVersion;   // Version expected by code
@@ -78,11 +80,15 @@
 };
 
 /**
- * @brief NVS EEPROM wrapper class
- * @description
+ * @brief NVS EEPROM wrapper class.
+ * 
+ * @details
  * This class provides a simple interface for storing and retrieving data
+ * 
+ * CORRECTED: Class name is now EARS_nvsEeprom (without Lib suffix)
+ * This matches the naming convention standard
  */
-class EARS_nvsEepromLib  : public Preferences {
+class EARS_nvsEeprom : public Preferences {
 public:
     // NVS Version - increment when NVS structure changes
     static const uint16_t CURRENT_VERSION = 1;
@@ -94,8 +100,8 @@ public:
     static const char* KEY_NVS_CRC;
     
     // Constructor and Destructor
-    EARS_nvsEepromLib ();
-    ~EARS_nvsEepromLib ();
+    EARS_nvsEeprom();
+    ~EARS_nvsEeprom();
     
     // Initialize NVS - call this in setup()
     bool begin();
@@ -112,12 +118,12 @@ public:
     uint16_t getVersion(const char* key, uint16_t defaultVersion = 0);
     bool putVersion(const char* key, uint16_t version);    
 
-    // NEW: Overall validation and tamper detection - Step 4
+    // Overall validation and tamper detection - Step 4
     NVSValidationResult validateNVS();
     bool updateNVSCRC();
     uint32_t calculateNVSCRC();
     
-    // NEW: ZapNumber validation
+    // ZapNumber validation
     bool isValidZapNumber(const String& zapNumber);
     
     // ZapNumber management
@@ -137,4 +143,4 @@ private:
 
 /******************************************************************************
  * End of EARS_nvsEepromLib.h
- *****************************************************************************/ 
+ ******************************************************************************/

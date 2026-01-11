@@ -46,7 +46,7 @@ var searchData=
   ['is_5fequal_43',['is_equal',['../namespaceeez_1_1flow.html#a6d305ed5add05625cfc019dfcd1746b5',1,'eez::flow']]],
   ['is_5fgreat_44',['is_great',['../namespaceeez_1_1flow.html#a0b829a1d7d8c39551d173b76d9819713',1,'eez::flow']]],
   ['is_5fless_45',['is_less',['../namespaceeez_1_1flow.html#ae4b75ddad72c095b5461b62238e3d13d',1,'eez::flow']]],
-  ['isactive_46',['isActive',['../class_screensaver_lib.html#a3768edc3f26b1a80287399210725f333',1,'ScreensaverLib']]],
+  ['isactive_46',['isActive',['../class_e_a_r_s__screen_saver.html#a6707ee1fc70a3cd94d237e6f92508884',1,'EARS_screenSaver']]],
   ['isavailable_47',['isAvailable',['../class_e_a_r_s__sd_card.html#a49952d7de7f2b5abba59521166855d4c',1,'EARS_sdCard']]],
   ['iscomponentreadytorun_48',['isComponentReadyToRun',['../namespaceeez_1_1flow.html#a1c2f393b87cb046d520b53f48eafa157',1,'eez::flow']]],
   ['isdigit_49',['isDigit',['../namespaceeez.html#a3e0b4ab520ffb10c6daab3a066253ef4',1,'eez']]],

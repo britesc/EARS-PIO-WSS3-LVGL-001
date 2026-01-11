@@ -20,7 +20,7 @@ var searchData=
   ['timeout_5fseconds_17',['timeout_seconds',['../struct_screensaver_settings.html#a6e72c4f3fadc3021d4b780c76b35152a',1,'ScreensaverSettings']]],
   ['tobcd_18',['toBCD',['../namespaceeez.html#a83a4da778189c50cc1f96a30ba723fa5',1,'eez']]],
   ['todo_19',['TODO',['../index.html#todo',1,'']]],
-  ['toggleenabled_20',['toggleEnabled',['../class_screensaver_lib.html#ac7e4af59ebcfe48920008ce4d0281c7b',1,'ScreensaverLib']]],
+  ['toggleenabled_20',['toggleEnabled',['../class_e_a_r_s__screen_saver.html#a3dbd8f61e21fd03790d05ead381a571a',1,'EARS_screenSaver']]],
   ['tohexdigit_21',['toHexDigit',['../namespaceeez.html#a9605bfb2a8ebcc6355f3ddae9e4772ab',1,'eez']]],
   ['tolocalestring_22',['toLocaleString',['../namespaceeez_1_1flow_1_1date.html#acdd1104d0194c4f870f164fd2aa764e8',1,'eez::flow::date']]],
   ['tools_23',['Tools',['../index.html#tools',1,'']]],

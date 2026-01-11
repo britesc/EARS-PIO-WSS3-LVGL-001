@@ -102,6 +102,7 @@ $(function(){initNavTree('main_8cpp.html','',''); });
 <code>#include &quot;<a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html">EARS_nvsEepromLib.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_logger_8h_source.html">Logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_e_a_r_s__sd_card_lib_8h_source.html">EARS_sdCardLib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_e_a_r_s__screen_saver_lib_8h_source.html">EARS_screenSaverLib.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
@@ -145,6 +146,7 @@ Variables</h2></td></tr>
 <tr class="memitem:ad72437f094071fef8fa57acf26a21b09" id="r_ad72437f094071fef8fa57acf26a21b09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_n_v_s_validation_result.html">NVSValidationResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a></td></tr>
 <tr class="memitem:a9ac98c601b3861a2f3356843d8f5ed83" id="r_a9ac98c601b3861a2f3356843d8f5ed83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_a_r_s__nvs_eeprom_lib.html">EARS_nvsEepromLib</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a></td></tr>
 <tr class="memitem:a76585e4d0d254d24ab0944560e8044e7" id="r_a76585e4d0d254d24ab0944560e8044e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_a_r_s__sd_card.html">EARS_sdCard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76585e4d0d254d24ab0944560e8044e7">using_ears_sdcard</a></td></tr>
+<tr class="memitem:ac06cc97e6fa4087e92e81a279fd51457" id="r_ac06cc97e6fa4087e92e81a279fd51457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_a_r_s__screen_saver.html">EARS_screenSaver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06cc97e6fa4087e92e81a279fd51457">using_screen_saver</a></td></tr>
 <tr class="memitem:ac04dce39c7671f6823c8dcd2484d716f" id="r_ac04dce39c7671f6823c8dcd2484d716f"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac04dce39c7671f6823c8dcd2484d716f">Core0_ValidationTask</a></td></tr>
 <tr class="memitem:a00730764cf73b6708f0abb96aca1e4bc" id="r_a00730764cf73b6708f0abb96aca1e4bc"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00730764cf73b6708f0abb96aca1e4bc">Core1_DisplayTask</a></td></tr>
 <tr class="memitem:a7bbc1d5433c18bc75eacc1de1ef6aa67" id="r_a7bbc1d5433c18bc75eacc1de1ef6aa67"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a> = false</td></tr>
@@ -168,62 +170,62 @@ Variables</h2></td></tr>
 
 <p>Core 0 Loader Logic Decision @description Called after validation completes to determine next action. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00265">265</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  265</span>                         {</div>
-<div class="line"><span class="lineno">  266</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Loader Decision ===&quot;</span>);</div>
-<div class="line"><span class="lineno">  267</span>    </div>
-<div class="line"><span class="lineno">  268</span>    <span class="comment">// Make decisions based on validation results</span></div>
-<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status) {</div>
-<div class="line"><span class="lineno">  270</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a>:</div>
-<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">NVSStatus::UPGRADED</a>:</div>
-<div class="line"><span class="lineno">  272</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Proceed to login screen&quot;</span>);</div>
-<div class="line"><span class="lineno">  273</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;ZapNumber: %s&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
-<div class="line"><span class="lineno">  274</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Ready - Login&quot;</span>);</div>
-<div class="line"><span class="lineno">  275</span>            <span class="comment">// TODO: Show login screen, validate password</span></div>
-<div class="line"><span class="lineno">  276</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  277</span>            </div>
-<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a>:</div>
-<div class="line"><span class="lineno">  279</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Show ZapNumber setup wizard&quot;</span>);</div>
-<div class="line"><span class="lineno">  280</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup: ZapNumber&quot;</span>);</div>
-<div class="line"><span class="lineno">  281</span>            <span class="comment">// TODO: Launch setup wizard to collect ZapNumber</span></div>
-<div class="line"><span class="lineno">  282</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  283</span>            </div>
-<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">NVSStatus::MISSING_PASSWORD</a>:</div>
-<div class="line"><span class="lineno">  285</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Show password setup wizard&quot;</span>);</div>
-<div class="line"><span class="lineno">  286</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Using ZapNumber: %s&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
-<div class="line"><span class="lineno">  287</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup: Password&quot;</span>);</div>
-<div class="line"><span class="lineno">  288</span>            <span class="comment">// TODO: Launch password setup wizard</span></div>
-<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  290</span>            </div>
-<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a>:</div>
-<div class="line"><span class="lineno">  292</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: SECURITY ALERT - Data tampering detected!&quot;</span>);</div>
-<div class="line"><span class="lineno">  293</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Action: Factory reset required&quot;</span>);</div>
-<div class="line"><span class="lineno">  294</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Factory Reset Needed&quot;</span>);</div>
-<div class="line"><span class="lineno">  295</span>            <span class="comment">// TODO: Show security warning, require factory reset</span></div>
-<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  297</span>            </div>
-<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a>:</div>
-<div class="line"><span class="lineno">  299</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Version mismatch&quot;</span>);</div>
-<div class="line"><span class="lineno">  300</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;NVS version %d incompatible with code version %d&quot;</span>,</div>
-<div class="line"><span class="lineno">  301</span>                         <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.currentVersion,</div>
-<div class="line"><span class="lineno">  302</span>                         <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.expectedVersion);</div>
-<div class="line"><span class="lineno">  303</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Version Mismatch&quot;</span>);</div>
-<div class="line"><span class="lineno">  304</span>            <span class="comment">// TODO: Show error, offer factory reset</span></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00274">274</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  274</span>                         {</div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Loader Decision ===&quot;</span>);</div>
+<div class="line"><span class="lineno">  276</span>    </div>
+<div class="line"><span class="lineno">  277</span>    <span class="comment">// Make decisions based on validation results</span></div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status) {</div>
+<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a>:</div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">NVSStatus::UPGRADED</a>:</div>
+<div class="line"><span class="lineno">  281</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Proceed to login screen&quot;</span>);</div>
+<div class="line"><span class="lineno">  282</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;ZapNumber: %s&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
+<div class="line"><span class="lineno">  283</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Ready - Login&quot;</span>);</div>
+<div class="line"><span class="lineno">  284</span>            <span class="comment">// TODO: Show login screen, validate password</span></div>
+<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  286</span>            </div>
+<div class="line"><span class="lineno">  287</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a>:</div>
+<div class="line"><span class="lineno">  288</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Show ZapNumber setup wizard&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup: ZapNumber&quot;</span>);</div>
+<div class="line"><span class="lineno">  290</span>            <span class="comment">// TODO: Launch setup wizard to collect ZapNumber</span></div>
+<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  292</span>            </div>
+<div class="line"><span class="lineno">  293</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">NVSStatus::MISSING_PASSWORD</a>:</div>
+<div class="line"><span class="lineno">  294</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Show password setup wizard&quot;</span>);</div>
+<div class="line"><span class="lineno">  295</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Using ZapNumber: %s&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
+<div class="line"><span class="lineno">  296</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup: Password&quot;</span>);</div>
+<div class="line"><span class="lineno">  297</span>            <span class="comment">// TODO: Launch password setup wizard</span></div>
+<div class="line"><span class="lineno">  298</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  299</span>            </div>
+<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a>:</div>
+<div class="line"><span class="lineno">  301</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: SECURITY ALERT - Data tampering detected!&quot;</span>);</div>
+<div class="line"><span class="lineno">  302</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Action: Factory reset required&quot;</span>);</div>
+<div class="line"><span class="lineno">  303</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Factory Reset Needed&quot;</span>);</div>
+<div class="line"><span class="lineno">  304</span>            <span class="comment">// TODO: Show security warning, require factory reset</span></div>
 <div class="line"><span class="lineno">  305</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  306</span>            </div>
-<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>:</div>
-<div class="line"><span class="lineno">  308</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Hardware error&quot;</span>);</div>
-<div class="line"><span class="lineno">  309</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Hardware Error&quot;</span>);</div>
-<div class="line"><span class="lineno">  310</span>            <span class="comment">// TODO: Show hardware error message</span></div>
-<div class="line"><span class="lineno">  311</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  312</span>            </div>
-<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  314</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Unknown state&quot;</span>);</div>
-<div class="line"><span class="lineno">  315</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Unknown State&quot;</span>);</div>
-<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  317</span>    }</div>
-<div class="line"><span class="lineno">  318</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;========================&quot;</span>);</div>
-<div class="line"><span class="lineno">  319</span>}</div>
+<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a>:</div>
+<div class="line"><span class="lineno">  308</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Version mismatch&quot;</span>);</div>
+<div class="line"><span class="lineno">  309</span>            <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;NVS version %d incompatible with code version %d&quot;</span>,</div>
+<div class="line"><span class="lineno">  310</span>                         <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.currentVersion,</div>
+<div class="line"><span class="lineno">  311</span>                         <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.expectedVersion);</div>
+<div class="line"><span class="lineno">  312</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Version Mismatch&quot;</span>);</div>
+<div class="line"><span class="lineno">  313</span>            <span class="comment">// TODO: Show error, offer factory reset</span></div>
+<div class="line"><span class="lineno">  314</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  315</span>            </div>
+<div class="line"><span class="lineno">  316</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>:</div>
+<div class="line"><span class="lineno">  317</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Hardware error&quot;</span>);</div>
+<div class="line"><span class="lineno">  318</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Hardware Error&quot;</span>);</div>
+<div class="line"><span class="lineno">  319</span>            <span class="comment">// TODO: Show hardware error message</span></div>
+<div class="line"><span class="lineno">  320</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  321</span>            </div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  323</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Decision: Unknown state&quot;</span>);</div>
+<div class="line"><span class="lineno">  324</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Unknown State&quot;</span>);</div>
+<div class="line"><span class="lineno">  325</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+<div class="line"><span class="lineno">  327</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;========================&quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span>}</div>
 <div class="ttc" id="a_e_a_r_s__nvs_eeprom_lib_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529"><div class="ttname"><a href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a></div><div class="ttdeci">@ MISSING_ZAPNUMBER</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00036">EARS_nvsEepromLib.h:36</a></div></div>
 <div class="ttc" id="a_e_a_r_s__nvs_eeprom_lib_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc"><div class="ttname"><a href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a></div><div class="ttdeci">@ CRC_FAILED</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00038">EARS_nvsEepromLib.h:38</a></div></div>
 <div class="ttc" id="a_e_a_r_s__nvs_eeprom_lib_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f"><div class="ttname"><a href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a></div><div class="ttdeci">@ INVALID_VERSION</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00035">EARS_nvsEepromLib.h:35</a></div></div>
@@ -233,12 +235,12 @@ Variables</h2></td></tr>
 <div class="ttc" id="a_e_a_r_s__nvs_eeprom_lib_8h_html_a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf"><div class="ttname"><a href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a></div><div class="ttdeci">@ INITIALIZATION_FAILED</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00040">EARS_nvsEepromLib.h:40</a></div></div>
 <div class="ttc" id="a_logger_8h_html_a158a8c64f24645c7478298399825737f"><div class="ttname"><a href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a></div><div class="ttdeci">#define LOG(msg)</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00325">Logger.h:325</a></div></div>
 <div class="ttc" id="a_logger_8h_html_abf90b9a1dd511a996bcba0a746281601"><div class="ttname"><a href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a></div><div class="ttdeci">#define LOGF(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00326">Logger.h:326</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ad72437f094071fef8fa57acf26a21b09"><div class="ttname"><a href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a></div><div class="ttdeci">NVSValidationResult g_nvsResult</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00092">main.cpp:92</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ad986c6fb2161557a720669a6dfa4bc66"><div class="ttname"><a href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a></div><div class="ttdeci">void updateStatus(const char *message)</div><div class="ttdoc">Update status message on display.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00158">main.cpp:158</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad72437f094071fef8fa57acf26a21b09"><div class="ttname"><a href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a></div><div class="ttdeci">NVSValidationResult g_nvsResult</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad986c6fb2161557a720669a6dfa4bc66"><div class="ttname"><a href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a></div><div class="ttdeci">void updateStatus(const char *message)</div><div class="ttdoc">Update status message on display.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00167">main.cpp:167</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00038">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00092">g_nvsResult</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00040">INITIALIZATION_FAILED</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00035">INVALID_VERSION</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00037">MISSING_PASSWORD</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00036">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00158">updateStatus()</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00039">UPGRADED</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00034">VALID</a>.</p>
+<p class="reference">References <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00038">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00095">g_nvsResult</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00040">INITIALIZATION_FAILED</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00035">INVALID_VERSION</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00037">MISSING_PASSWORD</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00036">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00167">updateStatus()</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00039">UPGRADED</a>, and <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00034">VALID</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00328">Core1_DisplayHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00337">Core1_DisplayHandler()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -275,99 +277,99 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00173">173</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>                                          {</div>
-<div class="line"><span class="lineno">  174</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] NVS Validation Task Started&quot;</span>);</div>
-<div class="line"><span class="lineno">  175</span>    </div>
-<div class="line"><span class="lineno">  176</span>    <span class="comment">// Simulate some validation steps with status updates</span></div>
-<div class="line"><span class="lineno">  177</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Checking NVS...&quot;</span>);</div>
-<div class="line"><span class="lineno">  178</span>    delay(500);</div>
-<div class="line"><span class="lineno">  179</span>    </div>
-<div class="line"><span class="lineno">  180</span>    <span class="comment">// Step 1: Initialize NVS</span></div>
-<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Initializing NVS...&quot;</span>);</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a>.begin()) {</div>
-<div class="line"><span class="lineno">  183</span>        <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status = <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>;</div>
-<div class="line"><span class="lineno">  184</span>        <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;NVS Init Failed!&quot;</span>);</div>
-<div class="line"><span class="lineno">  185</span>        <a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  186</span>        vTaskDelete(NULL);</div>
-<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  188</span>    }</div>
-<div class="line"><span class="lineno">  189</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] NVS Initialized&quot;</span>);</div>
-<div class="line"><span class="lineno">  190</span>    delay(500);</div>
-<div class="line"><span class="lineno">  191</span>    </div>
-<div class="line"><span class="lineno">  192</span>    <span class="comment">// Step 2: Validate entire NVS</span></div>
-<div class="line"><span class="lineno">  193</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validating data...&quot;</span>);</div>
-<div class="line"><span class="lineno">  194</span>    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a> = <a class="code hl_variable" href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a>.validateNVS();</div>
-<div class="line"><span class="lineno">  195</span>    delay(500);</div>
-<div class="line"><span class="lineno">  196</span>    </div>
-<div class="line"><span class="lineno">  197</span>    <span class="comment">// Step 3: Report results</span></div>
-<div class="line"><span class="lineno">  198</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Core 0 NVS Validation Results ===&quot;</span>);</div>
-<div class="line"><span class="lineno">  199</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Status: &quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00182">182</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                                          {</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] NVS Validation Task Started&quot;</span>);</div>
+<div class="line"><span class="lineno">  184</span>    </div>
+<div class="line"><span class="lineno">  185</span>    <span class="comment">// Simulate some validation steps with status updates</span></div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Checking NVS...&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>    delay(500);</div>
+<div class="line"><span class="lineno">  188</span>    </div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">// Step 1: Initialize NVS</span></div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Initializing NVS...&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a>.begin()) {</div>
+<div class="line"><span class="lineno">  192</span>        <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status = <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>;</div>
+<div class="line"><span class="lineno">  193</span>        <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;NVS Init Failed!&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>        <a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  195</span>        vTaskDelete(NULL);</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] NVS Initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  199</span>    delay(500);</div>
 <div class="line"><span class="lineno">  200</span>    </div>
-<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status) {</div>
-<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a>:</div>
-<div class="line"><span class="lineno">  203</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;VALID&quot;</span>);</div>
-<div class="line"><span class="lineno">  204</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: PASSED&quot;</span>);</div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">NVSStatus::UPGRADED</a>:</div>
-<div class="line"><span class="lineno">  207</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;UPGRADED&quot;</span>);</div>
-<div class="line"><span class="lineno">  208</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: UPGRADED&quot;</span>);</div>
-<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a>:</div>
-<div class="line"><span class="lineno">  211</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;INVALID_VERSION&quot;</span>);</div>
-<div class="line"><span class="lineno">  212</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: BAD VERSION&quot;</span>);</div>
-<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a>:</div>
-<div class="line"><span class="lineno">  215</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;MISSING_ZAPNUMBER&quot;</span>);</div>
-<div class="line"><span class="lineno">  216</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup Required&quot;</span>);</div>
-<div class="line"><span class="lineno">  217</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">NVSStatus::MISSING_PASSWORD</a>:</div>
-<div class="line"><span class="lineno">  219</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;MISSING_PASSWORD&quot;</span>);</div>
-<div class="line"><span class="lineno">  220</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Password Required&quot;</span>);</div>
-<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a>:</div>
-<div class="line"><span class="lineno">  223</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;CRC_FAILED - TAMPERING DETECTED!&quot;</span>);</div>
-<div class="line"><span class="lineno">  224</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;SECURITY ALERT!&quot;</span>);</div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>:</div>
-<div class="line"><span class="lineno">  227</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;INITIALIZATION_FAILED&quot;</span>);</div>
-<div class="line"><span class="lineno">  228</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Hardware Error&quot;</span>);</div>
-<div class="line"><span class="lineno">  229</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  231</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;NOT_CHECKED&quot;</span>);</div>
-<div class="line"><span class="lineno">  232</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Unknown Status&quot;</span>);</div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  234</span>    }</div>
-<div class="line"><span class="lineno">  235</span>    </div>
-<div class="line"><span class="lineno">  236</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Version: Current=%d, Expected=%d&quot;</span>, </div>
-<div class="line"><span class="lineno">  237</span>                <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.currentVersion, </div>
-<div class="line"><span class="lineno">  238</span>                <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.expectedVersion);</div>
-<div class="line"><span class="lineno">  239</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;ZapNumber: Valid=%d, Value=%s&quot;</span>, </div>
-<div class="line"><span class="lineno">  240</span>                    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumberValid, </div>
-<div class="line"><span class="lineno">  241</span>                    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
-<div class="line"><span class="lineno">  242</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Password: Valid=%d&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.passwordHashValid);        </div>
-<div class="line"><span class="lineno">  243</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;CRC: Valid=%d, Value=0x%08X&quot;</span>, </div>
-<div class="line"><span class="lineno">  244</span>                  <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.crcValid, </div>
-<div class="line"><span class="lineno">  245</span>                  <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.calculatedCRC);</div>
-<div class="line"><span class="lineno">  246</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Upgraded: %d&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.wasUpgraded);</div>
-<div class="line"><span class="lineno">  247</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;====================================&quot;</span>);</div>
-<div class="line"><span class="lineno">  248</span>    </div>
-<div class="line"><span class="lineno">  249</span>    delay(1000); <span class="comment">// Show final status for 1 second</span></div>
-<div class="line"><span class="lineno">  250</span>    </div>
-<div class="line"><span class="lineno">  251</span>    <span class="comment">// Mark validation as complete</span></div>
-<div class="line"><span class="lineno">  252</span>    <a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  253</span>    </div>
-<div class="line"><span class="lineno">  254</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] Validation Complete - Task Ending&quot;</span>);</div>
-<div class="line"><span class="lineno">  255</span>    </div>
-<div class="line"><span class="lineno">  256</span>    <span class="comment">// Task complete, delete itself</span></div>
-<div class="line"><span class="lineno">  257</span>    vTaskDelete(NULL);</div>
-<div class="line"><span class="lineno">  258</span>}</div>
-<div class="ttc" id="amain_8cpp_html_a7bbc1d5433c18bc75eacc1de1ef6aa67"><div class="ttname"><a href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a></div><div class="ttdeci">volatile bool validationComplete</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00112">main.cpp:112</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a9ac98c601b3861a2f3356843d8f5ed83"><div class="ttname"><a href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a></div><div class="ttdeci">EARS_nvsEepromLib using_nvs_eeprom</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
+<div class="line"><span class="lineno">  201</span>    <span class="comment">// Step 2: Validate entire NVS</span></div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validating data...&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a> = <a class="code hl_variable" href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a>.validateNVS();</div>
+<div class="line"><span class="lineno">  204</span>    delay(500);</div>
+<div class="line"><span class="lineno">  205</span>    </div>
+<div class="line"><span class="lineno">  206</span>    <span class="comment">// Step 3: Report results</span></div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Core 0 NVS Validation Results ===&quot;</span>);</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Status: &quot;</span>);</div>
+<div class="line"><span class="lineno">  209</span>    </div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.status) {</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac9f1a6384b1c466d4612f513bd8e13ea">NVSStatus::VALID</a>:</div>
+<div class="line"><span class="lineno">  212</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;VALID&quot;</span>);</div>
+<div class="line"><span class="lineno">  213</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: PASSED&quot;</span>);</div>
+<div class="line"><span class="lineno">  214</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9ac112c739c175b99f865ec63afedfeca6">NVSStatus::UPGRADED</a>:</div>
+<div class="line"><span class="lineno">  216</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;UPGRADED&quot;</span>);</div>
+<div class="line"><span class="lineno">  217</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: UPGRADED&quot;</span>);</div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a5f3740fef83818696e8b056c0456173f">NVSStatus::INVALID_VERSION</a>:</div>
+<div class="line"><span class="lineno">  220</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;INVALID_VERSION&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Validation: BAD VERSION&quot;</span>);</div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0141b7030fcca755668ae0fc90745529">NVSStatus::MISSING_ZAPNUMBER</a>:</div>
+<div class="line"><span class="lineno">  224</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;MISSING_ZAPNUMBER&quot;</span>);</div>
+<div class="line"><span class="lineno">  225</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Setup Required&quot;</span>);</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  227</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a6c33889470e0e7e0107e690e5ca743b8">NVSStatus::MISSING_PASSWORD</a>:</div>
+<div class="line"><span class="lineno">  228</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;MISSING_PASSWORD&quot;</span>);</div>
+<div class="line"><span class="lineno">  229</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Password Required&quot;</span>);</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9a0d9548c3dd81c5f698866b458662c2fc">NVSStatus::CRC_FAILED</a>:</div>
+<div class="line"><span class="lineno">  232</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;CRC_FAILED - TAMPERING DETECTED!&quot;</span>);</div>
+<div class="line"><span class="lineno">  233</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;SECURITY ALERT!&quot;</span>);</div>
+<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_e_a_r_s__nvs_eeprom_lib_8h.html#a636ea3dd5ee036c2a70fe68ce10dcad9afdd2c3274e42cbf32d77a90e764f1faf">NVSStatus::INITIALIZATION_FAILED</a>:</div>
+<div class="line"><span class="lineno">  236</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;INITIALIZATION_FAILED&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Hardware Error&quot;</span>);</div>
+<div class="line"><span class="lineno">  238</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  240</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;NOT_CHECKED&quot;</span>);</div>
+<div class="line"><span class="lineno">  241</span>            <a class="code hl_function" href="#ad986c6fb2161557a720669a6dfa4bc66">updateStatus</a>(<span class="stringliteral">&quot;Unknown Status&quot;</span>);</div>
+<div class="line"><span class="lineno">  242</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  243</span>    }</div>
+<div class="line"><span class="lineno">  244</span>    </div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Version: Current=%d, Expected=%d&quot;</span>, </div>
+<div class="line"><span class="lineno">  246</span>                <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.currentVersion, </div>
+<div class="line"><span class="lineno">  247</span>                <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.expectedVersion);</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;ZapNumber: Valid=%d, Value=%s&quot;</span>, </div>
+<div class="line"><span class="lineno">  249</span>                    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumberValid, </div>
+<div class="line"><span class="lineno">  250</span>                    <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.zapNumber);</div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Password: Valid=%d&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.passwordHashValid);        </div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;CRC: Valid=%d, Value=0x%08X&quot;</span>, </div>
+<div class="line"><span class="lineno">  253</span>                  <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.crcValid, </div>
+<div class="line"><span class="lineno">  254</span>                  <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.calculatedCRC);</div>
+<div class="line"><span class="lineno">  255</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Upgraded: %d&quot;</span>, <a class="code hl_variable" href="#ad72437f094071fef8fa57acf26a21b09">g_nvsResult</a>.wasUpgraded);</div>
+<div class="line"><span class="lineno">  256</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;====================================&quot;</span>);</div>
+<div class="line"><span class="lineno">  257</span>    </div>
+<div class="line"><span class="lineno">  258</span>    delay(1000); <span class="comment">// Show final status for 1 second</span></div>
+<div class="line"><span class="lineno">  259</span>    </div>
+<div class="line"><span class="lineno">  260</span>    <span class="comment">// Mark validation as complete</span></div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  262</span>    </div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 0] Validation Complete - Task Ending&quot;</span>);</div>
+<div class="line"><span class="lineno">  264</span>    </div>
+<div class="line"><span class="lineno">  265</span>    <span class="comment">// Task complete, delete itself</span></div>
+<div class="line"><span class="lineno">  266</span>    vTaskDelete(NULL);</div>
+<div class="line"><span class="lineno">  267</span>}</div>
+<div class="ttc" id="amain_8cpp_html_a7bbc1d5433c18bc75eacc1de1ef6aa67"><div class="ttname"><a href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a></div><div class="ttdeci">volatile bool validationComplete</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00121">main.cpp:121</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a9ac98c601b3861a2f3356843d8f5ed83"><div class="ttname"><a href="#a9ac98c601b3861a2f3356843d8f5ed83">using_nvs_eeprom</a></div><div class="ttdeci">EARS_nvsEepromLib using_nvs_eeprom</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00098">main.cpp:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00038">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00092">g_nvsResult</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00040">INITIALIZATION_FAILED</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00035">INVALID_VERSION</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00037">MISSING_PASSWORD</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00036">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00158">updateStatus()</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00039">UPGRADED</a>, <a class="el" href="main_8cpp_source.html#l00095">using_nvs_eeprom</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00034">VALID</a>, and <a class="el" href="main_8cpp_source.html#l00112">validationComplete</a>.</p>
+<p class="reference">References <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00038">CRC_FAILED</a>, <a class="el" href="main_8cpp_source.html#l00095">g_nvsResult</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00040">INITIALIZATION_FAILED</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00035">INVALID_VERSION</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00037">MISSING_PASSWORD</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00036">MISSING_ZAPNUMBER</a>, <a class="el" href="main_8cpp_source.html#l00167">updateStatus()</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00039">UPGRADED</a>, <a class="el" href="main_8cpp_source.html#l00098">using_nvs_eeprom</a>, <a class="el" href="_e_a_r_s__nvs_eeprom_lib_8h_source.html#l00034">VALID</a>, and <a class="el" href="main_8cpp_source.html#l00121">validationComplete</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -404,44 +406,44 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00328">328</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  328</span>                                           {</div>
-<div class="line"><span class="lineno">  329</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 1] Display Handler Task Started&quot;</span>);</div>
-<div class="line"><span class="lineno">  330</span>    </div>
-<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><span class="lineno">  332</span>        <span class="comment">// Handle LVGL timer</span></div>
-<div class="line"><span class="lineno">  333</span>        <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>, portMAX_DELAY)) {</div>
-<div class="line"><span class="lineno">  334</span>            lv_timer_handler();</div>
-<div class="line"><span class="lineno">  335</span>            xSemaphoreGive(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>);</div>
-<div class="line"><span class="lineno">  336</span>        }</div>
-<div class="line"><span class="lineno">  337</span>        </div>
-<div class="line"><span class="lineno">  338</span>        <span class="comment">// Check if validation is complete</span></div>
-<div class="line"><span class="lineno">  339</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a>) {</div>
-<div class="line"><span class="lineno">  340</span>            <span class="comment">// Hide spinner</span></div>
-<div class="line"><span class="lineno">  341</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> != NULL) {</div>
-<div class="line"><span class="lineno">  342</span>                lv_obj_del(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>);</div>
-<div class="line"><span class="lineno">  343</span>                <a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> = NULL;</div>
-<div class="line"><span class="lineno">  344</span>            }</div>
-<div class="line"><span class="lineno">  345</span>            </div>
-<div class="line"><span class="lineno">  346</span>            <span class="comment">// Run loader logic</span></div>
-<div class="line"><span class="lineno">  347</span>            <a class="code hl_function" href="#a9deaa646e3a2ff968bf99bb481fb9971">core0_loaderLogic</a>();</div>
-<div class="line"><span class="lineno">  348</span>            </div>
-<div class="line"><span class="lineno">  349</span>            <span class="comment">// End this task as validation phase is done</span></div>
-<div class="line"><span class="lineno">  350</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 1] Display task ending - validation complete&quot;</span>);</div>
-<div class="line"><span class="lineno">  351</span>            vTaskDelete(NULL);</div>
-<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  353</span>        }</div>
-<div class="line"><span class="lineno">  354</span>        </div>
-<div class="line"><span class="lineno">  355</span>        delay(5);</div>
-<div class="line"><span class="lineno">  356</span>    }</div>
-<div class="line"><span class="lineno">  357</span>}</div>
-<div class="ttc" id="amain_8cpp_html_a8409b569450ed69169f6bd4725726527"><div class="ttname"><a href="#a8409b569450ed69169f6bd4725726527">displayMutex</a></div><div class="ttdeci">SemaphoreHandle_t displayMutex</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00113">main.cpp:113</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a9deaa646e3a2ff968bf99bb481fb9971"><div class="ttname"><a href="#a9deaa646e3a2ff968bf99bb481fb9971">core0_loaderLogic</a></div><div class="ttdeci">void core0_loaderLogic()</div><div class="ttdoc">Core 0 Loader Logic Decision @description Called after validation completes to determine next action.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00265">main.cpp:265</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aca59e0966d3d11a6276e37ea6393dd6b"><div class="ttname"><a href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a></div><div class="ttdeci">lv_obj_t * spinner</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00085">main.cpp:85</a></div></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00337">337</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  337</span>                                           {</div>
+<div class="line"><span class="lineno">  338</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 1] Display Handler Task Started&quot;</span>);</div>
+<div class="line"><span class="lineno">  339</span>    </div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">  341</span>        <span class="comment">// Handle LVGL timer</span></div>
+<div class="line"><span class="lineno">  342</span>        <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>, portMAX_DELAY)) {</div>
+<div class="line"><span class="lineno">  343</span>            lv_timer_handler();</div>
+<div class="line"><span class="lineno">  344</span>            xSemaphoreGive(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>);</div>
+<div class="line"><span class="lineno">  345</span>        }</div>
+<div class="line"><span class="lineno">  346</span>        </div>
+<div class="line"><span class="lineno">  347</span>        <span class="comment">// Check if validation is complete</span></div>
+<div class="line"><span class="lineno">  348</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7bbc1d5433c18bc75eacc1de1ef6aa67">validationComplete</a>) {</div>
+<div class="line"><span class="lineno">  349</span>            <span class="comment">// Hide spinner</span></div>
+<div class="line"><span class="lineno">  350</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> != NULL) {</div>
+<div class="line"><span class="lineno">  351</span>                lv_obj_del(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>);</div>
+<div class="line"><span class="lineno">  352</span>                <a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> = NULL;</div>
+<div class="line"><span class="lineno">  353</span>            }</div>
+<div class="line"><span class="lineno">  354</span>            </div>
+<div class="line"><span class="lineno">  355</span>            <span class="comment">// Run loader logic</span></div>
+<div class="line"><span class="lineno">  356</span>            <a class="code hl_function" href="#a9deaa646e3a2ff968bf99bb481fb9971">core0_loaderLogic</a>();</div>
+<div class="line"><span class="lineno">  357</span>            </div>
+<div class="line"><span class="lineno">  358</span>            <span class="comment">// End this task as validation phase is done</span></div>
+<div class="line"><span class="lineno">  359</span>            <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;[Core 1] Display task ending - validation complete&quot;</span>);</div>
+<div class="line"><span class="lineno">  360</span>            vTaskDelete(NULL);</div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  362</span>        }</div>
+<div class="line"><span class="lineno">  363</span>        </div>
+<div class="line"><span class="lineno">  364</span>        delay(5);</div>
+<div class="line"><span class="lineno">  365</span>    }</div>
+<div class="line"><span class="lineno">  366</span>}</div>
+<div class="ttc" id="amain_8cpp_html_a8409b569450ed69169f6bd4725726527"><div class="ttname"><a href="#a8409b569450ed69169f6bd4725726527">displayMutex</a></div><div class="ttdeci">SemaphoreHandle_t displayMutex</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00122">main.cpp:122</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a9deaa646e3a2ff968bf99bb481fb9971"><div class="ttname"><a href="#a9deaa646e3a2ff968bf99bb481fb9971">core0_loaderLogic</a></div><div class="ttdeci">void core0_loaderLogic()</div><div class="ttdoc">Core 0 Loader Logic Decision @description Called after validation completes to determine next action.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00274">main.cpp:274</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aca59e0966d3d11a6276e37ea6393dd6b"><div class="ttname"><a href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a></div><div class="ttdeci">lv_obj_t * spinner</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00088">main.cpp:88</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00265">core0_loaderLogic()</a>, <a class="el" href="main_8cpp_source.html#l00113">displayMutex</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="main_8cpp_source.html#l00085">spinner</a>, and <a class="el" href="main_8cpp_source.html#l00112">validationComplete</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00274">core0_loaderLogic()</a>, <a class="el" href="main_8cpp_source.html#l00122">displayMutex</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="main_8cpp_source.html#l00088">spinner</a>, and <a class="el" href="main_8cpp_source.html#l00121">validationComplete</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -472,18 +474,18 @@ Here is the caller graph for this function:</div>
 
 <p>Initialize <a class="el" href="class_logger.html" title="Enhanced Logger class with hierarchical levels.">Logger</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00148">148</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>                   {</div>
-<div class="line"><span class="lineno">  149</span>    <a class="code hl_define" href="_logger_8h.html#aeedece291fd15bc3359fb24781eb56cd">LOG_INIT</a>(<span class="stringliteral">&quot;/logs/debug.log&quot;</span>, &amp;<a class="code hl_variable" href="#a76585e4d0d254d24ab0944560e8044e7">using_ears_sdcard</a>);</div>
-<div class="line"><span class="lineno">  150</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Setup started.&quot;</span>);</div>
-<div class="line"><span class="lineno">  151</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Free memory: %d bytes&quot;</span>, ESP.getFreeHeap());</div>
-<div class="line"><span class="lineno">  152</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00157">157</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>                   {</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_define" href="_logger_8h.html#aeedece291fd15bc3359fb24781eb56cd">LOG_INIT</a>(<span class="stringliteral">&quot;/logs/debug.log&quot;</span>, &amp;<a class="code hl_variable" href="#a76585e4d0d254d24ab0944560e8044e7">using_ears_sdcard</a>);</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Setup started.&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Free memory: %d bytes&quot;</span>, ESP.getFreeHeap());</div>
+<div class="line"><span class="lineno">  161</span>}</div>
 <div class="ttc" id="a_logger_8h_html_aeedece291fd15bc3359fb24781eb56cd"><div class="ttname"><a href="_logger_8h.html#aeedece291fd15bc3359fb24781eb56cd">LOG_INIT</a></div><div class="ttdeci">#define LOG_INIT(path, sd)</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00324">Logger.h:324</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a76585e4d0d254d24ab0944560e8044e7"><div class="ttname"><a href="#a76585e4d0d254d24ab0944560e8044e7">using_ears_sdcard</a></div><div class="ttdeci">EARS_sdCard using_ears_sdcard</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00101">main.cpp:101</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a76585e4d0d254d24ab0944560e8044e7"><div class="ttname"><a href="#a76585e4d0d254d24ab0944560e8044e7">using_ears_sdcard</a></div><div class="ttdeci">EARS_sdCard using_ears_sdcard</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00104">main.cpp:104</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00324">LOG_INIT</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, and <a class="el" href="main_8cpp_source.html#l00101">using_ears_sdcard</a>.</p>
+<p class="reference">References <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00324">LOG_INIT</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, and <a class="el" href="main_8cpp_source.html#l00104">using_ears_sdcard</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -510,17 +512,17 @@ Here is the caller graph for this function:</div>
 <p>Main loop function @description During development, this loop monitors system status. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00457">457</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  457</span>            {</div>
-<div class="line"><span class="lineno">  458</span>    <span class="comment">// Development monitoring</span></div>
-<div class="line"><span class="lineno">  459</span>    <span class="keyword">static</span> uint32_t lastPrint = 0;</div>
-<div class="line"><span class="lineno">  460</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>() - lastPrint &gt; 5000) {</div>
-<div class="line"><span class="lineno">  461</span>        <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;[Monitor] Free heap: %d bytes&quot;</span>, ESP.getFreeHeap());</div>
-<div class="line"><span class="lineno">  462</span>        <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;[Monitor] Running on Core: %d&quot;</span>, xPortGetCoreID());</div>
-<div class="line"><span class="lineno">  463</span>        lastPrint = <a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>();</div>
-<div class="line"><span class="lineno">  464</span>    }</div>
-<div class="line"><span class="lineno">  465</span>    delay(1000);</div>
-<div class="line"><span class="lineno">  466</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00466">466</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  466</span>            {</div>
+<div class="line"><span class="lineno">  467</span>    <span class="comment">// Development monitoring</span></div>
+<div class="line"><span class="lineno">  468</span>    <span class="keyword">static</span> uint32_t lastPrint = 0;</div>
+<div class="line"><span class="lineno">  469</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>() - lastPrint &gt; 5000) {</div>
+<div class="line"><span class="lineno">  470</span>        <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;[Monitor] Free heap: %d bytes&quot;</span>, ESP.getFreeHeap());</div>
+<div class="line"><span class="lineno">  471</span>        <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;[Monitor] Running on Core: %d&quot;</span>, xPortGetCoreID());</div>
+<div class="line"><span class="lineno">  472</span>        lastPrint = <a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>();</div>
+<div class="line"><span class="lineno">  473</span>    }</div>
+<div class="line"><span class="lineno">  474</span>    delay(1000);</div>
+<div class="line"><span class="lineno">  475</span>}</div>
 <div class="ttc" id="anamespaceeez_html_ad88b51b57ad370d9d63fca575306511b"><div class="ttname"><a href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">eez::millis</a></div><div class="ttdeci">uint32_t millis()</div><div class="ttdef"><b>Definition</b> <a href="eez-flow_8cpp_source.html#l00622">eez-flow.cpp:622</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>.</p>
@@ -545,12 +547,12 @@ Here is the caller graph for this function:</div>
 <p>Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to manage its timing. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00141">141</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>                         {</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>();</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00150">150</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                         {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceeez.html#ad88b51b57ad370d9d63fca575306511b">millis</a>();</div>
+<div class="line"><span class="lineno">  152</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -593,20 +595,20 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00126">126</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                                                  {</div>
-<div class="line"><span class="lineno">  127</span>    uint32_t w = lv_area_get_width(area);</div>
-<div class="line"><span class="lineno">  128</span>    uint32_t h = lv_area_get_height(area);</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;draw16bitRGBBitmap(area-&gt;x1, area-&gt;y1, (uint16_t *)px_map, w, h);</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>    lv_display_flush_ready(display);</div>
-<div class="line"><span class="lineno">  133</span>}</div>
-<div class="ttc" id="amain_8cpp_html_aa35e9135b0a3620ecb9b867344834657"><div class="ttname"><a href="#aa35e9135b0a3620ecb9b867344834657">gfx</a></div><div class="ttdeci">Arduino_GFX * gfx</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00075">main.cpp:75</a></div></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00135">135</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                                                  {</div>
+<div class="line"><span class="lineno">  136</span>    uint32_t w = lv_area_get_width(area);</div>
+<div class="line"><span class="lineno">  137</span>    uint32_t h = lv_area_get_height(area);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;draw16bitRGBBitmap(area-&gt;x1, area-&gt;y1, (uint16_t *)px_map, w, h);</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    lv_display_flush_ready(display);</div>
+<div class="line"><span class="lineno">  142</span>}</div>
+<div class="ttc" id="amain_8cpp_html_aa35e9135b0a3620ecb9b867344834657"><div class="ttname"><a href="#aa35e9135b0a3620ecb9b867344834657">gfx</a></div><div class="ttdeci">Arduino_GFX * gfx</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00078">main.cpp:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00075">gfx</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00078">gfx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -633,109 +635,109 @@ Here is the caller graph for this function:</div>
 <p>Primary setup function @description Initializes hardware and creates tasks for both cores Runs on Core 1 by default. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00367">367</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  367</span>             {</div>
-<div class="line"><span class="lineno">  368</span>    <span class="comment">// Initialize Serial for debugging (keep for emergency fallback)</span></div>
-<div class="line"><span class="lineno">  369</span>    Serial.begin(115200);</div>
-<div class="line"><span class="lineno">  370</span>    delay(1000);</div>
-<div class="line"><span class="lineno">  371</span>    </div>
-<div class="line"><span class="lineno">  372</span>    <span class="comment">// Initialize Logger first</span></div>
-<div class="line"><span class="lineno">  373</span>    <a class="code hl_function" href="#ab3d0e9567cfad5d6f83abc585beb520d">init_logger</a>();</div>
-<div class="line"><span class="lineno">  374</span>    </div>
-<div class="line"><span class="lineno">  375</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;\n\n=== EARS Dual-Core System Starting ===&quot;</span>);</div>
-<div class="line"><span class="lineno">  376</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Setup running on Core: %d&quot;</span>, xPortGetCoreID());</div>
-<div class="line"><span class="lineno">  377</span>    </div>
-<div class="line"><span class="lineno">  378</span>    <span class="comment">// Create mutex for display synchronization</span></div>
-<div class="line"><span class="lineno">  379</span>    <a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a> = xSemaphoreCreateMutex();</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00376">376</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  376</span>             {</div>
+<div class="line"><span class="lineno">  377</span>    <span class="comment">// Initialize Serial for debugging (keep for emergency fallback)</span></div>
+<div class="line"><span class="lineno">  378</span>    Serial.begin(115200);</div>
+<div class="line"><span class="lineno">  379</span>    delay(1000);</div>
 <div class="line"><span class="lineno">  380</span>    </div>
-<div class="line"><span class="lineno">  381</span>    <span class="comment">// Step 1: Initialize backlight</span></div>
-<div class="line"><span class="lineno">  382</span>    pinMode(<a class="code hl_define" href="_e_a_r_s__ws35tlcd_pins_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, OUTPUT);</div>
-<div class="line"><span class="lineno">  383</span>    digitalWrite(<a class="code hl_define" href="_e_a_r_s__ws35tlcd_pins_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, HIGH);</div>
-<div class="line"><span class="lineno">  384</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Backlight: ON&quot;</span>);</div>
-<div class="line"><span class="lineno">  385</span>    </div>
-<div class="line"><span class="lineno">  386</span>    <span class="comment">// Step 2: Initialize display</span></div>
-<div class="line"><span class="lineno">  387</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Initializing display...&quot;</span>);</div>
-<div class="line"><span class="lineno">  388</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;begin();</div>
-<div class="line"><span class="lineno">  389</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;fillScreen(<a class="code hl_define" href="_e_a_r_s__rgb565_colours_def_8h.html#a8a5f6e444ed0aeaa29b15d6c37f7dfbc">EARS_RGB565_BLACK</a>);</div>
-<div class="line"><span class="lineno">  390</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Display: Initialized&quot;</span>);</div>
-<div class="line"><span class="lineno">  391</span>    </div>
-<div class="line"><span class="lineno">  392</span>    <span class="comment">// Step 3: Initialize LVGL</span></div>
-<div class="line"><span class="lineno">  393</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Initializing LVGL...&quot;</span>);</div>
-<div class="line"><span class="lineno">  394</span>    lv_init();</div>
-<div class="line"><span class="lineno">  395</span>    lv_tick_set_cb(<a class="code hl_function" href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a>);</div>
-<div class="line"><span class="lineno">  396</span>     </div>
-<div class="line"><span class="lineno">  397</span>    <a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = lv_display_create(<a class="code hl_variable" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a>, <a class="code hl_variable" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a>);</div>
-<div class="line"><span class="lineno">  398</span>    lv_display_set_flush_cb(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_function" href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a>);</div>
-<div class="line"><span class="lineno">  399</span>    lv_display_set_buffers(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>, <a class="code hl_variable" href="#aaec57dd9b314789e8929c99a7b991331">buf2</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>), LV_DISPLAY_RENDER_MODE_PARTIAL);</div>
-<div class="line"><span class="lineno">  400</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;LVGL: Initialized&quot;</span>);</div>
-<div class="line"><span class="lineno">  401</span>    </div>
-<div class="line"><span class="lineno">  402</span>    <span class="comment">// Step 4: Create loading screen with spinner</span></div>
-<div class="line"><span class="lineno">  403</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating loading screen...&quot;</span>);</div>
-<div class="line"><span class="lineno">  404</span>    lv_obj_t *scr = lv_screen_active();</div>
-<div class="line"><span class="lineno">  405</span>    lv_obj_set_style_bg_color(scr, lv_color_hex(<a class="code hl_define" href="_e_a_r_s__rgb888_colours_def_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">EARS_RGB888_BLACK</a>), 0);</div>
-<div class="line"><span class="lineno">  406</span>    </div>
-<div class="line"><span class="lineno">  407</span>    <span class="comment">// Create spinner (loading animation)</span></div>
-<div class="line"><span class="lineno">  408</span>    <a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> = lv_spinner_create(scr);</div>
-<div class="line"><span class="lineno">  409</span>    lv_obj_set_size(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>, 80, 80);</div>
-<div class="line"><span class="lineno">  410</span>    lv_obj_center(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>);</div>
-<div class="line"><span class="lineno">  411</span>    lv_obj_set_style_arc_color(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>, lv_color_hex(0x00FF00), LV_PART_INDICATOR);</div>
-<div class="line"><span class="lineno">  412</span>    </div>
-<div class="line"><span class="lineno">  413</span>    <span class="comment">// Create status label below spinner</span></div>
-<div class="line"><span class="lineno">  414</span>    <a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a> = lv_label_create(scr);</div>
-<div class="line"><span class="lineno">  415</span>    lv_label_set_text(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, <span class="stringliteral">&quot;Starting...&quot;</span>);</div>
-<div class="line"><span class="lineno">  416</span>    lv_obj_set_style_text_color(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, lv_color_hex(<a class="code hl_define" href="_e_a_r_s__rgb888_colours_def_8h.html#abe361f4f87642c20f1e3cfa195c01cf0">EARS_RGB888_WHITE</a>), 0);</div>
-<div class="line"><span class="lineno">  417</span>    lv_obj_set_style_text_font(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, &amp;lv_font_montserrat_16, 0);</div>
-<div class="line"><span class="lineno">  418</span>    lv_obj_align(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, LV_ALIGN_CENTER, 0, 60);</div>
-<div class="line"><span class="lineno">  419</span>    </div>
-<div class="line"><span class="lineno">  420</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Loading screen: Created&quot;</span>);</div>
+<div class="line"><span class="lineno">  381</span>    <span class="comment">// Initialize Logger first</span></div>
+<div class="line"><span class="lineno">  382</span>    <a class="code hl_function" href="#ab3d0e9567cfad5d6f83abc585beb520d">init_logger</a>();</div>
+<div class="line"><span class="lineno">  383</span>    </div>
+<div class="line"><span class="lineno">  384</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;\n\n=== EARS Dual-Core System Starting ===&quot;</span>);</div>
+<div class="line"><span class="lineno">  385</span>    <a class="code hl_define" href="_logger_8h.html#abf90b9a1dd511a996bcba0a746281601">LOGF</a>(<span class="stringliteral">&quot;Setup running on Core: %d&quot;</span>, xPortGetCoreID());</div>
+<div class="line"><span class="lineno">  386</span>    </div>
+<div class="line"><span class="lineno">  387</span>    <span class="comment">// Create mutex for display synchronization</span></div>
+<div class="line"><span class="lineno">  388</span>    <a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a> = xSemaphoreCreateMutex();</div>
+<div class="line"><span class="lineno">  389</span>    </div>
+<div class="line"><span class="lineno">  390</span>    <span class="comment">// Step 1: Initialize backlight</span></div>
+<div class="line"><span class="lineno">  391</span>    pinMode(<a class="code hl_define" href="_e_a_r_s__ws35tlcd_pins_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, OUTPUT);</div>
+<div class="line"><span class="lineno">  392</span>    digitalWrite(<a class="code hl_define" href="_e_a_r_s__ws35tlcd_pins_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a>, HIGH);</div>
+<div class="line"><span class="lineno">  393</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Backlight: ON&quot;</span>);</div>
+<div class="line"><span class="lineno">  394</span>    </div>
+<div class="line"><span class="lineno">  395</span>    <span class="comment">// Step 2: Initialize display</span></div>
+<div class="line"><span class="lineno">  396</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Initializing display...&quot;</span>);</div>
+<div class="line"><span class="lineno">  397</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;begin();</div>
+<div class="line"><span class="lineno">  398</span>    <a class="code hl_variable" href="#aa35e9135b0a3620ecb9b867344834657">gfx</a>-&gt;fillScreen(<a class="code hl_define" href="_e_a_r_s__rgb565_colours_def_8h.html#a8a5f6e444ed0aeaa29b15d6c37f7dfbc">EARS_RGB565_BLACK</a>);</div>
+<div class="line"><span class="lineno">  399</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Display: Initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  400</span>    </div>
+<div class="line"><span class="lineno">  401</span>    <span class="comment">// Step 3: Initialize LVGL</span></div>
+<div class="line"><span class="lineno">  402</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Initializing LVGL...&quot;</span>);</div>
+<div class="line"><span class="lineno">  403</span>    lv_init();</div>
+<div class="line"><span class="lineno">  404</span>    lv_tick_set_cb(<a class="code hl_function" href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a>);</div>
+<div class="line"><span class="lineno">  405</span>     </div>
+<div class="line"><span class="lineno">  406</span>    <a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = lv_display_create(<a class="code hl_variable" href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a>, <a class="code hl_variable" href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a>);</div>
+<div class="line"><span class="lineno">  407</span>    lv_display_set_flush_cb(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_function" href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a>);</div>
+<div class="line"><span class="lineno">  408</span>    lv_display_set_buffers(<a class="code hl_variable" href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, <a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>, <a class="code hl_variable" href="#aaec57dd9b314789e8929c99a7b991331">buf2</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a>), LV_DISPLAY_RENDER_MODE_PARTIAL);</div>
+<div class="line"><span class="lineno">  409</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;LVGL: Initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">  410</span>    </div>
+<div class="line"><span class="lineno">  411</span>    <span class="comment">// Step 4: Create loading screen with spinner</span></div>
+<div class="line"><span class="lineno">  412</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating loading screen...&quot;</span>);</div>
+<div class="line"><span class="lineno">  413</span>    lv_obj_t *scr = lv_screen_active();</div>
+<div class="line"><span class="lineno">  414</span>    lv_obj_set_style_bg_color(scr, lv_color_hex(<a class="code hl_define" href="_e_a_r_s__rgb888_colours_def_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">EARS_RGB888_BLACK</a>), 0);</div>
+<div class="line"><span class="lineno">  415</span>    </div>
+<div class="line"><span class="lineno">  416</span>    <span class="comment">// Create spinner (loading animation)</span></div>
+<div class="line"><span class="lineno">  417</span>    <a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a> = lv_spinner_create(scr);</div>
+<div class="line"><span class="lineno">  418</span>    lv_obj_set_size(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>, 80, 80);</div>
+<div class="line"><span class="lineno">  419</span>    lv_obj_center(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>);</div>
+<div class="line"><span class="lineno">  420</span>    lv_obj_set_style_arc_color(<a class="code hl_variable" href="#aca59e0966d3d11a6276e37ea6393dd6b">spinner</a>, lv_color_hex(0x00FF00), LV_PART_INDICATOR);</div>
 <div class="line"><span class="lineno">  421</span>    </div>
-<div class="line"><span class="lineno">  422</span>    <span class="comment">// Step 5: Create Core 0 task for NVS validation</span></div>
-<div class="line"><span class="lineno">  423</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating Core 0 validation task...&quot;</span>);</div>
-<div class="line"><span class="lineno">  424</span>    xTaskCreatePinnedToCore(</div>
-<div class="line"><span class="lineno">  425</span>        <a class="code hl_function" href="#a1c076b10748fbca0df3dd401d6ecea8e">Core0_NVSValidation</a>,      <span class="comment">// Task function</span></div>
-<div class="line"><span class="lineno">  426</span>        <span class="stringliteral">&quot;NVS_Validation&quot;</span>,         <span class="comment">// Name</span></div>
-<div class="line"><span class="lineno">  427</span>        4096,                     <span class="comment">// Stack size (bytes)</span></div>
-<div class="line"><span class="lineno">  428</span>        NULL,                     <span class="comment">// Parameters</span></div>
-<div class="line"><span class="lineno">  429</span>        1,                        <span class="comment">// Priority (1 = low, higher = more priority)</span></div>
-<div class="line"><span class="lineno">  430</span>        &amp;<a class="code hl_variable" href="#ac04dce39c7671f6823c8dcd2484d716f">Core0_ValidationTask</a>,    <span class="comment">// Task handle</span></div>
-<div class="line"><span class="lineno">  431</span>        0                         <span class="comment">// Core 0</span></div>
-<div class="line"><span class="lineno">  432</span>    );</div>
-<div class="line"><span class="lineno">  433</span>    </div>
-<div class="line"><span class="lineno">  434</span>    <span class="comment">// Step 6: Create Core 1 task for display handling</span></div>
-<div class="line"><span class="lineno">  435</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating Core 1 display task...&quot;</span>);</div>
-<div class="line"><span class="lineno">  436</span>    xTaskCreatePinnedToCore(</div>
-<div class="line"><span class="lineno">  437</span>        <a class="code hl_function" href="#ab79f2231aa335d2d0f1c9f1b4c02ab01">Core1_DisplayHandler</a>,     <span class="comment">// Task function</span></div>
-<div class="line"><span class="lineno">  438</span>        <span class="stringliteral">&quot;Display_Handler&quot;</span>,        <span class="comment">// Name</span></div>
-<div class="line"><span class="lineno">  439</span>        8192,                     <span class="comment">// Stack size (bytes) - larger for LVGL</span></div>
-<div class="line"><span class="lineno">  440</span>        NULL,                     <span class="comment">// Parameters</span></div>
-<div class="line"><span class="lineno">  441</span>        2,                        <span class="comment">// Priority (higher than validation)</span></div>
-<div class="line"><span class="lineno">  442</span>        &amp;<a class="code hl_variable" href="#a00730764cf73b6708f0abb96aca1e4bc">Core1_DisplayTask</a>,       <span class="comment">// Task handle</span></div>
-<div class="line"><span class="lineno">  443</span>        1                         <span class="comment">// Core 1</span></div>
-<div class="line"><span class="lineno">  444</span>    );</div>
-<div class="line"><span class="lineno">  445</span>    </div>
-<div class="line"><span class="lineno">  446</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Setup Complete ===&quot;</span>);</div>
-<div class="line"><span class="lineno">  447</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Core 0: Running NVS validation&quot;</span>);</div>
-<div class="line"><span class="lineno">  448</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Core 1: Running display animation\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  449</span>}</div>
+<div class="line"><span class="lineno">  422</span>    <span class="comment">// Create status label below spinner</span></div>
+<div class="line"><span class="lineno">  423</span>    <a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a> = lv_label_create(scr);</div>
+<div class="line"><span class="lineno">  424</span>    lv_label_set_text(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, <span class="stringliteral">&quot;Starting...&quot;</span>);</div>
+<div class="line"><span class="lineno">  425</span>    lv_obj_set_style_text_color(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, lv_color_hex(<a class="code hl_define" href="_e_a_r_s__rgb888_colours_def_8h.html#abe361f4f87642c20f1e3cfa195c01cf0">EARS_RGB888_WHITE</a>), 0);</div>
+<div class="line"><span class="lineno">  426</span>    lv_obj_set_style_text_font(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, &amp;lv_font_montserrat_16, 0);</div>
+<div class="line"><span class="lineno">  427</span>    lv_obj_align(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, LV_ALIGN_CENTER, 0, 60);</div>
+<div class="line"><span class="lineno">  428</span>    </div>
+<div class="line"><span class="lineno">  429</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Loading screen: Created&quot;</span>);</div>
+<div class="line"><span class="lineno">  430</span>    </div>
+<div class="line"><span class="lineno">  431</span>    <span class="comment">// Step 5: Create Core 0 task for NVS validation</span></div>
+<div class="line"><span class="lineno">  432</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating Core 0 validation task...&quot;</span>);</div>
+<div class="line"><span class="lineno">  433</span>    xTaskCreatePinnedToCore(</div>
+<div class="line"><span class="lineno">  434</span>        <a class="code hl_function" href="#a1c076b10748fbca0df3dd401d6ecea8e">Core0_NVSValidation</a>,      <span class="comment">// Task function</span></div>
+<div class="line"><span class="lineno">  435</span>        <span class="stringliteral">&quot;NVS_Validation&quot;</span>,         <span class="comment">// Name</span></div>
+<div class="line"><span class="lineno">  436</span>        4096,                     <span class="comment">// Stack size (bytes)</span></div>
+<div class="line"><span class="lineno">  437</span>        NULL,                     <span class="comment">// Parameters</span></div>
+<div class="line"><span class="lineno">  438</span>        1,                        <span class="comment">// Priority (1 = low, higher = more priority)</span></div>
+<div class="line"><span class="lineno">  439</span>        &amp;<a class="code hl_variable" href="#ac04dce39c7671f6823c8dcd2484d716f">Core0_ValidationTask</a>,    <span class="comment">// Task handle</span></div>
+<div class="line"><span class="lineno">  440</span>        0                         <span class="comment">// Core 0</span></div>
+<div class="line"><span class="lineno">  441</span>    );</div>
+<div class="line"><span class="lineno">  442</span>    </div>
+<div class="line"><span class="lineno">  443</span>    <span class="comment">// Step 6: Create Core 1 task for display handling</span></div>
+<div class="line"><span class="lineno">  444</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Creating Core 1 display task...&quot;</span>);</div>
+<div class="line"><span class="lineno">  445</span>    xTaskCreatePinnedToCore(</div>
+<div class="line"><span class="lineno">  446</span>        <a class="code hl_function" href="#ab79f2231aa335d2d0f1c9f1b4c02ab01">Core1_DisplayHandler</a>,     <span class="comment">// Task function</span></div>
+<div class="line"><span class="lineno">  447</span>        <span class="stringliteral">&quot;Display_Handler&quot;</span>,        <span class="comment">// Name</span></div>
+<div class="line"><span class="lineno">  448</span>        8192,                     <span class="comment">// Stack size (bytes) - larger for LVGL</span></div>
+<div class="line"><span class="lineno">  449</span>        NULL,                     <span class="comment">// Parameters</span></div>
+<div class="line"><span class="lineno">  450</span>        2,                        <span class="comment">// Priority (higher than validation)</span></div>
+<div class="line"><span class="lineno">  451</span>        &amp;<a class="code hl_variable" href="#a00730764cf73b6708f0abb96aca1e4bc">Core1_DisplayTask</a>,       <span class="comment">// Task handle</span></div>
+<div class="line"><span class="lineno">  452</span>        1                         <span class="comment">// Core 1</span></div>
+<div class="line"><span class="lineno">  453</span>    );</div>
+<div class="line"><span class="lineno">  454</span>    </div>
+<div class="line"><span class="lineno">  455</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;=== Setup Complete ===&quot;</span>);</div>
+<div class="line"><span class="lineno">  456</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Core 0: Running NVS validation&quot;</span>);</div>
+<div class="line"><span class="lineno">  457</span>    <a class="code hl_define" href="_logger_8h.html#a158a8c64f24645c7478298399825737f">LOG</a>(<span class="stringliteral">&quot;Core 1: Running display animation\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  458</span>}</div>
 <div class="ttc" id="a_e_a_r_s__rgb565_colours_def_8h_html_a8a5f6e444ed0aeaa29b15d6c37f7dfbc"><div class="ttname"><a href="_e_a_r_s__rgb565_colours_def_8h.html#a8a5f6e444ed0aeaa29b15d6c37f7dfbc">EARS_RGB565_BLACK</a></div><div class="ttdeci">#define EARS_RGB565_BLACK</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__rgb565_colours_def_8h_source.html#l00022">EARS_rgb565ColoursDef.h:22</a></div></div>
 <div class="ttc" id="a_e_a_r_s__rgb888_colours_def_8h_html_a3aa37eda5aaf70ff5beebebeb6bf5900"><div class="ttname"><a href="_e_a_r_s__rgb888_colours_def_8h.html#a3aa37eda5aaf70ff5beebebeb6bf5900">EARS_RGB888_BLACK</a></div><div class="ttdeci">#define EARS_RGB888_BLACK</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00022">EARS_rgb888ColoursDef.h:22</a></div></div>
 <div class="ttc" id="a_e_a_r_s__rgb888_colours_def_8h_html_abe361f4f87642c20f1e3cfa195c01cf0"><div class="ttname"><a href="_e_a_r_s__rgb888_colours_def_8h.html#abe361f4f87642c20f1e3cfa195c01cf0">EARS_RGB888_WHITE</a></div><div class="ttdeci">#define EARS_RGB888_WHITE</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00023">EARS_rgb888ColoursDef.h:23</a></div></div>
 <div class="ttc" id="a_e_a_r_s__ws35tlcd_pins_8h_html_af1d9e076f5a205e1516b1f3251eab30b"><div class="ttname"><a href="_e_a_r_s__ws35tlcd_pins_8h.html#af1d9e076f5a205e1516b1f3251eab30b">GFX_BL</a></div><div class="ttdeci">#define GFX_BL</div><div class="ttdef"><b>Definition</b> <a href="_e_a_r_s__ws35tlcd_pins_8h_source.html#l00020">EARS_ws35tlcdPins.h:20</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a00730764cf73b6708f0abb96aca1e4bc"><div class="ttname"><a href="#a00730764cf73b6708f0abb96aca1e4bc">Core1_DisplayTask</a></div><div class="ttdeci">TaskHandle_t Core1_DisplayTask</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00107">main.cpp:107</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a1c076b10748fbca0df3dd401d6ecea8e"><div class="ttname"><a href="#a1c076b10748fbca0df3dd401d6ecea8e">Core0_NVSValidation</a></div><div class="ttdeci">void Core0_NVSValidation(void *parameter)</div><div class="ttdoc">Core 0 Task: NVS Validation @description Runs on Core 0, performs NVS validation while Core 1 shows a...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00173">main.cpp:173</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a2098bffdebce63de6366ca2e0d1c2638"><div class="ttname"><a href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a></div><div class="ttdeci">static lv_color_t buf1[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00068">main.cpp:68</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00080">main.cpp:80</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aa6bb2d0970b95ea952c1eb3086a906ab"><div class="ttname"><a href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a></div><div class="ttdeci">static const uint32_t screenWidth</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00062">main.cpp:62</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aa8b5dfbac926d5ef47bfc41e8757918f"><div class="ttname"><a href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a></div><div class="ttdeci">static const uint32_t screenHeight</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00063">main.cpp:63</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aaec57dd9b314789e8929c99a7b991331"><div class="ttname"><a href="#aaec57dd9b314789e8929c99a7b991331">buf2</a></div><div class="ttdeci">static lv_color_t buf2[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00069">main.cpp:69</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ab3d0e9567cfad5d6f83abc585beb520d"><div class="ttname"><a href="#ab3d0e9567cfad5d6f83abc585beb520d">init_logger</a></div><div class="ttdeci">void init_logger()</div><div class="ttdoc">Initialize Logger.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00148">main.cpp:148</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ab79f2231aa335d2d0f1c9f1b4c02ab01"><div class="ttname"><a href="#ab79f2231aa335d2d0f1c9f1b4c02ab01">Core1_DisplayHandler</a></div><div class="ttdeci">void Core1_DisplayHandler(void *parameter)</div><div class="ttdoc">Core 1 Task: LVGL Display Handler @description Runs on Core 1, handles LVGL timer and display updates...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00328">main.cpp:328</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ac04dce39c7671f6823c8dcd2484d716f"><div class="ttname"><a href="#ac04dce39c7671f6823c8dcd2484d716f">Core0_ValidationTask</a></div><div class="ttdeci">TaskHandle_t Core0_ValidationTask</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00106">main.cpp:106</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ac4b382b229c227a83d418b45c2db03f0"><div class="ttname"><a href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a></div><div class="ttdeci">lv_obj_t * status_label</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00086">main.cpp:86</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aeb891cadacdbb7142c387b4232fc412d"><div class="ttname"><a href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a></div><div class="ttdeci">void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map)</div><div class="ttdoc">LVGL display flush callback.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00126">main.cpp:126</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aedc59dea91554dea6db97f21f51fd69b"><div class="ttname"><a href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a></div><div class="ttdeci">uint32_t millis_cb(void)</div><div class="ttdoc">Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00141">main.cpp:141</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a00730764cf73b6708f0abb96aca1e4bc"><div class="ttname"><a href="#a00730764cf73b6708f0abb96aca1e4bc">Core1_DisplayTask</a></div><div class="ttdeci">TaskHandle_t Core1_DisplayTask</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00116">main.cpp:116</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a1c076b10748fbca0df3dd401d6ecea8e"><div class="ttname"><a href="#a1c076b10748fbca0df3dd401d6ecea8e">Core0_NVSValidation</a></div><div class="ttdeci">void Core0_NVSValidation(void *parameter)</div><div class="ttdoc">Core 0 Task: NVS Validation @description Runs on Core 0, performs NVS validation while Core 1 shows a...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00182">main.cpp:182</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a2098bffdebce63de6366ca2e0d1c2638"><div class="ttname"><a href="#a2098bffdebce63de6366ca2e0d1c2638">buf1</a></div><div class="ttdeci">static lv_color_t buf1[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00071">main.cpp:71</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00083">main.cpp:83</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aa6bb2d0970b95ea952c1eb3086a906ab"><div class="ttname"><a href="#aa6bb2d0970b95ea952c1eb3086a906ab">screenWidth</a></div><div class="ttdeci">static const uint32_t screenWidth</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00065">main.cpp:65</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aa8b5dfbac926d5ef47bfc41e8757918f"><div class="ttname"><a href="#aa8b5dfbac926d5ef47bfc41e8757918f">screenHeight</a></div><div class="ttdeci">static const uint32_t screenHeight</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00066">main.cpp:66</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aaec57dd9b314789e8929c99a7b991331"><div class="ttname"><a href="#aaec57dd9b314789e8929c99a7b991331">buf2</a></div><div class="ttdeci">static lv_color_t buf2[screenWidth *40]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00072">main.cpp:72</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ab3d0e9567cfad5d6f83abc585beb520d"><div class="ttname"><a href="#ab3d0e9567cfad5d6f83abc585beb520d">init_logger</a></div><div class="ttdeci">void init_logger()</div><div class="ttdoc">Initialize Logger.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00157">main.cpp:157</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ab79f2231aa335d2d0f1c9f1b4c02ab01"><div class="ttname"><a href="#ab79f2231aa335d2d0f1c9f1b4c02ab01">Core1_DisplayHandler</a></div><div class="ttdeci">void Core1_DisplayHandler(void *parameter)</div><div class="ttdoc">Core 1 Task: LVGL Display Handler @description Runs on Core 1, handles LVGL timer and display updates...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00337">main.cpp:337</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac04dce39c7671f6823c8dcd2484d716f"><div class="ttname"><a href="#ac04dce39c7671f6823c8dcd2484d716f">Core0_ValidationTask</a></div><div class="ttdeci">TaskHandle_t Core0_ValidationTask</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00115">main.cpp:115</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac4b382b229c227a83d418b45c2db03f0"><div class="ttname"><a href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a></div><div class="ttdeci">lv_obj_t * status_label</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00089">main.cpp:89</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aeb891cadacdbb7142c387b4232fc412d"><div class="ttname"><a href="#aeb891cadacdbb7142c387b4232fc412d">my_disp_flush</a></div><div class="ttdeci">void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map)</div><div class="ttdoc">LVGL display flush callback.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00135">main.cpp:135</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aedc59dea91554dea6db97f21f51fd69b"><div class="ttname"><a href="#aedc59dea91554dea6db97f21f51fd69b">millis_cb</a></div><div class="ttdeci">uint32_t millis_cb(void)</div><div class="ttdoc">Callback function to provide millis() to LVGL @description LVGL requires a millisecond tick source to...</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00150">main.cpp:150</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00068">buf1</a>, <a class="el" href="main_8cpp_source.html#l00069">buf2</a>, <a class="el" href="main_8cpp_source.html#l00173">Core0_NVSValidation()</a>, <a class="el" href="main_8cpp_source.html#l00106">Core0_ValidationTask</a>, <a class="el" href="main_8cpp_source.html#l00328">Core1_DisplayHandler()</a>, <a class="el" href="main_8cpp_source.html#l00107">Core1_DisplayTask</a>, <a class="el" href="main_8cpp_source.html#l00080">disp</a>, <a class="el" href="main_8cpp_source.html#l00113">displayMutex</a>, <a class="el" href="_e_a_r_s__rgb565_colours_def_8h_source.html#l00022">EARS_RGB565_BLACK</a>, <a class="el" href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00022">EARS_RGB888_BLACK</a>, <a class="el" href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00023">EARS_RGB888_WHITE</a>, <a class="el" href="main_8cpp_source.html#l00075">gfx</a>, <a class="el" href="_e_a_r_s__ws35tlcd_pins_8h_source.html#l00020">GFX_BL</a>, <a class="el" href="main_8cpp_source.html#l00148">init_logger()</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="main_8cpp_source.html#l00141">millis_cb()</a>, <a class="el" href="main_8cpp_source.html#l00126">my_disp_flush()</a>, <a class="el" href="main_8cpp_source.html#l00063">screenHeight</a>, <a class="el" href="main_8cpp_source.html#l00062">screenWidth</a>, <a class="el" href="main_8cpp_source.html#l00085">spinner</a>, and <a class="el" href="main_8cpp_source.html#l00086">status_label</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00071">buf1</a>, <a class="el" href="main_8cpp_source.html#l00072">buf2</a>, <a class="el" href="main_8cpp_source.html#l00182">Core0_NVSValidation()</a>, <a class="el" href="main_8cpp_source.html#l00115">Core0_ValidationTask</a>, <a class="el" href="main_8cpp_source.html#l00337">Core1_DisplayHandler()</a>, <a class="el" href="main_8cpp_source.html#l00116">Core1_DisplayTask</a>, <a class="el" href="main_8cpp_source.html#l00083">disp</a>, <a class="el" href="main_8cpp_source.html#l00122">displayMutex</a>, <a class="el" href="_e_a_r_s__rgb565_colours_def_8h_source.html#l00022">EARS_RGB565_BLACK</a>, <a class="el" href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00022">EARS_RGB888_BLACK</a>, <a class="el" href="_e_a_r_s__rgb888_colours_def_8h_source.html#l00023">EARS_RGB888_WHITE</a>, <a class="el" href="main_8cpp_source.html#l00078">gfx</a>, <a class="el" href="_e_a_r_s__ws35tlcd_pins_8h_source.html#l00020">GFX_BL</a>, <a class="el" href="main_8cpp_source.html#l00157">init_logger()</a>, <a class="el" href="_logger_8h_source.html#l00325">LOG</a>, <a class="el" href="_logger_8h_source.html#l00326">LOGF</a>, <a class="el" href="main_8cpp_source.html#l00150">millis_cb()</a>, <a class="el" href="main_8cpp_source.html#l00135">my_disp_flush()</a>, <a class="el" href="main_8cpp_source.html#l00066">screenHeight</a>, <a class="el" href="main_8cpp_source.html#l00065">screenWidth</a>, <a class="el" href="main_8cpp_source.html#l00088">spinner</a>, and <a class="el" href="main_8cpp_source.html#l00089">status_label</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -767,19 +769,19 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00158">158</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>                                       {</div>
-<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>, portMAX_DELAY)) {</div>
-<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a> != NULL) {</div>
-<div class="line"><span class="lineno">  161</span>            lv_label_set_text(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, message);</div>
-<div class="line"><span class="lineno">  162</span>        }</div>
-<div class="line"><span class="lineno">  163</span>        xSemaphoreGive(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>);</div>
-<div class="line"><span class="lineno">  164</span>    }</div>
-<div class="line"><span class="lineno">  165</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00167">167</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>                                       {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>, portMAX_DELAY)) {</div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a> != NULL) {</div>
+<div class="line"><span class="lineno">  170</span>            lv_label_set_text(<a class="code hl_variable" href="#ac4b382b229c227a83d418b45c2db03f0">status_label</a>, message);</div>
+<div class="line"><span class="lineno">  171</span>        }</div>
+<div class="line"><span class="lineno">  172</span>        xSemaphoreGive(<a class="code hl_variable" href="#a8409b569450ed69169f6bd4725726527">displayMutex</a>);</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="line"><span class="lineno">  174</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8cpp_source.html#l00113">displayMutex</a>, and <a class="el" href="main_8cpp_source.html#l00086">status_label</a>.</p>
+<p class="reference">References <a class="el" href="main_8cpp_source.html#l00122">displayMutex</a>, and <a class="el" href="main_8cpp_source.html#l00089">status_label</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00265">core0_loaderLogic()</a>, and <a class="el" href="main_8cpp_source.html#l00173">Core0_NVSValidation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00274">core0_loaderLogic()</a>, and <a class="el" href="main_8cpp_source.html#l00182">Core0_NVSValidation()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -809,9 +811,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00068">68</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -835,9 +837,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00069">69</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00072">72</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -853,7 +855,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00077">77</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -869,9 +871,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00106">106</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00115">115</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -887,9 +889,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00107">107</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00116">116</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -905,9 +907,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00083">83</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -923,9 +925,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00113">113</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00122">122</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00328">Core1_DisplayHandler()</a>, <a class="el" href="main_8cpp_source.html#l00367">setup()</a>, and <a class="el" href="main_8cpp_source.html#l00158">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00337">Core1_DisplayHandler()</a>, <a class="el" href="main_8cpp_source.html#l00376">setup()</a>, and <a class="el" href="main_8cpp_source.html#l00167">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -941,9 +943,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00092">92</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00265">core0_loaderLogic()</a>, and <a class="el" href="main_8cpp_source.html#l00173">Core0_NVSValidation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00274">core0_loaderLogic()</a>, and <a class="el" href="main_8cpp_source.html#l00182">Core0_NVSValidation()</a>.</p>
 
 </div>
 </div>
@@ -959,9 +961,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00075">75</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00078">78</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00126">my_disp_flush()</a>, and <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00135">my_disp_flush()</a>, and <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -985,9 +987,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -1011,9 +1013,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00065">65</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -1029,9 +1031,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00085">85</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00328">Core1_DisplayHandler()</a>, and <a class="el" href="main_8cpp_source.html#l00367">setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00337">Core1_DisplayHandler()</a>, and <a class="el" href="main_8cpp_source.html#l00376">setup()</a>.</p>
 
 </div>
 </div>
@@ -1047,9 +1049,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00089">89</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00367">setup()</a>, and <a class="el" href="main_8cpp_source.html#l00158">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00376">setup()</a>, and <a class="el" href="main_8cpp_source.html#l00167">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -1065,9 +1067,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00101">101</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00104">104</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00148">init_logger()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00157">init_logger()</a>.</p>
 
 </div>
 </div>
@@ -1083,9 +1085,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00173">Core0_NVSValidation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00182">Core0_NVSValidation()</a>.</p>
+
+</div>
+</div>
+<a id="ac06cc97e6fa4087e92e81a279fd51457" name="ac06cc97e6fa4087e92e81a279fd51457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06cc97e6fa4087e92e81a279fd51457">&#9670;&#160;</a></span>using_screen_saver</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_a_r_s__screen_saver.html">EARS_screenSaver</a> using_screen_saver</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00110">110</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -1101,9 +1119,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00112">112</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00121">121</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00173">Core0_NVSValidation()</a>, and <a class="el" href="main_8cpp_source.html#l00328">Core1_DisplayHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00182">Core0_NVSValidation()</a>, and <a class="el" href="main_8cpp_source.html#l00337">Core1_DisplayHandler()</a>.</p>
 
 </div>
 </div>

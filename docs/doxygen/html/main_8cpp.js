@@ -24,5 +24,6 @@ var main_8cpp =
     [ "status_label", "main_8cpp.html#ac4b382b229c227a83d418b45c2db03f0", null ],
     [ "using_ears_sdcard", "main_8cpp.html#a76585e4d0d254d24ab0944560e8044e7", null ],
     [ "using_nvs_eeprom", "main_8cpp.html#a9ac98c601b3861a2f3356843d8f5ed83", null ],
+    [ "using_screen_saver", "main_8cpp.html#ac06cc97e6fa4087e92e81a279fd51457", null ],
     [ "validationComplete", "main_8cpp.html#a7bbc1d5433c18bc75eacc1de1ef6aa67", null ]
 ];

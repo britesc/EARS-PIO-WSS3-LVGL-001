@@ -22,6 +22,7 @@ var hierarchy =
       [ "eez::flow::OutputActionComponent", "structeez_1_1flow_1_1_output_action_component.html", null ],
       [ "eez::flow::ShowPageActionComponent", "structeez_1_1flow_1_1_show_page_action_component.html", null ]
     ] ],
+    [ "EARS_screenSaver", "class_e_a_r_s__screen_saver.html", null ],
     [ "EARS_sdCard", "class_e_a_r_s__sd_card.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "LoggerConfig", "struct_logger_config.html", null ],
@@ -32,7 +33,6 @@ var hierarchy =
     [ "Preferences", null, [
       [ "EARS_nvsEepromLib", "class_e_a_r_s__nvs_eeprom_lib.html", null ]
     ] ],
-    [ "ScreensaverLib", "class_screensaver_lib.html", null ],
     [ "ScreensaverSettings", "struct_screensaver_settings.html", null ],
     [ "eez::flow::date::TimeChangeRule", "structeez_1_1flow_1_1date_1_1_time_change_rule.html", null ],
     [ "eez::flow::WatchList", "structeez_1_1flow_1_1_watch_list.html", null ],

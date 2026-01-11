@@ -131,7 +131,7 @@ var searchData=
   ['getparentdir_128',['getParentDir',['../namespaceeez.html#a3359ee1f98a1c3b11c4181e54ed19d02',1,'eez']]],
   ['getqueuesize_129',['getQueueSize',['../namespaceeez_1_1flow.html#a651cca2599c76141dee71aa1fce3316c',1,'eez::flow']]],
   ['getseconds_130',['getSeconds',['../namespaceeez_1_1flow_1_1date.html#aeb8691592a6d5f27e3757c7c111c2b98',1,'eez::flow::date']]],
-  ['getsettings_131',['getSettings',['../class_screensaver_lib.html#a2bf041c280f95a541a88dce547925cf8',1,'ScreensaverLib']]],
+  ['getsettings_131',['getSettings',['../class_e_a_r_s__screen_saver.html#a30c105857460f63ef56627033943f4b7',1,'EARS_screenSaver']]],
   ['getsmallerfactor_132',['getSmallerFactor',['../namespaceeez.html#a877ef843abea30500f905fd941ba3124',1,'eez']]],
   ['getsmallerunit_133',['getSmallerUnit',['../namespaceeez.html#a14c3eec9b5bbbe1099ce506006c65306',1,'eez']]],
   ['getsmallestunit_134',['getSmallestUnit',['../namespaceeez.html#a83c9398f825fb0956e619844f48255c7',1,'eez']]],

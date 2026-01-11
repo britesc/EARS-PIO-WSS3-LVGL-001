@@ -84,7 +84,7 @@ var searchData=
   ['create_5fscreens_81',['create_screens',['../eez-flow_8cpp.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8c.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c'],['../screens_8h.html#a6073eeb5bfdddd93f2ac07e3cffb37ae',1,'create_screens():&#160;screens.c']]],
   ['createdirectory_82',['createDirectory',['../class_e_a_r_s__sd_card.html#a24f8524dbe0feba5bb07eb10b72a5be3',1,'EARS_sdCard']]],
   ['createscreen_83',['createScreen',['../namespaceeez_1_1flow.html#a3d598de1f2aa00a9f515ba68ecd0bacd',1,'eez::flow::createScreen()'],['../eez-flow_8cpp.html#a323466cdbe7e39703f14602f465f132d',1,'createScreen():&#160;eez-flow.cpp']]],
-  ['createscreensaverscreen_84',['createScreensaverScreen',['../class_screensaver_lib.html#a998f9ac5c20472c4952fb583d7c1eed9',1,'ScreensaverLib']]],
+  ['createscreensaverscreen_84',['createScreensaverScreen',['../class_e_a_r_s__screen_saver.html#a66c48c02175ab50b6c9831ea3dfe5672',1,'EARS_screenSaver']]],
   ['createuserwidgetflowstate_85',['createUserWidgetFlowState',['../namespaceeez_1_1flow.html#aa233c049c02d6a121fe0845dfb7707ae',1,'eez::flow']]],
   ['current_5fversion_86',['CURRENT_VERSION',['../class_e_a_r_s__nvs_eeprom_lib.html#a3b5941264a943958ce375f0360c338a3',1,'EARS_nvsEepromLib']]],
   ['currentlevel_87',['currentLevel',['../struct_logger_config.html#aaf849b81fa12692a7818b50164737102',1,'LoggerConfig']]],
