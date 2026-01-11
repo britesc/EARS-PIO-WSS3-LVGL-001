@@ -4,7 +4,6 @@
  * @brief NVS EEPROM wrapper class header
  * @version 1.2.0
  * @date 20251229
- * @update 20260110
  * @copyright Copyright (c) 2025
  * 
  */

@@ -54,6 +54,8 @@
 #include "Logger.h"
 #include "EARS_sdCardLib.h"
 #include "EARS_screenSaverLib.h"
+#include "EARS_errorsLib.h"
+
 
 /******************************************************************************
  * Start of Object Declarations 
@@ -108,6 +110,12 @@ EARS_nvsEeprom using_nvs_eeprom;
  *****************************************************************************/
 // Global Screen Saver instance 
 EARS_screenSaver using_screen_saver;
+
+/******************************************************************************
+ * Errors object
+ *****************************************************************************/
+// Global Errors instance 
+EARS_errors using_errors;
 
 /******************************************************************************
  * Task Handles for Core Management
@@ -171,6 +179,16 @@ void updateStatus(const char* message) {
         }
         xSemaphoreGive(displayMutex);
     }
+}
+
+/**
+ * @brief Initialize Errors
+ */
+void init_errors() {
+    SD.begin();    
+    using_errors.begin();
+    LOG("Errors system: Initialized");
+
 }
 
 /**
@@ -377,6 +395,9 @@ void setup() {
     // Initialize Serial for debugging (keep for emergency fallback)
     Serial.begin(115200);
     delay(1000);
+    
+    // Initialize Errors system
+    init_errors();
     
     // Initialize Logger first
     init_logger();
