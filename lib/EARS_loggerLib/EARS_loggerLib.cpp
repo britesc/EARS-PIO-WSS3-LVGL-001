@@ -2,7 +2,7 @@
  * @file EARS_loggerLib.cpp
  * @author JTB
  * @brief Enhanced logging system implementation v2.1
- * @version 2.5
+ * @version 2.5.0
  * @date 20250105
  * 
  * @copyright Copyright (c) 2025 JTB. All rights reserved.
@@ -17,7 +17,7 @@
  * @return Logger& Reference to Logger instance.
  */
 EARS_logger& EARS_logger::getInstance() {
-    static Logger instance;
+    static EARS_logger instance;
     return instance;
 }
 

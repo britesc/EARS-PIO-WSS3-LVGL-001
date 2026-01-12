@@ -1,6 +1,11 @@
 /**
- * EARS_errorsLib.cpp
- * Error Management Library Implementation
+ * @file EARS_errorsLib.cpp
+ * @brief Implementation of the EARS_errorsLib for error and warning management.
+ * This library allows setting, retrieving, and logging errors and warnings.
+ * It loads error messages from a JSON file on a TF card and logs occurrences to a history file.
+ * @author Julian
+ * @date 20260112
+ * @version 1.6.0
  */
 
 #include "EARS_errorsLib.h"
