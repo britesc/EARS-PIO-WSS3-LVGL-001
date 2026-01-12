@@ -1,14 +1,14 @@
 /**
- * @file Logger.cpp
+ * @file EARS_loggerLib.cpp
  * @author JTB
  * @brief Enhanced logging system implementation v2.1
- * @version 2.1
+ * @version 2.5
  * @date 20250105
  * 
  * @copyright Copyright (c) 2025 JTB. All rights reserved.
  */
 
-#include "Logger.h"
+#include "EARS_loggerLib.h"
 #include <time.h>
 #include <sys/time.h>
 
@@ -16,7 +16,7 @@
  * @brief Get singleton instance.
  * @return Logger& Reference to Logger instance.
  */
-Logger& Logger::getInstance() {
+EARS_logger& EARS_logger::getInstance() {
     static Logger instance;
     return instance;
 }
@@ -24,7 +24,7 @@ Logger& Logger::getInstance() {
 /**
  * @brief Private constructor.
  */
-Logger::Logger() : 
+EARS_logger::EARS_logger() : 
     _initialized(false),
     _logFilePath(""),
     _configFilePath(""),
@@ -34,7 +34,7 @@ Logger::Logger() :
 /**
  * @brief Destructor.
  */
-Logger::~Logger() {
+EARS_logger::~EARS_logger() {
 }
 
 /**
@@ -46,7 +46,7 @@ Logger::~Logger() {
  * @param sdCard Pointer to SDCard instance 
  * 
  */
-bool Logger::begin(const char* logFilePath, const char* configFilePath, EARS_sdCard* sdCard) {
+bool EARS_logger::begin(const char* logFilePath, const char* configFilePath, EARS_sdCard* sdCard) {
     if (_initialized) {
         return true;
     }
@@ -98,7 +98,7 @@ bool Logger::begin(const char* logFilePath, const char* configFilePath, EARS_sdC
  * @param message Message to log
  * @return void
  */
-void Logger::debug(const char* message) {
+void EARS_logger::debug(const char* message) {
     log(LogLevel::DEBUG, message);
 }
 
@@ -107,7 +107,7 @@ void Logger::debug(const char* message) {
  * @param format Format string
  * @return void
  */
-void Logger::debugf(const char* format, ...) {
+void EARS_logger::debugf(const char* format, ...) {
     va_list args;
     va_start(args, format);
     logf(LogLevel::DEBUG, format, args);
@@ -119,7 +119,7 @@ void Logger::debugf(const char* format, ...) {
  * @param message Message to log
  * @return void
  */
-void Logger::info(const char* message) {
+void EARS_logger::info(const char* message) {
     log(LogLevel::INFO, message);
 }
 
@@ -128,7 +128,7 @@ void Logger::info(const char* message) {
  * @param format Format string
  * @return void
  */
-void Logger::infof(const char* format, ...) {
+void EARS_logger::infof(const char* format, ...) {
     va_list args;
     va_start(args, format);
     logf(LogLevel::INFO, format, args);
@@ -140,7 +140,7 @@ void Logger::infof(const char* format, ...) {
  * @param message Message to log
  * @return void
  */
-void Logger::warn(const char* message) {
+void EARS_logger::warn(const char* message) {
     log(LogLevel::WARN, message);
 }
 
@@ -149,7 +149,7 @@ void Logger::warn(const char* message) {
  * @param format Format string
  * @return void
  */
-void Logger::warnf(const char* format, ...) {
+void EARS_logger::warnf(const char* format, ...) {
     va_list args;
     va_start(args, format);
     logf(LogLevel::WARN, format, args);
@@ -161,7 +161,7 @@ void Logger::warnf(const char* format, ...) {
  * @param message Message to log
  * @return void
  */
-void Logger::error(const char* message) {
+void EARS_logger::error(const char* message) {
     log(LogLevel::ERROR, message);
 }
 
@@ -170,7 +170,7 @@ void Logger::error(const char* message) {
  * @param format Format string
  * @return void
  */
-void Logger::errorf(const char* format, ...) {
+void EARS_logger::errorf(const char* format, ...) {
     va_list args;
     va_start(args, format);
     logf(LogLevel::ERROR, format, args);
@@ -183,7 +183,7 @@ void Logger::errorf(const char* format, ...) {
  * @param message Message to log
  * @return void
  */
-void Logger::log(LogLevel level, const char* message) {
+void EARS_logger::log(LogLevel level, const char* message) {
     if (!_initialized || !shouldLog(level)) {
         return;
     }
@@ -213,7 +213,7 @@ void Logger::log(LogLevel level, const char* message) {
  * @param args Variable argument list
  * @return void
  */
-void Logger::logf(LogLevel level, const char* format, va_list args) {
+void EARS_logger::logf(LogLevel level, const char* format, va_list args) {
     if (!_initialized || !shouldLog(level)) {
         return;
     }
@@ -229,7 +229,7 @@ void Logger::logf(LogLevel level, const char* format, va_list args) {
  * @return true if should log
  * @return false if should not log
  */
-bool Logger::shouldLog(LogLevel level) const {
+bool EARS_logger::shouldLog(LogLevel level) const {
     // Hierarchical: current level must be >= message level
     return (static_cast<int>(_config.currentLevel) >= static_cast<int>(level));
 }
@@ -240,7 +240,7 @@ bool Logger::shouldLog(LogLevel level) const {
  * @return true if would log
  * @return false if would not log
  */
-bool Logger::wouldLog(LogLevel level) const {
+bool EARS_logger::wouldLog(LogLevel level) const {
     return _initialized && shouldLog(level);
 }
 
@@ -249,7 +249,7 @@ bool Logger::wouldLog(LogLevel level) const {
  * @param level Log level
  * @return const char* Level string
  */
-const char* Logger::getLevelString(LogLevel level) const {
+const char* EARS_logger::getLevelString(LogLevel level) const {
     switch (level) {
         case LogLevel::DEBUG:
             return "DEBUG";
@@ -269,7 +269,7 @@ const char* Logger::getLevelString(LogLevel level) const {
  * @brief Get current timestamp string
  * @return String Timestamp in "YYYY-MM-DD HH:MM:SS" format 
  */
-String Logger::getTimestamp() const {
+String EARS_logger::getTimestamp() const {
     struct timeval tv;
     gettimeofday(&tv, NULL);
     
@@ -293,7 +293,7 @@ String Logger::getTimestamp() const {
  * @param level New log level (NONE, ERROR, WARN, INFO, DEBUG)
  * @return void
  */
-void Logger::setLogLevel(LogLevel level) {
+void EARS_logger::setLogLevel(LogLevel level) {
     _config.currentLevel = level;
     saveConfig();
     
@@ -307,7 +307,7 @@ void Logger::setLogLevel(LogLevel level) {
  * @brief Get log level as string
  * @return String Log level string
  */
-String Logger::getLogLevelString() const {
+String EARS_logger::getLogLevelString() const {
     return levelToString(_config.currentLevel);
 }
 
@@ -317,7 +317,7 @@ String Logger::getLogLevelString() const {
  * @return true if valid level string
  * @return false if invalid level string
  */
-bool Logger::setLogLevelFromString(const String& levelStr) {
+bool EARS_logger::setLogLevelFromString(const String& levelStr) {
     LogLevel level = parseLevelString(levelStr);
     if (level == LogLevel::NONE && levelStr != "NONE") {
         return false;  // Invalid string
@@ -331,7 +331,7 @@ bool Logger::setLogLevelFromString(const String& levelStr) {
  * @param levelStr Log level string
  * @return LogLevel Parsed log level
  */
-LogLevel Logger::parseLevelString(const String& levelStr) const {
+LogLevel EARS_logger::parseLevelString(const String& levelStr) const {
     String upper = levelStr;
     upper.toUpperCase();
     
@@ -349,7 +349,7 @@ LogLevel Logger::parseLevelString(const String& levelStr) const {
  * @param level Log level
  * @return String Log level string
  */
-String Logger::levelToString(LogLevel level) const {
+String EARS_logger::levelToString(LogLevel level) const {
     switch (level) {
         case LogLevel::NONE:
             return "NONE";
@@ -372,7 +372,7 @@ String Logger::levelToString(LogLevel level) const {
  * @return true if load successful
  * @return false if load failed* 
  */
-bool Logger::loadUnifiedConfig(JsonDocument& doc) {
+bool EARS_logger::loadUnifiedConfig(JsonDocument& doc) {
     if (!_sdCard || !_sdCard->fileExists(_configFilePath.c_str())) {
         return false;
     }
@@ -392,7 +392,7 @@ bool Logger::loadUnifiedConfig(JsonDocument& doc) {
  * @return true if save successful
  * @return false if save failed
  */
-bool Logger::saveUnifiedConfig(const JsonDocument& doc) {
+bool EARS_logger::saveUnifiedConfig(const JsonDocument& doc) {
     String jsonString;
     serializeJsonPretty(doc, jsonString);
     return _sdCard->writeFile(_configFilePath.c_str(), jsonString);
@@ -403,7 +403,7 @@ bool Logger::saveUnifiedConfig(const JsonDocument& doc) {
  * @return true if load successful
  * @return false if load failed
  */
-bool Logger::loadConfig() {
+bool EARS_logger::loadConfig() {
     JsonDocument doc;
     
     if (!loadUnifiedConfig(doc)) {
@@ -438,7 +438,7 @@ bool Logger::loadConfig() {
  * @return true if save successful
  * @return false if save failed
  */
-bool Logger::saveConfig() {
+bool EARS_logger::saveConfig() {
     if (!_initialized) {
         return false;
     }
@@ -461,7 +461,7 @@ bool Logger::saveConfig() {
  * @return true if clear successful
  * @return false if clear failed
  */
-bool Logger::clearLog() {
+bool EARS_logger::clearLog() {
     if (!_initialized) {
         return false;
     }
@@ -479,7 +479,7 @@ bool Logger::clearLog() {
  * @brief Get current log file size in bytes
  * @return uint32_t Log file size in bytes
  */
-uint32_t Logger::getLogFileSize() {
+uint32_t EARS_logger::getLogFileSize() {
     if (!_initialized || !_sdCard->fileExists(_logFilePath.c_str())) {
         return 0;
     }
@@ -499,7 +499,7 @@ uint32_t Logger::getLogFileSize() {
  * @brief Get current log file size in MB
  * @return float Log file size in MB
  */
-float Logger::getLogFileSizeMB() {
+float EARS_logger::getLogFileSizeMB() {
     return getLogFileSize() / 1048576.0;
 }
 
@@ -508,7 +508,7 @@ float Logger::getLogFileSizeMB() {
  * @return true if rotation needed
  * @return false if rotation not needed
  */
-bool Logger::needsRotation() {
+bool EARS_logger::needsRotation() {
     uint32_t currentSize = getLogFileSize();
     return (currentSize >= _config.maxFileSizeBytes);
 }
@@ -518,7 +518,7 @@ bool Logger::needsRotation() {
  * @return true if rotation successful
  * @return false if rotation failed
  */
-bool Logger::performRotation() {
+bool EARS_logger::performRotation() {
     if (!_initialized) {
         return false;
     }
@@ -564,10 +564,10 @@ bool Logger::performRotation() {
  * @return true if rotation successful
  * @return false if rotation failed
  */
-bool Logger::rotateLog() {
+bool EARS_logger::rotateLog() {
     return performRotation();
 }
 
 /*****************************************************************************
- * End of Logger.cpp
+ * End of EARS_loggerLib.cpp
  ****************************************************************************/

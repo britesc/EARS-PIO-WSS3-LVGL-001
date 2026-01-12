@@ -1,17 +1,20 @@
 /**
- * @file Logger.h
+ * @file EARS_loggerLib.h
  * @author JTB
  * @brief Enhanced logging system with hierarchical levels and unified config
- * @version 2.1
+ * @version 2.5
  * @date 20260105
  * 
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 #pragma once
-#ifndef __LOGGER_H__
+#ifndef __EARS_LOGGER_LIB_H__
 #define __LOGGER_H__
 
+/******************************************************************************
+ * Includes Information
+ *****************************************************************************/
 #include <Arduino.h>
 #include <SD.h>
 #include <ArduinoJson.h>
@@ -53,12 +56,12 @@ struct LoggerConfig {
 /**
  * @brief Enhanced Logger class with hierarchical levels
  */
-class Logger {
+class EARS_logger {
 public:
     /**
      * @brief Get singleton instance
      */
-    static Logger& getInstance();
+    static EARS_logger& getInstance();
     
     /**
      * @brief Initialize logger
@@ -216,12 +219,12 @@ public:
     
 private:
     // Singleton - private constructor
-    Logger();
-    ~Logger();
+    EARS_logger();
+    ~EARS_logger();
     
     // Delete copy constructor and assignment
-    Logger(const Logger&) = delete;
-    Logger& operator=(const Logger&) = delete;
+    EARS_logger(const EARS_logger&) = delete;
+    EARS_logger& operator=(const EARS_logger&) = delete;
     
     bool _initialized;
     String _logFilePath;
@@ -311,22 +314,22 @@ private:
 };
 
 // Convenience macros for easy logging
-#define LOG_DEBUG(msg) Logger::getInstance().debug(msg)
-#define LOG_DEBUGF(fmt, ...) Logger::getInstance().debugf(fmt, __VA_ARGS__)
-#define LOG_INFO(msg) Logger::getInstance().info(msg)
-#define LOG_INFOF(fmt, ...) Logger::getInstance().infof(fmt, __VA_ARGS__)
-#define LOG_WARN(msg) Logger::getInstance().warn(msg)
-#define LOG_WARNF(fmt, ...) Logger::getInstance().warnf(fmt, __VA_ARGS__)
-#define LOG_ERROR(msg) Logger::getInstance().error(msg)
-#define LOG_ERRORF(fmt, ...) Logger::getInstance().errorf(fmt, __VA_ARGS__)
+#define LOG_DEBUG(msg) EARS_logger::getInstance().debug(msg)
+#define LOG_DEBUGF(fmt, ...) EARS_logger::getInstance().debugf(fmt, __VA_ARGS__)
+#define LOG_INFO(msg) EARS_logger::getInstance().info(msg)
+#define LOG_INFOF(fmt, ...) EARS_logger::getInstance().infof(fmt, __VA_ARGS__)
+#define LOG_WARN(msg) EARS_logger::getInstance().warn(msg)
+#define LOG_WARNF(fmt, ...) EARS_logger::getInstance().warnf(fmt, __VA_ARGS__)
+#define LOG_ERROR(msg) EARS_logger::getInstance().error(msg)
+#define LOG_ERRORF(fmt, ...) EARS_logger::getInstance().errorf(fmt, __VA_ARGS__)
 
 // Legacy macros for backward compatibility (map to INFO level)
-#define LOG_INIT(path, sd) Logger::getInstance().begin(path, "/config/ears.config", sd)
-#define LOG(msg) Logger::getInstance().info(msg)
-#define LOGF(fmt, ...) Logger::getInstance().infof(fmt, __VA_ARGS__)
+#define LOG_INIT(path, sd) EARS_logger::getInstance().begin(path, "/config/ears.config", sd)
+#define LOG(msg) EARS_logger::getInstance().info(msg)
+#define LOGF(fmt, ...) EARS_logger::getInstance().infof(fmt, __VA_ARGS__)
 
-#endif // __LOGGER_H__
+#endif // __EARS_LOGGER_LIB_H__
 
 /****************************************************************************
- * End of Logger.h
+ * End of EARS_loggerLib.h
  ***************************************************************************/

@@ -51,7 +51,7 @@
 #include "EARS_rgb565ColoursDef.h"
 #include "EARS_rgb888ColoursDef.h"
 #include "EARS_nvsEepromLib.h"
-#include "Logger.h"
+#include "EARS_loggerLib.h"
 #include "EARS_sdCardLib.h"
 #include "EARS_screenSaverLib.h"
 #include "EARS_errorsLib.h"
@@ -160,7 +160,7 @@ uint32_t millis_cb(void) {
 }
 
 /**
- * @brief Initialize Logger
+ * @brief Initialize EARS_logger
  */
 void init_logger() {
     LOG_INIT("/logs/debug.log", &using_ears_sdcard);

@@ -38,8 +38,8 @@ public:
     ~EARS_errors();
 
     // Initialize the library (load error messages from TF card)
-    bool begin(const char* errorJsonPath = "/errors.json", 
-               const char* logFilePath = "/error_log.txt");
+    bool begin(const char* errorJsonPath = "/config/errors.json", 
+               const char* logFilePath = "/logs/error_log.txt");
 
     // Set an error or warning
     void setError(uint16_t code, ErrorLevel level);
