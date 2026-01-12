@@ -141,8 +141,8 @@
             {
               "objID": "6b272cb8-48b4-467f-c130-a1edc1f930b7",
               "type": "LVGLLabelWidget",
-              "left": 356,
-              "top": 232,
+              "left": 196,
+              "top": 64,
               "width": 89,
               "height": 16,
               "customInputs": [],
@@ -183,6 +183,7 @@
           "checkedStateType": "literal",
           "disabledStateType": "literal",
           "states": "",
+          "useStyle": "Light_Screen",
           "localStyles": {
             "objID": "8eb86917-c831-b762-5685-8d01972e8a22"
           },
@@ -205,7 +206,46 @@
   "userWidgets": [],
   "lvglStyles": {
     "objID": "a31bd004-35c5-b3fb-5c8b-78ea5c7693b8",
-    "styles": [],
+    "styles": [
+      {
+        "objID": "b3716f6c-fb0a-43fb-e96f-954c6866cae2",
+        "name": "Light_Screen",
+        "forWidgetType": "LVGLScreenWidget",
+        "childStyles": [],
+        "definition": {
+          "objID": "4f62750f-de3f-433e-c30f-fb3abdc366cd",
+          "definition": {
+            "MAIN": {
+              "DEFAULT": {
+                "bg_color": "#0A0B0B",
+                "text_color": "#9E9A75",
+                "line_color": "#604439",
+                "border_color": "#604439",
+                "outline_color": "#604439",
+                "arc_color": "#604439"
+              }
+            }
+          }
+        }
+      },
+      {
+        "objID": "6db03c84-ec18-4352-bcb0-383f012a539a",
+        "name": "Dark_Screen",
+        "forWidgetType": "LVGLScreenWidget",
+        "childStyles": [],
+        "definition": {
+          "objID": "b4b470d4-da38-4c23-a3ba-242a6a14b2a3",
+          "definition": {
+            "MAIN": {
+              "DEFAULT": {
+                "bg_color": "#0A0B0B",
+                "text_color": "#FF6B6B"
+              }
+            }
+          }
+        }
+      }
+    ],
     "defaultStyles": {}
   },
   "lvglGroups": {
@@ -220,8 +260,13 @@
   "colors": [],
   "themes": [
     {
-      "objID": "ed882da1-8496-e314-059f-7473f6a898ba",
-      "name": "Default",
+      "objID": "4f7728cb-6bc0-4963-a159-033952455d4a",
+      "name": "Light_Theme",
+      "colors": []
+    },
+    {
+      "objID": "a15367df-b099-4a20-d28a-10d324a7d0c4",
+      "name": "Dark_Theme",
       "colors": []
     }
   ]

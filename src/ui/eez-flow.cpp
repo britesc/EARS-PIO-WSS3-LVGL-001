@@ -4016,7 +4016,7 @@ void executeLVGLComponent(FlowState *flowState, unsigned componentIndex) {
                         lv_obj_set_style_opa(target, intValue, 0);
                     } else if (specific->property == DROPDOWN_SELECTED) {
  #if LVGL_VERSION_MAJOR >= 9 && LVGL_VERSION_MINOR >= 3
-                        lv_dropdown_set_selected(target, intValue);
+                        lv_dropdown_set_selected(target, intValue, LV_ANIM_OFF);
 #else
                         lv_dropdown_set_selected(target, intValue);
 #endif
@@ -4484,7 +4484,7 @@ ACTION_START(dropdownSetSelected)
     UINT32_PROP(value);
 #if LVGL_VERSION_MAJOR >= 9
 #if LVGL_VERSION_MINOR >= 3
-    lv_dropdown_set_selected(obj, value);
+    lv_dropdown_set_selected(obj, value, LV_ANIM_OFF);
 #else
     lv_dropdown_set_selected(obj, value);
 #endif

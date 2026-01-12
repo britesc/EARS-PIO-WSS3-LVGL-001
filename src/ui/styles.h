@@ -7,6 +7,16 @@
 extern "C" {
 #endif
 
+// Style: Light_Screen
+lv_style_t *get_style_light_screen_MAIN_DEFAULT();
+void add_style_light_screen(lv_obj_t *obj);
+void remove_style_light_screen(lv_obj_t *obj);
+
+// Style: Dark_Screen
+lv_style_t *get_style_dark_screen_MAIN_DEFAULT();
+void add_style_dark_screen(lv_obj_t *obj);
+void remove_style_dark_screen(lv_obj_t *obj);
+
 
 
 #ifdef __cplusplus

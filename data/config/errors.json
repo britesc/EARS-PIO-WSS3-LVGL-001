@@ -1,0 +1,39 @@
+{
+    "errors": [
+      {
+        "code": 1001,
+        "level": "ERROR",
+        "message": "SD Card read failed"
+      },
+      {
+        "code": 1002,
+        "level": "ERROR",
+        "message": "SD Card write failed"
+      },
+      {
+        "code": 1003,
+        "level": "ERROR",
+        "message": "SD Card not found"
+      },
+      {
+        "code": 2001,
+        "level": "WARN",
+        "message": "Low memory warning"
+      },
+      {
+        "code": 2002,
+        "level": "WARN",
+        "message": "Display update slow"
+      },
+      {
+        "code": 3001,
+        "level": "ERROR",
+        "message": "LVGL initialization failed"
+      },
+      {
+        "code": 3002,
+        "level": "WARN",
+        "message": "Widget creation delayed"
+      }
+    ]
+  }
