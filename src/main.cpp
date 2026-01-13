@@ -55,6 +55,7 @@
 #include "EARS_sdCardLib.h"
 #include "EARS_screenSaverLib.h"
 #include "EARS_errorsLib.h"
+#include "EARS_backlightManagerLib.h"
 
 
 /******************************************************************************
@@ -116,6 +117,12 @@ EARS_screenSaver using_screen_saver;
  *****************************************************************************/
 // Global Errors instance 
 EARS_errors using_errors;
+
+/******************************************************************************
+ * BackLight Manager object
+ *****************************************************************************/
+// Global BackLight Manager instance 
+EARS_backLightManager using_backlightmanager;
 
 /******************************************************************************
  * Task Handles for Core Management
