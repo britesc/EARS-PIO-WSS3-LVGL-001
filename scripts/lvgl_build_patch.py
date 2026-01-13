@@ -1,7 +1,7 @@
 # Place this file in project root as: lvgl_build_patch.py
 # This pre-build script excludes ARM assembly files from LVGL compilation
 
-Import("env")
+Import("env") # type: ignore
 import os
 
 def exclude_arm_files(node):

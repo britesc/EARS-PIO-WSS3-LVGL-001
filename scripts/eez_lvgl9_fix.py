@@ -8,7 +8,7 @@ Created: 20250105
 """
 
 # type: ignore - PlatformIO build script
-Import("env")  # Provided by PlatformIO SCons environment
+Import("env")  # type: ignore # Provided by PlatformIO SCons environment
 import os
 import re
 
