@@ -123,6 +123,8 @@ EARS_errors using_errors;
  *****************************************************************************/
 // Global BackLight Manager instance 
 EARS_backLightManager using_backlightmanager;
+//TODO: Unlike other libraries this fails to compile if declared static here.
+// Investigate later.
 
 /******************************************************************************
  * Task Handles for Core Management
