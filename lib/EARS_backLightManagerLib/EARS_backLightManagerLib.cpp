@@ -4,8 +4,6 @@
  * @brief Implementation of LCD backlight manager
  * @version 0.1
  * @date 20260112
- * 
- * @copyright Copyright (c) 2025
  */
 
 #include "EARS_backlightManagerLib.h"

@@ -69,7 +69,13 @@ RECURSIVE              = YES
 EXCLUDE                = \
                          .pio \
                          .vscode \
-                         test
+                         test \
+                         data \
+                         eez_studio \
+                         previous_code_from_src \
+                         logs \
+                         scripts \
+                         
 
 EXCLUDE_PATTERNS       = */.pio/* \
                          */examples/* \
@@ -122,3 +128,9 @@ CALL_GRAPH             = YES
 CALLER_GRAPH           = YES
 CLASS_DIAGRAMS         = YES
 DOT_IMAGE_FORMAT       = svg
+
+#-------------------------------------------------
+# Graphs (disable if slow)
+#-------------------------------------------------
+ALIASES += constraints="@par Constraints:"
+ALIASES += thread="@par Thread safety:"

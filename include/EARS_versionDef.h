@@ -4,9 +4,7 @@
  * @brief EARS Project Version Header File.
  * @version 0.2.0
  * @date 20251229
- * @updated 20260109
  * 
- * @copyright Copyright (c) 2025
  * 
  */
 #pragma once

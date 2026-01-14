@@ -160,7 +160,7 @@ void my_disp_flush(lv_display_t *display, const lv_area_t *area, uint8_t *px_map
 
 /**
  * @brief Callback function to provide millis() to LVGL
- * @description
+ * @details
  * LVGL requires a millisecond tick source to manage its timing.
  * @return uint32_t 
  */
@@ -202,7 +202,7 @@ void init_errors() {
 
 /**
  * @brief Core 0 Task: NVS Validation
- * @description
+ * @details
  * Runs on Core 0, performs NVS validation while Core 1 shows animation
  * @param parameter Task parameters (unused)
  */
@@ -356,7 +356,7 @@ void core0_loaderLogic() {
 
 /**
  * @brief Core 1 Task: LVGL Display Handler
- * @description
+ * @details
  * Runs on Core 1, handles LVGL timer and display updates
  * 
  * @param parameter Task parameters (unused)
@@ -394,7 +394,7 @@ void Core1_DisplayHandler(void* parameter) {
 
 /**
  * @brief Primary setup function
- * @description
+ * @details
  * Initializes hardware and creates tasks for both cores
  * Runs on Core 1 by default
  * 
@@ -489,7 +489,7 @@ void setup() {
 
 /**
  * @brief Main loop function
- * @description
+ * @details
  * During development, this loop monitors system status.
  * @return void
  */

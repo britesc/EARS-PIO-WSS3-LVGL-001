@@ -5,8 +5,6 @@
  * @version 0.1
  * @date 20260112
  * 
- * @copyright Copyright (c) 2025
- * 
  * Features:
  * - Analog PWM brightness control (0-100%)
  * - NVS storage for user preferences

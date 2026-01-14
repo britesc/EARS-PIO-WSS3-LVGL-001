@@ -2,13 +2,9 @@
  * @file EARS_ws35tlcdPins.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief Defines pin assignments for the Waveshare 3.5" ESP32-S3 LCD display.
- * @Description This file is for the Arduino GFX Library.
+ * @details This file is for the Arduino GFX Library.
  * @version 0.1
  * @date 20251229
- * @updated 20260110
- * 
- * @copyright Copyright (c) 2025
- * 
  */
 #pragma once
 #ifndef __EARS_WS35TLCD_PINS_H_

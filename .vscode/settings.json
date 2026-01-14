@@ -1,0 +1,46 @@
+{
+    "doxdocgen.style": "doxygen",
+
+    "doxdocgen.file.authorTag": [],
+    "doxdocgen.file.dateTag": [],
+    "doxdocgen.file.versionTag": [],
+    "doxdocgen.file.copyrightTag": [],
+
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "brief",
+        "details"
+    ],
+
+    "doxdocgen.file.fileTemplate": [
+        "@file ${file}",
+        "@brief ${brief}",
+        "",
+        "@details",
+        "${details}"
+    ],
+
+    "doxdocgen.functionTemplate": [
+        "@brief ${brief}",
+        "",
+        "@param ${param}",
+        "@return ${return}"
+    ],
+
+    "doxdocgen.structTemplate": [
+        "@brief ${brief}",
+        "",
+        "@details",
+        "${details}"
+    ],
+
+    "doxdocgen.enumTemplate": [
+        "@brief ${brief}"
+    ],
+
+    "doxdocgen.enumMemberTemplate": "/**< ${brief} */",
+
+    "doxdocgen.commentPrefix": " * ",
+    "doxdocgen.firstLine": "/**",
+    "doxdocgen.lastLine": " */"
+}
