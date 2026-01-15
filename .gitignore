@@ -8,3 +8,4 @@ docs/doxygen/
 previous_code_from_source/
 .github/workflows/
 logs/
+vscode_ears-cppcheck-build-dir/
