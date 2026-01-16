@@ -1,5 +1,5 @@
 /**
- * @file main.cpp
+ * @file main.cpp - UPDATED with standardized EARS library pattern
  *
  * @mainpage EARS Project
  * 
@@ -11,27 +11,11 @@
  * - Core 0: NVS Validation and background tasks
  * - Core 1: LVGL display, animation, and UI
  *
- * @section libraries Libraries
- * - GFX Library for Arduino (https://github.com/moononournation/Arduino_GFX)
- *   - Graphics Gateway.
- * - Widgets Library for Arduino (https://github.com/lvgl/lvgl)
- *   - Widgets
- *
- * @section tools Tools
- * - VSCode 1.81.1.
- * - PlatformIO IDE 3.6.3.
- * - EEZ Studio 0.23.2.
- *
- * @section notes Notes
- * - Comments are Doxygen compatible.
- *
- * @section todo TODO
- * - Don't use Doxygen style formatting inside the body of a function.
+ * All libraries now use the standardized using_xxxxx() pattern
  *
  * @section author Author
  * - Created by JTB on 20251220.
- * - Modified by by JTB on 20260110.
- * - Modified for proper dual-core operation on 20250104.
+ * - Updated for standardized library pattern on 20260114.
  *
  * Copyright (c) 2025 JTB.  All rights reserved.
  */
@@ -55,7 +39,7 @@
 #include "EARS_sdCardLib.h"
 #include "EARS_screenSaverLib.h"
 #include "EARS_errorsLib.h"
-#include "EARS_backlightManagerLib.h"
+#include "EARS_backLightManagerLib.h"
 
 
 /******************************************************************************
@@ -92,39 +76,15 @@ lv_obj_t *spinner = NULL;
 lv_obj_t *status_label = NULL;
 
 /******************************************************************************
- * NVS EEPROM object
+ * NVS EEPROM - Global validation result (shared between cores)
  *****************************************************************************/
-// Global validation result - shared between cores
 NVSValidationResult g_nvsResult;
 
-// Global NVS instance
-EARS_nvsEeprom using_nvs_eeprom;
-
 /******************************************************************************
- * SD Card object
+ * NO MORE GLOBAL LIBRARY INSTANCES!
+ * All libraries are now accessed via using_xxxxx() functions
+ * This eliminates global declarations and makes code cleaner
  *****************************************************************************/
-// Global SD Card instance
- EARS_sdCard using_ears_sdcard;
-
-/******************************************************************************
- * Screen Saver object
- *****************************************************************************/
-// Global Screen Saver instance 
-EARS_screenSaver using_screen_saver;
-
-/******************************************************************************
- * Errors object
- *****************************************************************************/
-// Global Errors instance 
-EARS_errors using_errors;
-
-/******************************************************************************
- * BackLight Manager object
- *****************************************************************************/
-// Global BackLight Manager instance 
-EARS_backLightManager using_backlightmanager;
-//TODO: Unlike other libraries this fails to compile if declared static here.
-// Investigate later.
 
 /******************************************************************************
  * Task Handles for Core Management
@@ -172,9 +132,13 @@ uint32_t millis_cb(void) {
  * @brief Initialize EARS_logger
  */
 void init_logger() {
-    LOG_INIT("/logs/debug.log", &using_ears_sdcard);
-    LOG("Setup started.");
-    LOGF("Free memory: %d bytes", ESP.getFreeHeap());
+    // NEW: Use using_logger() instead of getInstance()
+    // NEW: Pass reference to SD card via using_sdcard()
+    using_logger().begin("/logs/debug.log", "/config/ears.config", &using_sdcard());
+    
+    // NEW: All log calls now use using_logger()
+    using_logger().info("Setup started.");
+    using_logger().infof("Free memory: %d bytes", ESP.getFreeHeap());
 }
 
 /**
@@ -194,10 +158,12 @@ void updateStatus(const char* message) {
  * @brief Initialize Errors
  */
 void init_errors() {
-    SD.begin();    
-    using_errors.begin();
-    LOG("Errors system: Initialized");
-
+    SD.begin();
+    
+    // NEW: Use using_errors() instead of global instance    
+    using_errors().begin();
+    
+    using_logger().info("Errors system: Initialized");
 }
 
 /**
@@ -207,87 +173,88 @@ void init_errors() {
  * @param parameter Task parameters (unused)
  */
 void Core0_NVSValidation(void* parameter) {
-    LOG("[Core 0] NVS Validation Task Started");
+    using_logger().info("[Core 0] NVS Validation Task Started");
     
     // Simulate some validation steps with status updates
     updateStatus("Checking NVS...");
     delay(500);
     
     // Step 1: Initialize NVS
+    // NEW: Use using_nvseeprom() instead of global instance
     updateStatus("Initializing NVS...");
-    if (!using_nvs_eeprom.begin()) {
+    if (!using_nvseeprom().begin()) {
         g_nvsResult.status = NVSStatus::INITIALIZATION_FAILED;
         updateStatus("NVS Init Failed!");
         validationComplete = true;
         vTaskDelete(NULL);
         return;
     }
-    LOG("[Core 0] NVS Initialized");
+    using_logger().info("[Core 0] NVS Initialized");
     delay(500);
     
     // Step 2: Validate entire NVS
+    // NEW: Use using_nvseeprom() for validation
     updateStatus("Validating data...");
-    g_nvsResult = using_nvs_eeprom.validateNVS();
+    g_nvsResult = using_nvseeprom().validateNVS();
     delay(500);
     
     // Step 3: Report results
-    LOG("=== Core 0 NVS Validation Results ===");
-    LOG("Status: ");
+    using_logger().info("=== Core 0 NVS Validation Results ===");
     
     switch (g_nvsResult.status) {
         case NVSStatus::VALID:
-            LOG("VALID");
-            updateStatus("Validation: PASSED");
+            using_logger().info("Status: VALID");
+            updateStatus("NVS: Valid");
             break;
         case NVSStatus::UPGRADED:
-            LOG("UPGRADED");
-            updateStatus("Validation: UPGRADED");
-            break;
-        case NVSStatus::INVALID_VERSION:
-            LOG("INVALID_VERSION");
-            updateStatus("Validation: BAD VERSION");
+            using_logger().info("Status: UPGRADED");
+            updateStatus("NVS: Upgraded");
             break;
         case NVSStatus::MISSING_ZAPNUMBER:
-            LOG("MISSING_ZAPNUMBER");
-            updateStatus("Setup Required");
+            using_logger().info("Status: MISSING_ZAPNUMBER");
+            updateStatus("NVS: Missing ZapNumber");
             break;
         case NVSStatus::MISSING_PASSWORD:
-            LOG("MISSING_PASSWORD");
-            updateStatus("Password Required");
+            using_logger().info("Status: MISSING_PASSWORD");
+            updateStatus("NVS: Missing Password");
             break;
         case NVSStatus::CRC_FAILED:
-            LOG("CRC_FAILED - TAMPERING DETECTED!");
-            updateStatus("SECURITY ALERT!");
+            using_logger().error("Status: CRC_FAILED - TAMPERING DETECTED!");
+            updateStatus("NVS: TAMPERED!");
+            break;
+        case NVSStatus::INVALID_VERSION:
+            using_logger().error("Status: INVALID_VERSION");
+            updateStatus("NVS: Invalid Version");
             break;
         case NVSStatus::INITIALIZATION_FAILED:
-            LOG("INITIALIZATION_FAILED");
-            updateStatus("Hardware Error");
+            using_logger().error("Status: INITIALIZATION_FAILED");
+            updateStatus("NVS: Init Failed");
             break;
         default:
-            LOG("NOT_CHECKED");
-            updateStatus("Unknown Status");
+            using_logger().error("Status: UNKNOWN");
+            updateStatus("NVS: Unknown");
             break;
     }
     
-    LOGF("Version: Current=%d, Expected=%d", 
-                g_nvsResult.currentVersion, 
-                g_nvsResult.expectedVersion);
-    LOGF("ZapNumber: Valid=%d, Value=%s", 
+    using_logger().infof("Version: Current=%d, Expected=%d", 
+                    g_nvsResult.currentVersion, 
+                    g_nvsResult.expectedVersion);
+    using_logger().infof("ZapNumber: Valid=%d, Value=%s", 
                     g_nvsResult.zapNumberValid, 
                     g_nvsResult.zapNumber);
-    LOGF("Password: Valid=%d", g_nvsResult.passwordHashValid);        
-    LOGF("CRC: Valid=%d, Value=0x%08X", 
+    using_logger().infof("Password: Valid=%d", g_nvsResult.passwordHashValid);        
+    using_logger().infof("CRC: Valid=%d, Value=0x%08X", 
                   g_nvsResult.crcValid, 
                   g_nvsResult.calculatedCRC);
-    LOGF("Upgraded: %d", g_nvsResult.wasUpgraded);
-    LOG("====================================");
+    using_logger().infof("Upgraded: %d", g_nvsResult.wasUpgraded);
+    using_logger().info("====================================");
     
     delay(1000); // Show final status for 1 second
     
     // Mark validation as complete
     validationComplete = true;
     
-    LOG("[Core 0] Validation Complete - Task Ending");
+    using_logger().info("[Core 0] Validation Complete - Task Ending");
     
     // Task complete, delete itself
     vTaskDelete(NULL);
@@ -299,41 +266,41 @@ void Core0_NVSValidation(void* parameter) {
  * Called after validation completes to determine next action
  */
 void core0_loaderLogic() {
-    LOG("=== Loader Decision ===");
+    using_logger().info("=== Loader Decision ===");
     
     // Make decisions based on validation results
     switch (g_nvsResult.status) {
         case NVSStatus::VALID:
         case NVSStatus::UPGRADED:
-            LOG("Decision: Proceed to login screen");
-            LOGF("ZapNumber: %s", g_nvsResult.zapNumber);
+            using_logger().info("Decision: Proceed to login screen");
+            using_logger().infof("ZapNumber: %s", g_nvsResult.zapNumber);
             updateStatus("Ready - Login");
             // TODO: Show login screen, validate password
             break;
             
         case NVSStatus::MISSING_ZAPNUMBER:
-            LOG("Decision: Show ZapNumber setup wizard");
+            using_logger().info("Decision: Show ZapNumber setup wizard");
             updateStatus("Setup: ZapNumber");
             // TODO: Launch setup wizard to collect ZapNumber
             break;
             
         case NVSStatus::MISSING_PASSWORD:
-            LOG("Decision: Show password setup wizard");
-            LOGF("Using ZapNumber: %s", g_nvsResult.zapNumber);
+            using_logger().info("Decision: Show password setup wizard");
+            using_logger().infof("Using ZapNumber: %s", g_nvsResult.zapNumber);
             updateStatus("Setup: Password");
             // TODO: Launch password setup wizard
             break;
             
         case NVSStatus::CRC_FAILED:
-            LOG("Decision: SECURITY ALERT - Data tampering detected!");
-            LOG("Action: Factory reset required");
+            using_logger().error("Decision: SECURITY ALERT - Data tampering detected!");
+            using_logger().info("Action: Factory reset required");
             updateStatus("Factory Reset Needed");
             // TODO: Show security warning, require factory reset
             break;
             
         case NVSStatus::INVALID_VERSION:
-            LOG("Decision: Version mismatch");
-            LOGF("NVS version %d incompatible with code version %d",
+            using_logger().info("Decision: Version mismatch");
+            using_logger().infof("NVS version %d incompatible with code version %d",
                          g_nvsResult.currentVersion,
                          g_nvsResult.expectedVersion);
             updateStatus("Version Mismatch");
@@ -341,17 +308,17 @@ void core0_loaderLogic() {
             break;
             
         case NVSStatus::INITIALIZATION_FAILED:
-            LOG("Decision: Hardware error");
+            using_logger().error("Decision: Hardware error");
             updateStatus("Hardware Error");
             // TODO: Show hardware error message
             break;
             
         default:
-            LOG("Decision: Unknown state");
+            using_logger().error("Decision: Unknown state");
             updateStatus("Unknown State");
             break;
     }
-    LOG("========================");
+    using_logger().info("========================");
 }
 
 /**
@@ -362,7 +329,7 @@ void core0_loaderLogic() {
  * @param parameter Task parameters (unused)
  */
 void Core1_DisplayHandler(void* parameter) {
-    LOG("[Core 1] Display Handler Task Started");
+    using_logger().info("[Core 1] Display Handler Task Started");
     
     while (true) {
         // Handle LVGL timer
@@ -383,7 +350,7 @@ void Core1_DisplayHandler(void* parameter) {
             core0_loaderLogic();
             
             // End this task as validation phase is done
-            LOG("[Core 1] Display task ending - validation complete");
+            using_logger().info("[Core 1] Display task ending - validation complete");
             vTaskDelete(NULL);
             return;
         }
@@ -405,41 +372,54 @@ void setup() {
     Serial.begin(115200);
     delay(1000);
     
+    // NEW: Initialize SD card first using using_sdcard()
+    if (!using_sdcard().begin()) {
+        Serial.println("FATAL: SD Card initialization failed!");
+        while(1) delay(1000);
+    }
+    
     // Initialize Errors system
     init_errors();
     
-    // Initialize Logger first
+    // Initialize Logger
     init_logger();
     
-    LOG("\n\n=== EARS Dual-Core System Starting ===");
-    LOGF("Setup running on Core: %d", xPortGetCoreID());
+    using_logger().info("\n\n=== EARS Dual-Core System Starting ===");
+    using_logger().infof("Setup running on Core: %d", xPortGetCoreID());
     
     // Create mutex for display synchronization
     displayMutex = xSemaphoreCreateMutex();
     
-    // Step 1: Initialize backlight
-    pinMode(GFX_BL, OUTPUT);
-    digitalWrite(GFX_BL, HIGH);
-    LOG("Backlight: ON");
+    // Step 1: Initialize backlight using new pattern
+    // NEW: Use using_backlightmanager() instead of global instance
+    if (using_backlightmanager().begin(GFX_BL, 0)) {
+        using_logger().info("Backlight: Initialized");
+    }
     
     // Step 2: Initialize display
-    LOG("Initializing display...");
+    using_logger().info("Initializing display...");
     gfx->begin();
     gfx->fillScreen(EARS_RGB565_BLACK);
-    LOG("Display: Initialized");
+    using_logger().info("Display: Initialized");
     
     // Step 3: Initialize LVGL
-    LOG("Initializing LVGL...");
+    using_logger().info("Initializing LVGL...");
     lv_init();
     lv_tick_set_cb(millis_cb);
      
     disp = lv_display_create(screenWidth, screenHeight);
     lv_display_set_flush_cb(disp, my_disp_flush);
     lv_display_set_buffers(disp, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
-    LOG("LVGL: Initialized");
+    using_logger().info("LVGL: Initialized");
     
-    // Step 4: Create loading screen with spinner
-    LOG("Creating loading screen...");
+    // Step 4: Initialize screensaver using new pattern
+    // NEW: Use using_screensaver() instead of global instance
+    using_screensaver().begin(disp);
+    using_screensaver().setTimeout(30);
+    using_logger().info("Screensaver: Initialized");
+    
+    // Step 5: Create loading screen with spinner
+    using_logger().info("Creating loading screen...");
     lv_obj_t *scr = lv_screen_active();
     lv_obj_set_style_bg_color(scr, lv_color_hex(EARS_RGB888_BLACK), 0);
     
@@ -456,10 +436,10 @@ void setup() {
     lv_obj_set_style_text_font(status_label, &lv_font_montserrat_16, 0);
     lv_obj_align(status_label, LV_ALIGN_CENTER, 0, 60);
     
-    LOG("Loading screen: Created");
+    using_logger().info("Loading screen: Created");
     
-    // Step 5: Create Core 0 task for NVS validation
-    LOG("Creating Core 0 validation task...");
+    // Step 6: Create Core 0 task for NVS validation
+    using_logger().info("Creating Core 0 validation task...");
     xTaskCreatePinnedToCore(
         Core0_NVSValidation,      // Task function
         "NVS_Validation",         // Name
@@ -470,8 +450,8 @@ void setup() {
         0                         // Core 0
     );
     
-    // Step 6: Create Core 1 task for display handling
-    LOG("Creating Core 1 display task...");
+    // Step 7: Create Core 1 task for display handling
+    using_logger().info("Creating Core 1 display task...");
     xTaskCreatePinnedToCore(
         Core1_DisplayHandler,     // Task function
         "Display_Handler",        // Name
@@ -482,9 +462,9 @@ void setup() {
         1                         // Core 1
     );
     
-    LOG("=== Setup Complete ===");
-    LOG("Core 0: Running NVS validation");
-    LOG("Core 1: Running display animation\n");
+    using_logger().info("=== Setup Complete ===");
+    using_logger().info("Core 0: Running NVS validation");
+    using_logger().info("Core 1: Running display animation\n");
 }
 
 /**
@@ -497,13 +477,17 @@ void loop() {
     // Development monitoring
     static uint32_t lastPrint = 0;
     if (millis() - lastPrint > 5000) {
-        LOGF("[Monitor] Free heap: %d bytes", ESP.getFreeHeap());
-        LOGF("[Monitor] Running on Core: %d", xPortGetCoreID());
+        using_logger().infof("[Monitor] Free heap: %d bytes", ESP.getFreeHeap());
+        using_logger().infof("[Monitor] Running on Core: %d", xPortGetCoreID());
         lastPrint = millis();
     }
+    
+    // NEW: Update screensaver using new pattern
+    using_screensaver().update();
+    
     delay(1000);
 }
 
 /******************************************************************************
- * End of File
+ * End of File main.cpp
  *****************************************************************************/
