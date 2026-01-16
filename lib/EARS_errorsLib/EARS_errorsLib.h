@@ -1,13 +1,11 @@
 /**
  * @file $(file) 
  * EARS_errorsLib.h
- * @author Julian (51fiftyone51fiftyone@gmail.com)
+ *  * @author JTB & Claude Sonnet 4.2
  * @brief Error Management Library for EARS Project
- * @version 1.0.0
- * @date 20260111
- * @details
- * Handles error/warning states, loads messages from JSON on TF card,
- * maintains error history, and provides non-blocking error notifications.
+ * @version 1.7.0
+ * @date 20260116
+ * 
  * @copyright Copyright (c) 2025
  */
 
