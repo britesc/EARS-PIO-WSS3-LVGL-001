@@ -1,15 +1,11 @@
 /**
  * @file EARS_nvsEepromLib.cpp
  * @author Julian (51fiftyone51fiftyone@gmail.com)
- * @brief NVS EEPROM wrapper class implementation.
+ * @brief NVS EEPROM wrapper class header
+ * @version 1.5.0
+ * @date 20260116
  * 
- * @details
- * 
- * @version 1.2.0
- * @date 20251229
- * 
- * @copyright Copyright (c) 2025
- * 
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 /******************************************************************************
@@ -442,6 +438,19 @@ bool EARS_nvsEeprom::setZapNumber(const String& zapNumber) {
     
     // Update CRC after successful write
     return updateNVSCRC();
+}
+
+/**
+ * @brief Get reference to global NVS EEPROM instance (Singleton pattern)
+ * 
+ * This function implements the singleton pattern to ensure only one
+ * NVS EEPROM instance exists throughout the application lifecycle.
+ * 
+ * @return EARS_nvsEeprom& Reference to the global NVS EEPROM instance
+ */
+EARS_nvsEeprom& using_nvseeprom() {
+    static EARS_nvsEeprom instance;
+    return instance;
 }
 
 /******************************************************************************
