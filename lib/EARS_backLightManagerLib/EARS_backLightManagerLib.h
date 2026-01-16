@@ -12,7 +12,7 @@
  * - Smooth fade transitions
  * - Initial device config detection (100% brightness)
  * - Default 75% after initial setup
-
+ *
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 

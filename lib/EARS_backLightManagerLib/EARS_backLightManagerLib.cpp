@@ -1,12 +1,13 @@
 /**
- * @file BacklightManagerLib.cpp
+ * @file EARS_backLightManagerLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
- * @brief Implementation of LCD backlight manager
- * @version 0.1
- * @date 20260112
+ * @brief Manages LCD backlight with PWM control, NVS storage, and screen saver integration
+ * @version 1.5.0
+ * @date 20260116
+ * 
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
-
-#include "EARS_backlightManagerLib.h"
+#include "EARS_backLightManagerLib.h"
 
 // Constructor
 EARS_backLightManager::EARS_backLightManager()
@@ -232,19 +233,19 @@ uint32_t EARS_backLightManager::percentageToDutyCycle(uint8_t percentage) const 
     return (_maxDutyCycle * percentage) / 100;
 }
 
-// Global instance
-///////////////////////
-// NO NO NO
-//////////////////////
-static EARS_backLightManager globalBacklightManager;
-
-///////////////////////
-// NO NO NO
-//////////////////////
+/**
+ * @brief Get reference to global backlight manager instance (Singleton pattern)
+ * 
+ * This function implements the singleton pattern to ensure only one
+ * backlight manager instance exists throughout the application lifecycle.
+ * 
+ * @return EARS_backLightManager& Reference to the global backlight manager instance
+ */
 EARS_backLightManager& using_backlightmanager() {
-    return globalBacklightManager;
+    static EARS_backLightManager instance;
+    return instance;
 }
 
 /******************************************************************************
- * End of BacklightManagerLib.cpp
+ * End of EARS_backLightManagerLib.cpp
  ****************************************************************************/
