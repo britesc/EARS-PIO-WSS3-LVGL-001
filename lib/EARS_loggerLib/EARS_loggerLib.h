@@ -1,9 +1,9 @@
 /**
  * @file EARS_loggerLib.h
- * @author JTB
+ * @author JTB & Claude Sonnet 4.2
  * @brief Enhanced logging system with hierarchical levels and unified config
- * @version 2.5
- * @date 20260105
+ * @version 2.7.0
+ * @date 20260116
  * 
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
