@@ -1,9 +1,9 @@
 /**
  * @file EARS_sdCardLib.h
- * @author JTB
+ * @author JTB & Claude Sonnet 4.2
  * @brief SD Card wrapper library for ESP32-S3 with separate SPI bus
- * @version 1.1.0
- * @date 20260105
+ * @version 1.5.0
+ * @date 20260116
  * 
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
@@ -161,6 +161,28 @@ private:
      */
     void initSPI();
 };
+
+/**
+ * @brief Get reference to global SD Card instance
+ * 
+ * This function provides access to the singleton SD Card instance.
+ * The instance is created on first call and persists for the lifetime
+ * of the application.
+ * 
+ * @return EARS_sdCard& Reference to the global SD Card instance
+ * 
+ * @example
+ * // Initialize SD card
+ * if (using_sdcard().begin()) {
+ *     Serial.println("SD card ready");
+ * }
+ * 
+ * // Check if file exists
+ * if (using_sdcard().fileExists("/config/settings.json")) {
+ *     String content = using_sdcard().readFile("/config/settings.json");
+ * }
+ */
+EARS_sdCard& using_sdcard();
 
 #endif // __EARS_SDCARD_LIB_H__
 
