@@ -1,11 +1,11 @@
 /**
  * @file EARS_sdCardLib.cpp
- * @author JTB
- * @brief SD Card wrapper library implementation
- * @version 1.1.0
- * @date 20260105
+ * @author JTB & Claude Sonnet 4.2
+ * @brief SD Card wrapper library for ESP32-S3 with separate SPI bus
+ * @version 1.5.0
+ * @date 20260116
  * 
- * @copyright Copyright (c) 2026  JTB. All rights reserved.
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
 
 #include "EARS_sdCardLib.h"
@@ -366,6 +366,19 @@ bool EARS_sdCard::appendFile(const char* path, const String& content) {
     Serial.print("[SDCard] Append failed: ");
     Serial.println(path);
     return false;
+}
+
+/**
+ * @brief Get reference to global SD Card instance (Singleton pattern)
+ * 
+ * This function implements the singleton pattern to ensure only one
+ * SD Card instance exists throughout the application lifecycle.
+ * 
+ * @return EARS_sdCard& Reference to the global SD Card instance
+ */
+EARS_sdCard& using_sdcard() {
+    static EARS_sdCard instance;
+    return instance;
 }
 
 /************************************************************************
