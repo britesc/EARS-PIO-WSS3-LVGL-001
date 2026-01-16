@@ -1,14 +1,14 @@
 /**
- * @file EARS_screenSaver.h.h
- * @author Julian (51fiftyone51fiftyone@gmail.com)
+ * @file EARS_screenSaverLib.h
+ * @author JTB & Claude Sonnet 4.2
  * @brief Screensaver library implementation header file
- * @version 1.0.0
- * @date 20260110
- * @update 20260107
- * @copyright Copyright (c) 2026
+ * @version 1.5.0
+ * @date 20260116
  * 
+ * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
-#pragma once
+
+ #pragma once
 #ifndef __EARS_SCREENSAVER_LIB_H__
 #define __EARS_SCREENSAVER_LIB_H__
 
@@ -101,8 +101,29 @@ private:
     void updateAnimation();
 };
 
+/**
+ * @brief Get reference to global screensaver instance
+ * 
+ * This function provides access to the singleton screensaver instance.
+ * The instance is created on first call and persists for the lifetime
+ * of the application.
+ * 
+ * @return EARS_screenSaver& Reference to the global screensaver instance
+ * 
+ * @example
+ * // Initialize screensaver
+ * using_screensaver().begin(display);
+ * 
+ * // Set timeout
+ * using_screensaver().setTimeout(30);
+ * 
+ * // Check in loop
+ * using_screensaver().update();
+ */
+EARS_screenSaver& using_screensaver();
+
 #endif // __EARS_SCREENSAVER_LIB_H__
 
 /************************************************************************
- * End of EARS_screenSaverLib
+ * End of EARS_screenSaverLib.h
  ***********************************************************************/
