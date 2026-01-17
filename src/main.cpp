@@ -368,6 +368,14 @@ void Core1_DisplayHandler(void* parameter) {
  * @return void
  */
 void setup() {
+    // Forward declarations to test
+    extern EARS_logger& using_logger();
+    extern EARS_errors& using_errors();
+    extern EARS_nvsEeprom& using_nvseeprom();
+    extern EARS_sdCard& using_sdcard();
+    extern EARS_screenSaver& using_screensaver();
+    extern EARS_backLightManager& using_backlightmanager();
+
     // Initialize Serial for debugging (keep for emergency fallback)
     Serial.begin(115200);
     delay(1000);
@@ -489,5 +497,5 @@ void loop() {
 }
 
 /******************************************************************************
- * End of File main.cpp
+ * End of File
  *****************************************************************************/
