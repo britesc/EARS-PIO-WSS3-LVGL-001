@@ -45,7 +45,10 @@
 #define LV_USE_BMP 1
 #define LV_USE_PNG 1
 #define LV_USE_SJPG 1
-#define LV_USE_SVG 1
+
+/* Image decoder - enable SVG */
+// #define LV_USE_SVG 1
+
 
 /* Font support - ENABLE MONTSERRAT FONTS */
 #define LV_FONT_MONTSERRAT_8  1
