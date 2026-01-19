@@ -2,8 +2,8 @@
  * @file EARS_backLightManagerLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief Manages LCD backlight with PWM control, NVS storage, and screen saver integration
- * @version 1.5.0
- * @date 20260116
+ * @version 1.8.0
+ * @date 20260118
  * 
  * @copyright Copyright (c) 2026 JTB. All rights reserved.
  */
@@ -176,7 +176,7 @@ void EARS_backLightManager::on() {
 }
 
 // Check if this is initial device configuration
-bool EARS_backLightManager::isInitialConfig() const {
+bool EARS_backLightManager::isInitialConfig() {
     // Check if the init flag exists in NVS
     return !_preferences.isKey(NVS_INIT_FLAG_KEY);
 }

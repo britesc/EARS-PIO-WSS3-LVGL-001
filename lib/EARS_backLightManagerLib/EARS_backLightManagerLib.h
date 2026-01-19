@@ -2,8 +2,8 @@
  * @file EARS_backLightManagerLib.h
  * @author Julian (51fiftyone51fiftyone@gmail.com)
  * @brief Manages LCD backlight with PWM control, NVS storage, and screen saver integration
- * @version 1.5.0
- * @date 20260116
+ * @version 1.8.0
+ * @date 2026018
  * 
  * Features:
  * - Analog PWM brightness control (0-100%)
@@ -89,7 +89,7 @@ public:
      * @brief Check if this is initial device configuration
      * @return true if NVS has never been written
      */
-    bool isInitialConfig() const;
+    bool isInitialConfig();
 
     /**
      * @brief Mark initial configuration as complete
@@ -148,5 +148,5 @@ EARS_backLightManager& using_backlightmanager();
 #endif // __EARS_BACKLIGHT_MANAGER_LIB_H__
 
 /******************************************************************************
- * End of backLightManagerLib.h
+ * End of EARS_backLightManagerLib.h
  ****************************************************************************/

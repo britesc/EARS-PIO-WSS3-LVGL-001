@@ -10,7 +10,7 @@
 
 #pragma once
 #ifndef __EARS_LOGGER_LIB_H__
-#define __LOGGER_H__
+#define __EARS_LOGGER_LIB_H__
 
 /******************************************************************************
  * Includes Information
