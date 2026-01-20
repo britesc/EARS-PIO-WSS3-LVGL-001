@@ -26,7 +26,7 @@ def print_banner(message):
 def extract_versions(source, target, env):
     """Extract compiler and platform versions and create header file"""
     
-    print_banner("VERSION EXTRACTION SCRIPT")
+    print_banner("Version Extraction Script")
     
     # ========================================================================
     # EXTRACT XTENSA COMPILER VERSION
@@ -97,7 +97,7 @@ def extract_versions(source, target, env):
     if not os.path.exists(include_dir):
         os.makedirs(include_dir, exist_ok=True)
     
-    header_path = os.path.join(include_dir, "compiler_version.h")
+    header_path = os.path.join(include_dir, "EARS_toolsVersionDef.h")
     
     try:
         with open(header_path, 'w') as f:
@@ -106,22 +106,22 @@ def extract_versions(source, target, env):
             f.write(f"// Generated on: {env.subst('$PIOENV')}\n")
             f.write(f"// Build timestamp: {env.subst('$UNIX_TIME')}\n\n")
             
-            f.write("#ifndef COMPILER_VERSION_H\n")
-            f.write("#define COMPILER_VERSION_H\n\n")
+            f.write("#ifndef __EARS_TOOLS_VERSION_H__\n")
+            f.write("#define __EARS_TOOLS_VERSION_H__\n\n")
             
             f.write("// Xtensa Compiler Version\n")
-            f.write(f"#define XTENSA_COMPILER_VERSION \"{xtensa_version}\"\n")
-            f.write(f"#define XTENSA_COMPILER_MAJOR {xtensa_major}\n")
-            f.write(f"#define XTENSA_COMPILER_MINOR {xtensa_minor}\n")
-            f.write(f"#define XTENSA_COMPILER_PATCH {xtensa_patch}\n\n")
+            f.write(f"#define EARS_XTENSA_COMPILER_VERSION \"{xtensa_version}\"\n")
+            f.write(f"#define EARS_XTENSA_COMPILER_MAJOR {xtensa_major}\n")
+            f.write(f"#define EARS_XTENSA_COMPILER_MINOR {xtensa_minor}\n")
+            f.write(f"#define EARS_XTENSA_COMPILER_PATCH {xtensa_patch}\n\n")
             
             f.write("// Espressif Platform Version (espressif32)\n")
-            f.write(f"#define ESPRESSIF_PLATFORM_VERSION \"{platform_version}\"\n")
-            f.write(f"#define ESPRESSIF_PLATFORM_MAJOR {platform_major}\n")
-            f.write(f"#define ESPRESSIF_PLATFORM_MINOR {platform_minor}\n")
-            f.write(f"#define ESPRESSIF_PLATFORM_PATCH {platform_patch}\n\n")
+            f.write(f"#define EARS_ESPRESSIF_PLATFORM_VERSION \"{platform_version}\"\n")
+            f.write(f"#define EARS_ESPRESSIF_PLATFORM_MAJOR {platform_major}\n")
+            f.write(f"#define EARS_ESPRESSIF_PLATFORM_MINOR {platform_minor}\n")
+            f.write(f"#define EARS_ESPRESSIF_PLATFORM_PATCH {platform_patch}\n\n")
             
-            f.write("#endif // COMPILER_VERSION_H\n")
+            f.write("#endif // __EARS_TOOLS_VERSION_H__\n")
         
         if os.path.exists(header_path):
             file_size = os.path.getsize(header_path)
@@ -132,7 +132,7 @@ def extract_versions(source, target, env):
     except Exception as e:
         print(f"✗ Error writing header file: {e}")
     
-    print_banner("VERSION EXTRACTION COMPLETE")
+    print_banner("Version Extraction Complete")
 
 # Register the callback to run before build
 env.AddPreAction("buildprog", extract_versions)

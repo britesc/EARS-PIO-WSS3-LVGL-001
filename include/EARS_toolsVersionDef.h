@@ -1,10 +1,10 @@
 // Auto-generated version information
 // Do not edit manually
 // Generated on: development
-// Build timestamp: 1768905864
+// Build timestamp: 1768929715
 
-#ifndef COMPILER_VERSION_H
-#define COMPILER_VERSION_H
+#ifndef __EARS_TOOLS_VERSION_H__
+#define __EARS_TOOLS_VERSION_H__
 
 // Xtensa Compiler Version
 #define XTENSA_COMPILER_VERSION "8.4.0"
@@ -18,4 +18,4 @@
 #define ESPRESSIF_PLATFORM_MINOR 8
 #define ESPRESSIF_PLATFORM_PATCH 1
 
-#endif // COMPILER_VERSION_H
+#endif // __EARS_TOOLS_VERSION_H__
