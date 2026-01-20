@@ -47,7 +47,9 @@
 #define LV_USE_SJPG 1
 
 /* Image decoder - enable SVG */
-// #define LV_USE_SVG 1
+#define LV_USE_VECTOR_GRAPHIC 1
+#define LV_USE_SVG 1
+#define LV_USE_MATRIX 1
 
 
 /* Font support - ENABLE MONTSERRAT FONTS */
