@@ -15,5 +15,6 @@
 #define EARS_NAMESPACE          "EARS"
 #define EARS_DESCRIPTION        "Equipment & Ammunition Reporting System"
 #define EARS_STATUS             "Development"
+#define EARS_COPYRIGHT          "Copyright JTB 2026 All Rights Reserved"
 
 #endif // __EARS_SYSTEM_DEF_H__
