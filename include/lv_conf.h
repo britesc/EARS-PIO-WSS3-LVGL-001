@@ -26,7 +26,10 @@
 #define LV_USE_PERF_MONITOR 1
 #define LV_USE_MEM_MONITOR 1
 
-/* CRITICAL: Matrix support - MUST be before vector graphics */
+/* CRITICAL: Float support - REQUIRED for matrix operations */
+#define LV_USE_FLOAT 1
+
+/* CRITICAL: Matrix support - MUST come after LV_USE_FLOAT */
 #define LV_USE_MATRIX 1
 
 /* CRITICAL: Disable ARM-specific optimizations for ESP32 */
