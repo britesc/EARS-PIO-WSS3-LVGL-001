@@ -8,22 +8,16 @@
 #define LV_COLOR_16_SWAP 0
 
 /* Memory settings */
-//#define LV_MEM_CUSTOM 0
 #define LV_MEM_CUSTOM 1
-//#define LV_MEM_SIZE (128U * 1024U)
-#define LV_MEM_SIZE  (48 * 1024U)  // Can be smaller now since using PSRAM
+#define LV_MEM_SIZE (48 * 1024U)  // Can be smaller now since using PSRAM
 
-// Then add or modify this section:
 #if LV_MEM_CUSTOM == 1
     #define LV_MEM_CUSTOM_INCLUDE <stdlib.h>
     #define LV_MEM_CUSTOM_ALLOC   heap_caps_malloc
     #define LV_MEM_CUSTOM_FREE    heap_caps_free
     #define LV_MEM_CUSTOM_REALLOC heap_caps_realloc
-    
-    // Add this line:
     #define LV_MEM_CUSTOM_ALLOC_PARAM   MALLOC_CAP_SPIRAM
 #endif
-
 
 /* Display settings */
 #define LV_DPI_DEF 130
@@ -31,6 +25,9 @@
 /* Feature usage */
 #define LV_USE_PERF_MONITOR 1
 #define LV_USE_MEM_MONITOR 1
+
+/* CRITICAL: Matrix support - MUST be before vector graphics */
+#define LV_USE_MATRIX 1
 
 /* CRITICAL: Disable ARM-specific optimizations for ESP32 */
 #define LV_USE_DRAW_SW_ASM LV_DRAW_SW_ASM_NONE
@@ -46,11 +43,9 @@
 #define LV_USE_PNG 1
 #define LV_USE_SJPG 1
 
-/* Image decoder - enable SVG */
+/* Image decoder - enable SVG (requires LV_USE_MATRIX = 1 above) */
 #define LV_USE_VECTOR_GRAPHIC 1
 #define LV_USE_SVG 1
-#define LV_USE_MATRIX 1
-
 
 /* Font support - ENABLE MONTSERRAT FONTS */
 #define LV_FONT_MONTSERRAT_8  1

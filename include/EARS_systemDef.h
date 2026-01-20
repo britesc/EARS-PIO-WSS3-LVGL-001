@@ -12,6 +12,7 @@
 #define __EARS_SYSTEM_DEF_H__
 
 #define EARS_SYSTEM_NAME        "EARS"
-
+#define EARS_NAMESPACE          "EARS"
+#define EARS_DESCRIPTION        "Equipment & Ammunition Reporting System"
 
 #endif // __EARS_SYSTEM_DEF_H__
